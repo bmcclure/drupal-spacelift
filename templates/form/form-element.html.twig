@@ -81,9 +81,9 @@
     </div>
   {% endif %}
   {% if children %}
-    <div class="FormItem-children">
-      {{ children }}
-    </div>
+    {% if type != 'checkbox' and type != 'radio' %}<div class="FormItem-children">{% endif %}
+    {{ children }}
+    {% if type != 'checkbox' and type != 'radio' %}</div>{% endif %}
   {% endif %}
 
   {% if suffix is not empty %}
