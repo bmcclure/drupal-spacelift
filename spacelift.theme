@@ -68,17 +68,25 @@ function spacelift_preprocess_block(&$variables) {
   if ($variables['elements']['#base_plugin_id'] == 'menu_block' && $region == 'sidebar_second') {
     $parent = $variables['elements']['#configuration']['parent'];
 
-    list(, $type, $uuid) = explode(':', $parent);
+    $parentPath = '';
+    $parentUrlActive = FALSE;
 
-    /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $link */
-    $link = \Drupal::getContainer()->get('entity.repository')->loadEntityByUuid($type, $uuid);
+    if (substr_count($parent, ':') >= 2) {
+      list(, $type, $uuid) = explode(':', $parent);
 
-    $parentUrl = $link->getUrlObject();
+      /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $link */
+      $link = \Drupal::getContainer()->get('entity.repository')->loadEntityByUuid($type, $uuid);
 
-    $currentUrl = \Drupal\Core\Url::fromRouteMatch(\Drupal::routeMatch())->getInternalPath();
+      $parentUrl = $link->getUrlObject();
 
-    $variables['parent_url'] = $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/' . $parentUrl->getInternalPath());
-    $variables['parent_url_active'] = ($parentUrl->getInternalPath() == $currentUrl);
+      $currentUrl = \Drupal\Core\Url::fromRouteMatch(\Drupal::routeMatch())->getInternalPath();
+
+      $parentPath = $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/' . $parentUrl->getInternalPath());
+      $parentUrlActive = ($parentUrl->getInternalPath() == $currentUrl);
+    }
+
+    $variables['parent_url'] = $parentPath;
+    $variables['parent_url_active'] = $parentUrlActive;
   }
 }
 
