@@ -1,7 +1,7 @@
-Spacelift 8.x-1.0-alpha1, 2017-05-04
+Spacelift 8.x-2.0-alpha1, 2017-05-04
 ------------------------------------
 No changes since initial dev release
 
-Spacelift 8.x-1.x-dev, 2017-05-04
+Spacelift 8.x-2.x-dev, 2017-05-04
 ---------------------------------
 Initial dev release by bmcclure
