@@ -135,25 +135,23 @@ function spacelift_theme_suggestions_user_alter(array &$suggestions, array $vari
  *   The theme regions to include.
  */
 function spacelift_set_interior_regions(array &$variables, array $includedRegions) {
-  $theme = \Drupal::theme()->getActiveTheme()->getName();
-  $all_regions = system_region_list($theme, 'REGIONS_ALL');
+  /** @var \Drupal\block\BlockRepositoryInterface $blockRepository */
+  $blockRepository = \Drupal::service('block.repository');
+  /** @var \Drupal\Core\Entity\EntityViewBuilderInterface $viewBuilder */
+  $viewBuilder = \Drupal::service('entity_type.manager')->getViewBuilder('block');
+  $allBlocks = $blockRepository->getVisibleBlocksPerRegion();
+  $regions = array_intersect(array_keys($allBlocks), $includedRegions);
+  $blocks = array_filter($allBlocks, function ($key) use ($regions) {
+    return in_array($key, $regions);
+  }, ARRAY_FILTER_USE_KEY);
 
-  $regions = array_intersect(array_keys($all_regions), $includedRegions);
-
-  foreach ($regions as $region) {
-    $blocks = \Drupal::entityTypeManager()
-      ->getStorage('block')
-      ->loadByProperties(['theme' => $theme, 'region' => $region]);
-
-    uasort($blocks, 'Drupal\block\Entity\Block::sort');
-
-    $build = [];
-    foreach ($blocks as $blockKey => $block) {
-      if ($block->access('view')) {
-        $build[$blockKey] = entity_view($block, 'block');
-      }
+  foreach ($blocks as $region => $blockList) {
+    /**
+     * @var string $blockKey
+     * @var \Drupal\block\BlockInterface $block
+     */
+    foreach ($blockList as $blockKey => $block) {
+      $variables[$region][$blockKey] = $viewBuilder->view($block);
     }
-
-    $variables[$region] = $build;
   }
 }
