@@ -1,34 +1,41 @@
 {
-  "assets": {
+  "assets": {},
 
-  },
   "browserSync": {
     "enabled": false,
     "hostname": "localhost",
-    "port": 8080
+    "port": 80
   },
+
   "drush": {
     "enabled": false,
     "watchDelay": 150
   },
+
   "icons": {
     "enabled": true
   },
+
   "fonts": {
     "enabled": false
   },
+
   "fontAwesome": {
     "enabled": false
   },
-  "kbox": {
+
+  "lando": {
     "enabled": false
   },
+
   "sass": {
     "enabled": true
   },
+
   "scripts": {
     "enabled": true
   },
+
   "twig": {
     "enabled": true
   }

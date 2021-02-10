@@ -1,15 +1,28 @@
 name: Spacelift
 type: theme
-base theme: classy
 description: A forward-thinking, developer-focused base theme for Drupal 8.
+base theme: classy
 core: 8.x
-regions:
-  utility: Utility
-  header: Header
-  breadcrumb: Breadcrumb
-  featured: Featured
-  sidebar_first: 'Sidebar first'
-  content: Content
-  sidebar_second: 'Sidebar second'
-  footer_top: 'Footer Top'
-  footer_bottom: 'Footer Bottom'
+core_version_requirement: ^8 || ^9
+
+# Spacelift's default regions:
+#  utility: Utility
+#  header: Header
+#  breadcrumb: Breadcrumb
+#  featured: Featured
+#  sidebar_first: 'Sidebar first'
+#  content: Content
+#  sidebar_second: 'Sidebar second'
+#  footer_top: 'Footer Top'
+#  footer_bottom: 'Footer Bottom'
+
+logo: images/logo.png
+
+# Remove unwanted system stylesheets
+# stylesheets-remove:
+#   - '@stable/css/system/components/align.module.css'
+#   - '@stable/css/system/components/fieldgroup.module.css'
+#   - '@stable/css/system/components/container-inline.module.css'
+#   - '@stable/css/system/components/nowrap.module.css'
+#   - '@stable/css/system/components/position-container.module.css'
+#   - '@stable/css/system/components/reset-appearance.module.css'

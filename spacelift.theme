@@ -33,7 +33,7 @@ function spacelift_html_head_alter(&$head_elements) {
     '#tag' => 'meta',
     '#attributes' => [
       'http-equiv' => 'x-ua-compatible',
-      'content' => 'IE=edge'
+      'content' => 'IE=edge',
     ],
     '#weight' => -1001,
   ];
@@ -43,44 +43,37 @@ function spacelift_html_head_alter(&$head_elements) {
  * Implements hook_preprocess_block().
  */
 function spacelift_preprocess_block(&$variables) {
+  $block_id = $variables['elements']['#id'];
   /** @var \Drupal\block\BlockInterface $block */
-  $block = Block::load($variables['elements']['#id']);
+  $block = Block::load($block_id);
   $region = $block->getRegion();
-
   $variables['region'] = $region;
-  $variables['id'] = $variables['elements']['#id'];
-  $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+  $variables['id'] = $block_id;
+  $variables['content']['#attributes']['block'] = $block_id;
 
-  if ($variables['elements']['#configuration']['provider'] == 'block_content') {
+  if ($variables['elements']['#configuration']['provider'] === 'block_content') {
     /** @var \Drupal\block_content\BlockContentInterface $blockContent */
     $blockContent = $variables['elements']['content']['#block_content'];
-
     $variables['block_type'] = $blockContent->bundle();
   }
 
-  if ($variables['base_plugin_id'] == 'language_block') {
+  if ($variables['base_plugin_id'] === 'language_block') {
     $languageManager = \Drupal::languageManager();
     $language = $languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
-
     $variables['current_language'] = $language->getName();
   }
 
-  if ($variables['elements']['#base_plugin_id'] == 'menu_block' && $region == 'sidebar_second') {
+  if ($variables['elements']['#base_plugin_id'] === 'menu_block' && $region === 'sidebar_second') {
     $parent = $variables['elements']['#configuration']['parent'];
-
     $parentPath = '';
     $parentUrlActive = FALSE;
 
     if (substr_count($parent, ':') >= 2) {
-      list(, $type, $uuid) = explode(':', $parent);
-
+      [, $type, $uuid] = explode(':', $parent);
       /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $link */
       $link = \Drupal::getContainer()->get('entity.repository')->loadEntityByUuid($type, $uuid);
-
       $parentUrl = $link->getUrlObject();
-
-      $currentUrl = \Drupal\Core\Url::fromRouteMatch(\Drupal::routeMatch())->getInternalPath();
-
+      $currentUrl = Url::fromRouteMatch(\Drupal::routeMatch())->getInternalPath();
       $parentPath = $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/' . $parentUrl->getInternalPath());
       $parentUrlActive = ($parentUrl->getInternalPath() == $currentUrl);
     }
@@ -104,7 +97,10 @@ function spacelift_theme_suggestions_menu_alter(array &$suggestions, array $vari
   // Remove the block and replace dashes with underscores in the block ID to
   // use for the hook name.
   if (isset($variables['attributes']['block'])) {
-    $hook = str_replace(['block-', '-'], ['', '_'], $variables['attributes']['block']);
+    $hook = str_replace(['block-', '-'], [
+      '',
+      '_',
+    ], $variables['attributes']['block']);
 
     $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
   }
@@ -115,9 +111,7 @@ function spacelift_theme_suggestions_block_alter(array &$suggestions, array $var
     $block_id = $variables['elements']['#id'];
     /** @var \Drupal\block\BlockInterface $block */
     $block = Block::load($block_id);
-
     $region = $block->getRegion();
-
     $suggestions[] = $variables['theme_hook_original'] . '__menu__region_' . $region;
   }
 }

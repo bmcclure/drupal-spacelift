@@ -1,0 +1,25 @@
+{
+  "name": "spacelift/{{starter}}",
+  "type": "drupal-theme",
+  "description": "Spacelift is a forward-thinking, developer-focused base theme for Drupal 8.",
+  "keywords": ["Drupal"],
+  "license": "MIT",
+  "homepage": "http://drupal.org/project/spacelift",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Ben McClure (bmcclure)",
+      "homepage": "https://www.drupal.org/u/bmcclure",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Tony Klose (amklose)",
+      "homepage": "https://www.drupal.org/u/amklose",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/spacelift",
+    "source": "http://cgit.drupalcode.org/spacelift"
+  }
+}
