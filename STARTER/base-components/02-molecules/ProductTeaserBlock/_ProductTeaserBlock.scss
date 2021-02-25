@@ -1,0 +1,58 @@
+.ProductTeaserBlock {
+  margin-bottom: .5rem;
+
+  &-container {
+    background: $white;
+    border: 1px solid $gray--medium;
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    min-height: 72px;
+
+    .ie & {
+      height: 72px;
+    }
+
+    h3 {
+      width: 100%;
+      margin-bottom: 0;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-image {
+    padding-top: $aspect-ratio-2-3;
+    display: block;
+    @include transition;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  &-text {
+    padding: 1.25rem 1rem;
+    border-top: 1px solid $gray--medium;
+    background: $gray--light;
+
+    .bg-light & {
+      background: $white;
+    }
+  }
+
+  a {
+    color: $white;
+    margin-bottom: 0;
+    width: 100%;
+    display: block;
+  }
+  .fas {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,36 @@
+$red: #d22728 !default;
+.EmailARep {
+  .name-widget-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .name-component-wrapper {
+      width: 100%;
+      @include breakpoint(medium) {
+        width: 50%;
+      }
+    }
+
+    .name-given-wrapper {
+      @include breakpoint(medium) {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  textarea {
+    max-height: 200px;
+  }
+
+  .required[class] {
+    color: $gray--dark;
+  }
+}
+
+/* copied styling from goodway */
+.float-labels-wrapper.float-labels-required.float-labels-star .float-labels-label:after {
+  content: "*";
+  color: $red;
+}
+
+/* end copied styling */

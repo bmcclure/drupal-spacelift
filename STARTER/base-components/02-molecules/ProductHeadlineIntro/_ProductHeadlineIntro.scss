@@ -1,0 +1,13 @@
+.ProductHeadlineIntro {
+
+  .SocialShareTo {
+    padding-bottom: 0;
+    width: auto !important;
+    &-menu[class] {
+      margin-bottom: 0;
+      li {
+        width: auto;
+      }
+    }
+  }
+}

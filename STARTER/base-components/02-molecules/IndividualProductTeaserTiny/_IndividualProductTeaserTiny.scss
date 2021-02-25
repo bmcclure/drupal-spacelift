@@ -1,0 +1,47 @@
+.IndividualProductTeaserTiny {
+  //margin-bottom: .75rem;
+  padding: .5rem;
+
+  &:hover {
+    background: $gray--light;
+  }
+
+  &--noHover {
+    &:hover {
+      background: initial;
+    }
+  }
+
+  &-title {
+    line-height: 1.1;
+    margin-bottom: .5rem;
+  }
+
+  &-text {
+    padding-left: .5rem;
+  }
+
+  &-teaser {
+    color: $gray--dark;
+
+    p {
+      font-size: $FontSize-xxs;
+      margin-bottom: 0;
+    }
+  }
+
+  &-price {
+    display: flex;
+    align-items: flex-end;
+    color: $gray--dark;
+
+    p {
+      font-size: $FontSize-xxs;
+      margin-bottom: 0;
+    }
+  }
+
+  &WithPrice {
+    margin-bottom: .5rem;
+  }
+}

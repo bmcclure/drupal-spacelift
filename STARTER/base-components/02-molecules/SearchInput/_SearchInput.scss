@@ -1,0 +1,56 @@
+/* SearchInput Styling, used on ResourcesSearchBar and the header Search*/
+
+.SearchInput {
+  $self: &;
+  position: relative;
+  padding: 10px; /* this helps with the icon position. */
+
+  &-icon {
+    position: absolute;
+    top: 22px; /* absolutely positioned because inputs cant do pseudoelements */
+    left: 25px;
+    color: $red;
+    font-size: rem-calc(14);
+  }
+
+  &-input {
+    margin-bottom: 0;
+    height: 35px;
+    padding-left: 35px;
+
+    &::placeholder {
+      font-style: italic;
+      color: $gray--dark;
+      font-size: rem-calc(14);
+    }
+  }
+
+  &--withButton {
+    padding: 0;
+
+    #{$self}-icon {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 40px;
+      cursor: pointer;
+      background: $primary-color;
+      color: $white;
+      @include transition;
+
+      &:hover {
+        background: darken($primary-color, 5%);
+      }
+    }
+
+    #{$self}-form {
+      display: flex;
+    }
+
+    #{$self}-input {
+      width: calc(100% - 40px);
+      padding-left: 1rem;
+    }
+
+  }
+}

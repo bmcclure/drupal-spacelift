@@ -3,3 +3,8 @@ motions:
   - name: 'Slide Up'
   - name: 'Slide Down'
   - name: 'Expand'
+
+animations:
+  - name: 'Fade Up'
+  - name: 'Fade Right'
+  - name: 'Fade Left'

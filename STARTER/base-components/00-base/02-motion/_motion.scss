@@ -116,3 +116,70 @@ $transition-timing-function-base: ease-in-out;
     transform: scale(1.03);
   }
 }
+
+a {
+  .Zoom {
+    position: relative;
+    overflow: hidden;
+
+    &-image {
+      @include transition;
+
+    }
+  }
+
+  &:hover {
+    @include breakpoint(large) {
+      .Zoom-image {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// AOS Animations
+[data-aos='fade-up'] {
+  transform: translate(0, 20px);
+  //transform: translate3d(0,20px,0);
+}
+[data-aos='fade-right'] {
+  transform: translate3d(-20px,0,0);
+}
+[data-aos='fade-left'] {
+  transform: translate3d(20px,0,0);
+}
+
+[data-aos^='counter'][data-aos^='counter'] {
+  transform: scale(.1);
+
+  &.aos-animate {
+    transform: scale(1);
+  }
+}
+
+[data-aos='SectionFade'] {
+  .SectionFade-one, .SectionFade-two, .SectionFade-three, .SectionFade-four {
+    transform: translate(0, 20px);
+    transition:.6s ease-out;
+    opacity: 0;
+  }
+
+  .SectionFade-two {
+    transition-delay: .3s;
+  }
+
+  .SectionFade-three {
+    transition-delay: .5s;
+  }
+
+  .SectionFade-four {
+    transition-delay: .7s;
+  }
+
+  &.aos-animate {
+    .SectionFade-one, .SectionFade-two, .SectionFade-three, .SectionFade-four {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { hrefTo } from '@storybook/addon-links';
 
 import '../../02-molecules/menus/main-menu/main-menu';
 
@@ -12,24 +14,21 @@ import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
 /**
  * Storybook Definition.
  */
-export default {
-  title: 'Pages/Landing Pages',
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
-
-export const homePage = () => (
-  <div
-    dangerouslySetInnerHTML={{
-      __html: home({
-        page_layout_modifier: 'contained',
-        ...mainMenuData,
-        ...breadcrumbData,
-        ...socialMenuData,
-        ...footerMenuData,
-        card__link__text: 'Click here',
-      }),
-    }}
-  />
-);
+hrefTo('Pages/Content Types', 'Article').then((url) => {
+  // TODO: Can't figure out how to link pages with hrefTo and storiesOf.
+  storiesOf('Pages/Landing Pages', module).add('Home', () => (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: home({
+          page_layout_modifier: 'contained',
+          ...mainMenuData,
+          ...breadcrumbData,
+          ...socialMenuData,
+          ...footerMenuData,
+          card_link_url: url,
+          card__link__text: 'Click here',
+        }),
+      }}
+    />
+  ));
+});

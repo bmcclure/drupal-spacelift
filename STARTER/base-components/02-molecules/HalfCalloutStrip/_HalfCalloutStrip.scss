@@ -1,0 +1,48 @@
+.HalfCalloutStrip {
+  .bg-blue {
+    a {
+      color: $white;
+    }
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  &-container {
+    padding: 1rem;
+    height: 100%;
+
+    @include breakpoint(medium) {
+      padding: 1.5rem;
+    }
+  }
+
+  .IndividualResourceDownloadsThumbnail {
+    width: 100%;
+  }
+
+  &:first-child {
+    @include breakpoint(large) {
+      .IndividualResourceDownloadsThumbnail {
+        max-width: 600px;
+        margin-left: auto;
+        padding-left: 50px;
+        padding-right: 4rem;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    @include breakpoint(large) {
+      .IndividualResourceDownloadsThumbnail {
+        max-width: 600px;
+        padding-left: 4rem;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: .75rem;
+  }
+}

@@ -1,0 +1,78 @@
+.ProductsHeaderBanner {
+  position: relative;
+  padding-bottom: 1rem;
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $gray--dark;
+    opacity: .3;
+  }
+
+  .grid-container {
+    position: relative;
+  }
+
+  &-headlines {
+    margin-bottom: 30vh;
+  }
+
+  &-headline, &-subheadline {
+    color: $white;
+  }
+
+  &-headline {
+    text-transform: uppercase;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+
+    &-container {
+
+      .sticky {
+        @include transition;
+        &.is-stuck {
+          background: $blue--dark;
+        }
+        @include breakpoint(large) {
+          padding: 1rem 0;
+        }
+      }
+    }
+
+    @include breakpoint(large) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    .button {
+      width: calc(50% - .5rem);
+      margin: .25rem;
+
+      @include breakpoint(medium down) {
+        text-align: left;
+        padding-right: 2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        .fas {
+          position: absolute;
+          right: .75rem;
+          top: calc(50% - .5em);
+        }
+
+      }
+      @include breakpoint(medium) {
+        width: calc(25% - 20px);
+        margin: 10px;
+      }
+    }
+  }
+}

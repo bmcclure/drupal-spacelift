@@ -1,0 +1,119 @@
+$medium-large: '768px';
+
+.SearchWithDropdown {
+
+  @media screen and (min-width: $medium-large) { /* Unique breakpoint due to how this is laid out (see design). Does not work at our normal medium breakpoint of 640. */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &-container {
+    @include breakpoint(large) {
+      position: relative;
+    }
+    max-width: 100%; //185px;
+    margin: auto;
+
+
+    .SearchInput {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include breakpoint(large) {
+      max-width: 450px;
+    }
+
+    .SearchInput-icon {
+      left: 15px;
+    }
+
+    .SearchInput-input {
+      background: $gray--light;
+    }
+  }
+
+  &-dropdown {
+    display: none;
+    background: $white;
+    padding-top: 4px;
+
+    /* Custom Scroll Bar - might move this out to its own snippet */
+    scrollbar-width: thin;
+    scrollbar-color: $yellow $gray--light;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $gray--medium;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $yellow;
+      position: relative;
+    }
+
+    /* end custom scroll bar*/
+
+    @include breakpoint(medium) {
+      position: absolute;
+      left: calc(50% - 250px);
+      top: 7rem;
+      right: auto;
+      border: 1px solid $gray--medium;
+      max-height: 70vh;
+      overflow-y: auto;
+      z-index: 120;
+      width: 500px;
+      padding-top: 0;
+    }
+    @include breakpoint(large) {
+      left: 0;
+      top: 48px;
+      width: 100%;
+    }
+
+
+    &.visible {
+      display: block;
+    }
+
+
+    .button {
+      width: 100%;
+      display: block;
+      margin-bottom: 0;
+      margin-top: .5rem;
+    }
+  }
+
+  &-left {
+    @include breakpoint(medium) {
+      border-right: 1px solid $gray--medium;
+    }
+  }
+
+  &-title {
+    padding: .5rem .75rem;
+  }
+
+
+  &-body {
+    padding: .75rem;
+
+    &Category {
+      display: block;
+      width: 100%;
+      padding: .25rem 0;
+      border-bottom: 1px solid $gray--medium;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+
+}

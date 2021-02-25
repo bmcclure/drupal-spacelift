@@ -10,12 +10,7 @@ import footerMenu from '../02-molecules/menus/inline/inline-menu.yml';
 /**
  * Storybook Definition.
  */
-export default {
-  title: 'Templates/Layouts',
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
+export default { title: 'Templates/Layouts' };
 
 export const fullWidth = () => (
   <div
@@ -24,7 +19,6 @@ export const fullWidth = () => (
     }}
   />
 );
-
 export const withSidebar = () => (
   <div
     dangerouslySetInnerHTML={{

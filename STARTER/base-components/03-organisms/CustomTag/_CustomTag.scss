@@ -1,0 +1,59 @@
+.CustomTag {
+  $self: &;
+  font-family: 'Helvetica', sans-serif; /* per functional spec */
+  max-width: 100%;
+  margin: auto;
+  display: block;
+
+  &-background { /* default*/
+    fill: #fff200; /* yellow */
+    stroke: $gray--medium;
+    filter: url(#shadow);
+  }
+
+  &-backgroundOverlay { /* default*/
+    fill: url(#CustomTag-gradient);
+    opacity: .6;
+    stroke: $gray--medium;
+  }
+
+  &-mounting {
+    &Hole {
+      fill: $white;
+      stroke: $gray--medium;
+      display: none;
+    }
+
+    &-0, &-5 {
+      #{$self}-mountingHoleTop {
+        display: block;
+      }
+    }
+
+    &-1, &-6 {
+      #{$self}-mountingHoleLeft {
+        display: block;
+      }
+    }
+
+    &-2, &-7 {
+      #{$self}-mountingHoleLeft, #{$self}-mountingHoleRight {
+        display: block;
+      }
+    }
+
+    &-3, &-8 {
+      #{$self}-mountingHoleTopLeft, #{$self}-mountingHoleTopRight, #{$self}-mountingHoleBottomLeft, #{$self}-mountingHoleBottomRight {
+        display: block;
+      }
+    }
+
+  }
+
+  &--round-1-5, &--square-1-5 {
+    #{$self}-number {
+      transform: translateY(50px);
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.Breadcrumb {
+  @include header-font-family-regular;
+  background: clr(background-section);
+  font-size: rem-calc(14px);
+  padding: 0.25rem 0 0.5rem;
+
+  a {
+    font-family: 600 $header-font-family;
+  }
+
+  &-separator {
+    padding: 0 0.5rem;
+  }
+}

@@ -1,0 +1,312 @@
+$MegaMenuHeight: 375px;
+$MegaMenuSubMenuHeight: 245px;
+
+$ProductMenuHeight: 500px;
+$ProductSubMenuHeight: 400px;
+
+.Header-mainNav {
+  border-top: 1px solid $gray--medium;
+  //border-bottom: 1px solid $medium-gray; // moved to parent
+  width: 100%;
+
+  &Menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    @include transition;
+
+    > li {
+      &.is-MegaMenu {
+        &::after {
+          content: '';
+          width: 10px;
+          height: 10px;
+          background: $gray--light;
+          border: 1px solid $gray--medium;
+          display: none;
+          position: absolute;
+          border-bottom: 0;
+          border-right: 0;
+          margin-left: 1rem;
+          bottom: -4px;
+          transform: rotate(45deg);
+          z-index: 100;
+        }
+
+        &.show-MegaMenu {
+          &::after {
+            display: block;
+          }
+        }
+      }
+
+      > a {
+        color: $blue--dark;
+        font-family: $header-font-family;
+        font-weight: 400;
+        display: block;
+        text-decoration: none;
+        padding: calc(.625rem - 3px) 0 .625rem;
+        border-top: 3px solid #fff;
+        border-top: 3px solid transparent;
+        text-transform: uppercase;
+        margin: 0 .5rem;
+        @include breakpoint(xlarge) {
+          margin: 0 1rem;
+        }
+
+        &.show-MegaMenu {
+          color: $primary-color;
+          border-top: 3px solid $primary-color;
+        }
+
+        &::after {
+          font-family: 'Font Awesome 5 Pro';
+          content: '\f0d7';
+          color: $red;
+          padding-left: .5rem;
+          font-weight: bold;
+
+        }
+
+      }
+    }
+  }
+}
+
+.MegaMenu {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+
+  &-wrapper {
+    background: $gray--light;
+    left: 0;
+    padding: 2rem 0 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+    border-top: 1px solid $gray--medium;
+    @include transition;
+  }
+
+  &-menu {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  &-topMenu {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 4rem);
+  }
+
+  a {
+    color: $gray--dark;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+
+  &-columns {
+    flex: 0 1 auto;
+    padding: 0 1rem;
+    border-right: 1px solid $gray--medium;
+    max-width: 33.3333%;
+    flex-shrink: 1;
+    @include breakpoint(xlarge) {
+      padding: 0 2rem;
+    }
+
+    &:last-child {
+      border: none;
+      flex-grow: 1;
+      max-width: 40%;
+    }
+
+    &:nth-child(2) {
+      .is-MegaMenu.long & {
+        min-width: 33.333%;
+      }
+    }
+
+
+    a {
+      font-size: rem-calc(14);
+    }
+
+    > a {
+      font-size: 1rem;
+      font-family: $header-font-family;
+      text-transform: uppercase;
+      color: $blue--dark;
+      margin-bottom: .25rem;
+      display: inline-block;
+      pointer-events: none;
+      vertical-align: baseline;
+      height: 2rem;
+      line-height: 2rem;
+    }
+
+    &:first-child {
+      > a {
+        font-size: rem-calc(22);
+        font-family: $header-font-family;
+        color: $blue--dark;
+        text-transform: none;
+        margin-bottom: .5rem;
+        display: block;
+        margin-top: -2px;
+      }
+
+      a.link {
+        color: $primary-color;
+      }
+
+    }
+  }
+
+  &-submenu {
+    max-height: $MegaMenuSubMenuHeight;
+    display: flex;
+    flex-flow: column wrap;
+
+    > li {
+      padding-right: .25rem;
+      @include breakpoint(xlarge) {
+        padding-right: 1rem;
+
+      }
+    }
+  }
+
+  &-footer {
+    background: $red;
+    padding: .75rem 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    &Row {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+    &Item {
+      flex: 0 1 auto;
+      border-right: 1px solid $white;
+      padding: 0 1rem;
+      font: 600 $header-font-family;
+      text-transform: uppercase;
+
+      &:last-child {
+        border: none;
+      }
+
+      .light {
+        font-family: $header-font-family;
+      }
+
+      a {
+        color: clr(text-inverse);
+      }
+    }
+  }
+
+  &-teasers {
+    padding-top: 0.5rem;
+
+    &.FlexRow {
+      flex-flow: row wrap;
+    }
+
+    &Image {
+      padding-top: 75%;
+    }
+
+    .FlexRow-item {
+      padding: 2px;
+    }
+
+    &Title {
+      color: $primary-color;
+      font-family: $header-font-family;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.is-MegaMenu-product {
+  .MegaMenu-wrapper {
+    min-height: $ProductMenuHeight;
+  }
+
+  .MegaMenu-columns {
+
+    > .MegaMenu-submenu {
+      height: $ProductSubMenuHeight;
+      max-height: 400px;
+    }
+
+    &:first-child {
+      > a {
+        font-size: 1rem;
+        text-transform: uppercase;
+
+      }
+
+      .MegaMenu-submenu > li {
+        > a {
+          font-size: 1rem;
+          font-weight: bold;
+          color: $red;
+        }
+      }
+
+      .MegaMenu-subsubmenu {
+        display: block;
+
+        > li > a {
+          font-weight: normal;
+          display: block;
+          font-size: .85em;
+          margin-bottom: .175rem;
+          color: $gray--dark;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+
+      width: 75%;
+      max-width: 75%;
+    }
+
+    width: 25%;
+  }
+}
+
+.is-MegaMenu.show-MegaMenu > .MegaMenu-wrapper {
+  display: block;
+  z-index: 100;
+  opacity: 1;
+  min-height: $MegaMenuHeight;
+  max-height: 600px;
+}
+
+.is-MegaMenu.is-MegaMenu-product.show-MegaMenu > .MegaMenu-wrapper {
+  min-height: $ProductMenuHeight;
+}

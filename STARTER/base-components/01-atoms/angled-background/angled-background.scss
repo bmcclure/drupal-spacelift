@@ -1,0 +1,79 @@
+@mixin angled-background {
+  background: clr(primary-alt);
+  overflow: hidden;
+  position: relative;
+
+  &.reverse {
+    @include breakpoint(medium) {
+      background: clr(primary);
+    }
+
+    &::before {
+      background: clr(primary-alt);
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 60%;
+    }
+
+    &::after {
+      transform: skewY(-21deg);
+      transform-origin: top right;
+
+      @include breakpoint(medium) {
+        left: auto;
+        right: 40%;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+
+    @include breakpoint(large) {
+      background: $blue;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 44%;
+      z-index: 0;
+    }
+  }
+
+  &::after {
+    background: clr(primary);
+    bottom: 31%;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: skewY(21deg);
+    transform-origin: 0;
+    width: 100%;
+    z-index: 1;
+
+
+    @include breakpoint(large) {
+      left: 44%;
+    }
+  }
+
+  &-text {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.AngledBackground {
+  @include angled-background;
+}
+
+.demo-angled-background {
+  height: 300px;
+  width: 100%;
+}

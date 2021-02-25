@@ -1,0 +1,16 @@
+// Font Awesome
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-pro/webfonts";
+$fa-font-display: block;
+
+// Comment out what you dont need
+
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
+
+
+
+//@import "../../../node_modules/@fortawesome/fontawesome-pro/scss/duotone.scss";
+//@import "../../../node_modules/@fortawesome/fontawesome-pro/scss/all.scss";

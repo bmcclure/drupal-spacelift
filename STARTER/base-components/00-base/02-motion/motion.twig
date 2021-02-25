@@ -8,4 +8,13 @@
       </div>
     {% endfor %}
   </div>
+  <h2>AOS Animations</h2>
+  <div class="motion__grid">
+    {% for animation in animations %}
+      <div class="motion__grid-item">
+        <h3>{{ animation.name }}</h3>
+        <div class="demo-animation demo-animation--{{ animation.name|lower|replace({' ':'-'}) }}"></div>
+      </div>
+    {% endfor %}
+  </div>
 </div>

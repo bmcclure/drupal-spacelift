@@ -1,0 +1,34 @@
+.IconInfoBox {
+  &-container {
+    background: $white;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(large) {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .IconInfoBoxes-row.boxes-light & {
+      background: $gray--light;
+    }
+  }
+
+  &-icon {
+    width: 50px;
+    padding-top: 5px;
+
+    svg {
+      max-width: 30px;
+      max-height: 30px;
+    }
+  }
+
+  &-text {
+    width: calc(100% - 50px);
+    padding-left: .5rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

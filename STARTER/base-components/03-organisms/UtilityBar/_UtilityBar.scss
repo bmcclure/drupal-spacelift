@@ -1,0 +1,62 @@
+$utility-bar-background: clr(primary) !default;
+$utility-bar-color: clr(text-inverse) !default;
+$utility-bar-font: 600 $FontSize-xs $header-font-family !default;
+$utility-bar-padding: 0.25rem 0 !default;
+$utility-bar-padding-medium: 0.5rem 0 !default;
+
+.UtilityBar {
+  background: $utility-bar-background;
+  color: $utility-bar-color;
+  font: $utility-bar-font;
+  padding: $utility-bar-padding;
+
+  @include breakpoint(medium) {
+    padding: $utility-bar-padding-medium;
+  }
+
+  a {
+    color: $utility-bar-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-text {
+    font-weight: bold;
+  }
+
+  .fas {
+    padding-right: 0.25rem;
+  }
+
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+
+    @include breakpoint(medium) {
+      justify-content: flex-start;
+    }
+
+    &Item {
+      flex: 0 1 auto;
+      padding: 0 .5rem;
+
+      @include breakpoint(medium) {
+        padding: 0 1rem 0 0;
+      }
+    }
+
+    &Right {
+      justify-content: flex-end;
+
+      &Item {
+        padding-right: 0;
+        padding-left: 1rem;
+      }
+    }
+  }
+}

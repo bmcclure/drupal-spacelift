@@ -54,3 +54,42 @@
     }
   }
 }
+
+// Color Utility Classes
+// TODO: Replace these with the clr() mixin
+.white {
+  color: $white;
+}
+
+.bg-light {
+  background: $light-gray;
+
+  + .bg-light {
+    padding-top: 0; // this fixes the too much padding problem if two sections have bg-light in a row
+  }
+}
+
+.bg-dark {
+  background: $dark-gray;
+}
+
+.bg-yellow {
+  background: $yellow;
+}
+
+.bg-dark-blue {
+  background: $dark-blue;
+}
+
+.bg-blue {
+  background: $blue;
+
+}
+
+.bg-blue, .bg-dark-blue, .bg-dark {
+  color: $white;
+
+  h2, h3, h4, h5, p, a {
+    color: $white;
+  }
+}

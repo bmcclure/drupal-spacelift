@@ -1,0 +1,19 @@
+.IndividualCaseStudyTeaser {
+  .wysiwyg {
+    ul li {
+      color: $gray--dark;
+
+      &:before {
+        color: $yellow--dark;
+      }
+    }
+  }
+
+  &-bullets {
+    li {
+      @include breakpoint(large) {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

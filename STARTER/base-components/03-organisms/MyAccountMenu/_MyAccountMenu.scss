@@ -1,0 +1,147 @@
+.MyAccountMenu {
+  $self: &;
+
+  a {
+    color: $gray--dark;
+  }
+
+  .far {
+    color: $primary-color;
+    font-size: 1.125rem;
+    @include breakpoint(medium only) { /* This is to match Melanie's design. */
+      width: 100%;
+      margin-bottom: .5rem;
+      text-align: center;
+    }
+    @include breakpoint(large) {
+      font-size: 1rem;
+    }
+  }
+
+  &-account {
+    //.far {
+    //  @include breakpoint(medium only) {
+    //    margin-left: 3px; /* to match the design  */
+    //  }
+    //}
+
+    a:after {
+      @include breakpoint(small only) {
+        display: none !important; /* all screens by default show the arrow, but melanie has it removed from mobile */
+      }
+      @include breakpoint(medium only) { /* this is to match the tablet ONLY design, overriding Foundation styles */
+        //right: -2px !important;
+        //bottom: 1rem;
+        //position: absolute;
+        //top: auto;
+
+        position: relative;
+        display: inline-block !important;
+        margin-left: 9px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+
+  &-dropdown #{$self}-title {
+    text-align: center;
+    padding: .75rem;
+    line-height: 1;
+    @include breakpoint(medium) {
+      padding: .75rem .75rem;
+    }
+  }
+
+  &-dropdownMenu #{$self}-account #{$self}-title {
+    padding-right: .75rem;
+    @include breakpoint(large) {
+      padding-right: 1.5rem;
+    }
+  }
+
+  .Header-cartButton {
+    cursor: pointer;
+    color: $gray--dark;
+    padding-right: 0;
+  }
+
+  &-dropdown {
+    $self: &;
+    justify-content: flex-end;
+
+    #{$self}-account {
+      &:hover, &:focus, &:focus-within {
+        #{$self}-dropdownMenu {
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    #{$self}-dropdownMenu {
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: $gray--light;
+        border: 1px solid $gray--medium;
+        display: none;
+        position: absolute;
+        border-bottom: 0;
+        border-right: 0;
+        margin-left: 1rem;
+        top: -4px;
+        transform: rotate(45deg);
+        z-index: 100;
+      }
+    }
+  }
+
+  &-dropdownMenu {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: $gray--light;
+      border: 1px solid $gray--medium;
+      display: none;
+      position: absolute;
+      border-bottom: 0;
+      border-right: 0;
+      margin-left: 1.25rem;
+      top: -6px;
+      transform: rotate(45deg);
+      z-index: 100;
+    }
+
+    .MyAccountMenu-dropdownMenuItem {
+      border-bottom: 1px solid $gray--medium;
+
+      a {
+        text-transform: uppercase;
+        font-family: $header-font-family;
+        color: $blue--dark;
+        font-size: $FontSize-xs;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+    }
+  }
+}
+
+
+

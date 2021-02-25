@@ -1,0 +1,45 @@
+$table-spacing: 10px !default;
+
+.ProductSpecifications {
+  padding-top: 0;
+
+  &-specs {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(large) {
+      margin-left: -$table-spacing;
+      margin-right: -$table-spacing;
+    }
+  }
+
+  &-spec {
+    padding: .325rem .5rem;
+    flex: 0 1 auto;
+    width: 100%;
+    display: flex;
+
+    &:nth-child(odd) {
+      background: $gray--light;
+    }
+
+    @include breakpoint(large) {
+      width: calc(50% - 20px);
+      margin: 0 10px;
+      &:nth-child(odd) {
+        background: none;
+      }
+      &:first-child, &:nth-child(4n +1), &:nth-child(2), &:nth-child(4n + 2) {
+        background: $gray--light;
+      }
+    }
+  }
+
+  &-label, &-value {
+    width: 50%;
+  }
+
+  &-label {
+    font-weight: 600;
+    padding-right: .5rem;
+  }
+}

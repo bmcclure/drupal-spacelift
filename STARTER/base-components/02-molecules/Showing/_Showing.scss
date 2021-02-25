@@ -1,0 +1,9 @@
+.Showing {
+  font-size: 1rem;
+  font-weight: normal;
+
+  &-title {
+    font: 600 $header-font-family;
+    color: clr(primary-alt);
+  }
+}

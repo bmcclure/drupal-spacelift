@@ -1,0 +1,12 @@
+/* A lot of form styling is setup in _settings.scss for Foundation */
+.Form {
+  label {
+    font-family: $header-font-family;
+    margin-bottom: .25rem;
+    text-transform: uppercase;
+  }
+
+  .required-asterisk {
+    color: $red;
+  }
+}

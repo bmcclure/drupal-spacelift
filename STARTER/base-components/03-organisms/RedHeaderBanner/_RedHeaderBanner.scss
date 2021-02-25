@@ -1,0 +1,37 @@
+.RedHeaderBanner {
+  background: $red;
+  padding: 2rem 0;
+  position: relative;
+
+  @include breakpoint(large) {
+    padding: 8rem 0;
+  }
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .125;
+    filter: grayscale(1);
+  }
+
+  &-text {
+    position: relative;
+    color: $white;
+    @include breakpoint(large) {
+      max-width: 950px;
+    }
+  }
+
+  &-super {
+    @include breakpoint(large) {
+      margin-bottom: .4em;
+    }
+  }
+
+  &-title {
+    color: $white;
+  }
+}

@@ -1,0 +1,13 @@
+.FeaturedServices {
+  .PageTeaserBlock {
+    @include breakpoint(medium only) {
+      &:last-child {
+        width: 100%;
+
+        .PageTeaserBlock-image {
+          padding-top: 33.3333%;
+        }
+      }
+    }
+  }
+}

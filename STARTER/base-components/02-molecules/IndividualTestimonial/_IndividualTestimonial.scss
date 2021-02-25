@@ -1,0 +1,31 @@
+.IndividualTestimonial {
+  &-row {
+    display: flex;
+    flex-flow: row wrap;
+    @include breakpoint(large) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &-quote {
+    flex: 0 1 auto;
+    flex-grow: 1;
+    margin: 0 auto;
+    @include breakpoint(large) {
+      padding-bottom: 3rem; // this is to make space for the absolutely positioned arrows
+    }
+  }
+
+  &-image {
+    flex: 0 1 auto;
+    width: 100%;
+    padding-top: $aspect-ratio-2-3;
+    margin-bottom: 1rem;
+    @include breakpoint(large) {
+      order: 2;
+      width: 50%;
+      min-width: 50%;
+      padding-top: $aspect-ratio-1-3;
+    }
+  }
+}

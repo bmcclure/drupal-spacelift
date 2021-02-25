@@ -1,0 +1,92 @@
+.HorizontalCard {
+  &-container {
+    background: $white;
+    border: 1px solid $gray--medium;
+    @include breakpoint(medium) {
+      height: 100%;
+    }
+  }
+
+  &-header {
+    padding: 1rem 1.5rem;
+  }
+
+  &-body {
+    height: 100%;
+    padding: 1.5rem;
+    border-top: 0;
+    flex-flow: column wrap;
+    @include breakpoint(large) {
+      flex-flow: row wrap;
+    }
+  }
+
+  &-image {
+    min-width: 74px;
+    min-height: 74px;
+    margin-right: 1rem;
+
+    @include breakpoint(large) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &-button {
+    margin-top: 1rem;
+    @include breakpoint(large) {
+      margin-top: 0;
+    }
+  }
+
+  &-list {
+    li {
+      margin-bottom: .5rem;
+    }
+
+    a {
+      color: $blue;
+      @include transition;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    .fas {
+      color: $red;
+      width: 1.75rem;
+    }
+  }
+
+  &-tinyIcon {
+    position: relative;
+    top: 3px;
+
+    svg {
+      max-width: 25px;
+      max-height: 20px;
+
+      path {
+        fill: $blue !important; // sorry, it wouldn't take it
+        @include transition;
+      }
+    }
+  }
+
+  a:hover {
+    svg {
+      path {
+        fill: $red !important; // sorry
+      }
+    }
+  }
+
+  .button, p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+
+}

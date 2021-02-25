@@ -1,0 +1,10 @@
+.ResourceResultVideo {
+  $self: &;
+
+  #{$self}-image {
+    display: none;
+  }
+  p {
+    color: $gray--dark;
+  }
+}

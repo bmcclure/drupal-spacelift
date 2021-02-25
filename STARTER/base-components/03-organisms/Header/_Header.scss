@@ -1,0 +1,18 @@
+@import 'components/03-organisms/Header/assets/header-main';
+@import 'components/03-organisms/Header/assets/hamburger';
+
+
+.Header {
+  &-wrap {
+    z-index: 100;
+
+    &.is-stuck {
+      z-index: 100;
+      //@include box-shadow;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

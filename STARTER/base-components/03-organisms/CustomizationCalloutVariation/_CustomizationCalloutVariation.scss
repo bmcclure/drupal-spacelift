@@ -1,0 +1,22 @@
+$CustomizationCalloutVariation-padding-top-medium: 72%; /* the padding in this variation controls how wide and tall the image is, and how much overlap there is */
+$CustomizationCalloutVariation-padding-top-xlarge: 40%;
+.CustomizationCalloutVariation {
+  .CustomizationCallout-top {
+    &-image {
+      &-container {
+        padding-top: 40%;
+        width: 50%;
+        height: 100%;
+        @include breakpoint(medium) {
+          padding-top: $CustomizationCalloutVariation-padding-top-medium; // adjustment for the customization image on tablet, so that it is large enough and overlaps
+          width: 100%;
+          height: calc(100% + 2rem);
+          margin-bottom: -2rem;
+        }
+        @include breakpoint(xlarge) {
+          padding-top: $CustomizationCalloutVariation-padding-top-xlarge; // adjusted again so that it is not too large on xlarge screens
+        }
+      }
+    }
+  }
+}

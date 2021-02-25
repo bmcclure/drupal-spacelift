@@ -1,0 +1,32 @@
+$SearchBar-grid-padding: 10px;
+
+
+.SearchBar {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -$SearchBar-grid-padding;
+  margin-right: -$SearchBar-grid-padding;
+
+  &-inputWrap {
+    padding: $SearchBar-grid-padding;
+    flex: 0 1 auto;
+    flex-grow: 1;
+    @include breakpoint(medium) {
+      max-width: 400px;
+    }
+  }
+
+
+  &-buttonWrap {
+    padding: $SearchBar-grid-padding;
+    flex: 0 1 auto;
+    flex-shrink: 1;
+  }
+
+  &-button {
+    margin-bottom: 0;
+    height: 35px;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+}

@@ -1,0 +1,50 @@
+.ResourceResult {
+  $self: &;
+  @include transition;
+
+  #{$self}-container {
+    border: 1px solid $gray--medium;
+
+    &:hover {
+      #{$self}-title, #{$self}-subtitle, #{$self}-caption {
+        color: $white;
+      }
+    }
+  }
+
+  &-image {
+    display: none;
+    padding-top: 130%;
+  }
+
+  &-icon {
+    text-align: center;
+    justify-content: center;
+
+    > span {
+      width: 100%;
+    }
+  }
+
+  #{$self}-text {
+    background: $white;
+    padding: .5rem 1rem;
+  }
+
+  #{$self}-title {
+    color: $red;
+    text-transform: capitalize;
+  }
+
+  #{$self}-subtitle {
+    font-weight: bold;
+    font-size: rem-calc(14);
+    color: $gray--dark;
+    margin-bottom: 0;
+  }
+
+  &-caption {
+    text-transform: initial;
+    margin-bottom: 0;
+  }
+}

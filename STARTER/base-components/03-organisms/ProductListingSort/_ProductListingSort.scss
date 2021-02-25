@@ -1,0 +1,115 @@
+$padding-normal: 10px !default;
+$padding-tight: 2px !default;
+
+.ProductListingSort {
+  background: $gray--light;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &-select, &-select:active, &-select:focus {
+    margin-bottom: 0;
+    color: $white;
+    font-family: $header-font-family;
+    font-size: 1rem;
+
+    background-color: $blue;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28255, 255, 255%29'></polygon></svg>");
+    background-origin: content-box;
+    background-position: right -1rem center;
+    background-repeat: no-repeat;
+    background-size: 9px 6px;
+    transition: none;
+    border: none;
+    height: 40px;
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
+    }
+
+    option {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  &-viewButtons {
+    flex: 0 1 auto;
+    width: 100%;
+    padding: $padding-normal;
+    padding-left: 0;
+
+    @include breakpoint(medium) {
+      width: auto;
+      flex-shrink: 1;
+    }
+
+    &Mobile {
+      .button {
+        width: 100%;
+        @include breakpoint(medium) {
+          width: auto;
+        }
+      }
+
+      &.small-up-2 {
+        @include breakpoint(medium) {
+          .FlexRow-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &Row {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-left: -$padding-tight;
+      margin-right: -$padding-tight;
+    }
+
+    &Title {
+      flex: 0 1 auto;
+      width: 100%;
+      font-family: $header-font-family;
+      font-weight: bold;
+      color: $blue--dark;
+      padding: $padding-tight;
+      padding-right: 1rem;
+      @include breakpoint(large) {
+        width: auto;
+        flex-grow: 1;
+        text-align: right;
+      }
+    }
+
+    &Button {
+      flex: 0 1 auto;
+      padding: $padding-tight;
+    }
+
+    .button {
+      margin-bottom: 0;
+
+      [class^="fa"] {
+        position: relative;
+        padding-left: 0;
+        padding-right: .5rem;
+        transition: none;
+      }
+    }
+  }
+
+  &-mobileButton {
+    text-align: left;
+    font-size: 1rem;
+    height: 40px;
+    padding: .5rem;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
+    }
+  }
+}

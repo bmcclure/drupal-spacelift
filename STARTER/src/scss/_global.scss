@@ -1,0 +1,23 @@
+/************************************************
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+html {
+  scroll-behavior: smooth;
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+  clear: both;
+}
+
+/*********************
+VISUAL EDITOR STYLES
+*********************/
+// Makes content look better in visual editor
+body#tinymce {
+  margin: 20px;
+}

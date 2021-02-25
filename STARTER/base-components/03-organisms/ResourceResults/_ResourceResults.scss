@@ -1,0 +1,217 @@
+$self: '.ResourceResult';
+$padding-normal: 10px;
+$padding-tight: 2px;
+
+.ResourceResults {
+  &-header {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -$padding-normal;
+    margin-right: -$padding-normal;
+    margin-bottom: 1rem;
+    @include breakpoint(large) {
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+  }
+
+  &-title {
+    flex: 0 1 auto;
+    width: 100%;
+    padding: $padding-normal;
+    @include breakpoint(medium) {
+      width: auto;
+      flex-grow: 1;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &-viewButtons {
+    flex: 0 1 auto;
+    width: 100%;
+    padding: $padding-normal;
+
+    @include breakpoint(medium) {
+      width: auto;
+      flex-shrink: 1;
+    }
+
+    &Row {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-left: -$padding-tight;
+      margin-right: -$padding-tight;
+    }
+
+    &Title {
+      flex: 0 1 auto;
+      width: 100%;
+      font-family: $header-font-family;
+      font-weight: bold;
+      color: $blue--dark;
+      padding: $padding-tight;
+      padding-right: 1rem;
+      @include breakpoint(large) {
+        width: auto;
+        flex-grow: 1;
+        text-align: right;
+      }
+    }
+
+    &Button {
+      flex: 0 1 auto;
+      padding: $padding-tight;
+    }
+
+    .button {
+      margin-bottom: 0;
+
+      [class^="fa"] {
+        position: relative;
+        padding-left: 0;
+        padding-right: .5rem;
+        transition: none;
+      }
+    }
+  }
+
+  &-showing {
+    flex: 0 1 auto;
+    width: 100%;
+    padding: $padding-normal;
+
+    &Title {
+      color: $blue--dark;
+      font-family: $header-font-family;
+      font-size: 1rem;
+    }
+
+    @include breakpoint(medium) {
+      width: auto;
+      flex-shrink: 1;
+      &Title {
+        width: 100%;
+        display: block;
+      }
+    }
+    @include breakpoint(large) {
+      &Title {
+        width: auto;
+        display: inline-block;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &-view {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -$padding-tight;
+    margin-right: -$padding-tight;
+  }
+
+  &-listView {
+    .ResourceResult {
+      padding: $padding-tight;
+      width: 100%;
+      @include breakpoint(medium) {
+        width: 50%;
+      }
+    }
+  }
+
+  &-gridView {
+    margin-left: -$padding-normal;
+    margin-right: -$padding-normal;
+
+    .ResourceResults-sectionTitle {
+      padding-left: $padding-normal;
+      padding-right: $padding-normal;
+    }
+
+    .ResourceResult {
+      width: 50%;
+      padding: $padding-normal;
+      @include breakpoint(medium) {
+        width: 20%;
+      }
+      @include breakpoint(xlarge) {
+        width: 16.6667%;
+      }
+
+      #{$self}-container {
+        border: none;
+
+        &:hover {
+          #{$self}-image {
+            @include drop-shadow-hover;
+            transform: scale(1.025);
+          }
+
+          #{$self}-title {
+            color: darken($red, 5%);
+          }
+
+          #{$self}-caption, #{$self}-subtitle {
+            color: $gray--dark;
+          }
+        }
+      }
+
+      #{$self}-image {
+        display: block;
+        width: 100%;
+        @include drop-shadow;
+        @include transition;
+
+      }
+
+
+      #{$self}-text {
+        background: transparent;
+        width: 100%;
+        padding: 1.5rem 0;
+      }
+
+      .ResourceCategoryIconBlock-icon {
+        display: none;
+      }
+    }
+
+    .ResourceResultVideo {
+      @include breakpoint(medium) {
+        width: 33.3333%;
+      }
+      @include breakpoint(large) {
+        width: 25%;
+      }
+
+      &-image {
+        text-align: center;
+
+        span {
+          @include breakpoint(medium) {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  &-sectionTitle {
+    &:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+
+  &-line {
+    margin-top: 2rem;
+  }
+}
