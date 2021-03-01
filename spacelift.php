@@ -474,6 +474,8 @@ function _spacelift_get_files_to_alter() {
     '{{starter}}.info.yml',
     '{{starter}}.theme',
     '{{starter}}.libraries.yml',
+    '.storybook/manager.js',
+    '.storybook/{{starter}}Theme.js',
     'config/install/{{starter}}.settings.yml',
     'css/{{starter}}.css',
     'src/scss/{{starter}}.scss',
@@ -561,6 +563,7 @@ function _spacelift_get_files_to_copy() {
   }
   else {
     return array_merge($default_array, [
+      '.storybook',
       'base-components',
       'config',
       'css',
@@ -588,6 +591,7 @@ function _spacelift_get_files_to_rename() {
     '{{starter}}.info.yml',
     '{{starter}}.theme',
     '{{starter}}.libraries.yml',
+    '.storybook/{{starter}}Theme.js',
     'config/install/{{starter}}.settings.yml',
     'css/{{starter}}.css',
   ];

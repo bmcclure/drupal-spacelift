@@ -18,15 +18,16 @@ describe('setupTwig', () => {
     setupTwig(Twig);
     expect(twigDrupal).toHaveBeenCalledWith(Twig);
     expect(twigBEM).toHaveBeenCalledWith(Twig);
+    // expect(twigSUIT).toHaveBeenCalledWith(Twig);
     expect(twigAddAttributes).toHaveBeenCalledWith(Twig);
   });
 
-  it('exports emulsifys namespaces', () => {
+  it('exports spacelifts namespaces', () => {
     expect(namespaces).toEqual({
-      atoms: '../components/01-atoms',
-      molecules: '../components/02-molecules',
-      organisms: '../components/03-organisms',
-      templates: '../components/04-templates',
+      atoms: '../base-components/01-atoms',
+      molecules: '../base-components/02-molecules',
+      organisms: '../base-components/03-organisms',
+      templates: '../base-components/04-templates',
     });
   });
 });

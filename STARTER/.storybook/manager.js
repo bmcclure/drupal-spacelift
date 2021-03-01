@@ -1,7 +1,7 @@
 import { addons } from '@storybook/addons';
 
-import emulsifyTheme from './emulsifyTheme';
+import theme from './{{starter}}Theme';
 
 addons.setConfig({
-  theme: emulsifyTheme,
+  theme: theme,
 });
