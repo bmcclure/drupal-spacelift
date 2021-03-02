@@ -1,6 +1,11 @@
 // These styles only affect the colors "Usage" page in the component library
 .cl-colors {
   padding: 1rem;
+
+  h2,
+  h3 {
+    color: clr(text);
+  }
 }
 
 .cl-colors__list {
@@ -25,8 +30,8 @@
 // Dynamically set swatch text color based on the lightness of the background color
 @function set-color(
   $color,
-  $text-primary: accent-high,
-  $text-secondary: muted
+  $text-primary: text,
+  $text-secondary: text-inverse
 ) {
   @if (lightness($color) > 50) {
     @return clr($text-primary);
@@ -50,7 +55,7 @@
   .cl-colors__item--dark {
     &-#{$name} {
       background-color: clr($name);
-      color: set-color($color, muted, accent-high);
+      color: set-color($color);
     }
   }
 }

@@ -7,6 +7,6 @@ import Line from './Line.twig';
  */
 export default {title: 'Atoms/Line'};
 
-export const Usage = () => (
+export const example = () => (
   <div dangerouslySetInnerHTML={{__html: Line}}/>
 );

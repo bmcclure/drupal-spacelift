@@ -16,7 +16,7 @@
 
 {% set checkbox_element %}
   <input id="{{ checkbox_id }}" name="checkbox" type="checkbox" class="Checkbox-input" {% if checkbox_item_checked %}checked="{{ checkbox_item_checked }}"{% endif %}>
-  {{ checkbox_item }} %}
+  {{ checkbox_item }}
 {% endset %}
 
 <li class="{{ bem(checkbox_base_class, checkbox_modifiers) }}">

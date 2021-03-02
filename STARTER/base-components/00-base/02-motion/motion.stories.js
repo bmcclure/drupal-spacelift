@@ -9,10 +9,6 @@ import motionData from './motion.yml';
  */
 export default {title: 'Base/Motion'};
 
-export const Usage = () => (
-  <div
-    dangerouslySetInnerHTML={{
-      __html: motion(motionData),
-    }}
-  />
+export const examples = () => (
+  <div dangerouslySetInnerHTML={{__html: motion(motionData)}}/>
 );

@@ -7,6 +7,6 @@ import AngledBackground from './AngledBackground.twig';
  */
 export default {title: 'Atoms/Angled Background'};
 
-export const Usage = () => (
-  <div dangerouslySetInnerHTML={{__html: AngledBackground}}/>
+export const Example = () => (
+  <div dangerouslySetInnerHTML={{__html: AngledBackground({})}}/>
 );

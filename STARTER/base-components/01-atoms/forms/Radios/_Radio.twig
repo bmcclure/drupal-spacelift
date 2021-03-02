@@ -16,7 +16,7 @@
 
 {% set radio_element %}
   <input id="{{ radio_id }}" name="radio" type="radio" class="Radio-input" {% if radio_item_checked %}checked="{{ radio_item_checked }}"{% endif %}>
-  {{ radio_item }} %}
+  {{ radio_item }}
 {% endset %}
 
 <li class="{{ bem(radio_base_class, radio_modifiers) }}">

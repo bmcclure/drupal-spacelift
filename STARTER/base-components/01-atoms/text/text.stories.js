@@ -16,15 +16,15 @@ export default { title: 'Atoms/Text' };
 // Loop over items in headingData to show each one in the example below.
 const headings = HeadingData.map((d) => Heading(d)).join('');
 
-export const headingsExamples = () => (
+export const headings = () => (
   <div dangerouslySetInnerHTML={{ __html: headings }} />
 );
-export const blockquoteExample = () => (
+export const blockquote = () => (
   <div dangerouslySetInnerHTML={{ __html: Blockquote(BlockquoteData) }} />
 );
-export const preformatted = () => (
+export const preformattedText = () => (
   <div dangerouslySetInnerHTML={{ __html: Pre({}) }} />
 );
-export const random = () => (
+export const miscellaneous = () => (
   <div dangerouslySetInnerHTML={{ __html: Paragraph({}) }} />
 );

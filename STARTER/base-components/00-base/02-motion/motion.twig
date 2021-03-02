@@ -1,18 +1,30 @@
 <div class="motion">
-  <h2>Motion</h2>
+  {% include "@atoms/text/Heading/_Heading.twig" with {
+    heading_level: 2,
+    heading: 'Emulsify Motions',
+  } %}
   <div class="motion__grid">
     {% for motion in motions %}
       <div class="motion__grid-item">
-        <h3>{{ motion.name }}</h3>
+        {% include "@atoms/text/Heading/_Heading.twig" with {
+          heading_level: 3,
+          heading: motion.name,
+        } %}
         <div class="demo-motion demo-motion--{{ motion.name|lower|replace({' ':'-'}) }}"></div>
       </div>
     {% endfor %}
   </div>
-  <h2>AOS Animations</h2>
+  {% include "@atoms/text/Heading/_Heading.twig" with {
+    heading_level: 2,
+    heading: 'AOS Animations',
+  } %}
   <div class="motion__grid">
     {% for animation in animations %}
       <div class="motion__grid-item">
-        <h3>{{ animation.name }}</h3>
+        {% include "@atoms/text/Heading/_Heading.twig" with {
+          heading_level: 3,
+          heading: animation.name,
+        } %}
         <div class="demo-animation demo-animation--{{ animation.name|lower|replace({' ':'-'}) }}"></div>
       </div>
     {% endfor %}
