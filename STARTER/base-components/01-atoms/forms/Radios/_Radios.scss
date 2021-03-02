@@ -1,0 +1,42 @@
+.RadioButtons {
+  list-style-type: none;
+
+  &-combo {
+    position: relative;
+  }
+
+  &-input[type=radio] {
+    bottom: 0;
+    display: block;
+    left: 0;
+    opacity: 0.01;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 20;
+
+    + label {
+      background: clr(background);
+      border: 1px solid clr(primary);
+      color: clr(primary);
+      margin: 0;
+    }
+
+    &:checked + label, .Checked + label {
+      background: clr(primary);
+      color: clr(text-inverse);
+    }
+  }
+
+  &-button {
+    @include transition;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    z-index: 10;
+
+    &.active {
+      border: 2px solid clr(primary);
+    }
+  }
+}

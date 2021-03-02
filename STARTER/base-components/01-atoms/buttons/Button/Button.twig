@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Template for an HTML button element
+ *
+ * Available variables:
+ * - button_base_class - the base classname
+ * - button_modifiers - array of modifiers to add to the base classname
+ * - button_blockname - blockname prepended to the base classname of the wrapper(s) and each component.
+ * - button_content - the content of the button (typically text)
+ *
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert an icon
+ */
+#}
+{% set button_base_class = button_base_class|default('Button') %}
+
+{% set additional_attributes = {
+  class: bem(button_base_class, button_modifiers, button_blockname),
+  data_open: data_open|default(''),
+} %}
+
+<button {{ add_attributes(additional_attributes) }}>
+  {% block button_content %}
+    {{ button_content }}
+  {% endblock %}
+</button>

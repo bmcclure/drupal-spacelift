@@ -1,0 +1,21 @@
+{% set title_bar_base_class = title_bar_base_class|default('title-bar') %}
+
+<div {{ bem(title_bar_base_clase, title_bar_modifiers, title_bar_blockname) }}>
+  {% block title_bar_left %}
+    <div class="title-bar-left">
+      {% include "@atoms/buttons/Button/Button.twig" with {
+        button_base_class: 'menu-icon',
+        data_open: 'offCanvasLeft',
+      } %}
+      <span class="title-bar-title">Title Bar</span>
+    </div>
+  {% endblock %}
+  {% block title_bar_right %}
+    <div class="title-bar-right">
+      {% include "@atoms/buttons/Button/Button.twig" with {
+        button_base_class: 'menu-icon',
+        data_open: 'offCanvasRight',
+      } %}
+    </div>
+  {% endblock %}
+</div>

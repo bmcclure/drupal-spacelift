@@ -1,13 +1,13 @@
 import React from 'react';
 
-import checkbox from './checkbox/checkbox.twig';
-import radio from './radio/radio.twig';
-import select from './select/select.twig';
-import textfields from './textfields/textfields.twig';
+import Checkboxes from './Checkboxes/Checkboxes.twig';
+import Radios from './Radios/Radios.twig';
+import Select from './Select/Select.twig';
+import Textfields from './Textfields/Textfields.twig';
 
-import checkboxData from './checkbox/checkbox.yml';
-import radioData from './radio/radio.yml';
-import selectOptionsData from './select/select.yml';
+import CheckboxData from './Checkboxes/Checkboxes.yml';
+import RadioData from './Radios/Radios.yml';
+import SelectOptionsData from './Select/Select.yml';
 
 /**
  * Storybook Definition.
@@ -15,14 +15,14 @@ import selectOptionsData from './select/select.yml';
 export default { title: 'Atoms/Forms' };
 
 export const checkboxes = () => (
-  <div dangerouslySetInnerHTML={{ __html: checkbox(checkboxData) }} />
+  <div dangerouslySetInnerHTML={{ __html: Checkboxes(CheckboxData) }} />
 );
-export const radioButtons = () => (
-  <div dangerouslySetInnerHTML={{ __html: radio(radioData) }} />
+export const radios = () => (
+  <div dangerouslySetInnerHTML={{ __html: Radios(RadioData) }} />
 );
-export const selectDropdowns = () => (
-  <div dangerouslySetInnerHTML={{ __html: select(selectOptionsData) }} />
+export const select = () => (
+  <div dangerouslySetInnerHTML={{ __html: Select(SelectOptionsData) }} />
 );
-export const textfieldsExamples = () => (
-  <div dangerouslySetInnerHTML={{ __html: textfields({}) }} />
+export const textfieldExamples = () => (
+  <div dangerouslySetInnerHTML={{ __html: Textfields({}) }} />
 );

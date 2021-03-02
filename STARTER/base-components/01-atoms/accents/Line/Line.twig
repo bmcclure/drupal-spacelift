@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Template for Line accent
+ *
+ * Available variables:
+ * - line_base_class - the base classname
+ * - line_modifiers - array of modifiers to add to the base classname
+ */
+#}
+{% set line_base_class = line_base_class|default('Line') %}
+
+<div {{ bem(line_base_class, line_modifiers) }}></div>

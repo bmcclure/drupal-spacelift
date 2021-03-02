@@ -1,12 +1,12 @@
 import React from 'react';
 
-import heading from './headings/_heading.twig';
-import blockquote from './text/02-blockquote.twig';
-import pre from './text/05-pre.twig';
-import paragraph from './text/03-inline-elements.twig';
+import Heading from './Heading/_Heading.twig';
+import Blockquote from './Blockquote.twig';
+import Pre from './Pre.twig';
+import Paragraph from './InlineElements.twig';
 
-import blockquoteData from './text/blockquote.yml';
-import headingData from './headings/headings.yml';
+import BlockquoteData from './Blockquote.yml';
+import HeadingData from './Heading/Heading.yml';
 
 /**
  * Storybook Definition.
@@ -14,17 +14,17 @@ import headingData from './headings/headings.yml';
 export default { title: 'Atoms/Text' };
 
 // Loop over items in headingData to show each one in the example below.
-const headings = headingData.map((d) => heading(d)).join('');
+const headings = HeadingData.map((d) => Heading(d)).join('');
 
 export const headingsExamples = () => (
   <div dangerouslySetInnerHTML={{ __html: headings }} />
 );
 export const blockquoteExample = () => (
-  <div dangerouslySetInnerHTML={{ __html: blockquote(blockquoteData) }} />
+  <div dangerouslySetInnerHTML={{ __html: Blockquote(BlockquoteData) }} />
 );
 export const preformatted = () => (
-  <div dangerouslySetInnerHTML={{ __html: pre({}) }} />
+  <div dangerouslySetInnerHTML={{ __html: Pre({}) }} />
 );
 export const random = () => (
-  <div dangerouslySetInnerHTML={{ __html: paragraph({}) }} />
+  <div dangerouslySetInnerHTML={{ __html: Paragraph({}) }} />
 );

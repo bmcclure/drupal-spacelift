@@ -14,6 +14,7 @@
   .FlexRow.small-up-2 & {
     width: 50%;
   }
+
   .FlexRow.small-up-3 & {
     width: 33.3333%;
   }
@@ -22,15 +23,17 @@
     .FlexRow.medium-up-2 & {
       width: 50%;
     }
+
     .FlexRow.medium-up-3 & {
       width: 33.3333%;
     }
+
     .FlexRow.medium-up-6 & {
       width: 16.6667%;
     }
   }
-  @include breakpoint(large) {
 
+  @include breakpoint(large) {
     .FlexRow.large-up-3 & {
       width: 33.3333%;
     }
@@ -39,6 +42,7 @@
       width: 25%;
     }
   }
+
   @include breakpoint(xlarge) {
     .FlexRow.xlarge-up-3 & {
       width: 33.3333%;
