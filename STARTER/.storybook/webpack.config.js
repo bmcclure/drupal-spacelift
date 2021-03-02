@@ -31,7 +31,7 @@ module.exports = async ({ config }) => {
         },
       },
       {
-        loader: 'sass-loader',
+        loader: './node_modules/aluminum-capsule/node_modules/sass-loader',
         options: {
           sourceMap: true,
           sassOptions: {
