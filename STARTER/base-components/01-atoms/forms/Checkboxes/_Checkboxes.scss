@@ -11,7 +11,7 @@
     padding-bottom: 0;
   }
 
-  &-input[type=checkbox] {
+  &-input[type="checkbox"] {
     position: absolute;
     visibility: hidden;
     width: 1px;
@@ -21,7 +21,7 @@
       padding-left: 40px;
       position: relative;
 
-      &:before {
+      &::before {
         background-color: clr(background);
         border: 1px solid clr(primary);
         content: '';
@@ -40,7 +40,7 @@
       + label {
         font-family: $header-font-family;
 
-        &:before {
+        &::before {
           background: clr(primary);
         }
       }

@@ -1,6 +1,6 @@
 .FeaturedServices {
   .PageTeaserBlock {
-    @include breakpoint(medium only) {
+    @include breakpoint($medium only) {
       &:last-child {
         width: 100%;
 

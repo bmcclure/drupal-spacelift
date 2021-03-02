@@ -26,7 +26,7 @@ ol {
   ol,
   ul {
     li {
-      @extend .list-item;
+      @extend .ListItem;
     }
   }
 }

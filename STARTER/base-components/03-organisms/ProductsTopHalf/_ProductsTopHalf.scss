@@ -1,7 +1,7 @@
 .ProductsTopHalf {
 
   .ProductImages {
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       position: sticky;
       top: 200px; /* making up for sticky header and then some */
       z-index: 0;

@@ -1,28 +1,52 @@
-$offcanvas-first-tier-background: $gray--light !default;
-$offcanvas-first-tier-text: $blue--dark !default;
-$offcanvas-second-tier-background: $gray--light !default;
-$offcanvas-second-tier-text: $gray--dark !default;
-$offcanvas-third-tier-background: $gray--light !default;
-$offcanvas-third-tier-text: $gray--dark !default;
-$offcanvas-active-background: $primary-color !default;
-$offcanvas-active-text: $white !default;
-$offcanvas-border-color: $gray--medium !default;
+$OffcanvasMenu-first-tier-background: $gray--light !default;
+$OffcanvasMenu-first-tier-text: $blue--dark !default;
+$OffcanvasMenu-second-tier-background: $gray--light !default;
+$OffcanvasMenu-second-tier-text: $gray--dark !default;
+$OffcanvasMenu-third-tier-background: $gray--light !default;
+$OffcanvasMenu-third-tier-text: $gray--dark !default;
+$OffcanvasMenu-active-background: clr(primary) !default;
+$OffcanvasMenu-active-text: $white !default;
+$OffcanvasMenu-border-color: $gray--medium !default;
+
+/**
+ OVERRIDES for Foundation
+ */
+.is-open .is-accordion-submenu.invisible {
+  visibility: visible; // I am not sure why that invisible class is getting added by Foundation, but this needs to be visible
+}
+
+// Drilldown 'go back' arrow
+.drilldown .js-drilldown-back > a::before {
+  border: inset 4px;
+  border-left-width: 0;
+  border-right-style: solid;
+  border-color: transparent $red transparent transparent;
+  content: '';
+  margin-right: 0.5rem;
+  vertical-align: baseline;
+}
+
+.js-drilldown-back a {
+  font-size: 0 !important; // This hides the foundation 'back' text so that I can replace it with the ::after 'Go BacK'
+
+  &::after {
+    content: 'GO BACK';
+    font-size: rem-calc(12px);
+    font-family: $header-font-family;
+    line-height: 1;
+    padding-top: 4px;
+  }
+}
+
+/** END overrides for foundation **/
 
 .OffcanvasMenu {
-  padding: 0 1rem;
-  //height: calc(100vh - 104px); /* height of dropdown scroll area - subtracting whats needed for the contact support button */
+  background: $OffcanvasMenu-first-tier-background;
+  border-top: 1px solid $gray--medium;
   overflow-y: scroll;
+  padding: 1rem 1rem 0;
   position: relative;
-
-  @include breakpoint(medium) {
-    //height: calc(100vh - 204px); /* Since tablet on up has more buttons on the bottom of the screen we don't want to cover up */
-  }
-
-  a:focus, a:focus-within, .button:focus, .button:focus-within {
-    outline: none; /* Requested by melanie. This is bad for accessibility. */
-  }
-
-  /* Custom Scroll Bar - might move this out to its own snippet */
+  // Custom Scroll Bar - might move this out to its own snippet
   scrollbar-width: thin;
   scrollbar-color: $yellow $gray--light;
 
@@ -40,70 +64,32 @@ $offcanvas-border-color: $gray--medium !default;
     position: relative;
   }
 
-  /* end custom scroll bar*/
-}
-
-
-/**
- OVERRIDES for foundation
- */
-
-.is-open .is-accordion-submenu.invisible {
-  visibility: visible; /* I am not sure why that invisible class is getting added by Foundation, but this needs to be visible */
-}
-
-/* Drilldown 'go back' arrow */
-.drilldown .js-drilldown-back > a::before {
-  border: inset 4px;
-  content: "";
-  border-left-width: 0;
-  border-right-style: solid;
-  border-color: transparent $red transparent transparent;
-  vertical-align: baseline;
-  margin-right: .5rem;
-}
-
-.js-drilldown-back a {
-  font-size: 0 !important; /* This hides the foundation 'back' text so that I can replace it with the ::after 'Go BacK' */
-
-  &::after {
-    content: 'GO BACK';
-    font-size: rem-calc(12);
-    font-family: $header-font-family;
-    line-height: 1;
-    padding-top: 4px;
+  a:focus,
+  a:focus-within,
+  .button:focus,
+  .button:focus-within {
+    outline: none; // Requested by melanie. This is bad for accessibility.
   }
-}
-
-/** END overrides for foundation **/
-
-.OffcanvasMenu {
-  border-top: 1px solid $gray--medium;
-  padding-top: 1rem;
-  background: $offcanvas-first-tier-background;
 
   a {
     font-family: $header-font-family;
-    font-size: rem-calc(16);
+    font-size: rem-calc(16px);
     padding: 0.7rem 0;
-    color: $offcanvas-first-tier-text;
+    color: $OffcanvasMenu-first-tier-text;
 
     &:not(.button) {
       padding-left: 0;
       padding-right: 0;
     }
-
   }
 
   &-menu {
     z-index: 1; // for weird Safari bug
   }
 
-
   .OffcanvasMenu-menu > .OffcanvasMenu-menuParent {
-    background: $offcanvas-first-tier-background;
-    border-bottom: 1px solid $offcanvas-border-color;
-
+    background: $OffcanvasMenu-first-tier-background;
+    border-bottom: 1px solid $OffcanvasMenu-border-color;
 
     &:last-child {
       border-bottom: none;
@@ -114,31 +100,31 @@ $offcanvas-border-color: $gray--medium !default;
     }
 
     > .OffcanvasMenu-menuChildren {
-      background: $offcanvas-second-tier-background;
+      background: $OffcanvasMenu-second-tier-background;
 
       a {
-        font-size: rem-calc(14);
+        font-size: rem-calc(14px);
         font-weight: 400;
-        font-family: $body-font-family;
-        color: $offcanvas-second-tier-text;
+        font-family: $font-family-body;
+        color: $OffcanvasMenu-second-tier-text;
 
         &.link {
-          color: $primary-color;
+          color: clr(primary);
           font-family: $header-font-family;
         }
       }
 
-      > .OffcanvasMenu-parent a { /* the class added via JS, to match the design */
-        font-size: 1rem;
-        color: $blue--dark;
-        text-transform: uppercase;
+      > .OffcanvasMenu-parent a { // the class added via JS, to match the design
+        color: clr(primary-alt);
         font-family: $header-font-family;
+        font-size: 1rem;
+        text-transform: uppercase;
       }
 
       > .OffcanvasMenu-menuChild {
         > a {
+          color: clr(primary-alt);
           font-family: $header-font-family;
-          color: $blue--dark;
           font-size: 1rem;
           text-transform: uppercase;
         }
@@ -150,7 +136,7 @@ $offcanvas-border-color: $gray--medium !default;
         }
 
         p {
-          margin-bottom: .5rem;
+          margin-bottom: 0.5rem;
 
           &:last-child {
             margin-bottom: 0;
@@ -158,9 +144,8 @@ $offcanvas-border-color: $gray--medium !default;
         }
 
         > .OffcanvasMenu-grandchildren {
-
           &--noMenu .OffcanvasMenu-grandchild {
-            padding-left: .5rem;
+            padding-left: 0.5rem;
           }
         }
       }
@@ -184,14 +169,12 @@ $offcanvas-border-color: $gray--medium !default;
     }
   }
 
-
   .cta-banner__button {
-    padding: .75rem .25rem;
     font-size: 1rem;
+    padding: 0.75rem 0.25rem;
   }
 
-
-  // Commenting this out for now, since I don't know what Drupals active classes look like
+  // Commenting this out for now, since I don't know what Drupal's active classes look like
   // Leaving it here in case it's useful in the future
   //.current-page-parent, .current-page-ancestor { // .current-menu-parent, .current-menu-ancestor
   //  background: $offcanvas-active-background;
@@ -219,10 +202,10 @@ $offcanvas-border-color: $gray--medium !default;
   //}
 
   .button {
-    color: $white;
-    width: 100%;
+    color: clr(text-inverse);
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
   }
 }
 

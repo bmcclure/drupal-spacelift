@@ -1,5 +1,6 @@
 .Breadcrumb {
   @include header-font-family-regular;
+
   background: clr(background-section);
   font-size: rem-calc(14px);
   padding: 0.25rem 0 0.5rem;

@@ -2,6 +2,7 @@
   @if $transition {
     @include transition;
   }
+
   background: $background;
   border: $border;
   color: $color;
@@ -13,7 +14,6 @@
     background: $background-hover;
     color: $color-hover;
   }
-
 
   &--iconLeft[class] {
     [class^="fa"] {
@@ -27,18 +27,17 @@
   @include button;
 
   &.outline {
-    @include button($background: rgba(clr(background), .125), $background-hover: clr(primary))
+    @include button($background: rgba(clr(background), 0.125), $background-hover: clr(primary));
   }
 
   &.white {
-    @include button($background: clr(background), $background-hover: clr(primary), $border: 1px solid clr(primary-alt), $color: clr(primary-alt))
+    @include button($background: clr(background), $background-hover: clr(primary), $border: 1px solid clr(primary-alt), $color: clr(primary-alt));
   }
 
   &.dark {
-    @include button($background: clr(primary), $background-hover: clr(background), $border: 1px solid clr(primary), $color: clr(text-inverse), $color-hover: clr(primary))
+    @include button($background: clr(primary), $background-hover: clr(background), $border: 1px solid clr(primary), $color: clr(text-inverse), $color-hover: clr(primary));
   }
 }
-
 
 .link,
 .button[class] {
@@ -48,12 +47,13 @@
   font-weight: normal;
   text-transform: uppercase;
 
-  @include breakpoint(medium) {
+  @include breakpoint($medium) {
     font-size: rem-calc(16px);
   }
 
   [class^="fa"] {
     @include transition;
+
     padding-left: 0.5rem;
     position: relative;
   }

@@ -1,9 +1,9 @@
 .off-canvas {
   .close-button {
-    color: $primary-color;
+    color: clr(primary);
 
     &:focus, &:focus-within {
-      outline: none; /* Requested by melanie. This is bad for accessibility. */
+      outline: none; // Requested by Melanie. This is bad for accessibility.
     }
   }
 }
@@ -12,15 +12,15 @@
   z-index: 110 !important;
   background: $gray--light;
   width: 95%;
-  @include breakpoint(medium) {
+  @include breakpoint($medium) {
     width: 75%;
   }
 
   .close-button {
-    color: $primary-color;
+    color: clr(primary);
 
     &:focus, &:focus-within {
-      outline: none; /* Requested by melanie. This is bad for accessibility. */
+      outline: none; // Requested by Melanie. This is bad for accessibility.
     }
   }
 
@@ -28,14 +28,13 @@
     position: relative;
     max-height: 100vh;
     overflow-y: scroll;
-    //padding-bottom: 3rem;
     min-height: 100vh;
   }
 
   &-title {
     margin-bottom: 0;
-    height: 35px; /* makes this element the same height as the Search element so that the close button doesn't get off layout wise */
-    line-height: 35px; /* vertically centers text*/
+    height: 35px; // makes this element the same height as the Search element so that the close button doesn't get off layout wise
+    line-height: 35px; // vertically centers text
   }
 
   &-search {
@@ -53,18 +52,11 @@
 
   &-buttons {
     margin-top:1rem;
-    //position: fixed;
-    //bottom: 0;
-    //left: 0;
-    //width: 100%;
-    //z-index: 110;
   }
 
   &-button[class] {
-    //display: inline-block;
-    //width: 100%;
     margin-bottom: 0;
-    border-color: $gray--light;// to prevent border glitch on second page of accordion menu
+    border-color: $gray--light; // to prevent border glitch on second page of accordion menu
     background: $red;
   }
 }

@@ -13,7 +13,7 @@
     padding: 1rem;
     height: 100%;
 
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       padding: 1.5rem;
     }
   }
@@ -23,7 +23,7 @@
   }
 
   &:first-child {
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       .IndividualResourceDownloadsThumbnail {
         max-width: 600px;
         margin-left: auto;
@@ -34,7 +34,7 @@
   }
 
   &:nth-child(2) {
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       .IndividualResourceDownloadsThumbnail {
         max-width: 600px;
         padding-left: 4rem;

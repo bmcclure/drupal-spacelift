@@ -9,7 +9,7 @@
     background: $white;
     padding: 1.5rem;
     margin-bottom: -8rem;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       padding: 3rem 2rem;
     }
   }

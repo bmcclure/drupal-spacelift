@@ -1,10 +1,10 @@
 blockquote {
   position: relative;
   border-left: 0;
-  @include breakpoint(medium) {
+  @include breakpoint($medium) {
     padding-left: 100px;
   }
-  @include breakpoint(large) {
+  @include breakpoint($large) {
     max-width: 80%;
     margin: auto;
   }
@@ -12,10 +12,10 @@ blockquote {
   &::before {
     content: '\f10d';
     color: $yellow;
-    font-family: 'Font Awesome 5 Pro';
+    font-family: $fontawesome-family;
     font-size: 60px;
     font-weight: bold;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       position: absolute;
       left: 0;
       top: 0;
@@ -29,11 +29,11 @@ blockquote {
     line-height: 1.4;
     text-rendering: optimizeLegibility;
 
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       font-size: rem-calc(18);
       margin-bottom: 1rem;
     }
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       font-size: rem-calc(20);
     }
   }

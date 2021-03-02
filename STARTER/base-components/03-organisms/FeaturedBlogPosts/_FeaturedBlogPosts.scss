@@ -1,6 +1,6 @@
 .FeaturedBlogPosts {
   &-headline {
-    @include breakpoint(medium down) {
+    @include breakpoint($medium down) {
       margin-bottom: 1rem;
     }
   }
@@ -10,7 +10,7 @@
       padding: 20px;
     }
 
-    @include breakpoint(medium down) {
+    @include breakpoint($medium down) {
       margin-left: 0;
       margin-right: 0;
     }

@@ -1,4 +1,5 @@
 $red: #d22728 !default;
+
 .EmailARep {
   .name-widget-wrapper {
     display: flex;
@@ -6,13 +7,13 @@ $red: #d22728 !default;
 
     .name-component-wrapper {
       width: 100%;
-      @include breakpoint(medium) {
+      @include breakpoint($medium) {
         width: 50%;
       }
     }
 
     .name-given-wrapper {
-      @include breakpoint(medium) {
+      @include breakpoint($medium) {
         padding-right: 1rem;
       }
     }
@@ -28,7 +29,7 @@ $red: #d22728 !default;
 }
 
 /* copied styling from goodway */
-.float-labels-wrapper.float-labels-required.float-labels-star .float-labels-label:after {
+.float-labels-wrapper.float-labels-required.float-labels-star .float-labels-label::after {
   content: "*";
   color: $red;
 }

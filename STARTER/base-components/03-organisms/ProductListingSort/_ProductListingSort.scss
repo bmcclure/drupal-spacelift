@@ -2,59 +2,60 @@ $padding-normal: 10px !default;
 $padding-tight: 2px !default;
 
 .ProductListingSort {
-  background: $gray--light;
-  padding: 0 1.5rem;
+  align-items: center;
+  background: clr(background-section);
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
   justify-content: space-between;
+  padding: 0 1.5rem;
 
   &-select, &-select:active, &-select:focus {
-    margin-bottom: 0;
-    color: $white;
-    font-family: $header-font-family;
-    font-size: 1rem;
-
-    background-color: $blue;
+    background-color: clr(primary);
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28255, 255, 255%29'></polygon></svg>");
     background-origin: content-box;
     background-position: right -1rem center;
     background-repeat: no-repeat;
     background-size: 9px 6px;
-    transition: none;
     border: none;
+    color: clr(text-inverse);
+    font-family: $header-font-family;
+    font-size: 1rem;
     height: 40px;
-    @include breakpoint(large) {
-      font-size: rem-calc(14);
+    margin-bottom: 0;
+    transition: none;
+
+    @include breakpoint($large) {
+      font-size: rem-calc(14px);
     }
 
     option {
-      background-color: $blue;
-      color: $white;
+      background-color: clr(primary);
+      color: clr(text-inverse);
     }
   }
 
   &-viewButtons {
     flex: 0 1 auto;
-    width: 100%;
     padding: $padding-normal;
     padding-left: 0;
+    width: 100%;
 
-    @include breakpoint(medium) {
-      width: auto;
+    @include breakpoint($medium) {
       flex-shrink: 1;
+      width: auto;
     }
 
     &Mobile {
       .button {
         width: 100%;
-        @include breakpoint(medium) {
+
+        @include breakpoint($medium) {
           width: auto;
         }
       }
 
       &.small-up-2 {
-        @include breakpoint(medium) {
+        @include breakpoint($medium) {
           .FlexRow-item {
             width: 100%;
           }
@@ -63,25 +64,26 @@ $padding-tight: 2px !default;
     }
 
     &Row {
+      align-items: center;
       display: flex;
       flex-flow: row wrap;
-      align-items: center;
       margin-left: -$padding-tight;
       margin-right: -$padding-tight;
     }
 
     &Title {
+      color: clr(primary-alt);
       flex: 0 1 auto;
-      width: 100%;
       font-family: $header-font-family;
       font-weight: bold;
-      color: $blue--dark;
       padding: $padding-tight;
       padding-right: 1rem;
-      @include breakpoint(large) {
-        width: auto;
+      width: 100%;
+
+      @include breakpoint($large) {
         flex-grow: 1;
         text-align: right;
+        width: auto;
       }
     }
 
@@ -94,22 +96,22 @@ $padding-tight: 2px !default;
       margin-bottom: 0;
 
       [class^="fa"] {
-        position: relative;
         padding-left: 0;
         padding-right: .5rem;
+        position: relative;
         transition: none;
       }
     }
   }
 
   &-mobileButton {
-    text-align: left;
     font-size: 1rem;
     height: 40px;
-    padding: .5rem;
+    padding: 0.5rem;
+    text-align: left;
 
-    @include breakpoint(large) {
-      font-size: rem-calc(14);
+    @include breakpoint($large) {
+      font-size: rem-calc(14px);
     }
   }
 }

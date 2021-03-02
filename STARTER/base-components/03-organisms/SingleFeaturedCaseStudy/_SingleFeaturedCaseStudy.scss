@@ -2,7 +2,7 @@ $self: '.IndividualCaseStudyTeaser';
 
 .SingleFeaturedCaseStudy {
   .IndividualCaseStudyTeaser {
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       #{$self}-link {
         display: flex;
         flex-flow: row wrap;
@@ -18,7 +18,7 @@ $self: '.IndividualCaseStudyTeaser';
         width: 60%;
         padding: 2rem 3rem;
       }
-      @include breakpoint(large) {
+      @include breakpoint($large) {
         #{$self}-bullets {
           display: flex;
           flex-flow: wrap;

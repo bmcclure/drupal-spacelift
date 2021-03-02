@@ -1,5 +1,5 @@
-$SocialMediaIcons-background: $primary-color !default;
-$SocialMediaIcons-border-color: $primary-color !default;
+$SocialMediaIcons-background: clr(primary) !default;
+$SocialMediaIcons-border-color: clr(primary) !default;
 $SocialMediaIcons-border-radius: 0 !default;
 $SocialMediaIcons-color: $white !default;
 $SocialMediaIcons-hover-background: transparent !default;
@@ -33,7 +33,7 @@ $SocialMediaIcons-fontsize: 14px !default;
       //outline: none; // per Melanie's request
     }
 
-    //@include breakpoint(medium) {
+    //@include breakpoint($medium) {
     //  width: 45px;
     //  height: 45px;
     //}

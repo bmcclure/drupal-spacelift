@@ -4,7 +4,7 @@
 
   &-dropdown {
     margin: 1rem 0;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       max-width: 400px;
     }
 

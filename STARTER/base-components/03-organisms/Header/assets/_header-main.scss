@@ -8,7 +8,7 @@ $site-header-menu-transform: uppercase !default;
   &Logo {
     margin: .25rem 0.5rem 0.5rem;
     max-width: 104px;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       max-width: 163px;
       margin: 0 1rem 1rem;
     }
@@ -33,7 +33,7 @@ $site-header-menu-transform: uppercase !default;
 
 #main-nav {
   .active > a {
-    color: $primary-color;
+    color: clr(primary);
   }
 }
 
@@ -41,7 +41,7 @@ $site-header-menu-transform: uppercase !default;
   justify-content: flex-end;
 
   &.dropdown.menu > li.is-dropdown-submenu-parent > a {
-    @include breakpoint(small only) {
+    @include breakpoint($small only) {
       padding-right: .5rem; /* OVERRIDE for foundation. */
     }
   }
@@ -49,7 +49,7 @@ $site-header-menu-transform: uppercase !default;
 
 .CartCount {
   font-size: rem-calc(12);
-  @include breakpoint(medium) {
+  @include breakpoint($medium) {
     font-size: rem-calc(14);
   }
 }

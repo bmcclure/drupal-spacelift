@@ -2,16 +2,15 @@
   $self: &;
 
   .grid-container {
-    @include breakpoint(large down) {
+    @include breakpoint($large down) {
       padding-right: 0; /* per Melanie's request per her design, the chart should overflow to the right on tablet and mobile */
     }
   }
 
   &-chart {
-    padding-bottom: 1rem;
-
     overflow-x: auto;
-    /* Custom Scroll Bar - might move this out to its own snippet */
+    padding-bottom: 1rem;
+    // Custom Scroll Bar - might move this out to its own snippet
     scrollbar-width: thin;
     scrollbar-color: $yellow $gray--light;
 
@@ -28,31 +27,31 @@
       background-color: $yellow;
       position: relative;
     }
-
-    /* end custom scroll bar*/
   }
 
   &-row {
     display: flex;
-    min-width: 840px; /* Hmm, unsure of how to get this width. I need a min-width so that it overflows per the design */
+    min-width: 840px; // Hmm, unsure of how to get this width. I need a min-width so that it overflows per the design
 
-    @include breakpoint(medium) {
-      min-width: 1100px; /* Same as above - this is based on the design */
+    @include breakpoint($medium) {
+      min-width: 1100px; // Same as above - this is based on the design
     }
-    /* purposefully using classnames here instead of first-child/nth child to lessen load on browser processing */
+
+    // purposefully using classnames here instead of first-child/nth child to lessen load on browser processing
     &-1 {
       #{$self}-cell {
         padding-top: 0;
 
         &Content {
-          background: $blue--dark;
-          color: $white;
           @include header-font-family-regular;
-          @include breakpoint(medium) {
-            font-size: rem-calc(18);
+
+          background: clr(primary-alt);
+          color: clr(text-inverse);
+
+          @include breakpoint($medium) {
+            font-size: rem-calc(18px);
           }
         }
-
 
         &-1 {
           #{$self}-cellContent {
@@ -62,8 +61,8 @@
 
         &-2 {
           #{$self}-cellContent {
-            background: $yellow;
-            color: $blue--dark;
+            background: clr(accent);
+            color: clr(primary-alt);
           }
         }
       }
@@ -74,18 +73,18 @@
         padding-bottom: 0;
 
         &Content {
-          padding: .75rem;
-          background: $red;
-          color: $white;
+          background: clr(secondary);
+          color: clr(text-inverse);
           font-family: $header-font-family;
+          padding: 0.75rem;
           text-transform: uppercase;
 
           //&Container {
           //  &Show {
-          //    @include breakpoint(medium) {
+          //    @include breakpoint($medium) {
           //      &::after {
           //        content: '\f0da';
-          //        font-family: 'Font Awesome 5 Pro';
+          //        font-family: $fontawesome-family;
           //        font-weight: bold;
           //        padding-left: .5rem;
           //      }
@@ -106,8 +105,8 @@
 
         &-2 {
           #{$self}-cellContent {
-            background: $yellow;
-            color: $blue--dark;
+            background: clr(accent);
+            color: clr(primary-alt);
 
             &ContainerShow {
               &::after {
@@ -118,54 +117,53 @@
         }
       }
     }
-
   }
 
   &-cell {
-    width: 140px; /* I'm just following the design for this */
+    width: 140px; // I'm just following the design for this
     padding: 2px;
     text-align: center;
-    @include breakpoint(medium) {
-      width: 200px;
 
+    @include breakpoint($medium) {
+      width: 200px;
     }
 
     &Content {
-      background: $gray--light;
-      padding: .75rem .5rem;
-      width: 100%;
-      height: 100%;
-      display: flex;
       align-items: center;
+      background: clr(background-section);
+      display: flex;
+      height: 100%;
+      padding: 0.75rem 0.5rem;
+      width: 100%;
 
       &Container {
+        line-height: 1.3; // to match design
         width: 100%;
-        line-height: 1.3; /* to match design */
       }
     }
 
     &-1 {
+      background: clr(background);
+      left: 0;
       padding-right: 4px;
       position: sticky;
-      background: $white;
-      left: 0;
       top: 0;
 
       #{$self}-cellContent {
-        background: $blue;
-        color: $white;
         @include header-font-family-regular;
 
-        @include breakpoint(medium) {
-          font-size: rem-calc(18);
+        background: clr(primary);
+        color: clr(text-inverse);
 
+        @include breakpoint($medium) {
+          font-size: rem-calc(18px);
         }
       }
     }
 
     &-2 {
-      border-left: 3px solid $yellow;
-      border-right: 3px solid $yellow;
+      border-left: 3px solid clr(accent);
+      border-right: 3px solid clr(accent);
       padding-left: 0;
       padding-right: 0;
     }

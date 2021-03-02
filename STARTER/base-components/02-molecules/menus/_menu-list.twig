@@ -3,7 +3,7 @@
 {% set ul_blockname = menu_blockname %}
 
 {# List #}
-{% extends "@atoms/lists/ul.twig" %}
+{% extends "@atoms/lists/Ul.twig" %}
   {% block list_content %}
     {% for item in items %}
       {% include "@molecules/menus/_menu-item.twig" with {

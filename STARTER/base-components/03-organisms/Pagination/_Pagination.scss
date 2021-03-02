@@ -12,7 +12,7 @@ $padding-tight: 2px;
     font-weight: 400;
     width: auto;
     display: block;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       display: inline-block;
     }
   }
@@ -24,7 +24,7 @@ $padding-tight: 2px;
     color: $gray--dark;
     padding-left: .5rem;
 
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       display: inline-block;
     }
   }
@@ -38,7 +38,7 @@ $padding-tight: 2px;
     margin-left: -$padding-tight;
     margin-right: -$padding-tight;
     margin-top: 1rem;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       margin-top: 0;
       width: auto;
       flex-grow: 1;
@@ -88,7 +88,7 @@ $padding-tight: 2px;
 
         .fas {
           padding-left: .25rem;
-          color: $primary-color;
+          color: clr(primary);
         }
       }
     }

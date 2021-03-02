@@ -3,7 +3,7 @@
 
   #{$self}-slider {
     padding-bottom: 4rem;
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       padding-bottom: 0;
       .slick-prev {
         left: calc(25% - 83px);

@@ -1,17 +1,18 @@
 .CustomTag {
   $self: &;
-  font-family: 'Helvetica', sans-serif; /* per functional spec */
-  max-width: 100%;
-  margin: auto;
-  display: block;
 
-  &-background { /* default*/
-    fill: #fff200; /* yellow */
+  display: block;
+  font-family: 'Helvetica', sans-serif; // per functional spec
+  margin: auto;
+  max-width: 100%;
+
+  &-background { // default
+    fill: #fff200; // yellow
     stroke: $gray--medium;
     filter: url(#shadow);
   }
 
-  &-backgroundOverlay { /* default*/
+  &-backgroundOverlay { // default
     fill: url(#CustomTag-gradient);
     opacity: .6;
     stroke: $gray--medium;

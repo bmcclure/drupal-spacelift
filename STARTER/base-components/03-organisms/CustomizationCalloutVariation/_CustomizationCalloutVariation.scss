@@ -7,13 +7,13 @@ $CustomizationCalloutVariation-padding-top-xlarge: 40%;
         padding-top: 40%;
         width: 50%;
         height: 100%;
-        @include breakpoint(medium) {
+        @include breakpoint($medium) {
           padding-top: $CustomizationCalloutVariation-padding-top-medium; // adjustment for the customization image on tablet, so that it is large enough and overlaps
           width: 100%;
           height: calc(100% + 2rem);
           margin-bottom: -2rem;
         }
-        @include breakpoint(xlarge) {
+        @include breakpoint($xl) {
           padding-top: $CustomizationCalloutVariation-padding-top-xlarge; // adjusted again so that it is not too large on xlarge screens
         }
       }

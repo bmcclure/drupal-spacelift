@@ -1,12 +1,10 @@
 .ColorCombinations {
 
   &-input[type="radio"] {
-
-
     &:checked + label, .Checked + label {
       &::before {
-        content: "\f058";
-        font-family: "Font Awesome 5 Pro";
+        content: '\f058';
+        font-family: $fontawesome-family;
         font-weight: bold;
       }
     }

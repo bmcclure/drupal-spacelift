@@ -19,7 +19,7 @@
     width: 33.3333%;
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint($medium) {
     .FlexRow.medium-up-2 & {
       width: 50%;
     }
@@ -33,7 +33,7 @@
     }
   }
 
-  @include breakpoint(large) {
+  @include breakpoint($large) {
     .FlexRow.large-up-3 & {
       width: 33.3333%;
     }
@@ -43,7 +43,7 @@
     }
   }
 
-  @include breakpoint(xlarge) {
+  @include breakpoint($xl) {
     .FlexRow.xlarge-up-3 & {
       width: 33.3333%;
     }

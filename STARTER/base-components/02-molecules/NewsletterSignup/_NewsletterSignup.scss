@@ -1,20 +1,20 @@
 .NewsletterSignup {
 
-  input[type=email] {
+  input[type="email"] {
     padding-left: 2.5rem;
     background: $gray--light;
     height: 40px;
 
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       height: 45px;
       max-width: 280px;
       min-width: 280px;
     }
-    @include breakpoint(large) { /* Front end tweaks for Melanie */
+    @include breakpoint($large) { /* Front end tweaks for Melanie */
       max-width: 100%;
       min-width: 200px;
     }
-    @include breakpoint(xlarge) {
+    @include breakpoint($xl) {
       max-width: 280px;
     }
 
@@ -29,7 +29,7 @@
 
     &::before {
       content: '\f658';
-      font-family: 'Font Awesome 5 Pro';
+      font-family: $fontawesome-family;
       position: absolute;
       left: 1rem;
       color: $red;
@@ -38,13 +38,13 @@
   }
 
   &-row {
-    @include breakpoint(medium only) { // does not apply to mobile or desktop on up
+    @include breakpoint($medium only) { // does not apply to mobile or desktop on up
       display: flex;
     }
   }
 
   &-button, &-input {
-    @include breakpoint(medium only) { // does not apply to mobile or desktop on up
+    @include breakpoint($medium only) { // does not apply to mobile or desktop on up
       width: auto;
       flex: 0 1 auto;
       margin-right: .5rem;
@@ -56,7 +56,7 @@
   }
 
   &-button {
-    @include breakpoint(medium only) { // does not apply to mobile or desktop on up
+    @include breakpoint($medium only) { // does not apply to mobile or desktop on up
       .button {
         border-color: $red; // so that it matches the input height
       }

@@ -6,7 +6,7 @@
     background: rgba(64, 64, 65, .75);
     color: $white;
     position: relative;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       border-right: 1px solid $white;
     }
 
@@ -16,13 +16,13 @@
 
     &Wrap {
       padding: 2rem 25px;
-      @include breakpoint(medium) {
+      @include breakpoint($medium) {
         max-width: 600px;
         margin-left: auto;
         padding-top: 3rem;
         padding-bottom: 3rem;
       }
-      @include breakpoint(xlarge) {
+      @include breakpoint($xl) {
         padding-top: 6rem;
         padding-bottom: 6rem;
       }
@@ -31,7 +31,7 @@
 
   &-title, p {
     color: $white;
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       max-width: 400px;
     }
   }

@@ -1,9 +1,9 @@
 .BlueContentStrip {
   &-text-container {
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       padding-right: 1.5rem;
     }
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       max-width: 400px;
     }
   }

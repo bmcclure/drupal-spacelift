@@ -1,25 +1,41 @@
-$offcanvas-cart-close-button-color: clr(secondary) !default;
-$offcanvas-cart-padding-top: 1rem !default;
-$offcanvas-cart-scrollbar-background-color: clr(background-section) !default;
-$offcanvas-cart-scrollbar-foreground-color: clr(accent) !default;
-$offcanvas-cart-width: 95% !default;
-$offcanvas-cart-width-medium: 75% !default;
-$offcanvas-cart-width-large: 600px !default;
+$OffcanvasCart-close-button-color: clr(secondary) !default;
+$OffcanvasCart-padding-top: 1rem !default;
+$OffcanvasCart-scrollbar-background-color: clr(background-section) !default;
+$OffcanvasCart-scrollbar-foreground-color: clr(accent) !default;
+$OffcanvasCart-width: 95% !default;
+$OffcanvasCart-width-medium: 75% !default;
+$OffcanvasCart-width-large: 600px !default;
 
 .OffcanvasCart {
-  padding-top: $offcanvas-cart-padding-top;
-  width: $offcanvas-cart-width;
+  padding-top: $OffcanvasCart-padding-top;
+  width: $OffcanvasCart-width;
   z-index: 110 !important;
+  // Custom Scroll Bar - might move this out to its own snippet
+  scrollbar-width: thin;
+  scrollbar-color: $OffcanvasCart-scrollbar-foreground-color $OffcanvasCart-scrollbar-background-color;
 
-  @include breakpoint(medium) {
-    width: $offcanvas-cart-width-medium;
+  &::-webkit-scrollbar {
+    width: 4px;
   }
-  @include breakpoint(large) {
-    width: $offcanvas-cart-width-large;
+
+  &::-webkit-scrollbar-track {
+    background: $OffcanvasCart-scrollbar-background-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $OffcanvasCart-scrollbar-foreground-color;
+    position: relative;
+  }
+
+  @include breakpoint($medium) {
+    width: $OffcanvasCart-width-medium;
+  }
+  @include breakpoint($large) {
+    width: $OffcanvasCart-width-large;
   }
 
   .close-button {
-    color: $offcanvas-cart-close-button-color;
+    color: $OffcanvasCart-close-button-color;
   }
 
   .button {
@@ -30,22 +46,4 @@ $offcanvas-cart-width-large: 600px !default;
     margin-bottom: 1rem;
     padding-right: 1.5rem;
   }
-
-  /* Custom Scroll Bar - might move this out to its own snippet */
-  scrollbar-width: thin;
-  scrollbar-color: $offcanvas-cart-scrollbar-foreground-color $offcanvas-cart-scrollbar-background-color;
-
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: $offcanvas-cart-scrollbar-background-color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $offcanvas-cart-scrollbar-foreground-color;
-    position: relative;
-  }
-  /* end custom scroll bar*/
 }

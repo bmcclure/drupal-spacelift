@@ -2,7 +2,7 @@
   $self: &;
   #{$self}-slider {
     padding-bottom: 4rem;
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       padding-bottom: 6rem;
     }
   }

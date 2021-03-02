@@ -1,6 +1,6 @@
 .SocialShareTo {
   width: 100px !important; // sorry
-  @include breakpoint(large) {
+  @include breakpoint($large) {
     padding-bottom: 3rem;
   }
 
@@ -10,7 +10,7 @@
 
     > li {
       flex: 0 1 auto;
-      @include breakpoint(large) {
+      @include breakpoint($large) {
         width: 100%;
 
       }

@@ -11,7 +11,7 @@
 
   &-image {
     margin-bottom: 1rem;
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       margin-bottom: 0;
     }
   }

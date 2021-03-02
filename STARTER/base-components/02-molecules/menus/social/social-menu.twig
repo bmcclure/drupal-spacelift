@@ -5,7 +5,7 @@
 {% set ul_blockname = menu_blockname %}
 
 {# List #}
-{% extends "@atoms/lists/ul.twig" %}
+{% extends "@atoms/lists/Ul.twig" %}
   {% block list_content %}
     {% for item in social_menu_items %}
       {% include "@molecules/menus/social/_social-menu-item.twig" %}

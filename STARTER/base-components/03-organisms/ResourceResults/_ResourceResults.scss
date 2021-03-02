@@ -6,22 +6,24 @@ $padding-tight: 2px;
   &-header {
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: 1rem;
     margin-left: -$padding-normal;
     margin-right: -$padding-normal;
-    margin-bottom: 1rem;
-    @include breakpoint(large) {
-      margin-bottom: 2rem;
+
+    @include breakpoint($large) {
       align-items: center;
+      margin-bottom: 2rem;
     }
   }
 
   &-title {
     flex: 0 1 auto;
-    width: 100%;
     padding: $padding-normal;
-    @include breakpoint(medium) {
-      width: auto;
+    width: 100%;
+
+    @include breakpoint($medium) {
       flex-grow: 1;
+      width: auto;
     }
 
     p {
@@ -31,34 +33,35 @@ $padding-tight: 2px;
 
   &-viewButtons {
     flex: 0 1 auto;
-    width: 100%;
     padding: $padding-normal;
+    width: 100%;
 
-    @include breakpoint(medium) {
-      width: auto;
+    @include breakpoint($medium) {
       flex-shrink: 1;
+      width: auto;
     }
 
     &Row {
+      align-items: center;
       display: flex;
       flex-flow: row wrap;
-      align-items: center;
       margin-left: -$padding-tight;
       margin-right: -$padding-tight;
     }
 
     &Title {
+      color: clr(primary-alt);
       flex: 0 1 auto;
-      width: 100%;
       font-family: $header-font-family;
       font-weight: bold;
-      color: $blue--dark;
       padding: $padding-tight;
       padding-right: 1rem;
-      @include breakpoint(large) {
-        width: auto;
+      width: 100%;
+
+      @include breakpoint($large) {
         flex-grow: 1;
         text-align: right;
+        width: auto;
       }
     }
 
@@ -71,9 +74,9 @@ $padding-tight: 2px;
       margin-bottom: 0;
 
       [class^="fa"] {
-        position: relative;
         padding-left: 0;
         padding-right: .5rem;
+        position: relative;
         transition: none;
       }
     }
@@ -81,27 +84,29 @@ $padding-tight: 2px;
 
   &-showing {
     flex: 0 1 auto;
-    width: 100%;
     padding: $padding-normal;
+    width: 100%;
 
     &Title {
-      color: $blue--dark;
+      color: clr(primary-alt);
       font-family: $header-font-family;
       font-size: 1rem;
     }
 
-    @include breakpoint(medium) {
-      width: auto;
+    @include breakpoint($medium) {
       flex-shrink: 1;
+      width: auto;
+
       &Title {
-        width: 100%;
         display: block;
+        width: 100%;
       }
     }
-    @include breakpoint(large) {
+
+    @include breakpoint($large) {
       &Title {
-        width: auto;
         display: inline-block;
+        width: auto;
       }
     }
 
@@ -121,7 +126,8 @@ $padding-tight: 2px;
     .ResourceResult {
       padding: $padding-tight;
       width: 100%;
-      @include breakpoint(medium) {
+
+      @include breakpoint($medium) {
         width: 50%;
       }
     }
@@ -137,12 +143,14 @@ $padding-tight: 2px;
     }
 
     .ResourceResult {
-      width: 50%;
       padding: $padding-normal;
-      @include breakpoint(medium) {
+      width: 50%;
+
+      @include breakpoint($medium) {
         width: 20%;
       }
-      @include breakpoint(xlarge) {
+
+      @include breakpoint($xl) {
         width: 16.6667%;
       }
 
@@ -152,6 +160,7 @@ $padding-tight: 2px;
         &:hover {
           #{$self}-image {
             @include drop-shadow-hover;
+
             transform: scale(1.025);
           }
 
@@ -160,24 +169,23 @@ $padding-tight: 2px;
           }
 
           #{$self}-caption, #{$self}-subtitle {
-            color: $gray--dark;
+            color: clr(text);
           }
         }
       }
 
       #{$self}-image {
+        @include transition;
+        @include drop-shadow;
+
         display: block;
         width: 100%;
-        @include drop-shadow;
-        @include transition;
-
       }
-
 
       #{$self}-text {
         background: transparent;
-        width: 100%;
         padding: 1.5rem 0;
+        width: 100%;
       }
 
       .ResourceCategoryIconBlock-icon {
@@ -186,10 +194,11 @@ $padding-tight: 2px;
     }
 
     .ResourceResultVideo {
-      @include breakpoint(medium) {
+      @include breakpoint($medium) {
         width: 33.3333%;
       }
-      @include breakpoint(large) {
+
+      @include breakpoint($large) {
         width: 25%;
       }
 
@@ -197,7 +206,7 @@ $padding-tight: 2px;
         text-align: center;
 
         span {
-          @include breakpoint(medium) {
+          @include breakpoint($medium) {
             font-size: 50px;
           }
         }

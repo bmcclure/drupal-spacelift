@@ -1,16 +1,19 @@
-/* SearchInput Styling, used on ResourcesSearchBar and the header Search*/
+// SearchInput Styling, used on ResourcesSearchBar and the header Search
+$SearchInput-icon-color: clr(primary) !default;
+$SearchInput-icon-color--hover: clr(primary-alt) !default;
 
 .SearchInput {
   $self: &;
+
   position: relative;
-  padding: 10px; /* this helps with the icon position. */
+  padding: 10px; // this helps with the icon position.
 
   &-icon {
     position: absolute;
-    top: 22px; /* absolutely positioned because inputs cant do pseudoelements */
+    top: 22px; // absolutely positioned because inputs cant do pseudo elements
     left: 25px;
     color: $red;
-    font-size: rem-calc(14);
+    font-size: rem-calc(14px);
   }
 
   &-input {
@@ -21,7 +24,7 @@
     &::placeholder {
       font-style: italic;
       color: $gray--dark;
-      font-size: rem-calc(14);
+      font-size: rem-calc(14px);
     }
   }
 
@@ -34,12 +37,12 @@
       left: auto;
       width: 40px;
       cursor: pointer;
-      background: $primary-color;
+      background: $SearchInput-icon-color;
       color: $white;
       @include transition;
 
       &:hover {
-        background: darken($primary-color, 5%);
+        background: $SearchInput-icon-color--hover;
       }
     }
 

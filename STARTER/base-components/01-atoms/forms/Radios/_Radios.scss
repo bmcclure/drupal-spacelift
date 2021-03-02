@@ -5,7 +5,7 @@
     position: relative;
   }
 
-  &-input[type=radio] {
+  &-input[type="radio"] {
     bottom: 0;
     display: block;
     left: 0;
@@ -30,6 +30,7 @@
 
   &-button {
     @include transition;
+
     height: 100%;
     margin: 0;
     width: 100%;

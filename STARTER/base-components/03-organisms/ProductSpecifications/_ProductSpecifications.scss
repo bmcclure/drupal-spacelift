@@ -6,7 +6,7 @@ $table-spacing: 10px !default;
   &-specs {
     display: flex;
     flex-wrap: wrap;
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       margin-left: -$table-spacing;
       margin-right: -$table-spacing;
     }
@@ -22,7 +22,7 @@ $table-spacing: 10px !default;
       background: $gray--light;
     }
 
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       width: calc(50% - 20px);
       margin: 0 10px;
       &:nth-child(odd) {

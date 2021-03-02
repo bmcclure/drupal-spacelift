@@ -10,7 +10,7 @@
 
   &-reveal {
     padding: 2rem;
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       max-width: 980px;
       width: 980px;
     }

@@ -4,7 +4,7 @@
   position: relative;
 
   &.reverse {
-    @include breakpoint(medium) {
+    @include breakpoint($medium) {
       background: clr(primary);
     }
 
@@ -21,7 +21,7 @@
       transform: skewY(-21deg);
       transform-origin: top right;
 
-      @include breakpoint(medium) {
+      @include breakpoint($medium) {
         left: auto;
         right: 40%;
       }
@@ -31,7 +31,7 @@
   &::before {
     content: '';
 
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       background: $blue;
       height: 100%;
       left: 0;
@@ -58,7 +58,7 @@
     z-index: 1;
 
 
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       left: 44%;
     }
   }

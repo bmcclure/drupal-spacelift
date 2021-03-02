@@ -129,7 +129,7 @@ a {
   }
 
   &:hover {
-    @include breakpoint(large) {
+    @include breakpoint($large) {
       .Zoom-image {
         transform: scale(1.05);
       }
@@ -138,18 +138,18 @@ a {
 }
 
 // AOS Animations
-[data-aos='fade-up'] {
+[data-aos="fade-up"] {
   transform: translate(0, 20px);
   //transform: translate3d(0,20px,0);
 }
-[data-aos='fade-right'] {
+[data-aos="fade-right"] {
   transform: translate3d(-20px,0,0);
 }
-[data-aos='fade-left'] {
+[data-aos="fade-left"] {
   transform: translate3d(20px,0,0);
 }
 
-[data-aos^='counter'][data-aos^='counter'] {
+[data-aos^="counter"][data-aos^="counter"] {
   transform: scale(.1);
 
   &.aos-animate {
@@ -157,7 +157,7 @@ a {
   }
 }
 
-[data-aos='SectionFade'] {
+[data-aos="SectionFade"] {
   .SectionFade-one, .SectionFade-two, .SectionFade-three, .SectionFade-four {
     transform: translate(0, 20px);
     transition:.6s ease-out;
