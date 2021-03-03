@@ -1,11 +1,11 @@
 import React from 'react';
 
-import image from './image/responsive-image.twig';
-import figure from './image/figure.twig';
-import iconTwig from './icons/icons.twig';
+import Image from './Image/ResponsiveImage.twig';
+import Figure from './Image/Figure.twig';
+import Icons from './Icons/Icons.twig';
 
-import imageData from './image/image.yml';
-import figureData from './image/figure.yml';
+import ImageData from './Image/Image.yml';
+import FigureData from './Image/Figure.yml';
 
 const svgIcons = require.context('../../../images/icons/', true, /\.svg$/);
 
@@ -14,11 +14,11 @@ const svgIcons = require.context('../../../images/icons/', true, /\.svg$/);
  */
 export default { title: 'Atoms/Images' };
 
-export const images = () => (
-  <div dangerouslySetInnerHTML={{ __html: image(imageData) }} />
+export const image = () => (
+  <div dangerouslySetInnerHTML={{ __html: Image(ImageData) }} />
 );
-export const figures = () => (
-  <div dangerouslySetInnerHTML={{ __html: figure(figureData) }} />
+export const figure = () => (
+  <div dangerouslySetInnerHTML={{ __html: Figure(FigureData) }} />
 );
 
 const items = [];
@@ -30,5 +30,5 @@ svgIcons.keys().forEach((key) => {
 });
 
 export const icons = () => (
-  <div dangerouslySetInnerHTML={{ __html: iconTwig({ items }) }} />
+  <div dangerouslySetInnerHTML={{ __html: Icons({ items }) }} />
 );

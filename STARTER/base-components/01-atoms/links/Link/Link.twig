@@ -7,16 +7,17 @@
  * - link_base_class - the base class name
  * - link_modifiers - array of modifiers to add to the base classname
  * - link_blockname - blockname prepended to the base classname
+ * - link_extra_classes - additional classes to be added to the link
  *
  * Available blocks:
  * - link_content - used to replace the content of the link
  *     Example: to insert the image component
  */
 #}
-{% set link_base_class = link_base_class|default('link') %}
+{% set link_base_class = link_base_class|default('Link') %}
 
 {% spaceless %}
-  <a {{ bem(link_base_class, link_modifiers, link_blockname) }}
+  <a {{ bem(link_base_class, link_modifiers, link_blockname, link_extra_classes) }}
     {% for attribute, value in link_attributes %}
       {{ attribute }}="{{ value }}"
     {% endfor %}

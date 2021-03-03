@@ -15,7 +15,7 @@
 {% set label_base_class = label_base_class|default('Label') %}
 
 {% set additional_attributes = {
-  'class': bem(label_base_class, label_modifiers, label_blockname),
+  'class': suit(label_base_class, label_modifiers, label_blockname),
   'for': label_for,
 } %}
 

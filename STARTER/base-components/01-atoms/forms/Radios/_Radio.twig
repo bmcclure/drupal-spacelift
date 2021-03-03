@@ -14,9 +14,9 @@
 
 {% set radio_id = 'radio' ~ key %}
 
-<li {{ bem(radio_base_class, radio_modifiers) }}>
+<li {{ suit(radio_base_class, radio_modifiers) }}>
   <input id="{{ radio_id }}" name="radio" type="radio" class="Radio-input" {% if radio_item_checked %}checked="{{ radio_item_checked }}"{% endif %}>
-  {% include "@atoms/forms/Label/Label.twig" with {
+  {% include '@atoms/forms/Label/Label.twig' with {
     label_for: radio_id,
     label_content: radio_item,
   } %}

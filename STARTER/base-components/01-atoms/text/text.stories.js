@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Heading from './Heading/_Heading.twig';
+import Heading from './Heading/Heading.twig';
 import Blockquote from './Blockquote.twig';
 import Pre from './Pre.twig';
 import Paragraph from './InlineElements.twig';
@@ -14,10 +14,10 @@ import HeadingData from './Heading/Heading.yml';
 export default { title: 'Atoms/Text' };
 
 // Loop over items in headingData to show each one in the example below.
-const headings = HeadingData.map((d) => Heading(d)).join('');
+const headingItems = HeadingData.map((d) => Heading(d)).join('');
 
 export const headings = () => (
-  <div dangerouslySetInnerHTML={{ __html: headings }} />
+  <div dangerouslySetInnerHTML={{ __html: headingItems }} />
 );
 export const blockquote = () => (
   <div dangerouslySetInnerHTML={{ __html: Blockquote(BlockquoteData) }} />

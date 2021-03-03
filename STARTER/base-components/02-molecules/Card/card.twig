@@ -43,11 +43,11 @@
  #}
 {% set card__base_class = 'card' %}
 
-<div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+<div {{ suit(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
   {# Image #}
   {% block card__img %}
     {% if card__image__src %}
-      {% include "@atoms/images/image/responsive-image.twig" with {
+      {% include '@atoms/images/Image/ResponsiveImage.twig' with {
         image_blockname: card__base_class,
         output_image_tag: card__image__output_image_tag,
         image_src: card__image__src,
@@ -56,11 +56,11 @@
     {% endif %}
   {% endblock %}
   {# Content #}
-  <div {{ bem('content', card__content__modifiers, card__base_class) }}>
+  <div {{ suit('content', card__content__modifiers, card__base_class) }}>
     {# Heading #}
     {% if card__heading %}
       {{ title_prefix }}
-      {% include "@atoms/text/Heading/_Heading.twig" with {
+      {% include '@atoms/text/Heading/Heading.twig' with {
         heading_base_class: card__heading__base_class|default('heading'),
         heading_modifiers: card__heading__modifiers,
         heading_blockname: card__base_class,
@@ -74,7 +74,7 @@
     {% endif %}
     {# Subheading #}
     {% if card__subheading %}
-      {% include "@atoms/text/Heading/_Heading.twig" with {
+      {% include '@atoms/text/Heading/Heading.twig' with {
         heading_base_class: card__subheading__base_class|default('subheading'),
         heading_modifiers: card__subheading__modifiers,
         heading_blockname: card__base_class,
@@ -85,7 +85,7 @@
     {% endif %}
     {# Body #}
     {% if card__body %}
-      {% include "@atoms/text/Paragraph.twig" with {
+      {% include '@atoms/text/Paragraph.twig' with {
         paragraph_base_class: card__body__base_class|default('body'),
         paragraph_modifiers: card__body__modifiers,
         paragraph_blockname: card__base_class,
@@ -94,7 +94,7 @@
     {% endif %}
     {# Link #}
     {% if card__link__url %}
-      {% include "@atoms/links/Link/Link.twig" with {
+      {% include '@atoms/links/Link/Link.twig' with {
         link_base_class: card__link__base_class|default('link'),
         link_blockname: card__base_class,
         link_attributes: card__link__attributes,
@@ -104,7 +104,7 @@
     {% endif %}
     {# Button #}
     {% if card__button__url %}
-      {% include "@atoms/buttons/Button/Button.twig" with {
+      {% include '@atoms/buttons/Button/Button.twig' with {
         button_base_class: card__button__base_class|default('button'),
         button_modifiers: card__button__modifiers,
         button_blockname: card__base_class,

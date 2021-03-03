@@ -1,8 +1,6 @@
-{% set picture_base_class = picture_base_class|default('picture') %}
+{% set picture_base_class = picture_base_class|default('Picture') %}
 
-<picture
-  {{ bem(picture_base_class, picture_modifiers, picture_blockname) }}
->
+<picture {{ suit(picture_base_class, picture_modifiers, picture_blockname) }}>
   {% if sources %}
     {#
     Internet Explorer 9 doesn't recognise source elements that are wrapped in
@@ -15,7 +13,7 @@
     <!--[if IE 9]></video><![endif]-->
   {% endif %}
   {# The controlling image, with the fallback image in srcset. #}
-  {% include "@atoms/images/image/_image.twig" with {
+  {% include '@atoms/images/Image/_Image.twig' with {
     image_blockname: picture_image_blockname|default(picture_blockname),
   } %}
 </picture>

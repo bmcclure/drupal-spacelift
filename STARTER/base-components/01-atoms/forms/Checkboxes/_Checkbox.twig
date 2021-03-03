@@ -14,7 +14,7 @@
 
 {% set checkbox_id = 'checkbox' ~ key %}
 
-<li {{ bem(checkbox_base_class, checkbox_modifiers) }}>
+<li {{ suit(checkbox_base_class, checkbox_modifiers) }}>
   <input id="{{ checkbox_id }}" name="checkbox" type="checkbox" class="Checkbox-input" {% if checkbox_item_checked %}checked="{{ checkbox_item_checked }}"{% endif %}>
   {% include "@atoms/forms/Label/Label.twig" with {
     label_for: checkbox_id,

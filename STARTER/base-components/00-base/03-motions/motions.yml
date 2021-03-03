@@ -5,6 +5,9 @@ motions:
   - name: 'Expand'
 
 animations:
+  - name: 'Zoom Image'
+
+aos-animations:
   - name: 'Fade Up'
   - name: 'Fade Right'
   - name: 'Fade Left'

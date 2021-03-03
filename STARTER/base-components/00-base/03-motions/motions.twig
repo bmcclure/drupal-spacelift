@@ -1,0 +1,55 @@
+<div class="motion">
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    heading_level: 2,
+    heading: 'Emulsify Motions',
+  } %}
+  <div class="motion__grid">
+    {% for motion in motions %}
+      <div class="motion__grid-item">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading_level: 3,
+          heading: motion.name,
+        } %}
+        <div class="demo-motion demo-motion--{{ motion.name|lower|replace({' ':'-'}) }}"></div>
+      </div>
+    {% endfor %}
+  </div>
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    heading_level: 2,
+    heading: 'Custom Animations',
+  } %}
+  <div class="motion__grid">
+    {% for animation in animations %}
+      <div class="motion__grid-item">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading_level: 3,
+          heading: animation.name,
+        } %}
+        {% set zoom_image %}
+          <div class="demo-animation Zoom">
+            <img class="Zoom-image" src="/themes/custom/msi/screenshot.png" />
+          </div>
+        {% endset %}
+        {% include '@atoms/links/Link/Link.twig' with {
+          link_content: zoom_image,
+          link_url: '#',
+        } %}
+      </div>
+    {% endfor %}
+  </div>
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    heading_level: 2,
+    heading: 'AOS Animations',
+  } %}
+  <div class="motion__grid">
+    {% for motion in motions %}
+      <div class="motion__grid-item">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading_level: 3,
+          heading: motion.name,
+        } %}
+        <div class="demo-aos-animation data-aos="{{ motion.name|lower|replace({' ':'-'}) }}"></div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

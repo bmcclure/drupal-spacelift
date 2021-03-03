@@ -2,37 +2,28 @@
 .cl-colors {
   padding: 1rem;
 
-  h2,
-  h3 {
-    color: clr(text);
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 2rem;
+    padding: 0;
+  }
+
+  &-item {
+    list-style: none;
+    padding: 1rem 2rem;
+    transition: all 0.4s;
+    flex: 1 1 20%;
+    min-width: 150px;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 }
 
-.cl-colors__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 2rem;
-  padding: 0;
-}
-
-.cl-colors__item {
-  list-style: none;
-  padding: 1rem 2rem;
-  transition: all 0.4s;
-  flex: 1 1 20%;
-  min-width: 150px;
-  min-height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
 // Dynamically set swatch text color based on the lightness of the background color
-@function set-color(
-  $color,
-  $text-primary: text,
-  $text-secondary: text-inverse
-) {
+@function set-color($color, $text-primary: text, $text-secondary: text-inverse) {
   @if (lightness($color) > 50) {
     @return clr($text-primary);
   } @else {
@@ -42,7 +33,7 @@
 
 // Style default color swatches
 @each $name, $color in $defaultColors {
-  .cl-colors__item--default {
+  .cl-colors-item--default {
     &-#{$name} {
       background-color: clr($name);
       color: set-color($color);
@@ -52,16 +43,15 @@
 
 // Style dark color swatches
 @each $name, $color in $darkColors {
-  .cl-colors__item--dark {
+  .cl-colors-item--dark {
     &-#{$name} {
       background-color: clr($name);
-      color: set-color($color);
+      color: set-color($color, text-inverse, text);
     }
   }
 }
 
 // Color Utility Classes
-// TODO: Replace these with the clr() mixin
 .white {
   color: clr(background);
 }

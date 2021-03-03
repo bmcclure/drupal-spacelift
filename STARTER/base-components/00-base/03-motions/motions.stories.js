@@ -1,8 +1,8 @@
 import React from 'react';
 
-import motion from './motion.twig';
+import motions from './motions.twig';
 
-import motionData from './motion.yml';
+import motionData from './motions.yml';
 
 /**
  * Add storybook definition for Animations.
@@ -10,5 +10,5 @@ import motionData from './motion.yml';
 export default {title: 'Base/Motion'};
 
 export const examples = () => (
-  <div dangerouslySetInnerHTML={{__html: motion(motionData)}}/>
+  <div dangerouslySetInnerHTML={{__html: motions(motionData)}}/>
 );

@@ -1,7 +1,7 @@
 {% if not attributes %}
 <fieldset class="FormItem form-item--radios">
-  <legend class="h3">Options as Radio buttons</legend>
-  <ul class="FormItem--radios RadioButtons">
+  <legend class="h3">Options as Radios:</legend>
+  <ul class="FormItem--radios Radios">
 {% endif %}
   {% for key, radio in radios %}
     {% include "@atoms/forms/Radios/_Radio.twig" with {

@@ -4,6 +4,10 @@
  * Various examples of text input elements
  */
 #}
+{% include '@atoms/text/Heading/Heading.twig' with {
+  heading_level: 2,
+  heading: 'Examples of various text inputs:',
+} %}
 <div class="form-item">
   <label for="edit-name" class="form-item__label form-item__label--required form-item__label--textfield">Name</label>
   <input id="edit-name" autocorrect="none" autocapitalize="none" spellcheck="false" type="text" name="name" value="" size="60" maxlength="60" class="form-item__textfield form-item__textfield--required" required="required" aria-required="true" placeholder="First, Middle, Last">

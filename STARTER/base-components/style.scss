@@ -16,13 +16,11 @@
 // util is required by settings
 @import 'foundation-sites/scss/util/util';
 
-// Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
-@import 'base-components/00-base/02-defaults/00-settings';
+// Import settings including foundation overrides
+@import 'base-components/00-base/02-defaults/*.scss';
 
-// Import other project-specific settings
-@import 'base-components/00-base/02-defaults/01-breakpoints';
-@import 'base-components/00-base/02-defaults/02-mixins';
-@import 'base-components/00-base/02-defaults/03-aspect-ratios';
+// Import motion styling
+@import 'base-components/00-base/03-motions/*.scss';
 
 // Import foundation.scss from vendor files
 @import 'foundation-sites/scss/foundation';

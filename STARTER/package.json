@@ -20,5 +20,26 @@
     "aluminum-capsule": "git+ssh://git@github.com:TopFloorTech/node-aluminum-capsule.git#2.x",
     "aluminum-components": "^0.2.6",
     "suit-twig-extension": "git+ssh://git@github.com:TopFloorTech/node-suit-twig-extension.git#master"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint ./components",
+    "a11y": "npm run build-storybook && ./scripts/a11y.js -r",
+    "storybook": "start-storybook --ci -s ./dist,./images -p 6006",
+    "build-storybook": "npm run build && build-storybook -s ./dist,./images -o .out",
+    "deploy-storybook": "storybook-to-ghpages -o .out",
+    "webpack": "webpack --watch --config ./webpack/webpack.dev.js",
+    "build": "webpack --config ./webpack/webpack.prod.js",
+    "develop": "concurrently --raw \"npm run webpack\" \"npm run storybook\"",
+    "test": "jest --coverage",
+    "twatch": "jest --no-coverage --watch --verbose",
+    "coverage": "yarn test && open-cli .coverage/lcov-report/index.html",
+    "format": "prettier --write \"**/*.{js,yml,scss,md}\"",
+    "lint-staged": "lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

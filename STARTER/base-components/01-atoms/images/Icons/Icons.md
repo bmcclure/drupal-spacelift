@@ -8,15 +8,15 @@ We are using an SVG sprite generator (details [here](https://www.npmjs.com/packa
 
 **Usage**
 
-The SVG component is found here: 
-`/components/_patterns/01-atoms/04-images/icons/_icon.twig`. 
-See available variables in that file 
+The SVG component is found here:
+`/base-components/01-atoms/images/Icons/Icon.twig`.
+See available variables in that file
 as well as instructions for Drupal. Examples of usage below:
 
 Simple: (no BEM renaming)
 
 ```
-{% include "@atoms/images/icons/_icon.twig" with {
+{% include "@atoms/images/Icons/Icon.twig" with {
   icon_name: 'menu',
 } %}
 ```
@@ -25,7 +25,7 @@ Simple: (no BEM renaming)
 
 ```
 <svg class="icon">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+  <use xmlns:xlink="http://www.w3.org/1999/xlink"
   xlink:href="/icons.svg#src--menu"></use>
 </svg>
 ```
@@ -33,7 +33,7 @@ Simple: (no BEM renaming)
 Complex (BEM classes):
 
 ```
-{% include "@atoms/04-images/icons/_icon.twig" with {
+{% include "@atoms/images/Icons/Icon.twig" with {
   icon_base_class: 'toggle',
   icon_blockname: 'main-nav',
   icon_name: 'menu',
@@ -44,7 +44,7 @@ Complex (BEM classes):
 
 ```
 <svg class="main-nav__toggle">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+  <use xmlns:xlink="http://www.w3.org/1999/xlink"
   xlink:href="/icons.svg#src--menu"></use>
 </svg>
 ```

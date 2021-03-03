@@ -4,11 +4,10 @@
  # - img_element: The controlling image, with the fallback image in srcset.
  # - output_image_tag: Whether or not to output an <img> tag instead of a <picture> tag.
  #}
-
-{% set responsive_image_base_class = responsive_image_base_class|default('image') %}
+{% set responsive_image_base_class = responsive_image_base_class|default('Image') %}
 
 {% if output_image_tag %}
-  {% include "@atoms/images/image/_image.twig" with {
+  {% include '@atoms/images/Image/_Image.twig' with {
     image_base_class: responsive_image_base_class,
     image_modifiers: responsive_image_modifiers,
     image_blockname: responsive_image_blockname,
@@ -19,7 +18,7 @@
     image_title: image_title|default(img_element['#title']),
   } %}
 {% else %}
-  {% include "@atoms/images/image/_picture.twig" with {
+  {% include '@atoms/images/Image/_Picture.twig' with {
     picture_base_class: responsive_image_base_class,
     picture_modifiers: responsive_image_modifiers,
     picture_blockname: responsive_image_blockname,

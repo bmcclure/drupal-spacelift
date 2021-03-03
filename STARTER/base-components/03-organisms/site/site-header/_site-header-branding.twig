@@ -1,9 +1,9 @@
 {% set link_base_class = 'logo-link' %}
 {% set link_url = logo_link__url|default('/') %}
 
-{% extends "@atoms/links/Link/Link.twig" %}
+{% extends '@atoms/links/Link/Link.twig' %}
   {% block link_content %}
-    {% include "@atoms/images/image/responsive-image.twig" with {
+    {% include '@atoms/images/Image/ResponsiveImage.twig' with {
       output_image_tag: true,
       image_src: header__logo_src,
       image_alt: 'Logo',
