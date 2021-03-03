@@ -130,7 +130,7 @@ a {
   }
 
   &:hover {
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       .Zoom-image {
         transform: scale(1.05);
       }

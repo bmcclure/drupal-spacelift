@@ -10,7 +10,8 @@ $CustomizationCallout-image-xlarge-height: 230%;
 
     &-image {
       margin-bottom: 1rem;
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         padding-right: 1rem;
         margin-bottom: 0;
       }
@@ -19,37 +20,43 @@ $CustomizationCallout-image-xlarge-height: 230%;
         padding-top: 40%;
         width: 50%;
         height: 100%;
-        @include breakpoint($medium) {
+
+        @include breakpoint(medium) {
           width: 100%;
           height: calc(100% + 1rem);
         }
-        @include breakpoint($large) {
+
+        @include breakpoint(large) {
           height: $CustomizationCallout-image-large-height;
           padding-top: 10%;
         }
-        @include breakpoint($xl) {
+
+        @include breakpoint(xlarge) {
           height: $CustomizationCallout-image-xlarge-height;
         }
       }
     }
 
     &-text {
-      padding: .5rem 0;
+      padding: 0.5rem 0;
     }
   }
 
   &-bottom {
     padding: 1rem 0;
-    @include breakpoint($medium) {
+
+    @include breakpoint(medium) {
       padding: 2.5rem 0 1.5rem;
     }
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       padding: 1.5rem 0;
     }
 
     &-left {
       border-bottom: 1px solid $gray--medium;
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         border-bottom: 0;
         border-right: 1px solid $gray--medium;
         padding-right: 3rem;
@@ -57,10 +64,11 @@ $CustomizationCallout-image-xlarge-height: 230%;
     }
 
     &-right {
-      @include breakpoint($small only) {
+      @include breakpoint(small only) {
         padding-top: 1rem;
       }
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         padding-left: 3rem;
       }
     }

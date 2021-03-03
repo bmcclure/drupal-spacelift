@@ -9,29 +9,30 @@
     color: clr(primary);
     font-size: 1.125rem;
 
-    @include breakpoint($medium only) { // This is to match Melanie's design.
+    @include breakpoint(medium only) { // This is to match Melanie's design.
       margin-bottom: 0.5rem;
       text-align: center;
       width: 100%;
     }
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       font-size: 1rem;
     }
   }
 
   &-account {
     //.far {
-    //  @include breakpoint($medium only) {
+    //  @include breakpoint(medium only) {
     //    margin-left: 3px; /* to match the design  */
     //  }
     //}
 
     a::after {
-      @include breakpoint($small only) {
+      @include breakpoint(small only) {
         display: none !important; // all screens by default show the arrow, but melanie has it removed from mobile
       }
-      @include breakpoint($medium only) { // this is to match the tablet ONLY design, overriding Foundation styles
+
+      @include breakpoint(medium only) { // this is to match the tablet ONLY design, overriding Foundation styles
         //bottom: 1rem;
         display: inline-block !important;
         margin-left: 9px;
@@ -49,7 +50,7 @@
     padding: 0.75rem;
     text-align: center;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       padding: 0.75rem;
     }
   }
@@ -57,7 +58,7 @@
   &-dropdownMenu #{$self}-account #{$self}-title {
     padding-right: 0.75rem;
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       padding-right: 1.5rem;
     }
   }

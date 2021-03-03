@@ -10,7 +10,7 @@ $padding-tight: 2px;
     margin-left: -$padding-normal;
     margin-right: -$padding-normal;
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       align-items: center;
       margin-bottom: 2rem;
     }
@@ -21,7 +21,7 @@ $padding-tight: 2px;
     padding: $padding-normal;
     width: 100%;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       flex-grow: 1;
       width: auto;
     }
@@ -36,7 +36,7 @@ $padding-tight: 2px;
     padding: $padding-normal;
     width: 100%;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       flex-shrink: 1;
       width: auto;
     }
@@ -58,7 +58,7 @@ $padding-tight: 2px;
       padding-right: 1rem;
       width: 100%;
 
-      @include breakpoint($large) {
+      @include breakpoint(large) {
         flex-grow: 1;
         text-align: right;
         width: auto;
@@ -75,7 +75,7 @@ $padding-tight: 2px;
 
       [class^="fa"] {
         padding-left: 0;
-        padding-right: .5rem;
+        padding-right: 0.5rem;
         position: relative;
         transition: none;
       }
@@ -93,7 +93,7 @@ $padding-tight: 2px;
       font-size: 1rem;
     }
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       flex-shrink: 1;
       width: auto;
 
@@ -103,7 +103,7 @@ $padding-tight: 2px;
       }
     }
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       &Title {
         display: inline-block;
         width: auto;
@@ -127,7 +127,7 @@ $padding-tight: 2px;
       padding: $padding-tight;
       width: 100%;
 
-      @include breakpoint($medium) {
+      @include breakpoint(medium) {
         width: 50%;
       }
     }
@@ -146,11 +146,11 @@ $padding-tight: 2px;
       padding: $padding-normal;
       width: 50%;
 
-      @include breakpoint($medium) {
+      @include breakpoint(medium) {
         width: 20%;
       }
 
-      @include breakpoint($xl) {
+      @include breakpoint(xlarge) {
         width: 16.6667%;
       }
 
@@ -194,11 +194,11 @@ $padding-tight: 2px;
     }
 
     .ResourceResultVideo {
-      @include breakpoint($medium) {
+      @include breakpoint(medium) {
         width: 33.3333%;
       }
 
-      @include breakpoint($large) {
+      @include breakpoint(large) {
         width: 25%;
       }
 
@@ -206,7 +206,7 @@ $padding-tight: 2px;
         text-align: center;
 
         span {
-          @include breakpoint($medium) {
+          @include breakpoint(medium) {
             font-size: 50px;
           }
         }

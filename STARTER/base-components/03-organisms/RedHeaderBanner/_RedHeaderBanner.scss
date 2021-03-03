@@ -3,7 +3,7 @@
   padding: 2rem 0;
   position: relative;
 
-  @include breakpoint($large) {
+  @include breakpoint(large) {
     padding: 8rem 0;
   }
 
@@ -20,14 +20,15 @@
   &-text {
     position: relative;
     color: $white;
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       max-width: 950px;
     }
   }
 
   &-super {
-    @include breakpoint($large) {
-      margin-bottom: .4em;
+    @include breakpoint(large) {
+      margin-bottom: 0.4em;
     }
   }
 

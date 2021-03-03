@@ -11,11 +11,11 @@ $SearchBar-grid-padding: 10px;
     padding: $SearchBar-grid-padding;
     flex: 0 1 auto;
     flex-grow: 1;
-    @include breakpoint($medium) {
+
+    @include breakpoint(medium) {
       max-width: 400px;
     }
   }
-
 
   &-buttonWrap {
     padding: $SearchBar-grid-padding;

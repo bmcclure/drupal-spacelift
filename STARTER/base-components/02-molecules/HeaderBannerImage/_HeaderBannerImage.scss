@@ -1,6 +1,6 @@
 .HeaderBannerImage {
   padding-top: 60%;
-  @include breakpoint($large) {
+  @include breakpoint(large) {
     padding-top: 20%;
   }
 }

@@ -11,7 +11,7 @@
 
   &-bullets {
     li {
-      @include breakpoint($large) {
+      @include breakpoint(large) {
         padding-right: 2rem;
       }
     }

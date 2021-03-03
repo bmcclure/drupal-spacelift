@@ -8,7 +8,8 @@
     .ResourceCategoryIconBlock {
       padding: 2px;
       width: 100%;
-      @include breakpoint($large) {
+
+      @include breakpoint(large) {
         width: 50%;
       }
     }

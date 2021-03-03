@@ -43,12 +43,12 @@
 .button[class] {
   cursor: pointer;
   font-family: $button-font-family;
-  font-size: rem-calc(14px);
+  font-size: rem-calc(14);
   font-weight: normal;
   text-transform: uppercase;
 
-  @include breakpoint($medium) {
-    font-size: rem-calc(16px);
+  @include breakpoint(medium) {
+    font-size: rem-calc(16);
   }
 
   [class^="fa"] {

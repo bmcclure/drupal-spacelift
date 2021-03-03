@@ -15,10 +15,12 @@
 
   &-industry {
     padding-bottom: 1rem;
-    @include breakpoint($medium) {
+
+    @include breakpoint(medium) {
       padding-bottom: 0;
     }
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       padding-right: 1rem;
     }
   }

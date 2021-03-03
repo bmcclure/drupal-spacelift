@@ -14,7 +14,7 @@ $ResourcesSearchBar-grid-padding: 10px;
     padding-bottom: 5px; // overriding because the line height adds too much space and I don't want to change the line height
     width: 100%;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       flex-shrink: 1;
       padding-bottom: 10px;
       width: auto;

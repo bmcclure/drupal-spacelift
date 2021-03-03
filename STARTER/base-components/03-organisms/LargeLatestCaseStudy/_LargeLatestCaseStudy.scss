@@ -5,13 +5,13 @@ $self: '.IndividualCaseStudyTeaser';
 
   .IndividualCaseStudyTeaser {
     #{$self}-imageWrapper, #{$self}-text {
-      @include breakpoint($xl) {
+      @include breakpoint(xlarge) {
         width: calc(50% - 1.25rem);
       }
     }
 
     #{$self}-bullets > li {
-      //@include breakpoint($large) {
+      //@include breakpoint(large) {
       //  width: 100%;
       //}
     }

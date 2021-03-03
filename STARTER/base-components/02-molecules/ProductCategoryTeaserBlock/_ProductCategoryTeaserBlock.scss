@@ -6,14 +6,16 @@
 
   &-text {
     padding: 1rem 0;
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       padding: 1.75rem 2rem;
     }
   }
 
   &-title {
-    color: $red;
-    @include breakpoint($large) {
+    color: clr(secondary);
+
+    @include breakpoint(large) {
       margin-bottom: 1.25rem;
     }
   }

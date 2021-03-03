@@ -15,11 +15,12 @@ $HeroBanner-text-width-large: 600px;
     padding: 1.5rem 20px 1rem;
     position: relative;
     border-bottom: 1px solid $white;
-    @include breakpoint($medium) {
-      padding: 3rem 20px 2rem;
 
+    @include breakpoint(medium) {
+      padding: 3rem 20px 2rem;
     }
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       border-right: 1px solid $white;
     }
 
@@ -30,27 +31,31 @@ $HeroBanner-text-width-large: 600px;
       bottom: 0;
       left: 0;
       background: $gray--dark;
-      opacity: .85;
-      @include breakpoint($medium) {
-        opacity: .75;
+      opacity: 0.85;
+
+      @include breakpoint(medium) {
+        opacity: 0.75;
       }
     }
 
     #{$self}-openBlockTextwrap {
       position: relative;
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         max-width: $HeroBanner-text-width-medium;
       }
-      @include breakpoint($xl) {
+
+      @include breakpoint(xlarge) {
         max-width: $HeroBanner-text-width-large;
         margin-left: auto;
         padding-top: 4rem;
         padding-bottom: 4rem;
         padding-left: 40px;
-        h1, p {
+
+        h1,
+        p {
           max-width: 400px;
         }
-
       }
     }
   }
@@ -63,27 +68,30 @@ $HeroBanner-text-width-large: 600px;
     border-bottom: 1px solid $white;
     padding: 1rem;
     position: relative;
-    @include breakpoint($medium) {
+
+    @include breakpoint(medium) {
       padding: 2rem;
     }
 
     &Overlay {
+      @include transition;
+
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      background: $blue;
-      opacity: .85;
-      @include transition;
-      @include breakpoint($xl) {
+      background: clr(primary);
+      opacity: 0.85;
+
+      @include breakpoint(xlarge) {
         background: $gray--dark;
         opacity: .35;
       }
     }
 
     &--two {
-      @include breakpoint($medium) {
+      @include breakpoint(medium) {
         border-right: 1px solid $white;
       }
     }
@@ -93,7 +101,8 @@ $HeroBanner-text-width-large: 600px;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         max-width: 250px;
       }
     }
@@ -101,7 +110,8 @@ $HeroBanner-text-width-large: 600px;
     &Icon {
       width: 80px;
       padding-right: 1rem;
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         width: 100%;
         padding-right: 0;
       }
@@ -109,17 +119,19 @@ $HeroBanner-text-width-large: 600px;
 
     &Text {
       width: calc(100% - 80px);
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         width: 100%;
       }
     }
+
     &Body {
-      margin-bottom: .75rem;
+      margin-bottom: 0.75rem;
     }
 
     &Hidden {
       @include transition;
-      @include breakpoint($xl) {
+      @include breakpoint(xlarge) {
         max-height: 0;
         overflow: hidden;
       }
@@ -129,15 +141,15 @@ $HeroBanner-text-width-large: 600px;
       color: $white;
 
       #{$self}-blockHidden {
-        @include breakpoint($xl) {
+        @include breakpoint(xlarge) {
           max-height: 400px;
         }
       }
 
-      @include breakpoint($xl) {
+      @include breakpoint(xlarge) {
         #{$self}-blockOverlay {
-          background: $blue;
-          opacity: .85;
+          background: clr(primary);
+          opacity: 0.85;
         }
       }
     }

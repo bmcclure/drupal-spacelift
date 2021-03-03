@@ -7,13 +7,14 @@ $red: #d22728 !default;
 
     .name-component-wrapper {
       width: 100%;
-      @include breakpoint($medium) {
+
+      @include breakpoint(medium) {
         width: 50%;
       }
     }
 
     .name-given-wrapper {
-      @include breakpoint($medium) {
+      @include breakpoint(medium) {
         padding-right: 1rem;
       }
     }
@@ -24,14 +25,14 @@ $red: #d22728 !default;
   }
 
   .required[class] {
-    color: $gray--dark;
+    color: clr(text);
   }
 }
 
 /* copied styling from goodway */
 .float-labels-wrapper.float-labels-required.float-labels-star .float-labels-label::after {
-  content: "*";
-  color: $red;
+  color: clr(secondary);
+  content: '*';
 }
 
 /* end copied styling */

@@ -53,7 +53,7 @@ $ProductSubMenuHeight: 400px;
         text-transform: uppercase;
         margin: 0 .5rem;
 
-        @include breakpoint($xl) {
+        @include breakpoint(xlarge) {
           margin: 0 1rem;
         }
 
@@ -63,10 +63,10 @@ $ProductSubMenuHeight: 400px;
         }
 
         &::after {
-          font-family: $fontawesome-family;
+          font-family: $font-family-fontawesome;
           content: '\f0d7';
           color: clr(secondary);
-          padding-left: .5rem;
+          padding-left: 0.5rem;
           font-weight: bold;
         }
       }
@@ -125,7 +125,7 @@ $ProductSubMenuHeight: 400px;
     max-width: 33.3333%;
     flex-shrink: 1;
 
-    @include breakpoint($xl) {
+    @include breakpoint(xlarge) {
       padding: 0 2rem;
     }
 
@@ -182,7 +182,8 @@ $ProductSubMenuHeight: 400px;
 
     > li {
       padding-right: 0.25rem;
-      @include breakpoint($xl) {
+
+      @include breakpoint(xlarge) {
         padding-right: 1rem;
       }
     }

@@ -105,7 +105,7 @@ $OffcanvasMenu-border-color: $gray--medium !default;
       a {
         font-size: rem-calc(14px);
         font-weight: 400;
-        font-family: $font-family-body;
+        font-family: $body-font-family;
         color: $OffcanvasMenu-second-tier-text;
 
         &.link {

@@ -2,7 +2,7 @@
   &-container {
     background: $white;
     border: 1px solid $gray--medium;
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       height: 100%;
     }
   }
@@ -16,7 +16,8 @@
     padding: 1.5rem;
     border-top: 0;
     flex-flow: column wrap;
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       flex-flow: row wrap;
     }
   }
@@ -26,14 +27,15 @@
     min-height: 74px;
     margin-right: 1rem;
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       margin-right: 1.5rem;
     }
   }
 
   &-button {
     margin-top: 1rem;
-    @include breakpoint($large) {
+
+    @include breakpoint(large) {
       margin-top: 0;
     }
   }

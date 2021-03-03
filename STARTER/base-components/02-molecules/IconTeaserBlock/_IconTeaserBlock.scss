@@ -58,7 +58,7 @@
       flex: 0 1 auto;
       margin-bottom: 0;
       @include transition;
-      @include breakpoint($medium) {
+      @include breakpoint(medium) {
         padding-right: 1rem;
       }
     }
@@ -66,7 +66,8 @@
     span {
       flex: 0 1 auto;
       font-size: 24px;
-      @include breakpoint($small only) {
+
+      @include breakpoint(small only) {
         display: none;
       }
     }

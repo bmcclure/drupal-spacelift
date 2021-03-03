@@ -5,16 +5,16 @@
     background: $gray--light;
     height: 40px;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       height: 45px;
       max-width: 280px;
       min-width: 280px;
     }
-    @include breakpoint($large) { /* Front end tweaks for Melanie */
+    @include breakpoint(large) { /* Front end tweaks for Melanie */
       max-width: 100%;
       min-width: 200px;
     }
-    @include breakpoint($xl) {
+    @include breakpoint(xlarge) {
       max-width: 280px;
     }
 
@@ -29,22 +29,22 @@
 
     &::before {
       content: '\f658';
-      font-family: $fontawesome-family;
+      font-family: $font-family-fontawesome;
       position: absolute;
       left: 1rem;
       color: $red;
-      top: calc(50% - .75em);
+      top: calc(50% - 0.75em);
     }
   }
 
   &-row {
-    @include breakpoint($medium only) { // does not apply to mobile or desktop on up
+    @include breakpoint(medium only) { // does not apply to mobile or desktop on up
       display: flex;
     }
   }
 
   &-button, &-input {
-    @include breakpoint($medium only) { // does not apply to mobile or desktop on up
+    @include breakpoint(medium only) { // does not apply to mobile or desktop on up
       width: auto;
       flex: 0 1 auto;
       margin-right: .5rem;
@@ -56,9 +56,9 @@
   }
 
   &-button {
-    @include breakpoint($medium only) { // does not apply to mobile or desktop on up
+    @include breakpoint(medium only) { // does not apply to mobile or desktop on up
       .button {
-        border-color: $red; // so that it matches the input height
+        border-color: clr(secondary); // so that it matches the input height
       }
     }
   }

@@ -24,8 +24,8 @@ $padding-tight: 2px !default;
     margin-bottom: 0;
     transition: none;
 
-    @include breakpoint($large) {
-      font-size: rem-calc(14px);
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
     }
 
     option {
@@ -40,7 +40,7 @@ $padding-tight: 2px !default;
     padding-left: 0;
     width: 100%;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       flex-shrink: 1;
       width: auto;
     }
@@ -49,13 +49,13 @@ $padding-tight: 2px !default;
       .button {
         width: 100%;
 
-        @include breakpoint($medium) {
+        @include breakpoint(medium) {
           width: auto;
         }
       }
 
       &.small-up-2 {
-        @include breakpoint($medium) {
+        @include breakpoint(medium) {
           .FlexRow-item {
             width: 100%;
           }
@@ -80,7 +80,7 @@ $padding-tight: 2px !default;
       padding-right: 1rem;
       width: 100%;
 
-      @include breakpoint($large) {
+      @include breakpoint(large) {
         flex-grow: 1;
         text-align: right;
         width: auto;
@@ -110,8 +110,8 @@ $padding-tight: 2px !default;
     padding: 0.5rem;
     text-align: left;
 
-    @include breakpoint($large) {
-      font-size: rem-calc(14px);
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
     }
   }
 }

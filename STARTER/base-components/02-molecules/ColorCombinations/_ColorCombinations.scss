@@ -4,7 +4,7 @@
     &:checked + label, .Checked + label {
       &::before {
         content: '\f058';
-        font-family: $fontawesome-family;
+        font-family: $font-family-fontawesome;
         font-weight: bold;
       }
     }

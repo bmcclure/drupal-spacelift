@@ -2,7 +2,7 @@
   $self: &;
 
   .grid-container {
-    @include breakpoint($large down) {
+    @include breakpoint(large down) {
       padding-right: 0; /* per Melanie's request per her design, the chart should overflow to the right on tablet and mobile */
     }
   }
@@ -33,7 +33,7 @@
     display: flex;
     min-width: 840px; // Hmm, unsure of how to get this width. I need a min-width so that it overflows per the design
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       min-width: 1100px; // Same as above - this is based on the design
     }
 
@@ -48,8 +48,8 @@
           background: clr(primary-alt);
           color: clr(text-inverse);
 
-          @include breakpoint($medium) {
-            font-size: rem-calc(18px);
+          @include breakpoint(medium) {
+            font-size: rem-calc(18);
           }
         }
 
@@ -81,10 +81,10 @@
 
           //&Container {
           //  &Show {
-          //    @include breakpoint($medium) {
+          //    @include breakpoint(medium) {
           //      &::after {
           //        content: '\f0da';
-          //        font-family: $fontawesome-family;
+          //        font-family: $font-family-fontawesome;
           //        font-weight: bold;
           //        padding-left: .5rem;
           //      }
@@ -124,7 +124,7 @@
     padding: 2px;
     text-align: center;
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       width: 200px;
     }
 
@@ -155,8 +155,8 @@
         background: clr(primary);
         color: clr(text-inverse);
 
-        @include breakpoint($medium) {
-          font-size: rem-calc(18px);
+        @include breakpoint(medium) {
+          font-size: rem-calc(18);
         }
       }
     }

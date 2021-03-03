@@ -10,7 +10,7 @@ $medium-large: '768px';
     margin: auto;
     max-width: 100%;
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       max-width: 450px;
       position: relative;
     }
@@ -50,7 +50,7 @@ $medium-large: '768px';
       position: relative;
     }
 
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       border: 1px solid $gray--medium;
       left: calc(50% - 250px);
       max-height: 70vh;
@@ -63,7 +63,7 @@ $medium-large: '768px';
       z-index: 120;
     }
 
-    @include breakpoint($large) {
+    @include breakpoint(large) {
       left: 0;
       top: 48px;
       width: 100%;
@@ -82,7 +82,7 @@ $medium-large: '768px';
   }
 
   &-left {
-    @include breakpoint($medium) {
+    @include breakpoint(medium) {
       border-right: 1px solid $gray--medium;
     }
   }
