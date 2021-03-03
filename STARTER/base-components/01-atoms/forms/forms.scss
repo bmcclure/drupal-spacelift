@@ -1,2 +1,8 @@
 // Components
 @import '01-atoms/forms/**/*.scss';
+
+fieldset {
+  legend {
+    color: clr(text);
+  }
+}

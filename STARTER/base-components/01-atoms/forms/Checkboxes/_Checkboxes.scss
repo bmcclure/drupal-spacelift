@@ -16,7 +16,7 @@
     visibility: hidden;
     width: 1px;
 
-    + label {
+    + .Label {
       margin-left: 0;
       padding-left: 40px;
       position: relative;
@@ -37,7 +37,7 @@
     }
 
     &:checked {
-      + label {
+      + .Label {
         font-family: $header-font-family;
 
         &::before {
