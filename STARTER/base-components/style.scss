@@ -20,9 +20,9 @@
 @import 'base-components/00-base/02-defaults/00-settings';
 
 // Import other project-specific settings
-@import 'base-components/00-base/02-defaults/02-breakpoints';
-@import 'base-components/00-base/02-defaults/04-mixins';
-@import 'base-components/00-base/02-defaults/05-aspect-ratios';
+@import 'base-components/00-base/02-defaults/01-breakpoints';
+@import 'base-components/00-base/02-defaults/02-mixins';
+@import 'base-components/00-base/02-defaults/03-aspect-ratios';
 
 // Import foundation.scss from vendor files
 @import 'foundation-sites/scss/foundation';
@@ -83,10 +83,10 @@
 // All other custom styling should be imported below.
 
 // Libraries
-@import 'base-components/00-base/02-defaults/06-utilities';
+@import 'base-components/00-base/02-defaults/04-utilities';
 
 // @todo refactor this
-@import 'base-components/00-base/02-defaults/07-shame';
+@import 'base-components/00-base/02-defaults/05-shame';
 
 // Components
 @import 'base-components/01-atoms/**/*.scss';
