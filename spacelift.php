@@ -458,6 +458,7 @@ function _spacelift_get_alterations($human_readable_name, $machine_name, $descri
     '{{Starter}}' => $human_readable_name,
     '{{starter}}' => $machine_name,
     'hidden: true' => '',
+    'default.aluminum.json' => 'aluminum.json',
   ];
 }
 
@@ -547,6 +548,8 @@ function _spacelift_get_files_to_copy() {
     'default.aluminum.json',
     'package.json',
     'screenshot.png',
+    'webpack.dev.js',
+    'webpack.prod.js',
     '{{starter}}.breakpoints.yml',
     '{{starter}}.info.yml',
     '{{starter}}.libraries.yml',
@@ -564,10 +567,8 @@ function _spacelift_get_files_to_copy() {
       '.storybook',
       'base-components',
       'config',
-      'css',
-      'fonts',
+      'dist',
       'images',
-      'js',
       'src',
       'templates',
       'README.md',
@@ -591,6 +592,7 @@ function _spacelift_get_files_to_rename() {
     '{{starter}}.libraries.yml',
     '.storybook/{{starter}}Theme.js',
     'config/install/{{starter}}.settings.yml',
+    'default.aluminum.json',
   ];
 
   // If we would like to have a bare copy we use the slim option.
