@@ -477,8 +477,6 @@ function _spacelift_get_files_to_alter() {
     '.storybook/manager.js',
     '.storybook/{{starter}}Theme.js',
     'config/install/{{starter}}.settings.yml',
-    'css/{{starter}}.css',
-    'src/scss/{{starter}}.scss',
     'package.json',
     'composer.json',
   ];
@@ -593,7 +591,6 @@ function _spacelift_get_files_to_rename() {
     '{{starter}}.libraries.yml',
     '.storybook/{{starter}}Theme.js',
     'config/install/{{starter}}.settings.yml',
-    'css/{{starter}}.css',
   ];
 
   // If we would like to have a bare copy we use the slim option.
