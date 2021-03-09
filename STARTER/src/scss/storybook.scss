@@ -1,0 +1,11 @@
+// Component base styles
+@import '../../base-components/base';
+
+// Components
+@import 'base-components/01-atoms/**/*.scss';
+@import 'base-components/02-molecules/**/*.scss';
+@import 'base-components/03-organisms/**/*.scss';
+@import 'base-components/04-templates/**/*.scss';
+
+// Drupal theme overrides
+@import 'app';
