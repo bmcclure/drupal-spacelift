@@ -8,13 +8,15 @@
     "assets": "^3.0.1",
     "components": "^0.1.0",
     "foundation-sites": "^6.6.3",
+    "jquery": "^3.6.0",
     "js-cookie": "^2.2.1",
     "lity": "^2.4.1",
     "lozad": "^1.16.0",
     "motion-ui": "^2.0.3",
     "normalize.css": "^8.0.1",
     "slick-carousel": "^1.8.1",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "what-input": "^5.2.10"
   },
   "devDependencies": {
     "aluminum-capsule": "git+ssh://git@github.com:TopFloorTech/node-aluminum-capsule.git#2.x",

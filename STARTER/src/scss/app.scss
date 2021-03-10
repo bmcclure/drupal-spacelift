@@ -26,15 +26,12 @@
 
 // Comment out the following two lines if not using Neat
 @import "settings/grid-settings"; // Must be imported BEFORE spacelift/grid and AFTER bourbon
-@import "spacelift/grid"; // Comment out if not using Neat
+//@import "spacelift/grid"; // Comment out if not using Neat
 
 // Import settings for components (these may require the grid to be defined above)
 @import "settings/component-settings";
 
 // Import common theme mixins and styles
-@import "aluminum-capsule";
-@import "spacelift";
-@import "spacelift/elements";
 @import "aluminum-components/base";
 @import "aluminum-components/drupal";
 

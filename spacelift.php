@@ -458,7 +458,6 @@ function _spacelift_get_alterations($human_readable_name, $machine_name, $descri
     '{{Starter}}' => $human_readable_name,
     '{{starter}}' => $machine_name,
     'hidden: true' => '',
-    'default.aluminum.json' => 'aluminum.json',
   ];
 }
 

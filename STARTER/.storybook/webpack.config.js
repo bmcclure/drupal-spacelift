@@ -32,7 +32,7 @@ module.exports = async ({ config }) => {
         },
       },
       {
-        loader: './node_modules/aluminum-capsule/node_modules/sass-loader',
+        loader: 'sass-loader',
         options: {
           sourceMap: true,
           sassOptions: {
@@ -45,7 +45,7 @@ module.exports = async ({ config }) => {
 
   config.plugins.push(
     new _StyleLintPlugin({
-      configFile: path.resolve(__dirname, '../', 'node_modules/aluminum-capsule/webpack/.stylelintrc'),
+      configFile: path.resolve(__dirname, './.stylelintrc'),
       context: path.resolve(__dirname, '../', 'base-components'),
       files: '**/*.scss',
       failOnError: false,
@@ -62,12 +62,6 @@ module.exports = async ({ config }) => {
   // JS
   config.module.rules.push(
     new _ESLintPlugin()
-    // test: /\.js$/,
-    // exclude: /node_modules/,
-    // loader: 'eslint-loader',
-    // options: {
-    //   cache: true,
-    // },
   );
 
   return config;
