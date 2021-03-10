@@ -542,6 +542,7 @@ function _spacelift_get_files_to_copy() {
   // Slim files and directories declaration.
   $default_array = [
     'util',
+    'webpack',
     '.editorconfig',
     '.gitignore',
     'composer.json',
