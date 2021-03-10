@@ -540,6 +540,7 @@ function _spacelift_get_directories_to_make() {
 function _spacelift_get_files_to_copy() {
   // Slim files and directories declaration.
   $default_array = [
+    'fonts',
     'util',
     'webpack',
     '.editorconfig',

@@ -60,7 +60,7 @@ module.exports = async ({ config }) => {
   });
 
   // JS
-  config.module.rules.push(
+  config.plugins.push(
     new _ESLintPlugin()
   );
 
