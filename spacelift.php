@@ -553,7 +553,7 @@ function _spacelift_get_files_to_copy() {
     'composer.json',
     'default.aluminum.json',
     'package.json',
-    'postcss.config.json',
+    'postcss.config.js',
     'prettier.config.js',
     'screenshot.png',
     'webpack.dev.js',
