@@ -7,8 +7,8 @@ import motionData from './motions.yml';
 /**
  * Add storybook definition for Animations.
  */
-export default {title: 'Base/Motion'};
+export default { title: 'Base/Motion' };
 
 export const examples = () => (
-  <div dangerouslySetInnerHTML={{__html: motions(motionData)}}/>
+  <div dangerouslySetInnerHTML={{ __html: motions(motionData) }} />
 );

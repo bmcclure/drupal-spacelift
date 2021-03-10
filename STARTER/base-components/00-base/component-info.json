@@ -1,7 +1,7 @@
 {
   "name": "base",
   "description": "Base Dependencies",
-  "entries":{
+  "entries": {
     "scss": [
       "00-colors/_00-colors-vars",
       "00-colors/_01-colors-used",

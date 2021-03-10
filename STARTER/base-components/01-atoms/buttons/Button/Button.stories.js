@@ -9,12 +9,12 @@ import ButtonDataAlt from './Button--alt.yml';
 /**
  * Add storybook definition for lines
  */
-export default {title: 'Atoms/Button'};
+export default { title: 'Atoms/Button' };
 
 export const button = () => (
-  <div dangerouslySetInnerHTML={{__html: Button(ButtonData)}}/>
+  <div dangerouslySetInnerHTML={{ __html: Button(ButtonData) }} />
 );
 
 export const buttonAlt = () => (
-  <div dangerouslySetInnerHTML={{__html: Button(ButtonDataAlt)}}/>
+  <div dangerouslySetInnerHTML={{ __html: Button(ButtonDataAlt) }} />
 );

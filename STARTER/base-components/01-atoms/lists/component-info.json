@@ -1,0 +1,9 @@
+{
+  "name": "lists",
+  "description": "HTML Lists",
+  "entries": {
+    "scss": [
+      "_Lists"
+    ]
+  }
+}

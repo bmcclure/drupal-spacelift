@@ -1,0 +1,10 @@
+{
+  "name": "accents",
+  "description": "Accents",
+  "entries": {
+    "scss": [
+      "AngledBackground/AngledBackground",
+      "Line/Line"
+    ]
+  }
+}

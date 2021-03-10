@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ReactButton from './ReactButton/Button.component';
+import ReactButtonComponent from './ReactButton/Button.component';
 
 import Button from './Button/Button.twig';
 
@@ -15,7 +15,9 @@ export default {
   title: 'Atoms/Button',
 };
 
-export const ReactButton = () => <ReactButton>React Button</ReactButton>;
+export const ReactButton = () => (
+  <ReactButtonComponent>React Button</ReactButtonComponent>
+);
 
 export const RegularButton = () => (
   <div dangerouslySetInnerHTML={{ __html: Button(ButtonData) }} />

@@ -1,0 +1,11 @@
+{
+  "name": "plugins",
+  "description": "JS Plugins",
+  "entries": {
+    "scss": [
+      "Tooltip/_Tooltip"
+    ],
+    "js": [
+    ]
+  }
+}

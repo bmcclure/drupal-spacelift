@@ -1,0 +1,12 @@
+{
+  "name": "media",
+  "description": "Media",
+  "entries": {
+    "scss": [
+      "Video/_Video"
+    ],
+    "js": [
+      "03-motions/aos-init.js"
+    ]
+  }
+}

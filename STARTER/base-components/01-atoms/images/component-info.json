@@ -1,0 +1,10 @@
+{
+  "name": "images",
+  "description": "Images and Icons",
+  "entries": {
+    "scss": [
+      "Icons/_Icons",
+      "Image/_Image"
+    ]
+  }
+}

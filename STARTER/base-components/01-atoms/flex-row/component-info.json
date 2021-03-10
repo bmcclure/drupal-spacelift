@@ -1,0 +1,9 @@
+{
+  "name": "flex-row",
+  "description": "Flex Row Styles",
+  "entries": {
+    "scss": [
+      "_flex-row"
+    ]
+  }
+}

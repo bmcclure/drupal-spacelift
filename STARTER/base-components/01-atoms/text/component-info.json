@@ -1,0 +1,10 @@
+{
+  "name": "text",
+  "description": "Text Elements",
+  "entries": {
+    "scss": [
+      "_text",
+      "Heading/_Heading"
+    ]
+  }
+}
