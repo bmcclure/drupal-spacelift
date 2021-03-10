@@ -14,18 +14,18 @@
 //@import "assets";
 
 // Import variables and core css values
+@import "fontawesome";
 @import "settings/variables";
-@import "base/fonts";
 
 // Import generated styles
 @import "generated/**/*.scss";
 
 // Import base functions/mixins/styles
 @import "normalize";
-@import "bourbon";
+//@import "bourbon";
 
 // Comment out the following two lines if not using Neat
-@import "settings/grid-settings"; // Must be imported BEFORE spacelift/grid and AFTER bourbon
+//@import "settings/grid-settings"; // Must be imported BEFORE spacelift/grid and AFTER bourbon
 //@import "spacelift/grid"; // Comment out if not using Neat
 
 // Import settings for components (these may require the grid to be defined above)
