@@ -1,0 +1,16 @@
+{
+  "name": "base",
+  "description": "Base Dependencies",
+  "entries":{
+    "scss": [
+      "00-colors/_00-colors-vars",
+      "00-colors/_01-colors-used",
+      "01-fonts/*.scss",
+      "02-defaults/*.scss",
+      "03-motions/*.scss"
+    ],
+    "js": [
+      "03-motions/aos-init.js"
+    ]
+  }
+}

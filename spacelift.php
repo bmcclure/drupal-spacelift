@@ -547,6 +547,7 @@ function _spacelift_get_files_to_copy() {
     'composer.json',
     'default.aluminum.json',
     'package.json',
+    'postcss.config.json',
     'screenshot.png',
     'webpack.dev.js',
     'webpack.prod.js',
