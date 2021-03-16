@@ -10,3 +10,7 @@
 .off-canvas-wrapper {
   overflow: initial; /* set to initial so that I can use position:sticky for product images */
 }
+
+.sr-only {
+  display: none; // @todo where was the class coming from on the markserv-frontend-components?
+}

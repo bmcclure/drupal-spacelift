@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Horizontal Card
+ *
+ * Available variables:
+ * - horizontal_card__base_class - the base class name
+ * - horizontal_card__modifiers - array of modifiers to add to the base classname
+ * - horizontal_card__blockname - blockname prepended to the base classname
+ * - horizontal_card__extra_classes - extra classes
+ * - horizontal_card__image - image
+ * - horizontal_card__name
+ * - horizontal_card__subtitle
+ * - horizontal_card__email
+ * - horizontal_card__phone
+ * - horizontal_card__mobile
+ * - horizontal_card__fax
+ * - horizontal_card__states
+ * - horizontal_card__contractor - true/false
+*/
+#}
+Incomplete -- why isn't this showing up?
+
+{% set horizontal_card__base_class = horizontal_card__base_class|default('HorizontalCard') %}
+{% set horizontal_card__extra_classes = horizontal_card__extra_classes|default(['FlexRow-item']) %}
+
+TEST
+<div {{ suit(horizontal_card__base_class, horizontal_card__modifiers, horizontal_card__blockname, horizontal_card__extra_classes) }}>
+  <div {{ suit('container', horizontal_card__modifiers, horizontal_card__base_class, ) }}>
+    <div {{ suit('header', horizontal_card__modifiers, horizontal_card__base_class, ['bg-dark-blue', 'grid-x', 'vertical-center'] ) }}>
+      <div {{ suit('image', horizontal_card__modifiers, horizontal_card__base_class, horizontal_card__extra_classes, ['cell', 'shrink', 'lozad'] ) }}>
+     TESTING
+      </div>
+    </div>
+  </div>
+</div>
+

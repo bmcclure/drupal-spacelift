@@ -1,13 +1,19 @@
 // Color Usage variables - use these (via the `clr` function below)
 // rather than color variables directly.
+
+$primary-color: $red; // this is the button color, and color most often used throughout the site
+$secondary-color: $blue; // this is what's used second most
+$body-copy: $gray--dark;
+
 $defaultColors: (
   text: $gray--dark,
   text-inverse: $white,
   background: $white,
   background-section: $gray--light,
-  primary: $blue,
-  primary-alt: $blue--dark,
-  secondary: $red,
+  primary: $red,
+  primary-alt: $red,
+  secondary: $blue,
+  secondary-alt: $blue--dark,
   accent: $yellow,
   accent-high: $yellow--dark,
   highlight: $white,
@@ -19,27 +25,27 @@ $defaultColors: (
   error: $red--light,
   message: $green--light,
 );
-
-$darkColors: (
-  text: $white,
-  text-inverse: $gray--dark,
-  background: $gray,
-  background-inverse: $gray--light,
-  background-section: $gray--dark,
-  primary: $blue,
-  primary-alt: $blue--dark,
-  secondary: $red,
-  accent: $yellow,
-  accent-high: $yellow--dark,
-  highlight: $gray,
-  highlight-high: $gray--dark,
-  border: $white,
-  border-alt: $blue--dark,
-  muted: $gray--medium,
-  warning: $yellow--light,
-  error: $red--light,
-  message: $green--light,
-);
+//
+//$darkColors: (
+//  text: $white,
+//  text-inverse: $gray--dark,
+//  background: $gray,
+//  background-inverse: $gray--light,
+//  background-section: $gray--dark,
+//  primary: $blue,
+//  primary-alt: $blue--dark,
+//  secondary: $red,
+//  accent: $yellow,
+//  accent-high: $yellow--dark,
+//  highlight: $gray,
+//  highlight-high: $gray--dark,
+//  border: $white,
+//  border-alt: $blue--dark,
+//  muted: $gray--medium,
+//  warning: $yellow--light,
+//  error: $red--light,
+//  message: $green--light,
+//);
 
 ///////////
 // Usage //
@@ -78,11 +84,11 @@ $darkColors: (
   }
 
   // Create custom properties for dark colors, an duse them if the user's OS has dark mode enabled
-  @media (prefers-color-scheme: dark) {
-    @each $name, $color in $darkColors {
-      --c-#{$name}: #{$color};
-    }
-  }
+  //@media (prefers-color-scheme: dark) {
+  //  @each $name, $color in $darkColors {
+  //    --c-#{$name}: #{$color};
+  //  }
+  //}
 
   // Use the default color scheme for the "Default Theme" section of the
   // component library regardless of OS setting.
@@ -96,9 +102,9 @@ $darkColors: (
   // Use the dark color scheme for the "Dark Theme" section of the  component
   // library regardless of OS setting.
   // This is required to show the correct colors in the component library at all times
-  [data-theme='dark'] {
-    @each $name, $color in $darkColors {
-      --c-#{$name}: #{$color};
-    }
-  }
+  //[data-theme='dark'] {
+  //  @each $name, $color in $darkColors {
+  //    --c-#{$name}: #{$color};
+  //  }
+  //}
 }

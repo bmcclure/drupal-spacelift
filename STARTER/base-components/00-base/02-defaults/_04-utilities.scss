@@ -135,7 +135,7 @@ p {
   font-weight: 600;
 
   &--regular {
-    font-weight: normal;
+    @include header-font-family-regular;
   }
 }
 

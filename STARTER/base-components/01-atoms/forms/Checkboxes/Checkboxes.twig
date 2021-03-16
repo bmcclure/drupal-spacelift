@@ -5,8 +5,8 @@
 {% endif %}
   {% for key, checkbox in checkboxes %}
     {% include "@atoms/forms/Checkboxes/_Checkbox.twig" with {
-      checkbox_item: checkbox.title,
-      checkbox_item_checked: checkbox.checked,
+      checkbox__item: checkbox.title,
+      checkbox__item_checked: checkbox.checked,
     } %}
   {% endfor %}
 {% if not attributes %}

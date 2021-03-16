@@ -7,11 +7,17 @@
 @import 'normalize.css/normalize';
 //@import 'breakpoint-sass/stylesheets/breakpoint';
 
+// Fontawesome
+@import '../src/scss/fontawesome';
+
 // Import project-specific colors
 @import 'base-components/00-base/00-colors/*.scss';
 
 // Import project-specific fonts
 @import 'base-components/00-base/01-fonts/*.scss';
+
+//// Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
+//@import 'base-components/00-base/02-defaults/00-settings';
 
 // util is required by settings
 @import 'foundation-sites/scss/util/util';
@@ -86,3 +92,21 @@
 // @todo refactor this
 @import 'base-components/00-base/02-defaults/05-shame';
 
+@import 'base-components/01-atoms/**/*.scss';
+@import 'base-components/02-molecules/**/*.scss';
+@import 'base-components/03-organisms/**/*.scss';
+@import 'base-components/04-templates/**/*.scss';
+//@import 'base-components/05-pages/**/*.scss';
+
+// Font Awesome
+//$fa-font-path: "./../node_modules/@fortawesome/fontawesome-pro/webfonts";
+//$fa-font-display: block;
+
+// Comment out what you dont need
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss";
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/duotone.scss";
+//@import "node_modules/@fortawesome/fontawesome-pro/scss/all.scss";

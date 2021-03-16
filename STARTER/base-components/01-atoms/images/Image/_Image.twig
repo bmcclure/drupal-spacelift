@@ -1,20 +1,21 @@
-{% set image_base_class = image_base_class|default('Image') %}
+{% set image__base_class = image__base_class|default('Image') %}
+{% set image__modifiers = image__modifiers|default('lozad') %}
 
 {% spaceless %}
   <img
-    {{ suit(image_base_class, image_modifiers, image_blockname) }}
-    {% if image_srcset %}
-      srcset="{{ image_srcset }}"
+    {{ suit(image__base_class, image__modifiers, image__blockname) }}
+    {% if image__srcset %}
+      srcset="{{ image__srcset }}"
     {% endif %}
-    {% if image_sizes %}
-      sizes="{{ image_sizes }}"
+    {% if image__sizes %}
+      sizes="{{ image__sizes }}"
     {% endif %}
-    src="{{ image_src }}"
-    {% if image_alt %}
-      alt="{{ image_alt }}"
+    src="{{ image__src }}"
+    {% if image__alt %}
+      alt="{{ image__alt }}"
     {% endif %}
-    {% if image_title %}
-      title="{{ image_title }}"
+    {% if image__title %}
+      title="{{ image__title }}"
     {% endif %}
   />
 {% endspaceless %}

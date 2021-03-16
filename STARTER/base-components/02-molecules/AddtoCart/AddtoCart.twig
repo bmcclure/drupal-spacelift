@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * AddtoCart
+ * used on 03-organisms/CompleteOrder
+ *
+ *
+*/
+#}
+
+<div class="AddtoCart">
+    <div class="AddtoCart-toggle">
+        <button id="AddtoCart-minus" class="AddtoCart-minus"><i class="fas fa-minus"></i></button>
+        <input id="AddtoCart-input" class="AddtoCart-input" type="number" value="1" min="0"/>
+        <button id="AddtoCart-plus" class="AddtoCart-plus"><i class="fas fa-plus"></i></button>
+    </div>
+    <a href="#" class="AddtoCart-button button" data-open="AddedToCartModal"><i class="fas fa-cart-plus"></i> ADD TO
+        CART</a>
+</div>
+
+<div class="reveal" id="AddedToCartModal" data-reveal>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <p class="h3">Item(s) Added To Your Cart...</p>
+
+{#   include "components/02-molecules/IndividualProductTeaserTinyWithPrice/IndividualProductTeaserTinyWithPrice.php"; ?>#}
+
+    <hr>
+    <div class="text-center">
+        <p class="Label">ORDER TOTAL</p>
+        <p>$##.##</p>
+        <div class="commerce-cart-block--contents__links">
+            <a href="#" class="button--iconLeft button keepBrowsing dialog-cancel" data-close><span class="fas fa-times-circle"></span>
+                Keep
+                Browsing</a>
+            <a href="#" class="button--iconLeft button checkout"><span class="fas fa-check-circle"></span> Checkout</a>
+        </div>
+    </div>
+</div>

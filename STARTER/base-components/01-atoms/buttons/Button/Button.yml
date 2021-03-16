@@ -1,2 +1,2 @@
-button_content: 'Example Button'
-button_url: '#'
+button__content: 'Example Button'
+button__url: '#'

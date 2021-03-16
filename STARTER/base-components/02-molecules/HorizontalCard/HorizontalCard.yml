@@ -1,0 +1,9 @@
+horizontal_card__image: 'https://placeimg.com/800/450/any'
+horizontal_card__name: 'Brad Angell'
+horizontal_card__subtitle: 'CONTRACTOR'
+horizontal_card__email: 'placeholder@test.com'
+horizontal_card__phone: '(800) 234-0135 ext.1125'
+horizontal_card__mobile: '(262) 123-4567'
+horizontal_card__fax: '(414) 973-1331'
+horizontal_card__states: 'Wisconsin, Iowa, Minnesota, Illinois, Michigan, Montana, Nebraska, Kansas'
+horizontal_card__contractor: true

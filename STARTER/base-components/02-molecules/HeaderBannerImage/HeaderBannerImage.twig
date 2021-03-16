@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Header Banner Image
+ *
+ * Available variables:
+ * - header_banner_image__base_class - the base class name
+ * - header_banner_image__modifiers - array of modifiers to add to the base classname
+ * - header_banner_image__blockname - blockname prepended to the base classname
+ * - header_banner_image__extra_classes - extra classes
+ * - header_banner_image__image - image url do NOT use lozad
+*/
+#}
+
+{% set header_banner_image__base_class = header_banner_image__base_class|default('HeaderBannerImage') %}
+
+<div {{ suit(header_banner_image__base_class, header_banner_image__modifiers, header_banner_image__blockname, header_banner_image__extra_classes) }}
+     style="background: url({{ header_banner_image__image }}) no-repeat center; background-size: cover;">
+</div>

@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Individual Case Study Teaser
+ * Used in Featured Case Studies
+ *
+ * Available variables:
+ * - individual_case_study_teaser__base_class - the base class name
+ * - individual_case_study_teaser__modifiers - array of modifiers to add to the base classname
+ * - individual_case_study_teaser__blockname - blockname prepended to the base classname
+ * - individual_case_study_teaser__extra_classes - extra classes
+ *
+ * - individual_case_study_teaser__title - title
+ * - individual_case_study_teaser__image - image of pdf thumbnail
+ * - individual_case_study_teaser__body - body content
+ * - individual_case_study_teaser__bullet_1
+ * - individual_case_study_teaser__bullet_2
+ * - individual_case_study_teaser__bullet_3
+ * - individual_case_study_teaser__url - URL
+ * - individual_case_study_teaser__subheadline - URL
+ * - individual_case_study_teaser__button_title - URL
+ *
+*/
+#}
+
+{% set individual_case_study_teaser__base_class = individual_case_study_teaser__base_class|default('IndividualCaseStudyTeaser') %}
+{% set individual_case_study_teaser__extra_classes = individual_case_study_teaser__extra_classes|default(['Card','FlexRow-item']) %}
+
+<div {{ suit(individual_case_study_teaser__base_class, individual_case_study_teaser__modifiers, individual_case_study_teaser__blockname, individual_case_study_teaser__extra_classes) }}>
+  <a
+    {{ suit('link', individual_case_study_teaser__modifiers, individual_case_study_teaser__base_class) }}
+    href="{{ individual_case_study_teaser__url }}"
+    title="{{ individual_case_study_teaser__title }}">
+    <div
+      {{ suit('imageWrapper', individual_case_study_teaser__modifiers, individual_case_study_teaser__base_class, ['Zoom']) }}>
+      <div
+        {{ suit('image', individual_case_study_teaser__modifiers, individual_case_study_teaser__base_class, ['Card-image', 'Zoom-image', 'lozad']) }}
+        data-background-image="{{ individual_case_study_teaser__image }}"
+        style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>
+    </div>
+    <div
+      {{ suit('text', individual_case_study_teaser__modifiers, individual_case_study_teaser__base_class, ['Card-text']) }}
+      data-aos="SectionFade">
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__base_class: 'h3',
+        heading__level: 3,
+        heading: individual_case_study_teaser__title,
+        heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one', 'title']
+      } %}
+      <p class="h6 SectionFade-two">{{ individual_case_study_teaser__subheadline }}</p>
+      <p class="SectionFade-three">{{ individual_case_study_teaser__body }}</p>
+      {% if individual_case_study_teaser__bullet_1 %}
+
+        <div class="wysiwyg styled-bullets SectionFade-four">
+          <ul class="IndividualCaseStudyTeaser-bullets ">
+            <li>{{ individual_case_study_teaser__bullet_1 }}</li>
+            {% if individual_case_study_teaser__bullet_2 %}
+              <li>{{ individual_case_study_teaser__bullet_2 }}</li>
+            {% endif %}
+            {% if individual_case_study_teaser__bullet_3 %}
+              <li>{{ individual_case_study_teaser__bullet_3 }}</li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+      <span class="link SectionFade-three">{{ individual_case_study_teaser__button_title }}<span class="fas fa-caret-right"></span></span>
+    </div>
+  </a>
+</div>
+
+

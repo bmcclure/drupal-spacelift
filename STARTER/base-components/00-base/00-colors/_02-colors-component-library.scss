@@ -42,14 +42,14 @@
 }
 
 // Style dark color swatches
-@each $name, $color in $darkColors {
-  .cl-colors-item--dark {
-    &-#{$name} {
-      background-color: clr($name);
-      color: set-color($color, text-inverse, text);
-    }
-  }
-}
+//@each $name, $color in $darkColors {
+//  .cl-colors-item--dark {
+//    &-#{$name} {
+//      background-color: clr($name);
+//      color: set-color($color, text-inverse, text);
+//    }
+//  }
+//}
 
 // Color Utility Classes
 .white {
@@ -77,7 +77,7 @@
 }
 
 .bg-blue {
-  background: clr(primary);
+  background: clr(secondary);
 }
 
 .bg-blue, .bg-dark-blue, .bg-dark {

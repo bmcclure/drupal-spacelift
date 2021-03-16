@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Individual Resource Download
+ * Thumbnail Version of Individual Resource Downloads
+ * Applies to:
+ * Catalogs
+ * Service Brochures
+ * Standards Documents
+ * Specifications Documents
+ * Product Sell Sheets
+ * Tip Sheets
+ * Technical Data Sheets
+ *
+ * Available variables:
+ * - individual_resource_downloads_thumbnail__base_class - the base class name
+ * - individual_resource_downloads_thumbnail__modifiers - array of modifiers to add to the base classname
+ * - individual_resource_downloads_thumbnail__blockname - blockname prepended to the base classname
+ * - individual_resource_downloads_thumbnail__extra_classes - extra classes
+ * - individual_resource_downloads_thumbnail__title - title
+ * - individual_resource_downloads_thumbnail__type - type
+ * - individual_resource_downloads_thumbnail__image - image of pdf thumbnail
+ * - individual_resource_downloads_thumbnail__body - body content
+ * - individual_resource_downloads_thumbnail__url - URL
+ *
+*/
+#}
+
+{% set individual_resource_downloads_thumbnail__base_class = individual_resource_downloads_thumbnail__base_class|default('IndividualResourceDownloadsThumbnail') %}
+
+<div {{ suit(individual_resource_downloads_thumbnail__base_class, individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__blockname, individual_resource_downloads_thumbnail__extra_classes) }}>
+  <div {{ suit('image', individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__base_class) }}>
+    <a href="{{ individual_resource_downloads_thumbnail__url }}>">
+      <img class="lozad" data-src="{{ individual_resource_downloads_thumbnail__image }}"
+           src="" alt="{{ individual_resource_downloads_thumbnail__title }}">
+    </a>
+  </div>
+  <div {{ suit('text', individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__base_class) }}>
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__base_class: 'h3',
+      heading__level: 3,
+      heading: individual_resource_downloads_thumbnail__title,
+      heading__extra_classes: ['HeaderFont--regular'],
+      heading__url: individual_resource_downloads_thumbnail__url,
+      link__blockname: ''
+    } %}
+    <p class="h6 uppercase">{{ individual_resource_downloads_thumbnail__type }}</p>
+    <p>{{ individual_resource_downloads_thumbnail__body }}</p>
+  </div>
+</div>

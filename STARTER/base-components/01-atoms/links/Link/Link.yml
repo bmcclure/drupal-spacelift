@@ -1,4 +1,4 @@
-link_url: 'https://github.com/topfloor_emulsify-ds/topfloor_emulsify-design-system'
-link_content: 'This is my link text'
-link_attributes:
+link__url: 'https://github.com/topfloor_emulsify-ds/topfloor_emulsify-design-system'
+link__content: 'This is my link text TEST AGAIN'
+link__attributes:
   'target': '_blank'

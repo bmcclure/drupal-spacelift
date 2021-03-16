@@ -74,8 +74,8 @@ $global-lineheight: 1.5;
 // $light-gray is an example
 // --------------
 $foundation-palette: (
-  primary: $blue,
-  secondary: $red,
+  primary: $red,
+  secondary: $blue,
   success: $green--light,
   warning: $yellow--light,
   alert: $red--light,
@@ -132,7 +132,7 @@ $block-grid-max: 8;
 
 // 4. Base Typography
 // ------------------
-$header-font-family: frutiger, 'Frutiger Linotype', univers, calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', tahoma, geneva, 'Helvetica Neue', helvetica, arial, sans-serif;
+$header-font-family: "Selawik Semibold", "Selawik", sans-serif;
 $header-font-weight: normal;
 $header-font-style: normal;
 $header-color: $blue--dark;
@@ -165,7 +165,8 @@ $header-styles: (
   ),
 );
 $header-text-rendering: optimizeLegibility;
-$body-font-family: corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', verdana, 'Verdana Ref', sans-serif !default;
+$body-font-family: "Lato", "Helvetica Neue", helvetica, roboto, arial,
+sans-serif;
 $body-antialiased: true;
 $font-family-monospace: consolas, 'Liberation Mono', courier, monospace;
 $font-family-fontawesome: 'Font Awesome 5 Pro';
@@ -291,11 +292,12 @@ $breadcrumbs-item-separator-color: $gray--medium;
 
 // 11. Button
 // ----------
+
 $button-font-family: inherit;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $blue;
+$button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;

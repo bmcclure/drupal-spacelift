@@ -1,6 +1,6 @@
-{% set picture_base_class = picture_base_class|default('Picture') %}
+{% set picture__base_class = picture__base_class|default('Picture') %}
 
-<picture {{ suit(picture_base_class, picture_modifiers, picture_blockname) }}>
+<picture {{ suit(picture__base_class, picture__modifiers, picture__blockname) }}>
   {% if sources %}
     {#
     Internet Explorer 9 doesn't recognise source elements that are wrapped in
@@ -14,6 +14,6 @@
   {% endif %}
   {# The controlling image, with the fallback image in srcset. #}
   {% include '@atoms/images/Image/_Image.twig' with {
-    image_blockname: picture_image_blockname|default(picture_blockname),
+    image_blockname: picture__image_blockname|default(picture__blockname),
   } %}
 </picture>

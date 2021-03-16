@@ -1,25 +1,25 @@
 {#
 /**
  * Available variables:
- * - ul_base_class - the base classname
- * - ul_modifiers - array of modifiers to add to the base classname
- * - ul_blockname - blockname prepended to the base classname
+ * - ul__base_class - the base classname
+ * - ul__modifiers - array of modifiers to add to the base classname
+ * - ul__blockname - blockname prepended to the base classname
  *
  * - listItems - TBD
  */
 #}
-{% set ul_base_class = ul_base_class|default('Ul') %}
+{% set ul__base_class = ul__base_class|default('Ul') %}
 
-<ul {{ bem(ul_base_class, ul_modifiers, ul_blockname) }}>
+<ul {{ bem(ul__base_class, ul__modifiers, ul__blockname) }}>
   {% block list_content %}
-    {% for ul_item in ul_items %}
+    {% for ul__item in ul__items %}
       {% include "@atoms/lists/_ListItem.twig" with {
-        list_item_label: ul_item.label,
-        list_item_content: ul_item.content,
-        li_base_class: ul_item.li_base_class,
-        li_base_class: ul_item.li_base_class,
-        li_modifiers: ul_item.li_modifiers,
-        li_blockname: ul_item.li_blockname,
+        list_item_label: ul__item.label,
+        list_item_content: ul__item.content,
+        li_base_class: ul__item.li_base_class,
+        li_base_class: ul__item.li_base_class,
+        li_modifiers: ul__item.li_modifiers,
+        li_blockname: ul__item.li_blockname,
       } %}
     {% endfor %}
   {% endblock %}

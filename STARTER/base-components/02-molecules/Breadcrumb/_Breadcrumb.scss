@@ -1,15 +1,13 @@
 .Breadcrumb {
+  padding: .25rem 0 .5rem;
+  background: $light-gray;
+  font-size: rem-calc(14);
   @include header-font-family-regular;
 
-  background: clr(background-section);
-  font-size: rem-calc(14px);
-  padding: 0.25rem 0 0.5rem;
-
   a {
-    font-family: 600 $header-font-family;
+    font-family: $header-font-family;
   }
-
   &-separator {
-    padding: 0 0.5rem;
+    padding: 0 .5rem;
   }
 }

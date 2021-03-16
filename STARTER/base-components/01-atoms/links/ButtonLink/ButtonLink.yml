@@ -1,4 +1,4 @@
-link_url: '#'
-link_content: 'This is my button link text <span class="fas fa-caret-right"></span>'
-link_attributes:
+link__url: '#'
+link__content: 'This is my button link text <span class="fas fa-caret-right"></span>'
+link__attributes:
   'target': '_blank'

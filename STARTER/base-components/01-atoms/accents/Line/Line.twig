@@ -4,11 +4,11 @@
  * Template for Line accent
  *
  * Available variables:
- * - line_base_class - the base classname
- * - line_modifiers - array of modifiers to add to the base classname
- * - line_blockname - blockname prepended to the base classname
+ * - line__base_class - the base classname
+ * - line__modifiers - array of modifiers to add to the base classname
+ * - line__blockname - blockname prepended to the base classname
  */
 #}
-{% set line_base_class = line_base_class|default('Line') %}
+{% set line__base_class = line__base_class|default('Line') %}
 
-<div {{ suit(line_base_class, line_modifiers, line_blockname) }}></div>
+<div {{ suit(line__base_class, line__modifiers, line__blockname) }}></div>

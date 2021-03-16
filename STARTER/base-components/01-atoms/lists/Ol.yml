@@ -1,4 +1,4 @@
-ol_items:
+ol__items:
   - content: 'This is the first item in the ordered list.'
   - content: 'And here is the item that goes with the label.'
     label: 'This is the optional label'

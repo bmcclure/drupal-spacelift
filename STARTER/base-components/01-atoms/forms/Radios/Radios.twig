@@ -5,8 +5,8 @@
 {% endif %}
   {% for key, radio in radios %}
     {% include "@atoms/forms/Radios/_Radio.twig" with {
-      radio_item: radio.title,
-      radio_item_checked: radio.checked,
+      radio__item: radio.title,
+      radio__item_checked: radio.checked,
     } %}
   {% endfor %}
 {% if not attributes %}

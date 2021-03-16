@@ -1,61 +1,17 @@
-@mixin button($background: clr(secondary), $background-hover: clr(secondary), $border: 1px solid clr(border), $color: $button-base-color, $color-hover: $button-base-color-hover, $font-weight: $button-font-weight, $transition: false) {
-  @if $transition {
-    @include transition;
-  }
-
-  background: $background;
-  border: $border;
-  color: $color;
-  font-weight: $font-weight;
-
-  &:hover,
-  &:focus,
-  &.active {
-    background: $background-hover;
-    color: $color-hover;
-  }
-
-  &--iconLeft[class] {
-    [class^="fa"] {
-      padding-left: 0;
-      padding-right: 0.5rem;
-    }
-  }
-}
-
-.button {
-  @include button;
-
-  &.outline {
-    @include button($background: rgba(clr(background), 0.125), $background-hover: clr(primary));
-  }
-
-  &.white {
-    @include button($background: clr(background), $background-hover: clr(primary), $border: 1px solid clr(primary-alt), $color: clr(primary-alt));
-  }
-
-  &.dark {
-    @include button($background: clr(primary), $background-hover: clr(background), $border: 1px solid clr(primary), $color: clr(text-inverse), $color-hover: clr(primary));
-  }
-}
-
-.link,
-.button[class] {
-  cursor: pointer;
-  font-family: $button-font-family;
-  font-size: rem-calc(14);
-  font-weight: normal;
+.link, .button[class] {
+  font-family: $header-font-family;
+  font-weight: 400;
   text-transform: uppercase;
-
+  font-size: rem-calc(14);
+  cursor: pointer;
   @include breakpoint(medium) {
     font-size: rem-calc(16);
   }
 
   [class^="fa"] {
-    @include transition;
-
-    padding-left: 0.5rem;
     position: relative;
+    padding-left: .5rem;
+    @include transition;
   }
 
   &:hover {
@@ -65,21 +21,64 @@
   }
 }
 
+.button {
+  font-weight: 600;
+  border: 1px solid $white;
+
+  &.outline {
+    background: transparent; /* backup */
+    background: rgba(255, 255, 255, .125);
+
+    &:hover {
+      background: clr($primary-color);
+    }
+  }
+
+  &.white {
+    background: $white;
+    border-color: $blue--dark;
+    color: $blue--dark;
+    @include transition;
+
+    &:hover, &:focus, &.active {
+      background: $blue;
+      color: $white;
+    }
+  }
+
+  &.dark {
+    background: $blue;
+    color: $white;
+    border: 1px solid $blue;
+
+    &:hover {
+      background: $white;
+      color: $blue;
+    }
+  }
+  &--iconLeft[class] {
+    [class^="fa"] {
+      padding-left: 0;
+      padding-right: .5rem;
+    }
+  }
+}
+
 .LinkButton {
-  color: $button-base-color;
-  cursor: pointer;
-  font-family: $button-font-family;
-  font-size: rem-calc(14px);
-  font-weight: normal;
-  padding: 0.5rem;
+  font-family: $header-font-family;
+  font-weight: 400;
   text-transform: uppercase;
+  padding: .5rem;
+  font-size: rem-calc(14);
+  color: $dark-gray;
+  cursor: pointer;
 
   &:hover {
-    color: clr(primary-alt);
+    color: $blue--dark;
   }
 
   .fal {
-    color: clr(secondary);
+    color: $red;
     padding-right: .325rem;
   }
 }

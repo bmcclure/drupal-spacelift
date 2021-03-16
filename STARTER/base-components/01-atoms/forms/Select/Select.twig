@@ -7,7 +7,7 @@
 {% endif %}
   {% for selection in select %}
     {% include '@atoms/forms/Select/_SelectOption.twig' with {
-      select_item: selection.title
+      select__item: selection.title
     } %}
   {% endfor %}
 {% if not attributes %}

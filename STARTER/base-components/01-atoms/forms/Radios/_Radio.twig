@@ -4,20 +4,20 @@
  * Template for Radio item
  *
  * Available variables:
- * - radio_base_class - the base classname
- * - radio_modifiers - array of modifiers to add to the base classname
- * - radio_item - the text associated with the radio
- * - radio_item_checked - boolean - whether the radio is selected
+ * - radio__base_class - the base classname
+ * - radio__modifiers - array of modifiers to add to the base classname
+ * - radio__item - the text associated with the radio
+ * - radio__item_checked - boolean - whether the radio is selected
  */
 #}
-{% set radio_base_class = radio_base_class|default('Radio') %}
+{% set radio__base_class = radio__base_class|default('Radio') %}
 
-{% set radio_id = 'radio' ~ key %}
+{% set radio__id = 'radio' ~ key %}
 
-<li {{ suit(radio_base_class, radio_modifiers) }}>
-  <input id="{{ radio_id }}" name="radio" type="radio" class="Radio-input" {% if radio_item_checked %}checked="{{ radio_item_checked }}"{% endif %}>
+<li {{ suit(radio__base_class, radio__modifiers) }}>
+  <input id="{{ radio__id }}" name="radio" type="radio" class="Radio-input" {% if radio__item_checked %}checked="{{ radio__item_checked }}"{% endif %}>
   {% include '@atoms/forms/Label/Label.twig' with {
-    label_for: radio_id,
-    label_content: radio_item,
+    label__for: radio__id,
+    label__content: radio__item,
   } %}
 </li>

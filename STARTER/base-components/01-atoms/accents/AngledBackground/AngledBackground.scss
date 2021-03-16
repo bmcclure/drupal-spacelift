@@ -1,15 +1,15 @@
 @mixin angled-background {
-  background: clr(primary-alt);
+  background: clr(secondary-alt);
   overflow: hidden;
   position: relative;
 
   &.reverse {
     @include breakpoint(medium) {
-      background: clr(primary);
+      background: clr(secondary);
     }
 
     &::before {
-      background: clr(primary-alt);
+      background: clr(secondary-alt);
       height: 100%;
       left: 0;
       position: absolute;
@@ -32,7 +32,7 @@
     content: '';
 
     @include breakpoint(large) {
-      background: clr(primary);
+      background: clr(secondary);
       height: 100%;
       left: 0;
       position: absolute;
@@ -43,7 +43,7 @@
   }
 
   &::after {
-    background: clr(primary);
+    background: clr(secondary);
     bottom: 31%;
     content: '';
     display: block;

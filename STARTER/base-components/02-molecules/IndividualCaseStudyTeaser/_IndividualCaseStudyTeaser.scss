@@ -1,10 +1,10 @@
 .IndividualCaseStudyTeaser {
   .wysiwyg {
     ul li {
-      color: $gray--dark;
+      color: $dark-gray;
 
       &::before {
-        color: $yellow--dark;
+        color: $dark-yellow;
       }
     }
   }
