@@ -1,5 +1,0 @@
-$MainMenuBlock-columns: 7 !default;
-
-.Block.Block--menu-main {
-  @include span-columns($MainMenuBlock-columns);
-}

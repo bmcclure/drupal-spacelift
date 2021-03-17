@@ -1,6 +1,0 @@
-// Component variables
-$AluminumPhoneNumberBlock-columns: 3 !default;
-
-.Block.Block--aluminum-phone-number {
-  @include span-columns($AluminumPhoneNumberBlock-columns);
-}

@@ -1,6 +1,0 @@
-// Component variables
-$BrandingBlock-columns: 3 !default;
-
-.Block.Block--system-branding-block {
-  @include span-columns($BrandingBlock-columns);
-}

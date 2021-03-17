@@ -1,6 +1,0 @@
-// Component variables
-$FooterMenuBlock-columns: 6 !default;
-
-.Block--menu-footer {
-  @include span-columns($FooterMenuBlock-columns);
-}
