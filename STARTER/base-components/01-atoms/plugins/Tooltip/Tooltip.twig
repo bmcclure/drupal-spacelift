@@ -1,0 +1,34 @@
+{#
+/**
+ * Available variables:
+ * - tooltip__base_class - the base classname
+ * - tooltip__modifiers - array of modifiers to add to the base classname
+ * - tooltip__blockname - blockname prepended to the base classname
+ * - tooltip__tabindex - tab index of the tooltip
+ * - tooltip__position - the position of the tooltip when expanded
+ * - tooltip__allow_html - whether or not to allow HTML in the tooltip
+ * - tooltip__title - the content of the tooltip
+ * - tooltip__icon_class - fontawesome classname to use for the icon element
+ * - tooltip__sr_content - the content of the list_item (typically text)
+ *
+ * Available blocks:
+ * - list_item__content - used to replace the content of the list_item with something other than text
+ *   for example: to insert the image and/or link components
+ */
+#}
+{% set tooltip__base_class = tooltip__base_class|default('Tooltip') %}
+{% set attributes = attributes
+  .setAttribute('data-tooltip')
+  .setAttribute('tabindex', tooltip__tabindex|default(1))
+  .setAttribute('data-position', tooltip__position|default('top'))
+  .setAttribute('data-allow-html', tooltip__allow_html|default('true'))
+  .setAttribute('title', tooltip__title)
+%}
+{% set tooltip__icon_class = tooltip__icon_class|default('fas fa-question-circle') %}
+
+<span {{ suit(tooltip__base_class, tooltip__modifiers, tooltip__blockname) }} {{ attributes }}>
+  <span class="{{ tooltip__icon_class }}"></span>
+  {% if tooltip__sr_content is not empty %}
+    <span class="sr-only">{{ tooltip__sr_content }}</span>
+  {% endif %}
+</span>

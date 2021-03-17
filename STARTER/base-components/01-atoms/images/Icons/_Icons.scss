@@ -8,9 +8,9 @@
     padding: $space;
     width: 100px;
 
-    @media (prefers-color-scheme: dark) {
-      fill: clr(secondary);
-    }
+    //@media (prefers-color-scheme: dark) {
+    //  fill: clr(secondary);
+    //}
   }
 
   pre {

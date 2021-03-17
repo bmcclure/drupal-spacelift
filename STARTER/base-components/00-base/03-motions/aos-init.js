@@ -1,6 +1,7 @@
+import $ from 'jquery';
 import AOS from 'aos';
 
-$(function () {
+$(() => {
   'use strict';
 
   AOS.init({

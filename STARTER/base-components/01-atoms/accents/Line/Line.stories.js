@@ -8,5 +8,8 @@ import Line from './Line.twig';
 export default { title: 'Atoms/Line' };
 
 export const example = () => (
-  <div dangerouslySetInnerHTML={{ __html: Line({}) }} />
+  <div>
+    <h2 className="h2">Line:</h2>
+    <div dangerouslySetInnerHTML={{ __html: Line({}) }} />
+  </div>
 );

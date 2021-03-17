@@ -1,6 +1,8 @@
+$LabelFontFamily: sans-serif !default;
+
 .Label {
-  color: clr(primary);
-  font-family: $header-font-family;
+  color: clr(secondary);
+  font-family: $LabelFontFamily;
   margin-bottom: 0.25rem;
   text-transform: uppercase;
 }

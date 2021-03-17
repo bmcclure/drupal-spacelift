@@ -297,7 +297,7 @@ $button-font-family: inherit;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: clr(primary);
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
@@ -836,3 +836,7 @@ $space-one-eighth: $space/8;
 @mixin space-stack-page {
   margin-bottom: $space-double;
 }
+
+$CheckboxInputFontFamily: $header-font-family;
+$LabelFontFamily: $header-font-family;
+$RadioInputFontFamily: $header-font-family;

@@ -154,19 +154,18 @@ a {
   @include transition;
 
   transform: translate(0, 20px);
-  //transform: translate3d(0,20px,0);
 }
 
 [data-aos="fade-right"] {
   @include transition;
 
-  transform: translate3d(-20px,0,0);
+  transform: translate3d(-20px, 0, 0);
 }
 
 [data-aos="fade-left"] {
   @include transition;
 
-  transform: translate3d(20px,0,0);
+  transform: translate3d(20px, 0, 0);
 }
 
 [data-aos^="counter"][data-aos^="counter"] {
@@ -187,20 +186,20 @@ a {
     @include transition;
 
     transform: translate(0, 20px);
-    transition:.6s ease-out;
+    transition: 0.6s ease-out;
     opacity: 0;
   }
 
   .SectionFade-two {
-    transition-delay: .3s;
+    transition-delay: 0.3s;
   }
 
   .SectionFade-three {
-    transition-delay: .5s;
+    transition-delay: 0.5s;
   }
 
   .SectionFade-four {
-    transition-delay: .7s;
+    transition-delay: 0.7s;
   }
 
   &.aos-animate {

@@ -3,7 +3,7 @@
   "description": "Buttons",
   "entries": {
     "scss": [
-      "_buttons"
+      "Button/Button.scss"
     ]
   }
 }

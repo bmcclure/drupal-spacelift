@@ -14,7 +14,7 @@
  *   for example: to insert an icon
  */
 #}
-{% set button__base_class = button__base_class|default('button') %}
+{% set button__base_class = button__base_class|default('Button') %}
 
 {% set additional_attributes = {
   class: suit(button__base_class, button__modifiers, button__blockname),

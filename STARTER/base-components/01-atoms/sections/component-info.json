@@ -3,7 +3,7 @@
   "description": "Sections",
   "entries": {
     "scss": [
-      "title-bar/_title-bar"
+      "title-bar/_title-bar.scss"
     ]
   }
 }

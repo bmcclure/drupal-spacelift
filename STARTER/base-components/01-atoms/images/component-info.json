@@ -3,8 +3,11 @@
   "description": "Images and Icons",
   "entries": {
     "scss": [
-      "Icons/_Icons",
-      "Image/_Image"
+      "Icons/_Icons.scss",
+      "Image/_Image.scss"
+    ],
+    "js": [
+      "Icons/svgxuse.min.js"
     ]
   }
 }

@@ -3,7 +3,7 @@
   "description": "Forms",
   "entries": {
     "scss": [
-      "forms"
+      "forms.scss"
     ]
   }
 }

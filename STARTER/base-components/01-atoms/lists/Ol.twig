@@ -10,16 +10,15 @@
 #}
 {% set ol__base_class = ol__base_class|default('Ol') %}
 
-<ol {{ bem(ol__base_class, ol__modifiers, ol__blockname) }}>
+<ol {{ suit(ol__base_class, ol__modifiers, ol__blockname) }}>
   {% block list_content %}
-    {% for ol__item in ol__items %}
+    {% for ol_item in ol_items %}
       {% include "@atoms/lists/_ListItem.twig" with {
-        list_item_label: ol__item.label,
-        list_item_content: ol__item.content,
-        li_base_class: ol__item.li_base_class,
-        li_base_class: ol__item.li_base_class,
-        li_modifiers: ol__item.li_modifiers,
-        li_blockname: ol__item.li_blockname,
+        list_item__label: ol_item.label,
+        list_item__content: ol_item.content,
+        li__base_class: ol_item.li_base_class,
+        li__modifiers: ol_item.li_modifiers,
+        li__blockname: ol_item.li_blockname,
       } %}
     {% endfor %}
   {% endblock %}

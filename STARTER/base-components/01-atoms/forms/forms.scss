@@ -1,5 +1,9 @@
 // Components
-@import '01-atoms/forms/**/*.scss';
+@import 'Checkboxes/Checkboxes';
+@import 'Label/Label';
+@import 'Radios/Radios';
+@import 'Select/Select';
+@import 'Textfields/Textfields';
 
 fieldset {
   legend {

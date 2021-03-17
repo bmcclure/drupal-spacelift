@@ -3,8 +3,8 @@
   "description": "Text Elements",
   "entries": {
     "scss": [
-      "_text",
-      "Heading/_Heading"
+      "text.scss",
+      "Heading/_Heading.scss"
     ]
   }
 }

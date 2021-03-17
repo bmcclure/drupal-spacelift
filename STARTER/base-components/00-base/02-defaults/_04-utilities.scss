@@ -85,7 +85,7 @@ hr {
       .bg-dark-blue &,
       .bg-dark &,
       .bg-blue & {
-        color: $white;
+        color: clr(text-inverse);
       }
     }
   }

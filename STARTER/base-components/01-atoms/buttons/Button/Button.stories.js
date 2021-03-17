@@ -15,6 +15,6 @@ export const button = () => (
   <div dangerouslySetInnerHTML={{ __html: Button(ButtonData) }} />
 );
 
-export const buttonAlt = () => (
+export const altButton = () => (
   <div dangerouslySetInnerHTML={{ __html: Button(ButtonDataAlt) }} />
 );

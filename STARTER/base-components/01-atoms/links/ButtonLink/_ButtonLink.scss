@@ -1,9 +1,98 @@
-.link, .button[class] {
+//// TODO: Refactor classes to be based on the .ButtonLink component class
+//.link, .button[class] {
+//  font-family: $header-font-family;
+//  font-weight: 400;
+//  text-transform: uppercase;
+//  font-size: rem-calc(14);
+//  cursor: pointer;
+//  @include breakpoint(medium) {
+//    font-size: rem-calc(16);
+//  }
+//
+//  [class^="fa"] {
+//    position: relative;
+//    padding-left: .5rem;
+//    @include transition;
+//  }
+//
+//  &:hover {
+//    .fa-caret-right {
+//      transform: translateX(3px);
+//    }
+//  }
+//}
+//
+//.button {
+//  font-weight: 600;
+//  border: 1px solid $white;
+//
+//  &.outline {
+//    background: transparent; /* backup */
+//    background: rgba(255, 255, 255, .125);
+//
+//    &:hover {
+//      background: clr(primary);
+//    }
+//  }
+//
+//  &.white {
+//    background: $white;
+//    border-color: $blue--dark;
+//    color: $blue--dark;
+//    @include transition;
+//
+//    &:hover, &:focus, &.active {
+//      background: $blue;
+//      color: $white;
+//    }
+//  }
+//
+//  &.dark {
+//    background: $blue;
+//    color: $white;
+//    border: 1px solid $blue;
+//
+//    &:hover {
+//      background: $white;
+//      color: $blue;
+//    }
+//  }
+//  &--iconLeft[class] {
+//    [class^="fa"] {
+//      padding-left: 0;
+//      padding-right: .5rem;
+//    }
+//  }
+//}
+//
+//.LinkButton {
+//  font-family: $header-font-family;
+//  font-weight: 400;
+//  text-transform: uppercase;
+//  padding: .5rem;
+//  font-size: rem-calc(14);
+//  color: $dark-gray;
+//  cursor: pointer;
+//
+//  &:hover {
+//    color: $blue--dark;
+//  }
+//
+//  .fal {
+//    color: $red;
+//    padding-right: .325rem;
+//  }
+//}
+
+.ButtonLink {
+  @include button;
+
   font-family: $header-font-family;
   font-weight: 400;
   text-transform: uppercase;
   font-size: rem-calc(14);
   cursor: pointer;
+
   @include breakpoint(medium) {
     font-size: rem-calc(16);
   }
@@ -19,66 +108,11 @@
       transform: translateX(3px);
     }
   }
-}
 
-.button {
-  font-weight: 600;
-  border: 1px solid $white;
+  &--hollow {
+    @include button-hollow;
+    @include button-hollow-style;
 
-  &.outline {
-    background: transparent; /* backup */
-    background: rgba(255, 255, 255, .125);
-
-    &:hover {
-      background: clr($primary-color);
-    }
-  }
-
-  &.white {
-    background: $white;
-    border-color: $blue--dark;
-    color: $blue--dark;
-    @include transition;
-
-    &:hover, &:focus, &.active {
-      background: $blue;
-      color: $white;
-    }
-  }
-
-  &.dark {
-    background: $blue;
-    color: $white;
-    border: 1px solid $blue;
-
-    &:hover {
-      background: $white;
-      color: $blue;
-    }
-  }
-  &--iconLeft[class] {
-    [class^="fa"] {
-      padding-left: 0;
-      padding-right: .5rem;
-    }
-  }
-}
-
-.LinkButton {
-  font-family: $header-font-family;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding: .5rem;
-  font-size: rem-calc(14);
-  color: $dark-gray;
-  cursor: pointer;
-
-  &:hover {
-    color: $blue--dark;
-  }
-
-  .fal {
-    color: $red;
-    padding-right: .325rem;
+    background-color: transparent;
   }
 }

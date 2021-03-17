@@ -1,3 +1,5 @@
+$RadioInputFontFamily: sans-serif !default;
+
 .RadioButtons {
   list-style-type: none;
 
@@ -17,14 +19,14 @@
 
     + label {
       background: clr(background);
-      border: 1px solid clr(primary);
-      color: clr(primary);
+      border: 1px solid clr(secondary);
+      color: clr(secondary);
       margin: 0;
     }
 
     &:checked + label,
     .Checked + label {
-      background: clr(primary);
+      background: clr(secondary);
       color: clr(text-inverse);
     }
   }
@@ -38,7 +40,7 @@
     z-index: 10;
 
     &.active {
-      border: 2px solid clr(primary);
+      border: 2px solid clr(secondary);
     }
   }
 }
@@ -69,7 +71,7 @@
 
       &::before {
         background-color: clr(background);
-        border: 1px solid clr(primary);
+        border: 1px solid clr(secondary);
         border-radius: 20px;
         content: '';
         display: block;
@@ -85,10 +87,10 @@
 
     &:checked {
       + .Label {
-        font-family: $header-font-family;
+        font-family: $RadioInputFontFamily;
 
         &::before {
-          background: clr(primary);
+          background: clr(secondary);
         }
       }
     }

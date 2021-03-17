@@ -3,8 +3,8 @@
   "description": "Accents",
   "entries": {
     "scss": [
-      "AngledBackground/AngledBackground",
-      "Line/Line"
+      "AngledBackground/AngledBackground.scss",
+      "Line/Line.scss"
     ]
   }
 }

@@ -1,0 +1,32 @@
+.Button {
+  @include button;
+
+  font-family: $header-font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: rem-calc(14);
+  cursor: pointer;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(16);
+  }
+
+  [class^="fa"] {
+    position: relative;
+    padding-left: .5rem;
+    @include transition;
+  }
+
+  &:hover {
+    .fa-caret-right {
+      transform: translateX(3px);
+    }
+  }
+
+  &--hollow {
+    @include button-hollow;
+    @include button-hollow-style;
+
+    background-color: transparent;
+  }
+}

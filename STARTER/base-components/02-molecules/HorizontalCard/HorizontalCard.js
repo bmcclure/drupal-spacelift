@@ -12,6 +12,5 @@ export default { title: 'Molecules/Horizontal-Card' };
 
 
 export const HorizontalCardExample = () => (
-  <div dangerouslySetInnerHTML={{ __html: HorizontalCard(HorizontalCardData) }}
-  />
+  <div dangerouslySetInnerHTML={{ __html: HorizontalCard(HorizontalCardData) }} />
 );

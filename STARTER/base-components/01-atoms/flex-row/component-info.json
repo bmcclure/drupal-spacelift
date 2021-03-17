@@ -3,7 +3,7 @@
   "description": "Flex Row Styles",
   "entries": {
     "scss": [
-      "_flex-row"
+      "FlexRow.scss"
     ]
   }
 }

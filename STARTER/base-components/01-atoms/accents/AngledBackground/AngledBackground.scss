@@ -1,5 +1,5 @@
 @mixin angled-background {
-  background: clr(secondary-alt);
+  background: clr(secondary-dark);
   overflow: hidden;
   position: relative;
 
@@ -9,7 +9,7 @@
     }
 
     &::before {
-      background: clr(secondary-alt);
+      background: clr(secondary-dark);
       height: 100%;
       left: 0;
       position: absolute;

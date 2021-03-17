@@ -7,7 +7,7 @@ import ButtonLinkData from './ButtonLink.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Atoms/Button Links' };
+export default { title: 'Atoms/Links' };
 
 export const buttonLink = () => (
   <div dangerouslySetInnerHTML={{ __html: ButtonLink(ButtonLinkData) }} />
