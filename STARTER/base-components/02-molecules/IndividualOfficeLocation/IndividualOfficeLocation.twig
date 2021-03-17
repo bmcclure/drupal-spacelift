@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * IndividualOfficeLocations
+ * uses the "Horizontal Card" styling
+ *
+ * Available variables:
+ * - individual_office_location__base_class - the base class name
+ * - individual_office_location__modifiers - array of modifiers to add to the base classname
+ * - individual_office_location__blockname - blockname prepended to the base classname
+ * - individual_office_location__extra_classes - extra classes
+ * - individual_office_location__image - image
+ * - individual_office_location__name
+ * - individual_office_location__subtitle
+ * - individual_office_location__phone
+ * - individual_office_location__mobile
+ * - individual_office_location__fax
+ * - individual_office_location__address
+*/
+#}
+{% include '@molecules/HorizontalCard/HorizontalCard.twig' with {
+  horizontal_card__base_class: 'HorizontalCard',
+  horizontal_card__extra_classes: ['IndividualOfficeLocation','FlexRow-item'],
+  horizontal_card__image:individual_office_location__image,
+  horizontal_card__name: individual_office_location__name,
+  horizontal_card__subtitle: individual_office_location__subtitle,
+  horizontal_card__phone: individual_office_location__phone,
+  horizontal_card__mobile: individual_office_location__mobile,
+  horizontal_card__fax: individual_office_location__fax,
+  horizontal_card__address: individual_office_location__address,
+} %}
+

@@ -23,6 +23,8 @@
 */
 #}
 
+{{ attach_library('msi/aos') }}
+
 {% set individual_case_study_teaser__base_class = individual_case_study_teaser__base_class|default('IndividualCaseStudyTeaser') %}
 {% set individual_case_study_teaser__extra_classes = individual_case_study_teaser__extra_classes|default(['Card','FlexRow-item']) %}
 

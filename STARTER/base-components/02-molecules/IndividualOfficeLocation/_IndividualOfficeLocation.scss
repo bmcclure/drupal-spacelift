@@ -1,0 +1,13 @@
+.IndividualOfficeLocation {
+  &-image.lozad[data-loaded="true"] {
+    opacity: .25;
+  }
+  a {
+    color: $dark-gray;
+    @include transition;
+    &:hover {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}

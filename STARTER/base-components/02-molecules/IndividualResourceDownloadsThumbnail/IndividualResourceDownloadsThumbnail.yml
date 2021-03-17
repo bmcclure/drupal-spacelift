@@ -1,5 +1,5 @@
 individual_resource_downloads_thumbnail__title: 'AIM Forms Mobile Technology'
 individual_resource_downloads_thumbnail__type: 'Service Brochures'
 individual_resource_downloads_thumbnail__body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
-individual_resource_downloads_thumbnail__image: '/components/02-molecules/IndividualResourceDownloadsThumbnail/pdf_thumbnail_placeholder.png'
+individual_resource_downloads_thumbnail__image: 'https://placeimg.com/320/180/any'
 individual_resource_downloads_thumbnail__url: "#placeholder"

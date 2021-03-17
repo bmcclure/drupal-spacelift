@@ -10,7 +10,7 @@
   url('./00-base/01-fonts/selawik/Selawik.ttf.eot?#iefix') format('embedded-opentype');
 }
 
-
+// @todo after all components are in, search-replace and make them use font weight, also adjust in the mixins
 @font-face {
   font-family: 'Selawik Semibold';
   font-style: normal;

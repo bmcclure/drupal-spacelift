@@ -5,6 +5,9 @@ import card from './card.twig';
 import cardData from './card.yml';
 import cardBgData from './card-bg.yml';
 
+// Todo: Remove if we can load via twig attach_library()
+import '../../../src/js/lozad-init';
+
 /**
  * Storybook Definition.
  */
