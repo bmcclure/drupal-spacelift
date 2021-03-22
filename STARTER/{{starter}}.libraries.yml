@@ -2,7 +2,7 @@ global:
   version: VERSION
   css:
     base:
-      dist/{{starter}}.css: {}
+      dist/msi.css: {}
   js:
     js/scripts.js: {}
 
@@ -24,3 +24,8 @@ tabs:
     dist/js/02-molecules/tabs/tabs.js: {}
   dependencies:
     - core/drupal
+
+aos:
+  js:
+    dist/js/aos-init.js: {}
+

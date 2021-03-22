@@ -1,46 +1,35 @@
-/**
- * @file
- * Components Main Stylesheet
- */
+////
+/// Components Main Stylesheet
+////
 
-// Libraries
+/// Libraries
 @import '~normalize.css/normalize';
-//@import 'breakpoint-sass/stylesheets/breakpoint';
 
-// Import project-specific colors
+/// Import project-specific colors
 @import 'base-components/00-base/00-colors/*.scss';
 
-// Import project-specific fonts
+/// Import project-specific fonts
 @import 'base-components/00-base/01-fonts/*.scss';
 
-//// Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
+/// Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
 //@import 'base-components/00-base/02-defaults/00-settings';
 
-// util is required by settings
+/// util is required by settings
 @import '~foundation-sites/scss/util/util';
 
-// Import settings including foundation overrides
+/// Import settings including foundation overrides
 @import 'base-components/00-base/02-defaults/*.scss';
 
-// Import motion styling
+/// Import motion styling
 @import 'base-components/00-base/03-motions/*.scss';
 
-// Import foundation.scss from vendor files
+/// Import foundation.scss from vendor files
 @import '~foundation-sites/scss/foundation';
 
-// Import Motion-UI from vendor files
-//@import "../../node_modules/motion-ui/src/motion-ui";
-//@include motion-ui-transitions;
-//@include motion-ui-animations;
-
-// Select the components you want to use
+/// Select the components you want to use
 @include foundation-global-styles;
 
-// Select the grid you would like to use
-// @include foundation-grid;
-// @include foundation-flex-grid;
-
-// Comment out what you dont need
+/// Comment out what you dont need
 @include foundation-xy-grid-classes;
 @include foundation-flex-classes;
 @include foundation-typography;
@@ -79,18 +68,8 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
-// Import your custom styles.
-// Project colors are imported at the top of this file.
-// All other custom styling should be imported below.
-
 // Libraries
 @import 'base-components/00-base/02-defaults/04-utilities';
 
 // @todo refactor this
 @import 'base-components/00-base/02-defaults/05-shame';
-
-@import 'base-components/01-atoms/**/*.scss';
-@import 'base-components/02-molecules/**/*.scss';
-@import 'base-components/03-organisms/**/*.scss';
-@import 'base-components/04-templates/**/*.scss';
-//@import 'base-components/05-pages/**/*.scss';

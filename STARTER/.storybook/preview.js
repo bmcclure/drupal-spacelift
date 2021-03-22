@@ -7,7 +7,7 @@ import { setupTwig } from './setupTwig';
 import '../src/scss/settings/_component-settings.scss';
 
 // Import base component styles
-import '../base-components/base-components.scss';
+import '../base-components/storybook.scss';
 
 // Import Drupal theme styles
 import '../src/scss/app.scss';

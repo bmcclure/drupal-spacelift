@@ -1,1 +1,1 @@
-import './aos';
+// Custom site-wide Drupal behaviors
