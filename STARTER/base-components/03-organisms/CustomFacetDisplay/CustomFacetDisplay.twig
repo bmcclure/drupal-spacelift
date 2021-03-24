@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * CustomFacetDisplay
+ * used on ProductCategoryListing
+ *
+ * Available variables:
+ * - custom_facet_display__base_class - the base class name
+ * - custom_facet_display__modifiers - array of modifiers to add to the base classname
+ * - custom_facet_display__blockname - blockname prepended to the base classname
+ * - custom_facet_display__extra_classes - extra classes
+ * -
+ * - custom_facet_display__title
+ * - custom_facet_display__background
+ * - custom_facet_display__types
+*/
+#}
+{% set custom_facet_display__base_class = custom_facet_display__base_class|default('custom_facet_displayMe') %}
+{% set custom_facet_display__extra_classes = custom_facet_display__extra_classes|default([custom_facet_display__background]) %}
+
+<section id="CustomFacetDisplay"
+  {{ suit(custom_facet_display__base_class, custom_facet_display__modifiers, custom_facet_display__blockname, custom_facet_display__extra_classes) }}>
+  <div class="grid-container">
+    <header class="section-header text-center"><h2><?= $headline ?></h2></header>
+    <div class="FlexRow small-up-2 medium-up-3 large-up-4">
+      {% for type in custom_facet_display__types %}
+        {% include '@molecules/IconTeaserBlock/IconTeaserBlock.twig' with {
+          icon_teaser_block__icon: type.icon,
+          icon_teaser_block__title: type.title,
+          icon_teaser_block__url: type.url,
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

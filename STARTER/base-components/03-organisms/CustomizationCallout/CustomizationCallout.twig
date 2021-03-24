@@ -1,0 +1,91 @@
+{#
+/**
+ * @file
+ * Customization Callout
+ * used on Homepage
+ *
+ * Available variables:
+ * - customization_callout__base_class - the base class name
+ * - customization_callout__modifiers - array of modifiers to add to the base classname
+ * - customization_callout__blockname - blockname prepended to the base classname
+ * - customization_callout__extra_classes - extra classes
+ * -
+ * - customization_callout__image - image
+ * - customization_callout__title
+ * - customization_callout__body
+ * - customization_callout__title2
+ * - customization_callout__body2
+ * - customization_callout__title3
+ * - customization_callout__body3
+ * - customization_callout__button_title
+ * - customization_callout__url
+*/
+#}
+{% set customization_callout__base_class = customization_callout__base_class|default('CustomizationCallout') %}
+{% set customization_callout__extra_classes = customization_callout__extra_classes|default(['']) %}
+
+<section
+  id="CustomizationCallout" {{ suit(customization_callout__base_class, customization_callout__modifiers, customization_callout__blockname, customization_callout__extra_classes) }}>
+  <div
+    {{ suit('top', customization_callout__modifiers, customization_callout__base_class, ['bg-yellow'] ) }}>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div
+          {{ suit('top-image', customization_callout__modifiers, customization_callout__base_class, ['cell', 'medium-4'] ) }}>
+          <div class="CustomizationCallout-top-image-container lozad"
+               data-background-image="{{ customization_callout__image }}"
+               style="background:url(/assets/images/placeholder.png) no-repeat bottom;background-size: contain;"></div>
+        </div>
+        <div
+          {{ suit('top-text', customization_callout__modifiers, customization_callout__base_class, ['cell', 'medium-8'] ) }}>
+          <div class="grid-x grid-margin-x vertical-center">
+            <div class="cell large-8">
+              {% include '@atoms/text/Heading/Heading.twig' with {
+                heading__base_class: '',
+                heading__level: 2,
+                heading: customization_callout__title,
+              } %}
+              <p>{{ customization_callout__body }}</p>
+            </div>
+            <div class="cell large-4 large-text-right">
+              <a href="{{ customization_callout__url }}" class="button">{{ customization_callout__button_title }} <span
+                  class="fas fa-caret-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    {{ suit('bottom', customization_callout__modifiers, customization_callout__base_class ) }}>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell large-4 show-for-large"></div>
+        <div
+          {{ suit('bottom-left', customization_callout__modifiers, customization_callout__base_class, ['cell', 'medium-6', 'large-4'] ) }}>
+
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 3,
+            heading: customization_callout__title2,
+            heading__extra_classes: ['uppercase'],
+          } %}
+
+          <p>{{ customization_callout__body2 }}</p>
+        </div>
+        <div
+          {{ suit('bottom-right', customization_callout__modifiers, customization_callout__base_class, ['cell', 'medium-6', 'large-4'] ) }}>
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 3,
+            heading: customization_callout__title3,
+            heading__extra_classes: ['uppercase'],
+          } %}
+          <p>{{ customization_callout__body3 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+

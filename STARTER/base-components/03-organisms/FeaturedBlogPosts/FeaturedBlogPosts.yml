@@ -1,0 +1,34 @@
+featured_blog_posts__background: 'bg-white'
+featured_blog_posts__title: 'Headline Goes Right Here'
+featured_blog_posts__button_title: 'View All Blogs'
+featured_blog_posts__url: '#'
+featured_blog_posts__blogs:
+  - id: 0
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Blog Title About A Specific MSI Service Goes Here'
+    body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
+    url: '#'
+    date: "Jan 26, 2020"
+
+  - id: 1
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Lorem Ipsum Dolor'
+    body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
+    url: '#'
+    date: "Jan 26, 2020"
+
+  - id: 2
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Blog Title About A Specific MSI Service Goes Here'
+    body: 'Lorem ipsum dolor sit amet, nec justo quisque volutpat mattis.'
+    url: '#'
+    date: "Jan 26, 2020"
+  - id: 3
+    image: 'https://placeimg.com/800/450/any'
+    title: '4th Blog Title '
+    body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
+    url: '#'
+    date: "Jan 26, 2020"
+
+
+

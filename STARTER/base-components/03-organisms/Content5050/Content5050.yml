@@ -1,0 +1,29 @@
+content_5050__image:  'https://placeimg.com/800/450/any'
+content_5050__title: 'Main Headline Highlighting the Different Services Performed'
+content_5050__body:
+content_5050__button_title:
+content_5050__url:
+
+
+body_content_block__title: 'Headline For More About this Service'
+body_content_block__body: '<h4>H4 Subheadline Example</h4>
+                               <p>Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit. Morbi in sem quis dui placerat ornare. Pellesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
+               				<ul>
+               					<li>Aliquam tincidunt mauris eu risus</li>
+               					<li>Vestibulum auctor dapibus neque</li>
+               					<li>Cras ornare tristique elit</li>
+               					<li>Donec quis dui at dolor tempor interdum</li>
+               				</ul>'
+body_content_block__button_title: 'Example Button'
+body_content_block__url:  '#placeholder'
+
+sidebyside_imageswithcontent__image: 'https://placeimg.com/320/180/any'
+sidebyside_imageswithcontent__title: 'Material Take Off'
+sidebyside_imageswithcontent__body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit."
+sidebyside_imageswithcontent__button_title: "Service Details"
+sidebyside_imageswithcontent__url: '#'
+sidebyside_imageswithcontent__image2: 'https://placeimg.com/320/180/any'
+sidebyside_imageswithcontent__title2: 'Second Example'
+sidebyside_imageswithcontent__body2: "Consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit."
+sidebyside_imageswithcontent__button_title2: "Service Details"
+sidebyside_imageswithcontent__url2: '#'

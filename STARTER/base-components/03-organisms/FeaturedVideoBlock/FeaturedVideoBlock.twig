@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Featured Video
+ *
+ * Available variables:
+ * - featured_video_block__base_class - the base class name
+ * - featured_video_block__modifiers - array of modifiers to add to the base classname
+ * - featured_video_block__blockname - blockname prepended to the base classname
+ * - featured_video_block__extra_classes - extra classes
+ * -
+ * - featured_video_block__image
+ * - featured_video_block__title
+ * - featured_video_block__caption
+ * - featured_video_block__url
+*/
+#}
+{% set featured_video_block__base_class = featured_video_block__base_class|default('FeaturedVideoBlock') %}
+{% set featured_video_block__extra_classes = featured_video_block__extra_classes|default(['cell']) %}
+
+
+<div {{ suit(featured_video_block__base_class, featured_video_block__modifiers, featured_video_block__blockname, featured_video_block__extra_classes) }}>
+  <div {{ suit('image', featured_video_block__modifiers, featured_video_block__base_class, ['lozad'] ) }}
+    data-background-image="{{ featured_video_block__image }}"
+    style="background: url(/assets/images/placeholder.png); background-size: cover;">
+    <a class="FeaturedVideoBlock-container" href="{{ featured_video_block__url }}&rel=0"
+       title="{{ featured_video_block__url }}" data-lity>
+      <span class="far fa-play-circle"></span>
+    </a>
+  </div>
+  {% if featured_video_block__caption %}
+    <div {{ suit('caption', featured_video_block__modifiers, featured_video_block__base_class) }} >
+      <p class="h3 HeaderFont--regular">{{ featured_video_block__caption }}</p>
+    </div>
+  {% endif %}
+</div>
+<script defer src="/components/03-organisms/FeaturedVideoBlock/dist/FeaturedVideoBlock.js?v=1.1.0"></script>
+

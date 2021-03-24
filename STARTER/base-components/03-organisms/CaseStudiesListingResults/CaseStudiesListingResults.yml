@@ -1,0 +1,46 @@
+case_studies_listing_results__title: 'Case Studies'
+case_studies_listing_results__total: 4
+case_studies_listing_results__begin: 1
+case_studies_listing_results__end: 4
+case_studies_listing_results__posts:
+  - id: 0
+    title: 'Case Study Title Goes Here'
+    image: "https://placeimg.com/960/540/any "
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros.'
+    bullet_1: 'Aliquam tincidunt mauris eu risus'
+    bullet_2: 'Vestibulum auctor dapibus neque'
+    bullet_3: 'Cras ornare tristique elit'
+    url: '#'
+    subheadline: 'CASE STUDY'
+    button_title: 'Continue Reading'
+  - id: 1
+    title: 'Case Study Title 2 Goes Here'
+    image: "https://placeimg.com/960/540/any "
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros.'
+    bullet_1: 'Aliquam tincidunt mauris eu risus'
+    bullet_2: 'Vestibulum auctor dapibus neque'
+    bullet_3: 'Cras ornare tristique elit'
+    url: '#'
+    subheadline: 'CASE STUDY'
+    button_title: 'Continue Reading'
+  - id: 2
+    title: 'Case Study Title 3 Goes Here'
+    image: "https://placeimg.com/960/540/any "
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros.'
+    bullet_1: 'Aliquam tincidunt mauris eu risus'
+    bullet_2: 'Vestibulum auctor dapibus neque'
+    bullet_3: 'Cras ornare tristique elit'
+    url: '#'
+    subheadline: 'CASE STUDY'
+    button_title: 'Continue Reading'
+  - id: 3
+    title: 'Case Study Title 4 Goes Here'
+    image: "https://placeimg.com/960/540/any "
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros.'
+    bullet_1: 'Aliquam tincidunt mauris eu risus'
+    bullet_2: 'Vestibulum auctor dapibus neque'
+    bullet_3: 'Cras ornare tristique elit'
+    url: '#'
+    subheadline: 'CASE STUDY'
+    button_title: 'Continue Reading'
+

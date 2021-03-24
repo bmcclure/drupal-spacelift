@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Featured Resource Categories
+ * Used on the Homepage, Producdt Category Listing Page
+ *
+ * Available variables:
+ * - featured_resource_categories__base_class - the base class name
+ * - featured_resource_categories__modifiers - array of modifiers to add to the base classname
+ * - featured_resource_categories__blockname - blockname prepended to the base classname
+ * - featured_resource_categories__extra_classes - extra classes
+ * -
+ * - featured_resource_categories__background - bg-blue / other background colors
+ * - featured_resource_categories__title
+ * - featured_resource_categories__body
+ * - featured_resource_categories__button_title
+ * - featured_resource_categories__url
+ * - featured_resource_categories__teasers
+*/
+#}
+{% set featured_resource_categories__base_class = featured_resource_categories__base_class|default('FeaturedResourceCategories') %}
+{% set featured_resource_categories__extra_classes = featured_resource_categories__extra_classes|default([featured_resource_categories__background]) %}
+
+<section {{ suit(featured_resource_categories__base_class, featured_resource_categories__modifiers, featured_resource_categories__blockname, featured_resource_categories__extra_classes) }}>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x grid-margin-y">
+      <div class="cell medium-5 large-4">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__level: 2,
+          heading: featured_resource_categories__title,
+          heading__extra_classes: ['title'],
+        } %}
+        <p>{{ featured_resource_categories__body }}</p>
+        <a href="{{ featured_resource_categories__url }}" class="button SectionFade-three">{{ featured_resource_categories__button_title }}
+          <span class="fas fa-caret-right"></span>
+        </a>
+      </div>
+      <div class="cell medium-7 large-8">
+        <div {{ suit('row', featured_resource_categories__modifiers, featured_resource_categories__base_class) }}>
+          {% for teaser in featured_resource_categories__teasers %}
+            {% include '@molecules/ResourceCategoryIconBlock/ResourceCategoryIconBlock.twig' with {
+              resource_category_icon_block__icon: teaser.icon,
+              resource_category_icon_block__title: teaser.title,
+              resource_category_icon_block__url: teaser.url,
+            } %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

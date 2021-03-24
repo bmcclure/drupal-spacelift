@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * CaseStudiesListingResults
+ * used on Case Studies Listing template only
+ *
+ * Available variables:
+ * - case_studies_listing_results__base_class - the base class name
+ * - case_studies_listing_results__modifiers - array of modifiers to add to the base classname
+ * - case_studies_listing_results__blockname - blockname prepended to the base classname
+ * - case_studies_listing_results__extra_classes - extra classes
+ * -
+ * - case_studies_listing_results__title
+ * - case_studies_listing_results__total
+ * - case_studies_listing_results__posts - case study posts
+*/
+#}
+{% set case_studies_listing_results__base_class = case_studies_listing_results__base_class|default('CaseStudiesListingResults') %}
+{% set case_studies_listing_results__extra_classes = case_studies_listing_results__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(case_studies_listing_results__base_class, case_studies_listing_results__modifiers, case_studies_listing_results__blockname, case_studies_listing_results__extra_classes) }}>
+  <div class="grid-container">
+
+    {% include '@organisms/ResourcesHeader/ResourcesHeader.twig' with {
+      resources_header__title: case_studies_listing_results__title,
+      resources_header__number: case_studies_listing_results__total,
+      resources_header__begin:case_studies_listing_results__begin,
+      resources_header__end:case_studies_listing_results__end,
+    } %}
+
+    <section class="PostListingResults-posts FlexRow medium-up-2 large-up-3">
+      {% for post in case_studies_listing_results__posts %}
+        {% include '@molecules/IndividualCaseStudyTeaser/IndividualCaseStudyTeaser.twig' with {
+          individual_case_study_teaser__title: post.title,
+          individual_case_study_teaser__image: post.image,
+          individual_case_study_teaser__body: post.body,
+          individual_case_study_teaser__bullet_1: post.bullet_1,
+          individual_case_study_teaser__bullet_2: post.bullet_2,
+          individual_case_study_teaser__bullet_3: post.bullet_3,
+          individual_case_study_teaser__url: post.url,
+          individual_case_study_teaser__subheadline: post.subheadline,
+          individual_case_study_teaser__button_title: post.button_title,
+        } %}
+      {% endfor %}
+    </section>
+    <hr class="ResourceResults-line">
+    {% include '@molecules/pager/pager.twig' %}
+
+  </div>
+</section>

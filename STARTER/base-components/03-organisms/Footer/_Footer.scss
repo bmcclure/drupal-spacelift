@@ -1,0 +1,207 @@
+$Footer-social-button: #fff !default;
+$Footer-social-button-hover: red !default;
+$FooterAccordionMenu-link-color: blue !default;
+$FooterAccordionMenu-link-color-hover: red !default;
+$FooterAccordionMenu-active: pink !default;
+$FooterAccordionMenu-border-color: blue !default;
+$FooterAccordionMenu-toggle: pink !default;
+.Footer {
+  &-top {
+    padding: 1.5rem 0;
+    @include breakpoint(large) {
+      padding: 3rem 0;
+    }
+  }
+
+  &-title {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding: .325rem 0;
+    pointer-events: none;
+    @include breakpoint(medium) {
+      padding-top: 0;
+    }
+  }
+
+  &-line {
+    margin-bottom: .75rem;
+    @include breakpoint(small only) {
+      display: none; // this is an override. It should display on all screens but small ones, to match the design.
+    }
+  }
+
+  &-menus {
+    @include breakpoint(medium) {
+      padding-top: 2rem;
+    }
+    @include breakpoint(large) {
+      padding-top: 0;
+    }
+  }
+
+  &-contact {
+    a {
+      line-height: 1.5;
+      display: inline-block;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    b {
+      font-weight: 600;
+    }
+
+  }
+
+  &-copyright {
+    padding: .625rem 0;
+
+    p, a {
+      font-size: rem-calc(12);
+      margin-bottom: 1rem;
+      @include breakpoint(medium) {
+        font-size: rem-calc(14);
+      }
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    &TopFloor {
+      display: block;
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
+    }
+
+    &Menu {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      @include breakpoint(large) {
+        justify-content: flex-end;
+      }
+
+      &Item {
+        a {
+          display: block; // needed for desktop aligning with paragraphs horizontally
+          padding: 0 .25rem;
+          @include breakpoint(medium) {
+            padding: 0 .75rem;
+          }
+        }
+
+        &:last-child {
+          a {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-socials {
+    .Socials-row {
+      margin-bottom: .75rem;
+      margin-top: .75rem;
+    }
+
+    .Socials-button {
+      width: 22px;
+      height: 22px;
+      color: $Footer-social-button !important; // sorry
+      padding: 3px 1px !important;
+      border-radius: 2px;
+
+      &:hover {
+        color: $Footer-social-button-hover !important; // ugh, sorry
+      }
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+
+}
+
+#FooterAccordionMenu {
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: -20px;
+    margin-right: -20px;
+
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  a {
+    color: $FooterAccordionMenu-link-color;
+    padding: .325rem 0;
+
+    &:hover {
+      text-decoration: underline;
+      color: $FooterAccordionMenu-link-color-hover;
+    }
+
+  }
+
+  li {
+    &.active {
+      > a {
+        text-decoration: underline;
+        background: none;
+        color: $FooterAccordionMenu-active;
+      }
+    }
+  }
+
+  > li {
+    flex: 0 1 auto;
+    border-bottom: 1px solid $FooterAccordionMenu-border-color;
+    @include breakpoint(medium) {
+      padding: 0 20px;
+      width: auto;
+      border-bottom: 0;
+    }
+
+    > a {
+      pointer-events: none;
+    }
+
+    ul {
+      padding-bottom: .5rem;
+    }
+
+  }
+
+  .submenu-toggle::after {
+    content: '\f150';
+    font-family: 'Font Awesome 5 Pro', sans-serif;
+    border: none;
+    font-weight: bold;
+    color: $FooterAccordionMenu-toggle;
+    width: 1em;
+    height: 1em;
+  }
+
+  .submenu-toggle[aria-expanded="true"]::after {
+    transform: none;
+    content: '\f151';
+  }
+}
+
+

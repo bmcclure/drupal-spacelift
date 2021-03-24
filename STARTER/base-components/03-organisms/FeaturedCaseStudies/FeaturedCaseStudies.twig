@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Featured Case Studies
+ *
+ * Available variables:
+ * - featured_case_studies__base_class - the base class name
+ * - featured_case_studies__modifiers - array of modifiers to add to the base classname
+ * - featured_case_studies__blockname - blockname prepended to the base classname
+ * - featured_case_studies__extra_classes - extra classes
+ * -
+ * - featured_case_studies__background - 'bg-white' or 'bg-light'
+ * - featured_case_studies__title
+ * - featured_case_studies__case_studies
+ * - featured_case_studies__count
+
+*/
+#}
+{% set featured_case_studies__base_class = featured_case_studies__base_class|default('FeaturedBlogPosts') %}
+{% set featured_case_studies__extra_classes = featured_case_studies__extra_classes|default([featured_case_studies__background]) %}
+
+
+{% set displayClass = 'FlexRow medium-up-2 large-up-3' %}
+{% set featured_case_studies__count = featured_case_studies__case_studies|length %}
+{% if featured_case_studies__count > 3 %}
+  {% set displayClass = 'FeaturedCaseStudies-slider MSISlider' %}
+{% endif %}
+{% if featured_case_studies__case_studies %}
+
+  <section {{ suit(featured_case_studies__base_class, featured_case_studies__modifiers, featured_case_studies__blockname, featured_case_studies__extra_classes) }}>
+    <div class="grid-container">
+      <header class="section-header text-center">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__base_class: '',
+          heading__level: 2,
+          heading: featured_case_studies__title,
+        } %}
+      </header>
+      <div class="{{ displayClass }}">
+        {% for post in featured_case_studies__case_studies %}
+          {% include '@molecules/IndividualCaseStudyTeaser/IndividualCaseStudyTeaser.twig' with {
+            individual_case_study_teaser__image    : post.image,
+            individual_case_study_teaser__title    : post.title,
+            individual_case_study_teaser__body     : post.body,
+            individual_case_study_teaser__bullet_1 : post.bullet_1,
+            individual_case_study_teaser__bullet_2 : post.bullet_2,
+            individual_case_study_teaser__bullet_3 : post.bullet_3,
+            individual_case_study_teaser__url      : post.url,
+            individual_case_study_teaser__subheadline  : post.subheadline,
+            individual_case_study_teaser__button_title : post.button_title,
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+    <script defer src="/components/03-organisms/FeaturedCaseStudies/dist/FeaturedCaseStudies.js?v=1.0.0"></script>
+  </section>
+
+{% endif %}

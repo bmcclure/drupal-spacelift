@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Customization Callout Variation
+ *
+ * Available variables:
+ * - customization_callout_variation__base_class - the base class name
+ * - customization_callout_variation__modifiers - array of modifiers to add to the base classname
+ * - customization_callout_variation__blockname - blockname prepended to the base classname
+ * - customization_callout_variation__extra_classes - extra classes
+ * -
+ * - customization_callout_variation__image
+ * - customization_callout_variation__title
+ * - customization_callout_variation__body
+*/
+#}
+{% set customization_callout_variation__base_class = customization_callout_variation__base_class|default('CustomizationCalloutVariation') %}
+{% set customization_callout_variation__extra_classes = customization_callout_variation__extra_classes|default(['CustomizationCallout']) %}
+
+<section
+  id="CustomizationCalloutVariation" {{ suit(customization_callout_variation__base_class, customization_callout_variation__modifiers, customization_callout_variation__blockname, customization_callout_variation__extra_classes) }}>
+  <div class="CustomizationCallout-top bg-yellow">
+    <div class="grid-container">
+      <div class="grid-x vertical-center">
+        <div class="CustomizationCallout-top-image cell medium-4">
+          <div class="CustomizationCallout-top-image-container lozad" data-background-image="{{ customization_callout_variation__image }}"
+               style="background:url(/assets/images/placeholder.png) no-repeat bottom; background-size: contain;"></div>
+        </div>
+        <div class="CustomizationCallout-top-text cell medium-8">
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__level: 2,
+            heading: customization_callout_variation__title,
+          } %}
+          <p>{{ customization_callout_variation__body }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

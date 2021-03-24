@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * FilterClear
+ * used in Product Listing
+ *
+ * Available variables:
+ * - filter_clear__base_class - the base class name
+ * - filter_clear__modifiers - array of modifiers to add to the base classname
+ * - filter_clear__blockname - blockname prepended to the base classname
+ * - filter_clear__extra_classes - extra classes
+ * -
+ * - filter_clear__filters
+ * @todo if needed: in Gooodway this is a UL with a tags : https://www.goodway.com/products/surface-sanitation-systems/f/accessory-type-p/chemical/accessory-type-p/fogger
+*/
+#}
+{% set filter_clear__base_class = filter_clear__base_class|default('FilterClear') %}
+
+<div {{ suit(filter_clear__base_class, filter_clear__modifiers, filter_clear__blockname, filter_clear__extra_classes) }}>
+  <div {{ suit('row', filter_clear__modifiers, filter_clear__base_class, ['vertical-center'] ) }}>
+    <div {{ suit('clearAll', filter_clear__modifiers, filter_clear__base_class ) }}>
+      <button class="button white small"> CLEAR ALL</button>
+    </div>
+    <div {{ suit('clearIndividually', filter_clear__modifiers, filter_clear__base_class ) }}>
+      <div class="FlexRow">
+        {% for filter in filter_clear__filters %}
+          <div {{ suit('item', filter_clear__modifiers, filter_clear__base_class, ['FlexRow-item'] ) }}>
+            {% include '@atoms/buttons/LinkButton/LinkButton.twig' with {
+              link_button__type: "button",
+              link_button__title: filter.title,
+            } %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

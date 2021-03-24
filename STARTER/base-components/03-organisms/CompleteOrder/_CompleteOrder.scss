@@ -1,0 +1,26 @@
+.CompleteOrder {
+  @media print { /* Currently putting print styles WITH the component */
+    display: none;
+  }
+
+  &-price {
+    font-size: rem-calc(22);
+    &Each {
+      font-size: initial;
+    }
+  }
+  &-caption {
+    font-size: rem-calc(14);
+  }
+
+  p {
+    margin-bottom: .5rem;
+  }
+
+  .CSRCallout {
+    margin-bottom: .5rem;
+  }
+  .AddtoCart {
+    //margin-top: 1rem;
+  }
+}

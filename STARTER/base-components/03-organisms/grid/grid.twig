@@ -18,7 +18,7 @@
     "heading": grid_label,
   } %}
 {% endif %}
-<div {{ suit(grid_base_class, grid_modifiers, grid_blockname) }}>
+<div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>
   {% block grid_content %}
     {% for item in items %}
       {% include "@organisms/grid/_grid-examples.twig" %}

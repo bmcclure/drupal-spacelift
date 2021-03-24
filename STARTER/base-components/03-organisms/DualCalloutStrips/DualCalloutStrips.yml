@@ -1,0 +1,15 @@
+dual_callout_strip__page_or_download: 'download'
+dual_callout_strip__image: 'https://placeimg.com/320/180/any '
+dual_callout_strip__title: 'AIM Forms Mobile Technology'
+dual_callout_strip__body: 'Lorem ipsum dolor sit amet, coner adipising quisque.'
+dual_callout_strip__url: '#download'
+
+dual_callout_strip__page_or_download2: 'page'
+dual_callout_strip__image2: 'https://placeimg.com/320/180/any '
+dual_callout_strip__title2: 'Second Callout Strip Half'
+dual_callout_strip__body2: 'Lorem ipsum dolor sit amet, coner adipising quisque.'
+dual_callout_strip__button_title2: 'CONTACT US TODAY'
+dual_callout_strip__url2: '#'
+
+
+

@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * ResourcesHeader, created after discussing with Melanie since Rep Locator, Case Studies Listing, and Post Listing all share the same styling
+ *
+ * Available variables:
+ * - resources_header__base_class - the base class name
+ * - resources_header__modifiers - array of modifiers to add to the base classname
+ * - resources_header__blockname - blockname prepended to the base classname
+ * - resources_header__extra_classes - extra classes
+ * -
+ * - resources_header__title
+ * - resources_header__number
+*/
+#}
+{% set resources_header__base_class = resources_header__base_class|default('ResourcesHeader') %}
+
+<header class="ResourcesHeader">
+
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    heading__base_class: '',
+    heading__level: 2,
+    heading: resources_header__title,
+  } %}
+
+  <div class="grid-x grid-margin-x grid-margin-y medium-up-2">
+    <div class="cell">{{ resources_header__number }} Results</div>
+    <div class="cell medium-text-right">
+      {% include '@molecules/Showing/Showing.twig' with {
+        showing__total: resources_header__number,
+        showing__begin: resources_header__begin,
+        showing__end: resources_header__end,
+      } %}
+    </div>
+  </div>
+</header>

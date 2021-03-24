@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Featured Testimonials
+ * used on Flexible template
+ *
+ * @todo heavy refactoring? only use the single version for the flexible template. the careers listing has the option to turn into a carousel
+ *
+ * Available variables:
+ * - featured_testimonials__base_class - the base class name
+ * - featured_testimonials__modifiers - array of modifiers to add to the base classname
+ * - featured_testimonials__blockname - blockname prepended to the base classname
+ * - featured_testimonials__extra_classes - extra classes
+ * -
+ * - featured_testimonials__background - bg-light or bg-white
+ * - featured_testimonials__teasers
+*/
+#}
+{% set featured_testimonials__class = [] %}
+{% set featured_testimonials__count = featured_testimonials__teasers|length %}
+{% if featured_testimonials__count > 1 %}
+  {% set featured_testimonials__class = ['FeaturedTestimonials-slider', 'MSISlider'] %}
+{% endif %}
+
+{% set featured_testimonials__base_class = featured_testimonials__base_class|default('FeaturedTestimonials') %}
+{% set featured_testimonials__extra_classes = featured_testimonials__extra_classes|default([featured_testimonials__background]) %}
+
+
+<section {{ suit(featured_testimonials__base_class, featured_testimonials__modifiers, featured_testimonials__blockname, featured_testimonials__extra_classes) }}>
+  <div class="grid-container">
+    <div {{ suit('row', featured_testimonials__modifiers, featured_testimonials__base_class, featured_testimonials__class ) }}>
+      {% for teaser in featured_testimonials__teasers %}
+        {% include '@molecules/IndividualTestimonial/IndividualTestimonial.twig' with {
+          individual_testimonial__image: teaser.image,
+          individual_testimonial__type: teaser.type,
+          individual_testimonial__testimonial: teaser.testimonial,
+          individual_testimonial__citation: teaser.citation,
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script defer src="/components/03-organisms/FeaturedTestimonials/dist/FeaturedTestimonials.js?v=1.0.0"></script>

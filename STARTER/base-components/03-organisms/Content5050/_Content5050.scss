@@ -1,0 +1,21 @@
+.Content5050 {
+  padding: 2rem 0;
+
+  &-row {
+    > .cell:first-child {
+      &.BodyContentBlock {
+        @include breakpoint(large) {
+          padding-right: 2rem;
+        }
+      }
+    }
+    > .cell:nth-child(2) {
+      &.BodyContentBlock {
+        @include breakpoint(large) {
+          padding-left: 2rem;
+
+        }
+      }
+    }
+  }
+}

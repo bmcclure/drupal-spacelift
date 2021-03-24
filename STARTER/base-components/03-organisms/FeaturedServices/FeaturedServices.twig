@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Featured Services
+ * Used on the homepage
+ *
+ * Available variables:
+ * - featured_services__base_class - the base class name
+ * - featured_services__modifiers - array of modifiers to add to the base classname
+ * - featured_services__blockname - blockname prepended to the base classname
+ * - featured_services__extra_classes - extra classes
+ * -
+ * - featured_services__title
+ * - featured_services__teasers
+*/
+#}
+{% set featured_services__base_class = featured_services__base_class|default('FeaturedServices') %}
+{% set featured_services__extra_classes = featured_services__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(featured_services__base_class, featured_services__modifiers, featured_services__blockname, featured_services__extra_classes) }} >
+  <div class="grid-container">
+    <header class="section-header text-center" data-aos="fade-up">
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__level: 2,
+        heading: featured_services__title,
+      } %}
+    </header>
+    <div class="FlexRow medium-up-2 large-up-3">
+      {% for teaser in featured_services__teasers %}
+        {% include '@molecules/Card/Card.twig' with {
+          card__image: teaser.image,
+          card__title: teaser.title,
+          card__body: teaser.body,
+          card__button_title: teaser.button_title,
+          card__url: teaser.url,
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

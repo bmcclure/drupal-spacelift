@@ -1,0 +1,16 @@
+.FeaturedResourceCategories {
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -2px;
+    margin-right: -2px;
+
+    .ResourceCategoryIconBlock {
+      padding: 2px;
+      width: 100%;
+      @include breakpoint(large) {
+        width: 50%;
+      }
+    }
+  }
+}

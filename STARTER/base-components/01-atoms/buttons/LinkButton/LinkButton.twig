@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * LinkButton
+ *
+ * Available variables:
+ * - link_button__base_class - the base class name
+ * - link_button__modifiers - array of modifiers to add to the base classname
+ * - link_button__blockname - blockname prepended to the base classname
+ * - link_button__extra_classes - extra classes
+ * -
+ * - link_button__type
+ * - link_button__title
+ * - link_button__url
+*/
+#}
+{% set link_button__base_class = link_button__base_class|default('LinkButton') %}
+
+<{{ link_button__type }}
+{% if link_button__type == 'a' %}
+  href="{{ link_button__url }}"
+{% endif %}
+{{ suit(link_button__base_class, link_button__modifiers, link_button__blockname, link_button__extra_classes) }}><i
+  class="fal fa-times"></i> {{ link_button__title }}</{{ link_button__type }}>

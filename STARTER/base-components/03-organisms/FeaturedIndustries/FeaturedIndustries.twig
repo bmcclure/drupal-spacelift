@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Featured Industries
+ *
+ * Available variables:
+ * - featured_industries__base_class - the base class name
+ * - featured_industries__modifiers - array of modifiers to add to the base classname
+ * - featured_industries__blockname - blockname prepended to the base classname
+ * - featured_industries__extra_classes - extra classes
+ * -
+ * - featured_industries__title
+ * - featured_industries__body
+ * - featured_industries__button_title
+ * - featured_industries__url
+ * - featured_industries__teasers
+*/
+#}
+{% set featured_industries__base_class = featured_industries__base_class|default('FeaturedIndustries') %}
+{% set featured_industries__extra_classes = featured_industries__extra_classes|default(['']) %}
+
+{% if featured_industries__teasers %}
+  <section
+    {{ suit(featured_industries__base_class, featured_industries__modifiers, featured_industries__blockname, featured_industries__extra_classes) }}data-aos="SectionFade">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-y grid-margin-x ">
+        <div
+          {{ suit('text', featured_industries__modifiers, featured_industries__base_class, ['cell', 'medium-5', 'large-4'] ) }}>
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 2,
+            heading: featured_industries__title,
+            heading__extra_classes: ['title', 'SectionFade-one'],
+          } %}
+          <p class="SectionFade-two">{{ featured_industries__body }}</p>
+          <a href="{{ featured_industries__url }}" class="button SectionFade-three">{{ featured_industries__button_title }}
+            <span class="fas fa-caret-right"></span>
+          </a>
+        </div>
+        <div class="FeaturedIndustries-blocks cell medium-7 large-8">
+          <div class="IconTeaserBlocks FlexRow small-up-2 large-up-3">
+            {% for teaser in featured_industries__teasers %}
+              {% include '@molecules/IconTeaserBlock/IconTeaserBlock.twig' with {
+                icon_teaser_block__icon: teaser.icon,
+                icon_teaser_block__title: teaser.title,
+                icon_teaser_block__url: teaser.url,
+              } %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

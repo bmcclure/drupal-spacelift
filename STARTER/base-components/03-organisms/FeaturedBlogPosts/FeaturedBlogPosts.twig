@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Featured Blog Posts
+ * Used on: General Listing Page
+ * Notes: Can this be reused for Related Posts?!
+ *
+ * Available variables:
+ * - featured_blog_posts__base_class - the base class name
+ * - featured_blog_posts__modifiers - array of modifiers to add to the base classname
+ * - featured_blog_posts__blockname - blockname prepended to the base classname
+ * - featured_blog_posts__extra_classes - extra classes
+ * -
+ * - featured_blog_posts__background - 'bg-white' or 'bg-light'
+ * - featured_blog_posts__title
+ * - featured_blog_posts__button_title
+ * - featured_blog_posts__url
+ * - featured_blog_posts__blogs
+*/
+#}
+{% set featured_blog_posts__base_class = featured_blog_posts__base_class|default('FeaturedBlogPosts') %}
+{% set featured_blog_posts__extra_classes = featured_blog_posts__extra_classes|default([featured_blog_posts__background]) %}
+
+{% if featured_blog_posts__blogs %}
+  <section {{ suit(featured_blog_posts__base_class, featured_blog_posts__modifiers, featured_blog_posts__blockname, featured_blog_posts__extra_classes) }}>
+    <div class="grid-container">
+      <header class="section-header grid-x vertical-center">
+        <div class="cell medium-auto">
+
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__level: 2,
+            heading: featured_blog_posts__title,
+            heading__extra_classes: ['FeaturedBlogPosts-headline'],
+          } %}
+        </div>
+        <div class="cell medium-shrink">
+          <a href="{{ featured_blog_posts__url }}"
+             class="button"
+             title="{{ featured_blog_posts__button_title }}">{{ featured_blog_posts__button_title }}
+            <span class="fas fa-caret-right"></span>
+          </a>
+        </div>
+      </header>
+      <div
+        {{ suit('slider', featured_blog_posts__modifiers, featured_blog_posts__base_class, ['MSISlider', 'grid-x','grid-margin-x','grid-margin-y','large-up-2 '] ) }}>
+        {% for blog in featured_blog_posts__blogs %}
+          {% include '@molecules/IndividualPostTeaser/IndividualPostTeaser.twig' with {
+            individual_post_teaser__image: blog.image,
+            individual_post_teaser__title: blog.title,
+            individual_post_teaser__body: blog.body,
+            individual_post_teaser__url: blog.url,
+            individual_post_teaser__date: blog.date,
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+    <script defer src="/components/03-organisms/FeaturedBlogPosts/dist/FeaturedBlogPosts.js?v=1.0.0"></script>
+
+  </section>
+
+{% endif %}

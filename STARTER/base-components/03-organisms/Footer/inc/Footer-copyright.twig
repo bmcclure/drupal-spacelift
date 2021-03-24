@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Footer-copyright
+ *
+ * footer__copyright_menu
+*/
+#}
+<div class="Footer-copyright bg-light">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x text-center large-text-left">
+      <div class="cell large-7">
+        <p>© {{ "now"|date("Y") }} Marking Services Inc. All Rights Reserved. <span
+            class="Footer-copyrightTopFloor">Designed by <a
+              href="https://www.topflooortech.com" target="_blank">Top Floor</a></span></p>
+      </div>
+      <div class="cell large-5 large-text-right">
+        {% if footer__copyright_menu %}
+
+          <ul class='Footer-copyrightMenu'>
+            {% for menuItem in footer__copyright_menu %}
+              <li class='Footer-copyrightMenuItem'><a href='{{ menuItem.url }}'>{{ menuItem.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>

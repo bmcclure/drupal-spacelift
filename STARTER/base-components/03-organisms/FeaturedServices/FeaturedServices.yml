@@ -1,0 +1,20 @@
+featured_services__title:  "Featured Services Headline Here (H2)"
+featured_services__teasers:
+  - id: 0
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit."
+    button_title: "Service Details"
+    url: '#'
+  - id: 1
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit."
+    button_title: "Service Details"
+    url: '#'
+  - id: 2
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Test Material Take Off'
+    body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit."
+    button_title: "Service Details"
+    url: '#'

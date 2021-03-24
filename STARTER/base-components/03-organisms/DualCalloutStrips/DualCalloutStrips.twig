@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * DualCalloutStrips
+ * used on Flexible Layout
+ *
+ * Available variables:
+ * - dual_callout_strip__base_class - the base class name
+ * - dual_callout_strip__modifiers - array of modifiers to add to the base classname
+ * - dual_callout_strip__blockname - blockname prepended to the base classname
+ * - dual_callout_strip__extra_classes - extra classes
+ * -
+ * - dual_callout_strip__page_or_download
+ * - dual_callout_strip__image - image
+ * - dual_callout_strip__title
+ * - dual_callout_strip__body - textarea
+ * - dual_callout_strip__button_title
+ * - dual_callout_strip__url
+ * -
+ * - dual_callout_strip__page_or_download2
+ * - dual_callout_strip__image2 - image
+ * - dual_callout_strip__title2
+ * - dual_callout_strip__body2 - textarea
+ * - dual_callout_strip__button_title2
+ * - dual_callout_strip__url2
+*/
+#}
+{% set dual_callout_strip__base_class = dual_callout_strip__base_class|default('DualCalloutStrips') %}
+{% set dual_callout_strip__extra_classes = dual_callout_strip__extra_classes|default(['FlexRow', 'medium-up-2']) %}
+
+{% if dual_callout_strip__title and dual_callout_strip__title2 %}
+
+  <section {{ suit(dual_callout_strip__base_class, dual_callout_strip__modifiers, dual_callout_strip__blockname, dual_callout_strip__extra_classes) }}>
+    {% include '@molecules/HalfCalloutStrip/HalfCalloutStrip.twig' with {
+      half_callout_strip__page_or_download: dual_callout_strip__page_or_download,
+      half_callout_strip__image: dual_callout_strip__image,
+      half_callout_strip__title: dual_callout_strip__title,
+      half_callout_strip__body: dual_callout_strip__body,
+      half_callout_strip__button_title:dual_callout_strip__button_title,
+      half_callout_strip__url: dual_callout_strip__url,
+    } %}
+
+    {% include '@molecules/HalfCalloutStrip/HalfCalloutStrip.twig' with {
+      half_callout_strip__page_or_download: dual_callout_strip__page_or_download2,
+      half_callout_strip__image: dual_callout_strip__image2,
+      half_callout_strip__title: dual_callout_strip__title2,
+      half_callout_strip__body: dual_callout_strip__body2,
+      half_callout_strip__button_title:dual_callout_strip__button_title2,
+      half_callout_strip__url: dual_callout_strip__url2,
+    } %}
+  </section>
+
+{% endif %}
+

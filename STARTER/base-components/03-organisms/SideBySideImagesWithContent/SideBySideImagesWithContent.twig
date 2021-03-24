@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * SideBySideImagesWithContent
+ * Used in Content 5050
+ *
+ * Available variables:
+ * - sidebyside_imageswithcontent__base_class - the base class name
+ * - sidebyside_imageswithcontent__modifiers - array of modifiers to add to the base classname
+ * - sidebyside_imageswithcontent__blockname - blockname prepended to the base classname
+ * - sidebyside_imageswithcontent__extra_classes - extra classes
+ * -
+ * - sidebyside_imageswithcontent__image
+ * - sidebyside_imageswithcontent__title
+ * - sidebyside_imageswithcontent__body
+ * - sidebyside_imageswithcontent__button_title
+ * - sidebyside_imageswithcontent__url
+ * - sidebyside_imageswithcontent__extra_classes
+ * - sidebyside_imageswithcontent__image2
+ * - sidebyside_imageswithcontent__title2
+ * - sidebyside_imageswithcontent__body2
+ * - sidebyside_imageswithcontent__button_title2
+ * - sidebyside_imageswithcontent__url2
+ * - sidebyside_imageswithcontent__extra_classes2
+*/
+#}
+{% set sidebyside_imageswithcontent__base_class = sidebyside_imageswithcontent__base_class|default('SideBySideImagesWithContent') %}
+{% set sidebyside_imageswithcontent__extra_classes = sidebyside_imageswithcontent__extra_classes|default(['cell']) %}
+
+<div {{ suit(sidebyside_imageswithcontent__base_class, sidebyside_imageswithcontent__modifiers, sidebyside_imageswithcontent__blockname, sidebyside_imageswithcontent__extra_classes) }}>
+  <div class="FlexRow medium-up-2">
+    {% include '@molecules/Card/Card.twig' with {
+      card__image: sidebyside_imageswithcontent__image,
+      card__title: sidebyside_imageswithcontent__title,
+      card__body: sidebyside_imageswithcontent__body,
+      card__button_title: sidebyside_imageswithcontent__button_title,
+      card__url: sidebyside_imageswithcontent__url,
+      card__extra_classes: [ 'Card--tight-space', 'FlexRow-item' ],
+    } %}
+
+    {% include '@molecules/Card/Card.twig' with {
+      card__image: sidebyside_imageswithcontent__image2,
+      card__title: sidebyside_imageswithcontent__title2,
+      card__body: sidebyside_imageswithcontent__body2,
+      card__button_title: sidebyside_imageswithcontent__button_title2,
+      card__url: sidebyside_imageswithcontent__url2,
+      card__extra_classes: [ 'Card--tight-space', 'FlexRow-item' ],
+    } %}
+
+  </div>
+</div>

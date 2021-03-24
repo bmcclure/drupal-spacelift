@@ -1,0 +1,13 @@
+socials__socials:
+  - id: 0
+    icon: 'facebook-f'
+    url: 'https://www.facebook.com/markingservices/?ref=hl'
+  - id: 1
+    icon: 'twitter'
+    url: 'https://twitter.com/MarkingServices'
+  - id: 2
+    icon: 'youtube'
+    url: 'https://www.youtube.com/channel/UC3yrx0Y57F7VT5pFk7L_DmA'
+  - id: 3
+    icon: 'linkedin-in'
+    url: 'https://www.linkedin.com/company/marking-services-inc'

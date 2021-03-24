@@ -1,0 +1,15 @@
+featured_categories__title: 'Featured Product Categories (H2)'
+featured_categories__body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+featured_categories__button_title: 'All Categories'
+featured_categories__url: '#'
+featured_categories__categories:
+  - id: 0
+    title: "Pipe Markers"
+    body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis."
+    image: 'https://placeimg.com/320/180/any'
+    url: "#"
+  - id: 2
+    title: "Second Category"
+    body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis."
+    image: 'https://placeimg.com/320/180/any'
+    url: "#"

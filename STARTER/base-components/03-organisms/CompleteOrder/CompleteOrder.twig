@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * CompleteOrder
+ *
+ * Available variables:
+ * - complete_order__base_class - the base class name
+ * - complete_order__modifiers - array of modifiers to add to the base classname
+ * - complete_order__blockname - blockname prepended to the base classname
+ * - complete_order__extra_classes - extra classes
+ * -
+ * - complete_order__total
+ * - complete_order__each
+ * - complete_order__caption
+ * - complete_order__part_number
+*/
+#}
+{% set complete_order__base_class = complete_order__base_class|default('CompleteOrder') %}
+
+
+<div {{ suit(complete_order__base_class, complete_order__modifiers, complete_order__blockname, complete_order__extra_classes) }}>
+  <h3 class="title">Complete Order</h3>
+  <div class="Label">TOTAL</div>
+  <div {{ suit('price', complete_order__modifiers, complete_order__base_class, ['Label'] ) }}>$<span class="price" id="TotalPrice">{{ complete_order__total }}</span> (USD)
+    <span {{ suit('priceEach', complete_order__modifiers, complete_order__base_class ) }}>($<span id="PriceForEach"
+                                                  class="">{{ complete_order__each }}</span> each)</span>
+  </div>
+  <p {{ suit('caption', complete_order__modifiers, complete_order__base_class, ['small'] ) }}>{{ complete_order__caption }}</p>
+  <p {{ suit('part', complete_order__modifiers, complete_order__base_class) }}>
+    <span class="Label">PART NUMBER:</span> {{ complete_order__part_number }}
+  </p>
+  <div id="CSRCallout" class="CSRCallout hide">
+    <p>Want a CSR to check your order?
+      <a href="tel:+1800234-0135">
+        <span class="fas fa-phone"></span>
+        (800) 234-0135
+      </a>
+    </p>
+  </div>
+
+  <div id="QuantityLabel" class="flex-container align-middle hide">
+    <label class="flex-child-shrink Label" for="Numbering">
+      QUANTITY
+    </label>
+
+    <div class="flex-child-auto">
+        <span class="Tooltip" data-tooltip tabindex="2" data-position="top" data-allow-html="true"
+              title="<div class='title'><b>Quantity</b></div>With Sequential Numbering, the quantity is calculated automatically, including the ending number (Ending - Starting + 1).">
+            <i class="fas fa-question-circle"></i>
+            <span class="sr-only">More information on Quantity</span>
+        </span>
+    </div>
+  </div>
+
+  {% include '@molecules/AddtoCart/AddtoCart.twig' %}
+  <p class="wysiwyg">Prefer to send us a spreadsheet? &nbsp;<a href="#"><i class="fas fa-table"></i> Bulk Order
+      Form</a>
+  </p>
+</div>

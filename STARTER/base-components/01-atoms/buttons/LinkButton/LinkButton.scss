@@ -1,0 +1,23 @@
+$LinkButton-family: sans-serif !default;
+$LinkButton-color: #484848 !default;
+$LinkButton-hover: red !default;
+$LinkButton-icon: blue !default;
+
+.LinkButton {
+  color: $LinkButton-color;
+  cursor: pointer;
+  font-family: $LinkButton-family;
+  font-size: rem-calc(14);
+  font-weight: 400;
+  padding: .5rem;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $LinkButton-hover;
+  }
+
+  .fal {
+    color: $LinkButton-icon;
+    padding-right: 0.325rem;
+  }
+}

@@ -1,0 +1,69 @@
+/* the height controls how large the image is, and how much overlap there is */
+$CustomizationCallout-image-large-height: 195% !default;
+$CustomizationCallout-image-xlarge-height: 230% !default;
+$CustomizationCallout-border-color: #484848 !default;
+
+.CustomizationCallout {
+  padding: 0;
+
+  &-top {
+    padding: 1.25rem 0 0;
+
+    &-image {
+      margin-bottom: 1rem;
+      @include breakpoint(medium) {
+        padding-right: 1rem;
+        margin-bottom: 0;
+      }
+
+      &-container {
+        padding-top: 40%;
+        width: 50%;
+        height: 100%;
+        @include breakpoint(medium) {
+          width: 100%;
+          height: calc(100% + 1rem);
+        }
+        @include breakpoint(large) {
+          height: $CustomizationCallout-image-large-height;
+          padding-top: 10%;
+        }
+        @include breakpoint(xlarge) {
+          height: $CustomizationCallout-image-xlarge-height;
+        }
+      }
+    }
+
+    &-text {
+      padding: .5rem 0;
+    }
+  }
+
+  &-bottom {
+    padding: 1rem 0;
+    @include breakpoint(medium) {
+      padding: 2.5rem 0 1.5rem;
+    }
+    @include breakpoint(large) {
+      padding: 1.5rem 0;
+    }
+
+    &-left {
+      border-bottom: 1px solid $CustomizationCallout-border-color;
+      @include breakpoint(medium) {
+        border-bottom: 0;
+        border-right: 1px solid $CustomizationCallout-border-color;
+        padding-right: 3rem;
+      }
+    }
+
+    &-right {
+      @include breakpoint(small only) {
+        padding-top: 1rem;
+      }
+      @include breakpoint(medium) {
+        padding-left: 3rem;
+      }
+    }
+  }
+}
