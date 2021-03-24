@@ -1,0 +1,135 @@
+////
+/// Mixins
+/// General mixins (put specific ones in component files where applicable)
+////
+
+/// Import any global variable definitions set up for Foundation so they can be used on the components
+@import '00-foundation-settings';
+
+/// Mixin - Body Copy
+/// Sets up basic font styles to be used on the body copy
+$mixin-body-copy--font-family: sans-serif !default;
+@mixin body-copy {
+  font-family: $mixin-body-copy--font-family;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/// Mixin - Clearfix
+/// Clears any floats on the current selector
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+/// Mixin - Wrapper
+/// Outer container mixin for large screens
+$mixin-wrapper--container-max-width: 1440px !default;
+$mixin-wrapper--outer-container-break: 0 !default;
+@mixin wrapper(
+  $container-max-width: $mixin-wrapper--container-max-width,
+  $outer-container-break: $mixin-wrapper--outer-container-break,
+  $v-margin: 0,
+  $v-padding: 0,
+  $h-padding: $space,
+  $h-padding-large: $h-padding
+) {
+  max-width: #{$container-max-width};
+  width: 100%;
+  margin: #{$v-margin} auto;
+  padding: #{$v-padding} #{$h-padding};
+
+  @include breakpoint($outer-container-break) {
+    padding: #{$v-padding} #{$h-padding-large};
+  }
+
+  @include breakpoint($container-max-width) {
+    padding-left: calc(
+      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+    );
+    padding-right: calc(
+      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+    );
+  }
+}
+
+/// Mixin - Margin
+/// Adds the standard margins
+$mixin-Margin--top: 0 !default;
+$mixin-Margin--right: 0 !default;
+$mixin-Margin--bottom: 1em !default;
+$mixin-Margin--left: 0 !default;
+@mixin margin(
+  $top: $mixin-Margin--top,
+  $right: $mixin-Margin--right,
+  $bottom: $mixin-Margin--bottom,
+  $left: $mixin-Margin--left,
+) {
+  margin: $top $right $bottom $left;
+}
+
+/// Mixin - No Bottom
+/// Removes bottom margin
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
+/// Mixin - List Reset
+/// Removes any browser default styling on lists
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/// Mixin - Transition
+/// Sets up standard CSS transition styles
+$mixin-Transition--duration: 0.4s !default;
+$mixin-Transition--timingFunction: ease-out;
+@mixin transition(
+  $transition-property: all,
+  $transition-duration: $mixin-Transition--duration,
+  $transition-timing-function: $mixin-Transition--timingFunction
+) {
+  transition: $transition-property $transition-duration $transition-timing-function;
+}
+
+/// Mixin - Box Shadow
+/// @todo Make configurable and overridable
+@mixin box-shadow {
+  box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+/// Mixin - Box Shadow (Hover)
+/// @todo Make configurable and overridable
+@mixin box-shadow-hover {
+  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, .15);
+}
+
+/// Mixin - Drop Shadow
+/// @todo Make configurable and overridable
+@mixin drop-shadow {
+  filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.15));
+}
+
+/// Mixin - Drop Shadow (Hover)
+/// @todo Make configurable and overridable
+@mixin drop-shadow-hover {
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.15));
+}
+
+/// Mixin - Header Font Family (Regular)
+/// @todo See if we can replace with standard "font" rule
+@mixin header-font-family-regular {
+  font-family: 'Selawik', 'Selawik Semibold', sans-serif;
+  font-weight: 400;
+}
+
+/// Mixin - Space Stack Page
+/// Use this on the outer wrapper of page-level elements. It ensures consistent spacing between elements on the page.
+@mixin space-stack-page {
+  margin-bottom: $space-double;
+}

@@ -1,6 +1,9 @@
+$IconInfoBox-Background: #fff !default;
+$IconInfoBox-lightBackground: #eee !default;
+
 .IconInfoBox {
   &-container {
-    background: $white;
+    background: $IconInfoBox-Background;
     padding: 2rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +13,7 @@
     }
 
     .IconInfoBoxes-row.boxes-light & {
-      background: $gray--light;
+      background: $IconInfoBox-lightBackground;
     }
   }
 

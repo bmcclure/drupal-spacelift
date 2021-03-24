@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Intro Section
+ * This is NOT a melanie functional spec component. I pulled it out of the Products Category Page
+ *
+ * Available variables:
+ * - intro_section__base_class - the base class name
+ * - intro_section__modifiers - array of modifiers to add to the base classname
+ * - intro_section__blockname - blockname prepended to the base classname
+ * - intro_section__extra_classes - extra classes
+ * -
+ * - intro_section__title
+ * - intro_section__body
+*/
+#}
+{% set intro_section__base_class = intro_section__base_class|default('IntroSection') %}
+{% set intro_section__extra_classes = intro_section__extra_classes|default(['section-header']) %}
+
+<header {{ suit(intro_section__base_class, intro_section__modifiers, intro_section__blockname, intro_section__extra_classes) }}>
+    <div class="grid-container short text-center">
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__level: 2,
+        heading: intro_section__title,
+      } %}
+        <p>{{ intro_section__body }}</p>
+    </div>
+</header>

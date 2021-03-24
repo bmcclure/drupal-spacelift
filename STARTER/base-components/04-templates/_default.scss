@@ -16,7 +16,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
   margin-bottom: 4em;
 
-  @include large {
+  @include breakpoint(large) {
     display: flex;
   }
 }
@@ -24,7 +24,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .main-sidebar {
   margin-bottom: $space-double;
 
-  @include large {
+  @include breakpoint(large) {
     order: 2;
     width: $sidebar-width;
     margin-bottom: 0;
@@ -34,7 +34,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .main-content {
   width: 100%;
 
-  @include large {
+  @include breakpoint(large) {
     &--with-sidebar {
       margin-right: $gutter;
       width: $main-width;
@@ -53,7 +53,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   margin-bottom: 4em;
 
   &--with-sidebar {
-    @include large {
+    @include breakpoint(large) {
       display: grid;
       grid-gap: $gutter;
       grid-template-areas: "content sidebar";

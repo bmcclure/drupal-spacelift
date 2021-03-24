@@ -1,7 +1,7 @@
 .form-item {
   @include clearfix;
 
-  color: clr(text);
+  color: color(text);
   margin-bottom: 1em;
   max-width: 32em;
 }
@@ -10,7 +10,7 @@
   display: block;
   font-weight: 600;
 
-  @include small {
+  @include breakpoint(small) {
     display: block;
     margin-right: 2%;
     padding: 0.6em 0;
@@ -18,16 +18,16 @@
 }
 
 .form-item__textfield {
-  border: 1px solid clr(highlight-high);
+  border: 1px solid color(highlight-high);
   max-width: 100%;
   padding: 0.6em;
 
   &:focus {
-    border-color: clr(accent-high);
+    border-color: color(accent-high);
   }
 
   &::placeholder {
-    color: clr(text-light);
+    color: color(text-light);
   }
 }
 

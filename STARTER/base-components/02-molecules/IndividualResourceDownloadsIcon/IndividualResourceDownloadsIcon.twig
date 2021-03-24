@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Icon Version of Individual Resource Downloads
+ *
+ * Applies to:
+ * Catalogs
+ * Service Brochures
+ * Standards Documents
+ * Specifications Documents
+ * Product Sell Sheets
+ * Tip Sheets
+ * Technical Data Sheets
+ *
+ * Available variables:
+ * - individual_resource_downloads_icon__base_class - the base class name
+ * - individual_resource_downloads_icon__modifiers - array of modifiers to add to the base classname
+ * - individual_resource_downloads_icon__blockname - blockname prepended to the base classname
+ * - individual_resource_downloads_icon__extra_classes - extra classes
+ * - individual_resource_downloads_icon__image - image
+ * - individual_resource_downloads_icon__title
+ * - individual_resource_downloads_icon__type
+ * - individual_resource_downloads_icon__image
+ * - individual_resource_downloads_icon__icon
+ * - individual_resource_downloads_icon__body
+ * - individual_resource_downloads_icon__url
+*/
+#}
+{% set individual_resource_downloads_icon__base_class = individual_resource_downloads_icon__base_class|default('IndividualResourceDownloadsIcon') %}
+{% set individual_resource_downloads_icon__extra_classes = individual_resource_downloads_icon__extra_classes|default(['']) %}
+
+
+<div
+  {{ suit(individual_resource_downloads_icon__base_class, individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__blockname, individual_resource_downloads_icon__extra_classes) }}
+>
+  <div
+    {{ suit('icon', individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__base_class) }}>
+    <a href="{{ individual_resource_downloads_icon__url }}">
+      {{ individual_resource_downloads_icon__icon }}
+    </a>
+  </div>
+  <div {{ suit('text', individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__base_class) }}>
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__base_class: '',
+      heading__level: 5,
+      heading: individual_resource_downloads_icon__title,
+      heading__extra_classes: ['IndividualResourceDownloadsIcon-title', 'HeaderFont--regular'],
+      heading__url: individual_resource_downloads_icon__url,
+    } %}
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__base_class: '',
+      heading__level: 6,
+      heading: individual_resource_downloads_icon__type,
+      heading__extra_classes: ['IndividualResourceDownloadsIcon-subtitle', 'uppercase'],
+    } %}
+    {% if individual_resource_downloads_icon__body %}
+      <p>{{ individual_resource_downloads_icon__body }}</p>
+    {% endif %}
+  </div>
+</div>

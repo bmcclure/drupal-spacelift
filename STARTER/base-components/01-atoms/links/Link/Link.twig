@@ -21,7 +21,8 @@
     {% for attribute, value in link__attributes %}
       {{ attribute }}="{{ value }}"
     {% endfor %}
-    href="{{ link__url }}">
+    href="{{ link__url }}"
+    title="{{ link__content }}">
     {% block link__content %}
       {{ link__content }}
     {% endblock %}

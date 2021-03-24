@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Product Category Teaser Block
+ * Used in organisms/FeaturedProductCategories
+ *
+ * Available variables:
+ * - product_category_teaser_block__base_class - the base class name
+ * - product_category_teaser_block__modifiers - array of modifiers to add to the base classname
+ * - product_category_teaser_block__blockname - blockname prepended to the base classname
+ * - product_category_teaser_block__extra_classes - extra classes
+ * -
+ * - product_category_teaser_block__image - image
+ * - product_category_teaser_block__title
+ * - product_category_teaser_block__body
+ * - product_category_teaser_block__url
+*/
+#}
+{% set product_category_teaser_block__base_class = product_category_teaser_block__base_class|default('ProductCategoryTeaserBlock') %}
+{% set product_category_teaser_block__extra_classes = product_category_teaser_block__extra_classes|default(['FlexRow-item']) %}
+
+<a
+  {{ suit(product_category_teaser_block__base_class, product_category_teaser_block__modifiers, product_category_teaser_block__blockname, product_category_teaser_block__extra_classes) }}
+  href="{{ product_category_teaser_block__url }}" title="{{ product_category_teaser_block__title }}">
+  <div
+    {{ suit('imageWrapper', product_category_teaser_block__modifiers, product_category_teaser_block__base_class, ['Zoom'] ) }}>
+    <div
+      {{ suit('image', product_category_teaser_block__modifiers, product_category_teaser_block__base_class, ['Zoom-image', 'lozad'] ) }}
+      data-background-image="{{ product_category_teaser_block__image }}"
+      style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover; padding-top: 66.6667%;">
+    </div>
+  </div>
+  <div
+    {{ suit('text', product_category_teaser_block__modifiers, product_category_teaser_block__base_class ) }}
+    class="ProductCategoryTeaserBlock-text " data-aos="SectionFade">
+
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__level: 3,
+      heading: product_category_teaser_block__title,
+      heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one', 'ProductCategoryTeaserBlock-title '],
+    } %}
+    <p class="SectionFade-two">{{ product_category_teaser_block__body }}</p>
+  </div>
+</a>

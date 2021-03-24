@@ -3,12 +3,14 @@
  * @file
  * Horizontal Card
  * used for IndividualRep, IndividualOfficeLocation
+ * also job post teaser
  *
  * Available variables:
  * - horizontal_card__base_class - the base class name
  * - horizontal_card__modifiers - array of modifiers to add to the base classname
  * - horizontal_card__blockname - blockname prepended to the base classname
  * - horizontal_card__extra_classes - extra classes
+ *
  * - horizontal_card__image - image
  * - horizontal_card__name
  * - horizontal_card__subtitle
@@ -20,6 +22,9 @@
  * - horizontal_card__contractor - true/false
  * - horizontal_card__industries -- array of industries, with their link and icon
  * - horizontal_card__address -- WYSIWYG of address
+ * - horizontal_card__job_description
+ * - horizontal_card__job_posteddate
+ * - horizontal_card__job_url
 */
 #}
 
@@ -45,39 +50,67 @@
           heading__base_class: 'white',
           heading__level: 6,
           heading: horizontal_card__subtitle,
-          heading__extra_classes: [],
+          heading__extra_classes: ['uppercase'],
         } %}
       </div>
-      <div {{ suit('button', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'large-shrink'] ) }}>
-        <a href="#" data-open="EmailARep" class="button"><span class="far fa-envelope"></span> EMAIL ME</a>
-      </div>
+      {% if horizontal_card__email %}
+        <div {{ suit('button', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'large-shrink'] ) }}>
+          <a href="#" data-open="EmailARep" class="button"><span class="far fa-envelope"></span> EMAIL ME</a>
+        </div>
+      {% endif %}
+      {% if horizontal_card__job_url %}
+        <div {{ suit('button', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'large-shrink'] ) }}>
+          <a href="{{ horizontal_card__job_url }}" class="button"><span class="fas fa-external-link-alt"></span>
+            APPLY</a>
+        </div>
+      {% endif %}
+
     </div>
     <div {{ suit('body', horizontal_card__modifiers, horizontal_card__base_class, ['grid-x', 'large-up-2'] ) }}>
       <div {{ suit('contact', horizontal_card__modifiers, horizontal_card__base_class, ['cell'] ) }}>
-        {% include '@atoms/text/Heading/Heading.twig' with {
-          heading__base_class: 'h4',
-          heading__level: 4,
-          heading: 'Contact',
-        } %}
-        <ul {{ suit('list', horizontal_card__modifiers, horizontal_card__base_class, ['no-bullet'] ) }}>
-          {% if horizontal_card__phone %}
-            <li>
-              <a href='tel:+1{{ horizontal_card__phone }}'><span
-                  class='fas fa-phone'></span> {{ horizontal_card__phone }}</a>
-            </li>
-          {% endif %}
-          {% if horizontal_card__mobile %}
-            <li>
-              <a href='tel:+1{{ horizontal_card__mobile }}'><span
-                  class='fas fa-mobile-alt'></span> {{ horizontal_card__mobile }}</a>
-            </li>
-          {% endif %}
-          {% if horizontal_card__fax %}
-            <li>
-              <span class='fas fa-fax'></span> {{ horizontal_card__fax }}
-            </li>
-          {% endif %}
-        </ul>
+        {% if horizontal_card__job_description %}
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: 'h4',
+            heading__level: 4,
+            heading: 'Job Overview',
+          } %}
+          <p>{{ horizontal_card__job_description }}</p>
+          <p class="uppercase">
+            <small>
+              <b>POSTED:
+                <date>{{ horizontal_card__job_posteddate }}</date>
+              </b>
+            </small>
+          </p>
+        {% else %}
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: 'h4',
+            heading__level: 4,
+            heading: 'Contact',
+          } %}
+        {% endif %}
+        {% if (horizontal_card__phone or horizontal_card__mobile or horizontal_card__fax) %}
+
+          <ul {{ suit('list', horizontal_card__modifiers, horizontal_card__base_class, ['no-bullet'] ) }}>
+            {% if horizontal_card__phone %}
+              <li>
+                <a href='tel:+1{{ horizontal_card__phone }}'><span
+                    class='fas fa-phone'></span> {{ horizontal_card__phone }}</a>
+              </li>
+            {% endif %}
+            {% if horizontal_card__mobile %}
+              <li>
+                <a href='tel:+1{{ horizontal_card__mobile }}'><span
+                    class='fas fa-mobile-alt'></span> {{ horizontal_card__mobile }}</a>
+              </li>
+            {% endif %}
+            {% if horizontal_card__fax %}
+              <li>
+                <span class='fas fa-fax'></span> {{ horizontal_card__fax }}
+              </li>
+            {% endif %}
+          </ul>
+        {% endif %}
       </div>
       <div {{ suit('more', horizontal_card__modifiers, horizontal_card__base_class, ['cell'] ) }}>
 

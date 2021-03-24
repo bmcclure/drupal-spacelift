@@ -18,16 +18,16 @@ $RadioInputFontFamily: sans-serif !default;
     z-index: 20;
 
     + label {
-      background: clr(background);
-      border: 1px solid clr(secondary);
-      color: clr(secondary);
+      background: color(background);
+      border: 1px solid color(secondary);
+      color: color(secondary);
       margin: 0;
     }
 
     &:checked + label,
     .Checked + label {
-      background: clr(secondary);
-      color: clr(text-inverse);
+      background: color(secondary);
+      color: color(text-inverse);
     }
   }
 
@@ -40,7 +40,7 @@ $RadioInputFontFamily: sans-serif !default;
     z-index: 10;
 
     &.active {
-      border: 2px solid clr(secondary);
+      border: 2px solid color(secondary);
     }
   }
 }
@@ -70,8 +70,8 @@ $RadioInputFontFamily: sans-serif !default;
       position: relative;
 
       &::before {
-        background-color: clr(background);
-        border: 1px solid clr(secondary);
+        background-color: color(background);
+        border: 1px solid color(secondary);
         border-radius: 20px;
         content: '';
         display: block;
@@ -90,7 +90,7 @@ $RadioInputFontFamily: sans-serif !default;
         font-family: $RadioInputFontFamily;
 
         &::before {
-          background: clr(secondary);
+          background: color(secondary);
         }
       }
     }

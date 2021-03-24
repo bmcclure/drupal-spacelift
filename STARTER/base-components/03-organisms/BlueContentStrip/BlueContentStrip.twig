@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Blue 50/50 Content Strip
+ * used on Homepage
+ *
+ * Available variables:
+ * - blue_content_strip__base_class - the base class name
+ * - blue_content_strip__modifiers - array of modifiers to add to the base classname
+ * - blue_content_strip__blockname - blockname prepended to the base classname
+ * - blue_content_strip__extra_classes - extra classes
+ * -
+ * - blue_content_strip__image - image
+ * - blue_content_strip__image_2 - image
+ * - blue_content_strip__title
+ * - blue_content_strip__body
+ * - blue_content_strip__button_title
+ * - blue_content_strip__url
+*/
+#}
+{% set blue_content_strip__base_class = blue_content_strip__base_class|default('BlueContentStrip') %}
+{% set blue_content_strip__extra_classes = blue_content_strip__extra_classes|default(['AngledBackground', ' bg-dark-blue']) %}
+
+<section
+  {{ suit(blue_content_strip__base_class, blue_content_strip__modifiers, blue_content_strip__blockname, blue_content_strip__extra_classes) }}
+  data-aos="SectionFade">
+  <div
+    {{ suit('container', blue_content_strip__modifiers, blue_content_strip__base_class, ['AngledBackground-text','grid-container'] ) }}>
+    <div class="grid-x grid-padding-y large-up-2">
+      <div
+        {{ suit('text', blue_content_strip__modifiers, blue_content_strip__base_class, ['cell'] ) }}>
+        <div
+          {{ suit('textContainer', blue_content_strip__modifiers, blue_content_strip__base_class) }}>
+
+          {% include '@atoms/accents/Line/Line.twig' %}
+
+
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 2,
+            heading: blue_content_strip__title,
+            heading__extra_classes: ['title', 'SectionFade-one'],
+          } %}
+          <div class="styled-bullets SectionFade-two">{{ blue_content_strip__body }}</div>
+          <a href="{{ blue_content_strip__url }}"
+             class="button SectionFade-three">{{ blue_content_strip__button_title }} <span
+              class="fas fa-caret-right"></span></a>
+        </div>
+      </div>
+      <div
+        {{ suit('images', blue_content_strip__modifiers, blue_content_strip__base_class, ['cell'] ) }}>
+        <div
+          {{ suit('image', blue_content_strip__modifiers, blue_content_strip__base_class, ['lozad'] ) }}
+          data-background-image="{{ blue_content_strip__image }}"
+          style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>
+        <div
+          {{ suit('image', blue_content_strip__modifiers, blue_content_strip__base_class, ['lozad'] ) }}
+          data-background-image="{{ blue_content_strip__image_2 }}"
+          style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>
+      </div>
+    </div>
+  </div>
+</section>

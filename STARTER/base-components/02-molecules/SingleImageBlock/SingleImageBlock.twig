@@ -1,0 +1,23 @@
+{#
+/**
+* @file
+ * SingleImageBlock
+ * Used in Content 5050
+*
+* Available variables:
+* - single_image_block__base_class - the base class name
+* - single_image_block__modifiers - array of modifiers to add to the base classname
+* - single_image_block__blockname - blockname prepended to the base classname
+* - single_image_block__extra_classes - extra classes
+* -
+* - single_image_block__image - image
+
+*/
+#}
+{% set single_image_block__base_class = single_image_block__base_class|default('SingleImageBlock') %}
+{% set single_image_block__extra_classes = single_image_block__extra_classes|default(['cell', 'lozad']) %}
+
+<div class="SingleImageBlock cell lozad" data-background-image="{{ single_image_block__image }}"
+     style="background:url(/assets/images/placeholder.png) no-repeat center; background-size: cover;">
+
+</div>

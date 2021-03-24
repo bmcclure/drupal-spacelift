@@ -12,16 +12,16 @@
 
   &--warning {
     color: $gray;
-    background-color: clr(warning);
+    background-color: color(warning);
   }
 
   &--error {
     color: $gray;
-    background-color: clr(error);
+    background-color: color(error);
   }
 
   &--status {
     color: $gray;
-    background-color: clr(message);
+    background-color: color(message);
   }
 }

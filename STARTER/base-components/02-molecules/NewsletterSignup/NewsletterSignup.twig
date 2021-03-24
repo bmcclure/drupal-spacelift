@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Newsletter Signup
+ *
+ * Notes: the invisible Line is to help with the layout so that it matches the rest of the blocks on desktop
+ *
+ * Available variables:
+ * - newsletter_signup__base_class - the base class name
+ * - newsletter_signup__modifiers - array of modifiers to add to the base classname
+ * - newsletter_signup__blockname - blockname prepended to the base classname
+ * - newsletter_signup__extra_classes - extra classes
+ * -
+ * - newsletter_signup__title
+ * - newsletter_signup__body
+*/
+#}
+{% set newsletter_signup__base_class = newsletter_signup__base_class|default('NewsletterSignup') %}
+{% set newsletter_signup__extra_classes = newsletter_signup__extra_classes|default(['']) %}
+
+<div {{ suit(newsletter_signup__base_class, newsletter_signup__modifiers, newsletter_signup__blockname, newsletter_signup__extra_classes) }}>
+  <div class="Footer-line Line invisible"></div>
+  <h3 class="HeaderFont--regular">Newsletter Signup</h3>
+  <p>Lorem ipsum dolor sit amet consectetuer.</p>
+  {# @todo this will need to use a Drupal form #}
+
+  <form action="">
+    <label for="" class="sr-only">Email</label>
+    <div {{ suit('row', newsletter_signup__modifiers, newsletter_signup__base_class) }}>
+      <div {{ suit('input', newsletter_signup__modifiers, newsletter_signup__base_class) }}>
+        <input type="email" placeholder="Email">
+      </div>
+      <div {{ suit('button', newsletter_signup__modifiers, newsletter_signup__base_class) }}>
+        <button class="button">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>

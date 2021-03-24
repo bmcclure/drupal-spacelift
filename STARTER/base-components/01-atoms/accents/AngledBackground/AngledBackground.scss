@@ -1,15 +1,22 @@
+////
+/// Accent - Angled Background
+/// Includes a mixin and a utility class to add an angled background to any block element
+////
+
+/// Mixin - Angled Background
+/// Adds the angled background style to a block element
 @mixin angled-background {
-  background: clr(secondary-dark);
+  background: color(secondary-dark);
   overflow: hidden;
   position: relative;
 
   &.reverse {
     @include breakpoint(medium) {
-      background: clr(secondary);
+      background: color(secondary);
     }
 
     &::before {
-      background: clr(secondary-dark);
+      background: color(secondary-dark);
       height: 100%;
       left: 0;
       position: absolute;
@@ -32,7 +39,7 @@
     content: '';
 
     @include breakpoint(large) {
-      background: clr(secondary);
+      background: color(secondary);
       height: 100%;
       left: 0;
       position: absolute;
@@ -43,7 +50,7 @@
   }
 
   &::after {
-    background: clr(secondary);
+    background: color(secondary);
     bottom: 31%;
     content: '';
     display: block;
@@ -71,9 +78,4 @@
 
 .AngledBackground {
   @include angled-background;
-}
-
-.demo-angled-background {
-  height: 300px;
-  width: 100%;
 }

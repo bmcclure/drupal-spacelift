@@ -5,13 +5,13 @@
   flex-wrap: wrap;
   position: relative;
 
-  @include medium {
+  @include breakpoint(medium) {
     border-top: none;
     display: inline-block;
 
     /* Only top level */
     &:not(.main-menu__item--sub):hover {
-      background-color: clr(accent-high);
+      background-color: color(accent-high);
       transition: all 0.2s;
 
       & > .main-menu--sub {
@@ -22,21 +22,21 @@
 
   &:hover {
     .main-menu__link::after {
-      color: clr(text);
+      color: color(text);
     }
   }
 }
 
 /* Expand Button */
 .expand-sub {
-  background-color: clr(accent-high);
+  background-color: color(accent-high);
   cursor: pointer;
   display: block;
   width: 20%;
   color: $white;
   position: relative;
 
-  @include medium {
+  @include breakpoint(medium) {
     display: none;
   }
 
@@ -58,8 +58,8 @@
 
   /* See main-menu.js */
   &--open {
-    background-color: clr(accent-high);
-    color: clr(muted);
+    background-color: color(accent-high);
+    color: color(muted);
 
     &::after {
       border-top-color: transparent;
@@ -75,11 +75,11 @@
 
 /* LI (Nested) */
 .main-menu__item--sub {
-  @include medium {
+  @include breakpoint(medium) {
     display: block;
 
     &:not(:first-child) {
-      border-top: 1px solid clr(highlight);
+      border-top: 1px solid color(highlight);
     }
   }
 }

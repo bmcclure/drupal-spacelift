@@ -1,32 +1,38 @@
+$IconTeaserBlock-background: #eee !default;
+$IconTeaserBlock-color: blue !default;
+$IconTeaserBlock-lightBackground: #fff !default;
+$IconTeaserBlock-hoverBackground: red !default;
+$IconTeaserBlock-hoverText: #fff !default;
+
 .IconTeaserBlock {
   $self: &;
 
   &-container {
     display: block;
-    background: $light-gray;
-    color: $blue;
+    background: $IconTeaserBlock-background;
+    color: $IconTeaserBlock-color;
     padding: 1rem 1rem 4rem;
     position: relative;
     min-height: 145px;
     height: 100%;
 
     .bg-light & {
-      background: $white;
+      background: $IconTeaserBlock-lightBackground;
     }
 
     @include transition;
 
     &:hover {
-      background: $red;
-      color: $white;
+      background: $IconTeaserBlock-hoverBackground;
+      color: $IconTeaserBlock-hoverText;
 
       h4 {
-        color: $white;
+        color: $IconTeaserBlock-hoverText;
       }
 
       #{$self}-icon {
         path {
-          fill: $white;
+          fill: $IconTeaserBlock-hoverText;
         }
       }
     }
@@ -36,8 +42,9 @@
     svg {
       max-width: 50px;
       max-height: 50px;
+
       path {
-        fill: $blue;
+        fill: $IconTeaserBlock-color;
         @include transition;
       }
     }

@@ -1,10 +1,13 @@
+$IndividualCaseStudyTeaser-text: #484848 !default;
+$IndividualCaseStudyTeaser-icon: #eee !default;
+
 .IndividualCaseStudyTeaser {
   .wysiwyg {
     ul li {
-      color: $dark-gray;
+      color: $IndividualCaseStudyTeaser-text;
 
       &::before {
-        color: $dark-yellow;
+        color: $IndividualCaseStudyTeaser-icon;
       }
     }
   }

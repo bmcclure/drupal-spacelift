@@ -1,71 +1,105 @@
+$pager-padding-tight: 2px !default;
+$pager-color: blue !default;
+$pager-summary: blue !default;
+$pager-buttonBackground: #fff !default;
+$pager-buttonBorder: 1px solid blue !default;
+$pager-buttonText: blue;
+$pager-buttonBackgrounActive: blue !default;
+$pager-fontAwesome: pink !default;
+
 .pager {
-  margin: 2em 0;
-}
+  color: $pager-color;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 
-.pager__items {
-  @include list-reset;
-
-  text-align: center;
-}
-
-.pager__item {
-  display: inline-block;
-  margin: 0 0.7em;
-
-  @include large {
-    margin: 0 1em;
-  }
-}
-
-.pager__link,
-.pager__link:link,
-.pager__link:visited {
-  color: clr(text);
-  font-weight: 600;
-  text-decoration: none;
-
-  &.is-active,
-  &:hover {
-    color: clr(accent);
-  }
-}
-
-.pager__link--next,
-.pager__link--prev {
-  display: block;
-
-  span {
-    display: none;
-  }
-
-  &::before {
-    border: 8px solid clr(text);
-    border-bottom: 6px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 6px solid transparent;
-    content: '';
+  #pagination-heading {
+    font-size: 1rem;
+    margin-bottom: 0;
+    flex: 0 1 auto;
+    font-weight: 400;
+    width: auto;
     display: block;
-    position: relative;
-    top: 1px;
-  }
-
-  &:hover {
-    &::before {
-      border-left-color: clr(accent);
+    @include breakpoint(medium) {
+      display: inline-block;
     }
   }
-}
 
-.pager__link--prev {
-  &::before {
-    border-left-color: transparent;
-    border-right-color: clr(text);
-  }
+  &-summary {
+    flex: 0 1 auto;
+    width: auto;
+    flex-grow: 1;
+    color: $pager-summary;
+    padding-left: .5rem;
 
-  &:hover {
-    &::before {
-      border-left-color: transparent;
-      border-right-color: clr(accent);
+    @include breakpoint(medium) {
+      display: inline-block;
     }
   }
+
+  &__items {
+    width: 100%;
+    list-style: none;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    margin-left: -$pager-padding-tight;
+    margin-right: -$pager-padding-tight;
+    margin-top: 1rem;
+    @include breakpoint(medium) {
+      margin-top: 0;
+      width: auto;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    flex: 0 1 auto;
+    padding: $pager-padding-tight;
+
+    > a {
+      display: block;
+      background: $pager-buttonBackground;
+      border: $pager-buttonBorder;
+      line-height: 1;
+      padding: .25rem .5rem;
+      text-align: center;
+      width: 27px;
+      height: 27px;
+      color: $pager-buttonText;
+
+      &:hover {
+        background: $pager-buttonText;
+        color: $pager-buttonBackground;
+      }
+    }
+
+    &.is-active {
+      > a {
+        background: $pager-buttonBackgrounActive;
+        color: $pager-buttonBackground;
+      }
+    }
+
+    &--next {
+      font-weight: bold;
+      padding-left: .5rem;
+
+
+      a {
+        color: $pager-buttonText;
+        width: auto;
+        height: auto;
+        background: transparent;
+        border: none;
+
+        .fas {
+          padding-left: .25rem;
+          color: $pager-fontAwesome;
+        }
+      }
+    }
+  }
+
 }

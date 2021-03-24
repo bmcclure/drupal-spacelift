@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Body Content
+ * used in organisms/Content 5050
+ *
+ * Available variables:
+ * - body_content_block__base_class - the base class name
+ * - body_content_block__modifiers - array of modifiers to add to the base classname
+ * - body_content_block__blockname - blockname prepended to the base classname
+ * - body_content_block__extra_classes - extra classes
+ * -
+ * - body_content_block__title
+ * - body_content_block__body
+ * - body_content_block__button_title
+ * - body_content_block__url
+*/
+#}
+{% set body_content_block__base_class = body_content_block__base_class|default('BodyContentBlock') %}
+{% set body_content_block__extra_classes = body_content_block__extra_classes|default(['cell']) %}
+
+{% if  body_content_block__title %}
+
+  <article {{ suit(body_content_block__base_class, body_content_block__modifiers, body_content_block__blockname, body_content_block__extra_classes) }}>
+    <header>
+      {% include '@atoms/accents/Line/Line.twig' %}
+
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__level: 2,
+        heading: body_content_block__title,
+        heading__extra_classes: ['title'],
+      } %}
+
+    </header>
+    <div class="styled-bullets wysiwyg">{{ body_content_block__body }}</div>
+    {% if body_content_block__button_title %}
+      <a href="{{ body_content_block__url }}" class="button">{{ body_content_block__button_title }}
+        <span class="fas fa-caret-right"></span>
+      </a>
+    {% endif %}
+  </article>
+
+{% endif %}

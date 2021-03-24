@@ -2,7 +2,7 @@
 .toggle-expand {
   @include link;
 
-  @include medium {
+  @include breakpoint(medium) {
     display: none;
   }
 
@@ -13,7 +13,7 @@
 
   /* See main-menu.js */
   &--open {
-    background-color: clr(accent);
+    background-color: color(accent);
   }
 }
 
@@ -23,7 +23,7 @@
   font-weight: bold;
 
   .toggle-expand--open & {
-    color: clr(background);
+    color: color(background);
   }
 }
 
@@ -48,7 +48,7 @@
   text-align: center;
 
   &::before {
-    color: clr(background);
+    color: color(background);
     content: 'X';
     display: block;
     font-size: 2.5rem;

@@ -1,8 +1,8 @@
 @mixin link {
-  color: clr(primary);
+  color: color(primary);
 
   &:hover {
-    color: clr(primary-dark);
+    color: color(primary-dark);
   }
 }
 

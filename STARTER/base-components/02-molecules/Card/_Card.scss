@@ -1,11 +1,15 @@
+$Card-background: #fff !default;
+$Card-headerColor: black !default;
+$Card-bodyColor: gray !default;
 .Card {
   $self: &;
 
   a {
-    background: $white;
+    background: $Card-background;
     display: block;
+
     h3 {
-      color: $red;
+      color: $Card-headerColor;
     }
   }
 
@@ -27,9 +31,8 @@
     }
 
 
-
     p {
-      color: $gray--dark;
+      color: $Card-bodyColor;
     }
   }
 

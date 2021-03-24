@@ -1,31 +1,35 @@
+### Site-wide styles and scripts added to every page:
 global:
   version: VERSION
   css:
     base:
-      dist/msi.css: {}
+      dist/css/app.css: {}
   js:
-    js/scripts.js: {}
+    dist/js/scripts.js: {}
 
-main-menu:
-  js:
-    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
-  dependencies:
-    - core/drupal
-
-# IE 11 support for SVG use - disable if not needed.
-# See also components/01-atoms/images/icons/_icon.twig to remove attach_library.
+### IE 11 support for SVG use:
 sprite:
   js:
-    components/01-atoms/images/icons/svgxuse.min.js:
+    dist/js/svgxuse.min.js:
       { attributes: { defer: true } }
 
-tabs:
-  js:
-    dist/js/02-molecules/tabs/tabs.js: {}
-  dependencies:
-    - core/drupal
+### Component-specific Libraries:
+#main-menu:
+#  js:
+#    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
+#  dependencies:
+#    - core/drupal
+#tabs:
+#  js:
+#    dist/js/02-molecules/tabs/tabs.js: {}
+#  dependencies:
+#    - core/drupal
 
+### Plugin Libraries:
 aos:
   js:
     dist/js/aos-init.js: {}
 
+lozad:
+  js:
+    dist/js/lozad-init.js: {}

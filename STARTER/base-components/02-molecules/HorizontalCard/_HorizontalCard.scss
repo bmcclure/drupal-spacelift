@@ -1,7 +1,12 @@
+$HorizontalCard-background: #fff !default;
+$HorizontalCard-border: 1px solid gray !default;
+$HorizontalCard-listLinkColor: blue !default;
+$HorizontalCard-listLinkHover: red !default;
+
 .HorizontalCard {
   &-container {
-    background: $white;
-    border: 1px solid $medium-gray;
+    background: $HorizontalCard-background;
+    border: $HorizontalCard-border;
     @include breakpoint(medium) {
       height: 100%;
     }
@@ -44,16 +49,16 @@
     }
 
     a {
-      color: $blue;
+      color: $HorizontalCard-listLinkColor;
       @include transition;
 
       &:hover {
-        color: $red;
+        color: $HorizontalCard-listLinkHover;
       }
     }
 
     .fas {
-      color: $red;
+      color: $HorizontalCard-listLinkHover;
       width: 1.75rem;
     }
   }
@@ -67,7 +72,7 @@
       max-height: 20px;
 
       path {
-        fill: $blue !important; // sorry, it wouldn't take it
+        fill: $HorizontalCard-listLinkColor !important; // sorry, it wouldn't take it
         @include transition;
       }
     }
@@ -76,7 +81,7 @@
   a:hover {
     svg {
       path {
-        fill: $red !important; // sorry
+        fill: $HorizontalCard-listLinkHover !important; // sorry
       }
     }
   }

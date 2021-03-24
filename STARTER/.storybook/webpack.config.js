@@ -40,9 +40,18 @@ module.exports = async ({ config }) => {
           },
         },
       },
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            'base-components/setup.scss',
+          ]
+        },
+      },
     ],
   });
 
+  // StyleLint
   config.plugins.push(
     new _StyleLintPlugin({
       configFile: path.resolve(__dirname, './.stylelintrc'),

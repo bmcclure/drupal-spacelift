@@ -1,0 +1,5 @@
+card__image: 'https://placeimg.com/320/180/any'
+card__title: 'Material Take Off'
+card__body: "Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit."
+card__button_title: "Service Details"
+card__url: '#'

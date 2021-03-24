@@ -1,0 +1,6 @@
+search_result__image: 'https://placeimg.com/320/180/any'
+search_result__title: 'Example Product Title Here'
+search_result__body: 'Lorem ipsum dolor <b>XYZ</b> teaser copy here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+search_result__url: '#'
+search_result__backgroundTreatment: 'cover'
+search_result__type: 'Products'

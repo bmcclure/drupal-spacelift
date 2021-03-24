@@ -1,18 +1,26 @@
-//// @TODO: Refactor classes to be based on the .ButtonLink component class
-.link, .button[class] {
-  font-family: $header-font-family;
+@import '~foundation-sites/scss/components/button';
+
+$ButtonLinkFontFamily: sans-serif !default;
+$ButtonLinkBorderColor: gray !default;
+
+// TODO: Refactor classes to be based on the .ButtonLink component class
+.link,
+.button[class] {
+  cursor: pointer;
+  font-family: $ButtonLinkFontFamily;
+  font-size: rem-calc(14);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: rem-calc(14);
-  cursor: pointer;
+
   @include breakpoint(medium) {
     font-size: rem-calc(16);
   }
 
-  [class^="fa"] {
-    position: relative;
-    padding-left: .5rem;
+  [class^='fa'] {
     @include transition;
+
+    padding-left: .5rem;
+    position: relative;
   }
 
   &:hover {
@@ -23,48 +31,51 @@
 }
 
 .button {
+  border: 1px solid $ButtonLinkBorderColor;
   font-weight: 600;
-  border: 1px solid $white;
 
   &.outline {
     background: transparent; /* backup */
     background: rgba(255, 255, 255, .125);
 
     &:hover {
-      background: clr(primary);
+      background: color(primary);
     }
   }
 
   &.white {
-    background: $white;
-    border-color: $blue--dark;
-    color: $blue--dark;
     @include transition;
 
-    &:hover, &:focus, &.active {
-      background: $blue;
-      color: $white;
+    background: color(background);
+    border-color: color(secondary-dark);
+    color: color(secondary-dark);
+
+    &:hover,
+    &:focus,
+    &.active {
+      background: color(secondary);
+      color: color(text-inverse);
     }
   }
 
   &.dark {
-    background: $blue;
-    color: $white;
-    border: 1px solid $blue;
+    background: color(secondary);
+    color: color(text-inverse);
+    border: 1px solid color(secondary);
 
     &:hover {
-      background: $white;
-      color: $blue;
+      background: color(background);
+      color: color(secondary);
     }
   }
   &--iconLeft[class] {
-    [class^="fa"] {
+    [class^='fa'] {
       padding-left: 0;
-      padding-right: .5rem;
+      padding-right: 0.5rem;
     }
   }
 }
-//
+
 //.LinkButton {
 //  font-family: $header-font-family;
 //  font-weight: 400;
@@ -97,9 +108,9 @@
     font-size: rem-calc(16);
   }
 
-  [class^="fa"] {
+  [class^='fa'] {
     position: relative;
-    padding-left: .5rem;
+    padding-left: 0.5rem;
     @include transition;
   }
 

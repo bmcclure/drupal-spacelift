@@ -1,9 +1,9 @@
 .tabs__link,
 .tabs__link--local-tasks {
-  background-color: clr(muted);
-  border: 1px solid clr(highlight-high);
+  background-color: color(muted);
+  border: 1px solid color(highlight-high);
   border-bottom: none;
-  color: clr(text);
+  color: color(text);
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
@@ -12,8 +12,8 @@
   text-decoration: none;
   transition: color 0.3s;
 
-  @include large {
-    border-bottom: 1px solid clr(highlight-high);
+  @include breakpoint(large) {
+    border-bottom: 1px solid color(highlight-high);
     border-left: none;
     display: inline-block;
     font-size: 1rem;
@@ -24,21 +24,21 @@
   }
 
   &:hover {
-    background-color: clr(highlight-high);
-    color: clr(accent);
+    background-color: color(highlight-high);
+    color: color(accent);
   }
 
   &.is-active {
-    background-color: clr(text);
-    border: 1px solid clr(text);
-    color: clr(text-inverse);
+    background-color: color(text);
+    border: 1px solid color(text);
+    color: color(text-inverse);
 
-    @include large {
-      background-color: clr(background);
-      border: 1px solid clr(highlight-high);
-      border-bottom: 1px solid clr(highlight-high);
+    @include breakpoint(large) {
+      background-color: color(background);
+      border: 1px solid color(highlight-high);
+      border-bottom: 1px solid color(highlight-high);
       border-left: none;
-      color: clr(text);
+      color: color(text);
     }
   }
 }

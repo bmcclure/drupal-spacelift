@@ -1,18 +1,19 @@
-// Color variables - it is better to use the colors in
-// components/00-base/01-colors/_01-colors-used.scss rather than
-// these colors directly.
+////
+/// Brand Color variables
+/// It is better to use the colors in _01-colors-used.scss rather than these colors directly.
+////
 
-// Brand colors
+/// Brand colors
 $red: #d22728;
 $yellow: #f2b419;
 $yellow--dark: #dba317;
 $blue: #003d4c;
 $blue--dark: #082832;
-// @todo search-replace after all components are in, to bulk rename these
+/// @todo Search-replace after all components are in to change references to the following colors to the color() function
 $dark-blue: $blue--dark;
 $dark-yellow: $yellow--dark;
 
-// Grayscale
+/// Grayscale
 $white: #fff;
 $gray--light: #e7e7e8;
 $gray--medium: #9fa1a4;
@@ -20,12 +21,12 @@ $gray: #636467;
 $gray--dark: #404041;
 $black: #000;
 
-// Status
+/// Status
 $yellow--light: #f9fb93;
 $red--light: #fbe3e4;
 $green--light: #cfefc2;
 
-// Product Standard Colors
+/// Product Standard Colors
 $product-red: #d2232a;
 $product-orange: #f08e20;
 $product-yellow: #fff200;

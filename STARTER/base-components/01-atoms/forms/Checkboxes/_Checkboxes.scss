@@ -24,8 +24,8 @@ $CheckboxInputFontFamily: sans-serif !default;
       position: relative;
 
       &::before {
-        background-color: clr(background);
-        border: 1px solid clr(secondary);
+        background-color: color(background);
+        border: 1px solid color(secondary);
         content: '';
         display: block;
         height: 20px;
@@ -43,7 +43,7 @@ $CheckboxInputFontFamily: sans-serif !default;
         font-family: $CheckboxInputFontFamily;
 
         &::before {
-          background: clr(secondary);
+          background: color(secondary);
         }
       }
     }

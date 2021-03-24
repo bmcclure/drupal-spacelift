@@ -1,0 +1,48 @@
+$ProductToggle-active: blue !default;
+.ProductToggle {
+  padding: 1rem;
+
+  &-title {
+    font-size: 1rem;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-button {
+    margin-bottom: 0;
+    @include breakpoint(small only) {
+      width: 100%; /* literally only for small screens per the design */
+    }
+
+    &Wrapper {
+      padding: 2px;
+    }
+  }
+
+  &-input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &-input[type="radio"] {
+    opacity: 0.01;
+    z-index: 20;
+
+    + label {
+      margin: 0;
+    }
+
+    &:checked + label, .Checked + label {
+      background: $ProductToggle-active;
+    }
+  }
+
+  @media print { /* Currently putting print styles WITH the component */
+    display: none;
+  }
+}

@@ -1,53 +1,30 @@
-spacelift.small:
+{{ starter }}.small:
   label: Small
   mediaQuery: ''
   weight: 0
   multipliers:
     - 1x
-spacelift.medium:
+{{ starter }}.medium:
   label: Medium
-  mediaQuery: 'all and (min-width: 600px) and (max-width: 900px)'
+  mediaQuery: 'all and (min-width: 640px) and (max-width: 1023px)'
   weight: 1
   multipliers:
     - 1x
-spacelift.medium_up:
-  label: Medium Up
-  mediaQuery: 'all and (min-width: 600px)'
+{{ starter }}.large:
+  label: Large
+  mediaQuery: 'all and (min-width: 1024px) and (max-width: 1199px)'
   weight: 2
   multipliers:
     - 1x
-spacelift.large:
-  label: Large
-  mediaQuery: 'all and (min-width: 900px) and (max-width: 1200px)'
+{{ starter }}.xlarge:
+  label: X-Large
+  mediaQuery: 'all and (min-width: 1200px) and (max-width: 1439px)'
   weight: 3
   multipliers:
     - 1x
-spacelift.large_up:
-  label: Large Up
-  mediaQuery: 'all and (min-width: 900px)'
+{{ starter }}.xxlarge:
+  label: XX-Large
+  mediaQuery: 'all and (min-width: 1440px)'
   weight: 4
   multipliers:
     - 1x
-spacelift.x_large:
-  label: X-Large
-  mediaQuery: 'all and (min-width: 1200px)'
-  weight: 5
-  multipliers:
-    - 1x
-# Emulsify Breakpoints:
-# Breakpoints - change based on site need
-emulsify.small:
-  label: small
-  mediaQuery: 'all and (min-width: 25em)'
-emulsify.small-med:
-  label: small-med
-  mediaQuery: 'all and (min-width: 26em)'
-emulsify.small-large:
-  label: small-large
-  mediaQuery: 'all and (min-width: 41em)'
-emulsify.medium:
-  label: medium
-  mediaQuery: 'all and (min-width: 48em)'
-emulsify.large:
-  label: large
-  mediaQuery: 'all and (min-width: 61.25em)'

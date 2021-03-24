@@ -1,16 +1,13 @@
-/* Menu media */
-$main-menu-medium: $medium;
-
 /* Nav */
 .main-nav {
   display: none;
 
-  @include medium {
+  @include breakpoint(medium) {
     display: block;
   }
 
   &--open {
-    background-color: clr(background);
+    background-color: color(background);
     display: block;
     left: 0;
     overflow-y: scroll;
@@ -29,7 +26,7 @@ $main-menu-medium: $medium;
   position: relative;
   z-index: 10;
 
-  @include medium {
+  @include breakpoint(medium) {
     border-bottom: none;
   }
 }
@@ -43,11 +40,11 @@ $main-menu-medium: $medium;
   border-bottom: none;
   height: 0;
   overflow: hidden;
-  background-color: clr(muted);
+  background-color: color(muted);
   width: 100%;
 
-  @include medium {
-    background-color: clr(highlight-high);
+  @include breakpoint(medium) {
+    background-color: color(highlight-high);
     display: none;
     height: auto;
     left: 0;
@@ -62,19 +59,19 @@ $main-menu-medium: $medium;
   }
 
   &:hover {
-    @include medium {
+    @include breakpoint(medium) {
       opacity: 1;
-      background-color: clr(accent-high);
+      background-color: color(accent-high);
       transition: all 0.2s;
 
       .main-menu__link--sub {
-        color: clr(highlight);
+        color: color(highlight);
 
         &.active,
         &:active,
         &:hover {
-          color: clr(background);
-          background-color: clr(accent-high);
+          color: color(background);
+          background-color: color(accent-high);
         }
       }
     }
@@ -87,7 +84,7 @@ $main-menu-medium: $medium;
 }
 
 .main-menu--sub-2 {
-  @include medium {
+  @include breakpoint(medium) {
     display: none; /* Never shown on large screens */
   }
 }

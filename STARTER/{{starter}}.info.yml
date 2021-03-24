@@ -19,18 +19,19 @@ libraries:
 
 # CKEditor stylesheet loads in wysiwyg to give content editors a better experience
 ckeditor_stylesheets:
-  - dist/style.css
+  - dist/css/app.css
 
 regions:
   utility: Utility
   header: Header
-  breadcrumb: Breadcrumb
+  breadcrumb: Breadcrumbs
   featured: Featured
-  sidebar_first: 'Sidebar first'
+  sidebar_first: First sidebar
   content: Content
-  sidebar_second: 'Sidebar second'
-  footer_top: 'Footer Top'
-  footer_bottom: 'Footer Bottom'
+  content_second: Content second
+  sidebar_second: Second sidebar
+  footer_top: Footer top
+  footer_bottom: Footer bottom
 
 logo: images/logo.png
 

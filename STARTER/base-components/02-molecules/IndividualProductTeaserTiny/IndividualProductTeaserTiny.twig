@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Individual Product Teaser --tiny
+ * Used in organisms/Header/inc/Header-mainSearch.php
+ * Available variables:
+ * - individual_product_teaser_tiny__base_class - the base class name
+ * - individual_product_teaser_tiny__modifiers - array of modifiers to add to the base classname
+ * - individual_product_teaser_tiny__blockname - blockname prepended to the base classname
+ * - individual_product_teaser_tiny__extra_classes - extra classes
+ * - individual_product_teaser_tiny__image - image
+ * - individual_product_teaser_tiny__title
+ * - individual_product_teaser_tiny__url
+*/
+#}
+{% set individual_product_teaser_tiny__base_class = individual_product_teaser_tiny__base_class|default('IndividualProductTeaserTiny') %}
+{% set individual_product_teaser_tiny__extra_classes = individual_product_teaser_tiny__extra_classes|default(['grid-x']) %}
+
+
+<a href="{{ individual_product_teaser_tiny__url }}"
+  {{ suit(individual_product_teaser_tiny__base_class, individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__blockname, individual_product_teaser_tiny__extra_classes) }}>
+  <div
+    {{ suit('wrapper', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class, ['cell', 'small-4'] ) }}>
+    <div
+      {{ suit('image', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class ) }}
+      class="IndividualProductTeaserTiny-image "
+      style="background: url({{ individual_product_teaser_tiny__image }}) no-repeat center; background-size: cover; padding-top: 100%;"></div>
+  </div>
+  <div
+    {{ suit('text', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class, ['cell', 'small-8'] ) }}>
+    <div {{ suit('title', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class ) }}>
+      {{ individual_product_teaser_tiny__title }}
+    </div>
+  </div>
+</a>

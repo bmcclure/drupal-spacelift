@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * Component: Social Share
+ * Developed for: CQL
+ * By: Sophia Zey
+ * Version: 1.0
+ *
+ * Requires:
+ *
+ * SETUP Instructions: add the ID #sticky-container on a div that wraps around this component.
+ *
+ * Available variables:
+ * - social_share_to__base_class - the base class name
+ * - social_share_to__modifiers - array of modifiers to add to the base classname
+ * - social_share_to__blockname - blockname prepended to the base classname
+ * - social_share_to__extra_classes - extra classes
+ * -
+ * - social_share_to__title
+ * - social_share_to__url
+ * - social_share_to__sticky - true/false, should this be sticky?
+
+*/
+#}
+{% set social_share_to__base_class = social_share_to__base_class|default('SocialShareTo') %}
+{% if (social_share_to__sticky == true) %}
+  {% set social_share_to__extra_classes = social_share_to__extra_classes|default(['sticky']) %}
+{% endif %}
+
+<div id="SocialShareTo"
+  {{ suit(replace__base_class, replace__modifiers, replace__blockname, replace__extra_classes) }}
+  {% if (social_share_to__sticky == true) %}
+    data-sticky
+    data-sticky-on="large"
+    data-margin-top="5"
+    data-anchor="sticky-container"
+    data-margin-bottom="1"
+  {% endif %}
+>
+  <ul
+    {{ suit('menu', replace__modifiers, replace__base_class, ['Socials-row'] ) }}>
+    <li>
+      <a data-open="socialModal" class="Socials-button"><i class="fa fa-share fa-stack"></i></a>
+    </li>
+    <li>
+      <a href="mailto:?subject={{ social_share_to__title }}>&body=Check out this article: {{ social_share_to__url }}"
+         class="Socials-button"
+         rel="noopener nofollow"
+         title="{{ social_share_to__title }}"
+         target="_blank">
+        <i class="fas fa-envelope fa-stack"></i></a>
+    </li>
+  </ul>
+
+  <div class="reveal" id="socialModal" data-reveal>
+    <span
+      {{ suit('label', replace__modifiers, replace__base_class, ['subtitle', 'h6'] ) }}
+    >Share This Post</span>
+    <h2 class="title">{{ social_share_to__title }}</h2>
+    <div {{ suit('row', replace__modifiers, replace__base_class, ['Socials-row'] ) }}>
+
+      <a href="https://www.facebook.com/sharer.php?u={{ social_share_to__url }}"
+        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+         ref="noopener nofollow" target="_blank"><span class="fab fa-facebook-f"></span>
+      </a>
+
+      <a href="https://twitter.com/share?text={{ social_share_to__title }}&url={{ social_share_to__url }}"
+        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+
+         ref="noopener nofollow"
+         target="_blank"><span class="fab fa-twitter"></span>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ social_share_to__url }}"
+        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+
+         ref="noopener nofollow"
+         target="_blank"><span class="fab fa-linkedin-in"></span>
+      </a>
+      <a
+        href="https://pinterest.com/pin/create/button/?url={{ social_share_to__url }}&description={{ social_share_to__title }}"
+        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+        ref="noopener nofollow" target="_blank">
+        <span class="fab fa-pinterest-p"></span>
+      </a>
+    </div>
+
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+body_content_block__title: 'Headline For More About this Service'
+body_content_block__body: '<h4>H4 Subheadline Example</h4>
+                               <p>Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit. Morbi in sem quis dui placerat ornare. Pellesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
+               				<ul>
+               					<li>Aliquam tincidunt mauris eu risus</li>
+               					<li>Vestibulum auctor dapibus neque</li>
+               					<li>Cras ornare tristique elit</li>
+               					<li>Donec quis dui at dolor tempor interdum</li>
+               				</ul>'
+body_content_block__button_title: 'Example Button'
+body_content_block__url:  '#placeholder'

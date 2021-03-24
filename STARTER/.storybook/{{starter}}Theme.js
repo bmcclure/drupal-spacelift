@@ -4,7 +4,6 @@ import { create } from '@storybook/theming';
 
 export default create({
   base: 'light',
-  // Branding
   brandTitle: '{{Starter}}',
   brandUrl: 'https://github.com/TopFloorTech/drupal-spacelift',
   brandImage:

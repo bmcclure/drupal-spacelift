@@ -1,0 +1,64 @@
+$ProductTeaserBlock-background: #fff !default;
+$ProductTeaserBlock-border: 1px solid #484848 !default;
+$ProductTeaserBlock-textBackground: #eee !default;
+$ProductTeaserBlock-imagePadding: 66.6667% !default;
+
+.ProductTeaserBlock {
+  margin-bottom: .5rem;
+
+  &-container {
+    background: $ProductTeaserBlock-background;
+    border: 1px solid $ProductTeaserBlock-border;
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    min-height: 72px;
+
+    .ie & {
+      height: 72px;
+    }
+
+    h3 {
+      width: 100%;
+      margin-bottom: 0;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-image {
+    padding-top: $ProductTeaserBlock-imagePadding;
+    display: block;
+    @include transition;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  &-text {
+    padding: 1.25rem 1rem;
+    border-top: $ProductTeaserBlock-border;
+    background: $ProductTeaserBlock-textBackground;
+
+    .bg-light & {
+      background: $ProductTeaserBlock-background;
+    }
+  }
+
+  a {
+    color: $ProductTeaserBlock-background;
+    margin-bottom: 0;
+    width: 100%;
+    display: block;
+  }
+
+  .fas {
+    padding-left: 0;
+  }
+}

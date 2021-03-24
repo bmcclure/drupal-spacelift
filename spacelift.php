@@ -505,7 +505,6 @@ function _spacelift_get_directories_to_make() {
     return [
       'base-components',
       'base-components/00-base',
-      'base-components/00-base/global',
       'base-components/01-atoms',
       'base-components/02-molecules',
       'base-components/03-organisms',
@@ -513,7 +512,6 @@ function _spacelift_get_directories_to_make() {
       'base-components/05-pages',
       'images',
       'images/icons',
-      'images/icons/src',
       'templates',
     ];
   }
@@ -557,8 +555,6 @@ function _spacelift_get_files_to_copy() {
     'postcss.config.js',
     'prettier.config.js',
     'screenshot.png',
-    'webpack.dev.js',
-    'webpack.prod.js',
     '{{starter}}.breakpoints.yml',
     '{{starter}}.info.yml',
     '{{starter}}.libraries.yml',
@@ -582,6 +578,8 @@ function _spacelift_get_files_to_copy() {
       'templates',
       'README.md',
       'screenshot.png',
+      'webpack.dev.js',
+      'webpack.prod.js',
     ]);
   }
 }
@@ -597,11 +595,10 @@ function _spacelift_get_files_to_rename() {
   $default_array = [
     '{{starter}}.breakpoints.yml',
     '{{starter}}.info.yml',
-    '{{starter}}.theme',
     '{{starter}}.libraries.yml',
+    '{{starter}}.theme',
     '.storybook/{{starter}}Theme.js',
     'config/install/{{starter}}.settings.yml',
-    'default.aluminum.json',
   ];
 
   // If we would like to have a bare copy we use the slim option.
@@ -638,7 +635,6 @@ function _spacelift_alter_files(string $theme_path, array $files_to_alter = [], 
   }
 
   foreach ($files_to_alter as $file_to_replace) {
-//    echo "File to alter: $file_to_replace\n";
     if ($absolute === TRUE) {
       $file_type = filetype(realpath($file_to_replace));
       $file_path = $file_to_replace;

@@ -10,7 +10,7 @@
 #}
 {% set dl__base_class = dl__base_class|default('Dl') %}
 
-<dl {{ bem(dl__base_class, dl__modifiers, dl__blockname) }}>
+<dl {{ suit(dl__base_class, dl__modifiers, dl__blockname) }}>
   {% block list_content %}
     {% for dl__item in dl__items %}
       {% include "@atoms/lists/_ListItem--definition.twig" with {

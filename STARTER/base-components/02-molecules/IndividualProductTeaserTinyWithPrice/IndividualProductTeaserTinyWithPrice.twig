@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Individual Product Teaser Tiny With Price
+ * Used on the Offcanvas Cart
+
+ * Available variables:
+ * - individual_product_teaser_tiny_with_price__base_class - the base class name
+ * - individual_product_teaser_tiny_with_price__modifiers - array of modifiers to add to the base classname
+ * - individual_product_teaser_tiny_with_price__blockname - blockname prepended to the base classname
+ * - individual_product_teaser_tiny_with_price__extra_classes - extra classes
+ * - individual_product_teaser_tiny_with_price__image - image
+ * - individual_product_teaser_tiny_with_price__title
+ * - individual_product_teaser_tiny_with_price__number
+ * - individual_product_teaser_tiny_with_price__body
+ * - individual_product_teaser_tiny_with_price__url
+ * - individual_product_teaser_tiny_with_price__price
+ * - individual_product_teaser_tiny_with_price__quantity
+*/
+#}
+{% set individual_product_teaser_tiny_with_price__base_class = individual_product_teaser_tiny_with_price__base_class|default('IndividualProductTeaserTiny') %}
+{% set individual_product_teaser_tiny_with_price__extra_classes = individual_product_teaser_tiny_with_price__extra_classes|default(['grid-x', 'IndividualProductTeaserTinyWithPrice']) %}
+
+<a href="{{ individual_product_teaser_tiny_with_price__url }}"
+  {{ suit(individual_product_teaser_tiny_with_price__base_class, individual_product_teaser_tiny_with_price__modifiers, individual_product_teaser_tiny_with_price__blockname, individual_product_teaser_tiny_with_price__extra_classes) }}>
+  <div class="IndividualProductTeaserTiny-wrapper cell small-3">
+    <div class="IndividualProductTeaserTiny-image"
+         style="background: url({{ individual_product_teaser_tiny_with_price__image }}) no-repeat center; background-size: cover; padding-top: 100%;"></div>
+  </div>
+  <div class="IndividualProductTeaserTiny-text cell small-6">
+    <div class="IndividualProductTeaserTiny-title">
+        {{individual_product_teaser_tiny_with_price__title }}
+    </div>
+    <div class="IndividualProductTeaserTiny-teaser">
+      <p>
+        {{ individual_product_teaser_tiny_with_price__body }}<br>
+        <b>QTY:</b> {{ individual_product_teaser_tiny_with_price__quantity }}
+      </p>
+    </div>
+  </div>
+  <div class="IndividualProductTeaserTiny-price cell small-3 text-right">
+    <p class="full-width"><b>{{ individual_product_teaser_tiny_with_price__price }}</b></p>
+  </div>
+</a>

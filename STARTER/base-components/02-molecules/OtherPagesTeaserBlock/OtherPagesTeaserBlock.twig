@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Other Pages Teaser Block
+ * Used in organism/OtherPagesToView, among others
+ *
+ * Uses common "PageTeaserBlock" styling - this is shared with other molecules.
+ *
+ * Available variables:
+ * - other_pages_teaser_block__base_class - the base class name
+ * - other_pages_teaser_block__modifiers - array of modifiers to add to the base classname
+ * - other_pages_teaser_block__blockname - blockname prepended to the base classname
+ * - other_pages_teaser_block__extra_classes - extra classes
+ * -
+ * - other_pages_teaser_block__image - image
+ * - other_pages_teaser_block__title
+ * - other_pages_teaser_block__body
+ * - other_pages_teaser_block__button_title
+ * - other_pages_teaser_block__url
+*/
+#}
+{% set other_pages_teaser_block__base_class = other_pages_teaser_block__base_class|default('OtherPagesTeaserBlock') %}
+{% set other_pages_teaser_block__extra_classes = other_pages_teaser_block__extra_classes|default(['']) %}
+
+
+{% include '@molecules/Card/Card.twig' with {
+  card__image: other_pages_teaser_block__image,
+  card__title: other_pages_teaser_block__title,
+  card__body: other_pages_teaser_block__body,
+  card__button_title: other_pages_teaser_block__button_title,
+  card__url: other_pages_teaser_block__url,
+  card__extra_classes: ['OtherPagesTeaserBlock','FlexRow-item', 'Card--tight-space']
+} %}

@@ -1,0 +1,25 @@
+////
+/// Theme Fonts
+/// Use this file to load any font-face definitions you'd like manually.
+////
+
+@font-face {
+  font-family: 'Selawik';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../fonts/selawik/Selawik.ttf.woff') format('woff'),
+  url('../../fonts/selawik/Selawik.ttf.svg#Selawik') format('svg'),
+  url('../../fonts/selawik/Selawik.ttf.eot'),
+  url('../../fonts/selawik/Selawik.ttf.eot?#iefix') format('embedded-opentype');
+}
+
+/// @todo After all components are in, refactor any references to the semibold font to just 'Selawik' with a 600 weight
+@font-face {
+  font-family: 'Selawik Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('../../fonts/selawik/selawksb.woff') format('woff');
+}
+
+/// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');

@@ -1,0 +1,122 @@
+////
+/// Component Settings
+/// This file sets up the variable overrides needed to style the component-level variables
+////
+
+/// Import any global variable definitions set up for Foundation so they can be used on the components
+@import '00-foundation-settings';
+
+/// Spacelift spacing
+$space: 1rem;
+$space-double: $space * 2;
+$space-triple: $space * 3;
+$space-quadruple: $space * 4;
+$space-quintuple: $space * 5;
+$space-sextuple: $space * 6;
+$space-septuple: $space * 7;
+$space-one-half: $space/2;
+$space-one-third: $space/3;
+$space-one-fourth: $space/4;
+$space-one-fifth: $space/5;
+$space-one-sixth: $space/6;
+$space-one-seventh: $space/7;
+$space-one-eighth: $space/8;
+
+/// Aspect ratio padding
+$aspect-ratio-2-3: 66.6667%;
+$aspect-ratio-1-3: 33.3333%;
+
+/// Mixin settings
+$mixin-body-copy--font-family: $font-family-body;
+$mixin-wrapper--container-max-width: map-get($breakpoints, xlarge);
+$mixin-wrapper--outer-container-break: map-get($breakpoints, small);
+
+/// Atom overrides
+$ButtonLinkFontFamily: $header-font-family;
+$CheckboxInputFontFamily: $header-font-family;
+$IconsDemoIconPadding: $space;
+$IconsDemoItemMargin: $space-one-fourth;
+$LabelFontFamily: $header-font-family;
+$RadioInputFontFamily: $header-font-family;
+$CheckboxInputFontFamily: $header-font-family;
+$LabelFontFamily: $header-font-family;
+$RadioInputFontFamily: $header-font-family;
+
+/// Molecule overrides
+$AddtoCart-buttonTextColor: color(text-inverse);
+$AddtoCart-buttonBackground: color(secondary);
+$blockquote-iconFamily: $font-family-fontawesome;
+$blockquote-fontFamily: $header-font-family;
+$Breadcrumb-fontFamily: $header-font-family;
+$Card-background: color(background);
+$Card-headerColor: color(primary);
+$Card-bodyColor: color(text);
+$HorizontalCard-background: color(background);
+$HorizontalCard-border: 1px solid color(border-gray);
+$HorizontalCard-listLinkColor: color(secondary);
+$HorizontalCard-listLinkHover: color(primary);
+$IconInfoBox-Background: color(background);
+$IconInfoBox-lightBackground: color(background-section);
+$IconTeaserBlock-background: color(background-section);
+$IconTeaserBlock-color: color(secondary);
+$IconTeaserBlock-lightBackground: color(background);
+$IconTeaserBlock-hoverBackground: color(primary);
+$IconTeaserBlock-hoverText: color(text-inverse);
+$IndividualCaseStudyTeaser-text: color(text);
+$IndividualCaseStudyTeaser-icon: color(accent-dark);
+$IndividualOfficeLocation-text: color(text);
+$IndividualOfficeLocation-hoverText: color(primary);
+$IndividualPostTeaser-dateColor: color(text);
+$IndividualProductTeaserTiny-hoverBackground: color(background-section);
+$IndividualProductTeaserTiny-textColor: color(text);
+$IndividualProductTeaserTiny-smallFontSize: $FontSize-xxs;
+$IndividualResourceDownloadsIcon-borderTop: 1px solid color(border-gray);
+$IndividualResourceDownloadsIcon-icon: color(secondary);
+$IndividualResourceDownloadsIcon-subtitle: color(text);
+$IndividualTestimonial-imageAspectRatioMobile: $aspect-ratio-2-3;
+$IndividualTestimonial-imageAspectRatioDesktop: $aspect-ratio-1-3;
+$NewsletterSignup-background: color(background-section);
+$NewsletterSignup-placeholder: color(text);
+$NewsletterSignup-active: color(primary);
+$OtherPagesTeaserBlock-white: color(text-inverse);
+$pager-padding-tight: 2px;
+$pager-color: color(secondary-dark);
+$pager-summary: color(text);
+$pager-buttonBackground: color(background);
+$pager-buttonBorder: 1px solid color(secondary-dark);
+$pager-buttonText: color(secondary-dark);
+$pager-buttonBackgrounActive: color(secondary);
+$pager-fontAwesome: color(primary);
+$ProductCategoryTeaserBlock-title: color(primary);
+$ProductCategoryTeaserBlock-text: color(text);
+$ProductTeaserBlock-background: color(background);
+$ProductTeaserBlock-border: 1px solid color(border-gray);
+$ProductTeaserBlock-textBackground: color(background-section);
+$ProductTeaserBlock-imagePadding: $aspect-ratio-2-3;
+$ProductToggle-active: color(secondary);
+$ResourceCategoryIconBlock-hoverTitle: color(primary);
+$ResourceCategoryIconBlock-Title: color(secondary-dark);
+$ResourceCategoryIconBlock-iconBackground: color(accent);
+$ResourceCategoryIconBlock-iconColor: color(text-inverse);
+$ResourceResult-border: color(border-gray);
+$ResourceResult-hoverText: color(text-inverse);
+$ResourceResult-title: color(primary);
+$ResourceResult-subtitle: color(text);
+$SearchInput-icon: color(primary);
+$SearchInput-placeholder: color(text);
+$SearchInput-withButtonbackground: color(primary);
+$SearchInput-withButtonText: color(text-inverse);
+//$SearchInput-withButtonHover: darken($red, 5%); // TODO: See if this can use color(primary-dark)
+$SearchInput-withButtonHover: color(primary-dark);
+$SearchResult-borderBottom: 1px solid color(muted);
+$Showing-color: color(secondary-dark);
+$SingleImageBlock-aspectMobile: $aspect-ratio-2-3;
+$SingleImageBlock-aspectDesktop: $aspect-ratio-1-3;
+
+/// Organism overrides
+$BodyCopy-border:  1px solid color(border-gray);
+$BodyCopy-background: color(background);
+
+/// Template overrides
+
+/// Page overrides

@@ -1,6 +1,6 @@
-$color-breadcrumb: clr(accent);
-$color-breadcrumb-hover: clr(accent-high);
-$color-breadcrumb-active: clr(text);
+$color-breadcrumb: color(accent);
+$color-breadcrumb-hover: color(accent-high);
+$color-breadcrumb-active: color(text);
 
 .breadcrumb {
   @include list-reset;

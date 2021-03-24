@@ -4,6 +4,7 @@ import HorizontalCard from './HorizontalCard.twig';
 
 import HorizontalCardData from './HorizontalCard.yml';
 import HorizontalCardAltData from './HorizontalCard--alt.yml';
+import JobPostTeaser from './HorizontalCard--JobPostTeaser.yml';
 
 /**
  * Storybook Definition.
@@ -21,4 +22,8 @@ export const HorizontalCardAltExample = () => (
   <div
     dangerouslySetInnerHTML={{ __html: HorizontalCard(HorizontalCardAltData) }}
   />
+);
+
+export const JobPostTeaserExample = () => (
+  <div dangerouslySetInnerHTML={{ __html: HorizontalCard(JobPostTeaser) }} />
 );
