@@ -560,6 +560,7 @@ function _spacelift_get_files_to_copy() {
     'postcss.config.js',
     'prettier.config.js',
     'screenshot.png',
+    'yarn.lock',
     '{{starter}}.breakpoints.yml',
     '{{starter}}.info.yml',
     '{{starter}}.libraries.yml',
