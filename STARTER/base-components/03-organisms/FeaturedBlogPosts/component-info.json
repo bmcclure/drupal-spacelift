@@ -1,0 +1,12 @@
+{
+  "name": "FeaturedBlogPosts",
+  "description": "Featured Blog Posts",
+  "entries": {
+    "scss": [
+      "FeaturedBlogPosts.scss"
+    ],
+    "js": [
+      "FeaturedBlogPosts.js"
+    ]
+  }
+}

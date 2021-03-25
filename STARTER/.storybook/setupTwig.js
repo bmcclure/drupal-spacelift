@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 const twigDrupal = require('twig-drupal-filters');
 const twigBEM = require('bem-twig-extension');
-const twigSUIT = require ('suit-twig-extension');
+const twigSUIT = require('suit-twig-extension');
 const twigAddAttributes = require('add-attributes-twig-extension');
 
 module.exports.namespaces = {

@@ -1,0 +1,44 @@
+.Tabs-link,
+.Tabs-link--local-tasks {
+  background-color: color(muted);
+  border: 1px solid color(highlight-high);
+  border-bottom: none;
+  color: color(text);
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1em 2.4em;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  @include breakpoint(large) {
+    border-bottom: 1px solid color(highlight-high);
+    border-left: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.6em 1.7em;
+    position: relative;
+    top: 1px;
+    width: auto;
+  }
+
+  &:hover {
+    background-color: color(highlight-high);
+    color: color(accent);
+  }
+
+  &.is-active {
+    background-color: color(text);
+    border: 1px solid color(text);
+    color: color(text-inverse);
+
+    @include breakpoint(large) {
+      background-color: color(background);
+      border: 1px solid color(highlight-high);
+      border-bottom: 1px solid color(highlight-high);
+      border-left: none;
+      color: color(text);
+    }
+  }
+}

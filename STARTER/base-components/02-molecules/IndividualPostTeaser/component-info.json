@@ -1,0 +1,9 @@
+{
+  "name": "IndividualPostTeaser",
+  "description": "Individual Post Teaser",
+  "entries": {
+    "scss": [
+      "IndividualPostTeaser.scss"
+    ]
+  }
+}

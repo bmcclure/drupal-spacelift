@@ -1,23 +1,24 @@
 import $ from 'jquery';
-import 'slick-carousel';
-import AOS from "aos";
+import AOS from 'aos';
 import lozad from 'lozad';
-//
-$(function () {
+
+Drupal.behaviors.FeaturedTestimonialsComponent = {
+  attach: (context) => {
     'use strict';
-    $('.FeaturedTestimonials .FeaturedTestimonials-slider').on('init', function (event, slick) {
+
+    $('.FeaturedTestimonials .FeaturedTestimonials-slider', context)
+      .on('init', (event, slick) => {
         // console.log("initialized");
         AOS.init();
-        const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+        const observer = lozad();
         observer.observe();
-    });
-
-    $('.FeaturedTestimonials .FeaturedTestimonials-slider').slick({
+      })
+      .slick({
         arrows: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
-    });
-});
-
+      });
+  },
+};

@@ -9,7 +9,7 @@ import SocialsData from './Socials.yml';
  */
 export default { title: 'Organisms/Socials' };
 
-export const SocialsExample = () => (
+export const socials = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: Socials(SocialsData),

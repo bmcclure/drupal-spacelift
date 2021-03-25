@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * SingleFeaturedBlogPost
+ * used on Flexible Layout
+ *
+ * Available variables:
+ * - single_featured_blog_post__base_class - the base class name
+ * - single_featured_blog_post__modifiers - array of modifiers to add to the base classname
+ * - single_featured_blog_post__blockname - blockname prepended to the base classname
+ * - single_featured_blog_post__extra_classes - extra classes
+ * -
+ * - single_featured_blog_post__background - bg-white, bg-light, or bg-blue
+ * - single_featured_blog_post__title
+ * - single_featured_blog_post__button_title
+ * - single_featured_blog_post__url
+ * - single_featured_blog_post__teaser
+*/
+#}
+
+{% set single_featured_blog_post__base_class = single_featured_blog_post__base_class|default('SingleFeaturedBlogPost') %}
+{% set single_featured_blog_post__extra_classes = single_featured_blog_post__extra_classes|default([single_featured_blog_post__background]) %}
+
+{% if single_featured_blog_post__teaser %}
+  <section {{ suit(single_featured_blog_post__base_class, single_featured_blog_post__modifiers, single_featured_blog_post__blockname, single_featured_blog_post__extra_classes) }}>
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x grid-margin-y ">
+        <div class="cell medium-4">
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__level: 2,
+            heading: single_featured_blog_post__title,
+            heading__extra_classes: ['title'],
+          } %}
+          <a href="{{ single_featured_blog_post__url }}" class="button">{{ single_featured_blog_post__button_title }}
+            <span class="fas fa-caret-right"></span></a>
+        </div>
+        <div class="cell medium-8">
+          {% include '@molecules/IndividualPostTeaser/IndividualPostTeaser.twig' with {
+            individual_post_teaser__image: single_featured_blog_post__teaser.image,
+            individual_post_teaser__title: single_featured_blog_post__teaser.title,
+            individual_post_teaser__body: single_featured_blog_post__teaser.body,
+            individual_post_teaser__url: single_featured_blog_post__teaser.url,
+            individual_post_teaser__date: single_featured_blog_post__teaser.date,
+          } %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

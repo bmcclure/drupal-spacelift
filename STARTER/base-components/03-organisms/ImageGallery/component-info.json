@@ -1,0 +1,12 @@
+{
+  "name": "ImageGallery",
+  "description": "Image Gallery",
+  "entries": {
+    "scss": [
+      "ImageGallery.scss"
+    ],
+    "js": [
+      "ImageGallery.js"
+    ]
+  }
+}

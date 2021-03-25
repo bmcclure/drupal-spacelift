@@ -1,0 +1,9 @@
+{
+  "name": "OtherPagesTeaserBlock",
+  "description": "Other Pages Teaser Block",
+  "entries": {
+    "scss": [
+      "OtherPagesTeaserBlock.scss"
+    ]
+  }
+}

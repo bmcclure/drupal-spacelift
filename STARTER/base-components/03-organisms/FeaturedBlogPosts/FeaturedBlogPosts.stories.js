@@ -10,7 +10,7 @@ import FeaturedBlogPostsAltData from './FeaturedBlogPosts--alt.yml';
  */
 export default { title: 'Organisms/Featured Blog Posts' };
 
-export const FeaturedBlogPostsExample = () => (
+export const featuredBlogPosts = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedBlogPosts(FeaturedBlogPostsData),
@@ -18,7 +18,7 @@ export const FeaturedBlogPostsExample = () => (
   />
 );
 
-export const FeaturedBlogPostsAltExample = () => (
+export const altFeaturedBlogPosts = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedBlogPosts(FeaturedBlogPostsAltData),

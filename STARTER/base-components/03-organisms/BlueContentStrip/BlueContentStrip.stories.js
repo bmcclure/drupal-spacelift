@@ -9,7 +9,7 @@ import BlueContentStripData from './BlueContentStrip.yml';
  */
 export default { title: 'Organisms/Blue Content Strip' };
 
-export const BlueContentStripExample = () => (
+export const blueContentStrip = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: BlueContentStrip(BlueContentStripData),

@@ -1,0 +1,9 @@
+{
+  "name": "ProductTeaserBlock",
+  "description": "Product Teaser Block",
+  "entries": {
+    "scss": [
+      "ProductTeaserBlock.scss"
+    ]
+  }
+}

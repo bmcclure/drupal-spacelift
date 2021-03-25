@@ -1,0 +1,9 @@
+{
+  "name": "IndividualResourceDownloadsThumbnail",
+  "description": "Individual Resource Downloads Thumbnail",
+  "entries": {
+    "scss": [
+      "IndividualResourceDownloadsThumbnail.scss"
+    ]
+  }
+}

@@ -28,7 +28,7 @@
 {% endif %}
 
 <div id="SocialShareTo"
-  {{ suit(replace__base_class, replace__modifiers, replace__blockname, replace__extra_classes) }}
+  {{ suit(social_share_to__base_class, social_share_to__modifiers, social_share_to__blockname, social_share_to__extra_classes) }}
   {% if (social_share_to__sticky == true) %}
     data-sticky
     data-sticky-on="large"
@@ -38,7 +38,7 @@
   {% endif %}
 >
   <ul
-    {{ suit('menu', replace__modifiers, replace__base_class, ['Socials-row'] ) }}>
+    {{ suit('menu', social_share_to__modifiers, social_share_to__base_class, ['Socials-row'] ) }}>
     <li>
       <a data-open="socialModal" class="Socials-button"><i class="fa fa-share fa-stack"></i></a>
     </li>
@@ -54,31 +54,31 @@
 
   <div class="reveal" id="socialModal" data-reveal>
     <span
-      {{ suit('label', replace__modifiers, replace__base_class, ['subtitle', 'h6'] ) }}
+      {{ suit('label', social_share_to__modifiers, social_share_to__base_class, ['subtitle', 'h6'] ) }}
     >Share This Post</span>
     <h2 class="title">{{ social_share_to__title }}</h2>
-    <div {{ suit('row', replace__modifiers, replace__base_class, ['Socials-row'] ) }}>
+    <div {{ suit('row', social_share_to__modifiers, social_share_to__base_class, ['Socials-row'] ) }}>
 
       <a href="https://www.facebook.com/sharer.php?u={{ social_share_to__url }}"
-        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+        {{ suit('button', social_share_to__modifiers, social_share_to__base_class, ['Socials-button'] ) }}
          ref="noopener nofollow" target="_blank"><span class="fab fa-facebook-f"></span>
       </a>
 
       <a href="https://twitter.com/share?text={{ social_share_to__title }}&url={{ social_share_to__url }}"
-        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+        {{ suit('button', social_share_to__modifiers, social_share_to__base_class, ['Socials-button'] ) }}
 
          ref="noopener nofollow"
          target="_blank"><span class="fab fa-twitter"></span>
       </a>
       <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ social_share_to__url }}"
-        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+        {{ suit('button', social_share_to__modifiers, social_share_to__base_class, ['Socials-button'] ) }}
 
          ref="noopener nofollow"
          target="_blank"><span class="fab fa-linkedin-in"></span>
       </a>
       <a
         href="https://pinterest.com/pin/create/button/?url={{ social_share_to__url }}&description={{ social_share_to__title }}"
-        {{ suit('button', replace__modifiers, replace__base_class, ['Socials-button'] ) }}
+        {{ suit('button', social_share_to__modifiers, social_share_to__base_class, ['Socials-button'] ) }}
         ref="noopener nofollow" target="_blank">
         <span class="fab fa-pinterest-p"></span>
       </a>

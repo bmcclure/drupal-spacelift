@@ -1,4 +1,4 @@
-resource_result__icon: "<span class='far fa-play-circle'></span>"
+resource_result__icon: '<span class="far fa-play-circle"></span>'
 resource_result__image: 'https://placeimg.com/320/180/any'
 resource_result__title: 'Video Title Lorem Ipsum'
 resource_result__subtitle: 'Instructional Video'

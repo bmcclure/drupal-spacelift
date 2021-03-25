@@ -1,0 +1,9 @@
+{
+  "name": "ContactUsBox",
+  "description": "Contact Us Box",
+  "entries": {
+    "scss": [
+      "ContactUsBox.scss"
+    ]
+  }
+}

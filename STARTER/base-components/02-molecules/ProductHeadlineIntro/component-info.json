@@ -1,0 +1,9 @@
+{
+  "name": "ProductHeadlineIntro",
+  "description": "Product Headline Intro",
+  "entries": {
+    "scss": [
+      "ProductHeadlineIntro.scss"
+    ]
+  }
+}

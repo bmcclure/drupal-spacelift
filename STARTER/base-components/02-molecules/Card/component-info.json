@@ -1,0 +1,9 @@
+{
+  "name": "Card",
+  "description": "Card",
+  "entries": {
+    "scss": [
+      "Card.scss"
+    ]
+  }
+}

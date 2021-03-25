@@ -9,7 +9,7 @@ import ContactUsBoxData from './ContactUsBox.yml';
  */
 export default { title: 'Organisms/Contact Us Box' };
 
-export const ContactUsBoxExample = () => (
+export const contactUsBox = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: ContactUsBox(ContactUsBoxData),

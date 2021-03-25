@@ -1,6 +1,83 @@
-@import 'setup';
-@import '01-atoms/**/*.scss';
-@import '02-molecules/**/*.scss';
-@import '03-organisms/**/*.scss';
-@import '04-templates/**/*.scss';
-//@import '05-pages/**/*.scss';
+////
+/// Storybook Setup
+/// Includes all base components and theme assets needed to render storybook
+////
+
+@import '~normalize.css/normalize';
+@import '../src/scss/fonts/fontawesome';
+@import 'base-components/setup';
+@import 'base-components/00-base/00-colors/02-colors-demo';
+@import 'base-components/00-base/02-motions/motions-demo';
+@import '!~foundation-sites/scss/foundation';
+
+/// Include all necessary Foundation mixins
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+//@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button;
+@include foundation-button-group;
+//@include foundation-callout;
+//@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+//@include foundation-orbit;
+@include foundation-pagination;
+//@include foundation-progress-bar;
+//@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+//@include foundation-switch;
+//@include foundation-table;
+//@include foundation-tabs;
+//@include foundation-thumbnail;
+//@include foundation-title-bar;
+@include foundation-tooltip;
+//@include foundation-top-bar;
+@include foundation-visibility-classes;
+//@include foundation-float-classes;
+
+/// Utility classes
+@import '../src/scss/utilities';
+
+/// Components
+@import 'base-components/01-atoms/**/*.scss';
+@import 'base-components/02-molecules/**/*.scss';
+@import 'base-components/03-organisms/**/*.scss';
+@import 'base-components/04-templates/**/*.scss';
+
+/// Manually loading theme fonts here because the path is different
+@font-face {
+  font-family: 'Selawik';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/selawik/Selawik.ttf.woff') format('woff'),
+  url('../fonts/selawik/Selawik.ttf.svg#Selawik') format('svg'),
+  url('../fonts/selawik/Selawik.ttf.eot'),
+  url('../fonts/selawik/Selawik.ttf.eot?#iefix') format('embedded-opentype');
+}
+
+/// @todo After all components are in, refactor any references to the semibold font to just 'Selawik' with a 600 weight
+@font-face {
+  font-family: 'Selawik Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('../fonts/selawik/selawksb.woff') format('woff');
+}
+
+/// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');

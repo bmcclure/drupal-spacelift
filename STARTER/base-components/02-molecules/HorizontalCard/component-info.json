@@ -1,0 +1,9 @@
+{
+  "name": "HorizontalCard",
+  "description": "Horizontal Card",
+  "entries": {
+    "scss": [
+      "HorizontalCard.scss"
+    ]
+  }
+}

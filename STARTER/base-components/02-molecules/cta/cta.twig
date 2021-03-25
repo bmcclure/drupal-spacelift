@@ -1,7 +1,11 @@
 {% set cta__base_class = 'cta' %}
+
 <div {{ suit(cta__base_class, cta__modifiers, cta__blockname, cta__extra_classes) }}>
-  <h2>{{ cta__heading }}</h2>
-  {% include "@atoms/buttons/Button/Button.twig" with {
-    button_content: cta__button_text,
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    heading__level: 2,
+    heading: cta__heading,
+  } %}
+  {% include '@atoms/buttons/Button/Button.twig' with {
+    button__content: cta__button_text,
   } %}
 </div>

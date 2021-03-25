@@ -1,0 +1,38 @@
+$IconInfoBox-Background: white !default;
+$IconInfoBox-lightBackground: lightgray !default;
+
+.IconInfoBox {
+  &-container {
+    background: $IconInfoBox-Background;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 1.5rem;
+
+    @include breakpoint(large) {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .IconInfoBoxes-row.boxes-light & {
+      background: $IconInfoBox-lightBackground;
+    }
+  }
+
+  &-icon {
+    padding-top: 5px;
+    width: 50px;
+
+    svg {
+      max-height: 30px;
+      max-width: 30px;
+    }
+  }
+
+  &-text {
+    padding-left: 0.5rem;
+    width: calc(100% - 50px);
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

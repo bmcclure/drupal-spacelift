@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Header
+ * @todo PLEASE SEE ORIGINAL in markserv-frontend-components for how the real site header should be laid out
+ *
+ * Available variables:
+ * - header__base_class - the base class name
+ * - header__modifiers - array of modifiers to add to the base classname
+ * - header__blockname - blockname prepended to the base classname
+ * - header__extra_classes - extra classes
+ * - header__image - image
+*/
+#}
+{% set header__base_class = header__base_class|default('Header') %}
+
+<header {{ suit(header__base_class, header__modifiers, header__blockname, header__extra_classes) }}
+  role="banner"
+  data-sticky-container>
+
+  <div {{ suit('wrap', header__modifiers, header__base_class ) }}
+    data-sticky-on="small" data-sticky
+    data-options="marginTop:0;"
+    style="width:100%;">
+    {% include '@organisms/Header/_HeaderMain.twig' with {
+      header_main__image: header__image,
+    } %}
+  </div>
+
+</header> <!-- end .header -->
+

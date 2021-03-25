@@ -1,0 +1,12 @@
+$self: '.IndividualPostTeaser';
+
+.LargeLatestPost {
+  padding: 2rem 0;
+  .IndividualPostTeaser {
+    #{$self}-imageWrapper, #{$self}-textWrapper {
+      @include breakpoint(medium) {
+        width: calc(50% - 1.25rem);
+      }
+    }
+  }
+}

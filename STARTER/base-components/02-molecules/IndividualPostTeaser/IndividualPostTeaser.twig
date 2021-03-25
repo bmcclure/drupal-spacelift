@@ -14,25 +14,23 @@
  * - individual_post_teaser__date
  * - individual_post_teaser__body
  * - individual_post_teaser__url
-*/
+ */
 #}
+
 {% set individual_post_teaser__base_class = individual_post_teaser__base_class|default('IndividualPostTeaser') %}
 {% set individual_post_teaser__extra_classes = individual_post_teaser__extra_classes|default(['cell']) %}
+
 <article {{ suit(individual_post_teaser__base_class, individual_post_teaser__modifiers, individual_post_teaser__blockname, individual_post_teaser__extra_classes) }}>
   <div class="grid-x grid-margin-x">
-    <a
-      href="{{ individual_post_teaser__url }}" {{ suit('imageWrapper', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['cell', 'medium-4'] ) }} >
+    <a href="{{ individual_post_teaser__url }}" {{ suit('imageWrapper', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['cell', 'medium-4'] ) }} >
       <div class="Zoom">
-        <div
-          {{ suit('image', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['Zoom-image', 'lozad'] ) }}
+        <div {{ suit('image', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['Zoom-image', 'lozad'] ) }}
           data-background-image=" {{ individual_post_teaser__image }}"
-          style="background: url(images/placeholder.png) no-repeat center; background-size: cover;"></div>
+          style="background: url(images/placeholder.png) no-repeat center; background-size: cover;">
+        </div>
       </div>
     </a>
-    <div
-      {{ suit('textWrapper', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['cell', 'medium-8'] ) }}
-    >
-
+    <div {{ suit('textWrapper', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['cell', 'medium-8'] ) }}>
       {% include '@atoms/text/Heading/Heading.twig' with {
         heading__base_class: '',
         heading__level: 3,
@@ -40,11 +38,12 @@
         heading__extra_classes: ['HeaderFont--regular'],
         heading__url: individual_post_teaser__url,
       } %}
-
-      <p
-        {{ suit('date', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['h6', 'uppercase'] ) }}
-      >{{ individual_post_teaser__date }}</p>
-      <p>{{ individual_post_teaser__body }}</p>
+      <p {{ suit('date', individual_post_teaser__modifiers, individual_post_teaser__base_class, ['h6', 'uppercase'] ) }}>
+        {{ individual_post_teaser__date }}
+      </p>
+      <p>
+        {{ individual_post_teaser__body }}
+      </p>
     </div>
   </div>
 </article>

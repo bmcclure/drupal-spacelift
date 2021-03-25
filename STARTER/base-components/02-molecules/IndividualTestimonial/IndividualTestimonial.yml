@@ -1,4 +1,4 @@
 individual_testimonial__image: 'https://placeimg.com/320/180/any'
 individual_testimonial__type: 'customer'
 individual_testimonial__testimonial: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis..'
-individual_testimonial__citation: "John Doe, Engineering Manager"
+individual_testimonial__citation: 'John Doe, Engineering Manager'

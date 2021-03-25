@@ -15,18 +15,15 @@
  * - product_teaser_block__body
  * - product_teaser_block__button_title
  * - product_teaser_block__url
-*/
+ */
 #}
+
 {% set product_teaser_block__base_class = product_teaser_block__base_class|default('ProductTeaserBlock') %}
 {% set product_teaser_block__extra_classes = product_teaser_block__extra_classes|default(['FlexRow-item','text-center']) %}
 
 <div {{ suit(product_teaser_block__base_class, product_teaser_block__modifiers, product_teaser_block__blockname, product_teaser_block__extra_classes) }}>
-  <div
-    {{ suit('container', product_teaser_block__modifiers, product_teaser_block__base_class ) }}
-  >
-    <div
-      {{ suit('title', product_teaser_block__modifiers, product_teaser_block__base_class, ['bg-dark-blue'] ) }}>
-
+  <div {{ suit('container', product_teaser_block__modifiers, product_teaser_block__base_class ) }}>
+    <div {{ suit('title', product_teaser_block__modifiers, product_teaser_block__base_class, ['bg-dark-blue'] ) }}>
       {% include '@atoms/text/Heading/Heading.twig' with {
         heading__base_class: 'h4',
         heading__level: 3,
@@ -34,17 +31,14 @@
         heading__extra_classes: ['HeaderFont--regular'],
         heading__url: product_teaser_block__url,
       } %}
-
     </div>
-    <a href="{{ product_teaser_block__url }}" title="{{ product_teaser_block__title }}"
-      {{ suit('image', product_teaser_block__modifiers, product_teaser_block__base_class, ['lozad']) }}
-       data-background-image="{{ product_teaser_block__image }}"
-       style="background:url(assets/images/placeholder.png) no-repeat center; background-size: contain;"></a>
+    <a href="{{ product_teaser_block__url }}" title="{{ product_teaser_block__title }}" {{ suit('image', product_teaser_block__modifiers, product_teaser_block__base_class, ['lozad']) }} data-background-image="{{ product_teaser_block__image }}" style="background:url(assets/images/placeholder.png) no-repeat center; background-size: contain;"></a>
     <div {{ suit('text', product_teaser_block__modifiers, product_teaser_block__base_class) }}>
       <p>{{ product_teaser_block__body }}</p>
-      <a href="{{ product_teaser_block__url }}" class="button"
-         title="{{ product_teaser_block__title }}">{{ product_teaser_block__button_title }}&nbsp;&nbsp;<span
-          class="fas fa-caret-right"></span></a>
+      <a href="{{ product_teaser_block__url }}" class="button" title="{{ product_teaser_block__title }}">
+        {{ product_teaser_block__button_title }}&nbsp;
+        <span class="fas fa-caret-right"></span>
+      </a>
     </div>
   </div>
 </div>

@@ -1,0 +1,9 @@
+{
+  "name": "IndividualCaseStudyTeaser",
+  "description": "Individual Case Study Teaser",
+  "entries": {
+    "scss": [
+      "IndividualCaseStudyTeaser.scss"
+    ]
+  }
+}

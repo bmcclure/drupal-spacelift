@@ -1,3 +1,2 @@
-link_button__type: "button"
-link_button__title: "Button Title"
-link_button__url:
+link_button__type: 'button'
+link_button__title: 'Button Title'

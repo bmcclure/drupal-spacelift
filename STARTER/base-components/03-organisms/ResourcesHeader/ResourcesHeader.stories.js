@@ -9,7 +9,7 @@ import ResourcesHeaderData from './ResourcesHeader.yml';
  */
 export default { title: 'Organisms/Resources Header' };
 
-export const ResourcesHeaderExample = () => (
+export const resourcesHeader = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: ResourcesHeader(ResourcesHeaderData),

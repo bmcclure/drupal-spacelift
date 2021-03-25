@@ -1,0 +1,7 @@
+large_latest_post__title: 'The Latest Blog Post'
+large_latest_post__teaser:
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Blog Title About A Specific MSI Service Goes Here'
+    body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
+    url: '#'
+    date: 'Jan 26, 2020'

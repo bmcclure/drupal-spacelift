@@ -1,0 +1,9 @@
+{
+  "name": "IndividualProductTeaserTiny",
+  "description": "Individual Product Teaser Tiny",
+  "entries": {
+    "scss": [
+      "IndividualProductTeaserTiny.scss"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+$IndividualPostTeaser-dateColor: #686868 !default;
+
+.IndividualPostTeaser {
+  &-image {
+    margin-bottom: 1rem;
+    padding-top: $aspect-ratio-2-3;
+  }
+
+  &-date {
+    color: $IndividualPostTeaser-dateColor;
+  }
+}

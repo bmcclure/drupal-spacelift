@@ -1,0 +1,22 @@
+offcanvas_search__title: 'Recommended Products'
+offcanvas_search__view_more: 'View 10 More'
+offcanvas_search__teasers:
+  - id: 0
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Product Title Name Goes Here'
+    url: '#'
+  - id: 1
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Product Title 2 Name Goes Here'
+    url: '#'
+  - id: 2
+    image: 'https://placeimg.com/800/450/any'
+    title: 'Product Title Name Goes Here'
+    url: '#'
+offcanvas_search__categories:
+  - id: 0
+    title: 'Category Name 1'
+  - id: 1
+    title: 'Category Name 2'
+  - id: 2
+    title: 'Category Name 3'

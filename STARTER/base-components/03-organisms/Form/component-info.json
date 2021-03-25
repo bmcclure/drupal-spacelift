@@ -1,0 +1,9 @@
+{
+  "name": "Form",
+  "description": "Form",
+  "entries": {
+    "scss": [
+      "Form.scss"
+    ]
+  }
+}

@@ -9,7 +9,7 @@ import CaseStudiesListingResultsData from './CaseStudiesListingResults.yml';
  */
 export default { title: 'Organisms/Case Studies Listing Results' };
 
-export const CaseStudiesListingResultsExample = () => (
+export const caseStudiesListingResults = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: CaseStudiesListingResults(CaseStudiesListingResultsData),

@@ -9,7 +9,7 @@ import FeaturedServicesData from './FeaturedServices.yml';
  */
 export default { title: 'Organisms/Featured Services' };
 
-export const FeaturedServicesExample = () => (
+export const featuredServices = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedServices(FeaturedServicesData),

@@ -9,7 +9,7 @@ import IndividualResourceDownloadsThumbnailData from './IndividualResourceDownlo
  */
 export default { title: 'Molecules/Individual Resource Downloads Thumbnail' };
 
-export const IndividualResourceDownloadsThumbnailExample = () => (
+export const individualResourceDownloadsThumbnail = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualResourceDownloadsThumbnail(

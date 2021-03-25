@@ -12,18 +12,18 @@ import JobPostTeaser from './HorizontalCard--JobPostTeaser.yml';
 
 export default { title: 'Molecules/Horizontal Card' };
 
-export const HorizontalCardExample = () => (
+export const horizontalCard = () => (
   <div
     dangerouslySetInnerHTML={{ __html: HorizontalCard(HorizontalCardData) }}
   />
 );
 
-export const HorizontalCardAltExample = () => (
+export const altHorizontalCard = () => (
   <div
     dangerouslySetInnerHTML={{ __html: HorizontalCard(HorizontalCardAltData) }}
   />
 );
 
-export const JobPostTeaserExample = () => (
+export const jobPostTeaser = () => (
   <div dangerouslySetInnerHTML={{ __html: HorizontalCard(JobPostTeaser) }} />
 );

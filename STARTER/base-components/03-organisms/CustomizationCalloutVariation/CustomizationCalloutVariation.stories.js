@@ -9,7 +9,7 @@ import CustomizationCalloutVariationData from './CustomizationCalloutVariation.y
  */
 export default { title: 'Organisms/Customization Callout Variation' };
 
-export const CustomizationCalloutVariationExample = () => (
+export const customizationCalloutVariation = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: CustomizationCalloutVariation(CustomizationCalloutVariationData),

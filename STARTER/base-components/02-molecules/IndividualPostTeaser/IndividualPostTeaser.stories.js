@@ -10,7 +10,7 @@ import IndividualPostTeaserData from './IndividualPostTeaser.yml';
 
 export default { title: 'Molecules/Individual Post Teaser' };
 
-export const IndividualPostTeaserExample = () => (
+export const individualPostTeaser = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualPostTeaser(IndividualPostTeaserData),

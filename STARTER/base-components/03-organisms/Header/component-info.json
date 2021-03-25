@@ -1,0 +1,9 @@
+{
+  "name": "Header",
+  "description": "Header",
+  "entries": {
+    "scss": [
+      "Header.scss"
+    ]
+  }
+}

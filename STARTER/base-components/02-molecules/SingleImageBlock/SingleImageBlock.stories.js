@@ -9,7 +9,7 @@ import SingleImageBlockData from './SingleImageBlock.yml';
  */
 export default { title: 'Molecules/Single Image Block' };
 
-export const SingleImageBlockExample = () => (
+export const singleImageBlock = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: SingleImageBlock(SingleImageBlockData),

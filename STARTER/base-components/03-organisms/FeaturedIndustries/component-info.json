@@ -1,0 +1,9 @@
+{
+  "name": "FeaturedIndustries",
+  "description": "Featured Industries",
+  "entries": {
+    "scss": [
+      "FeaturedIndustries.scss"
+    ]
+  }
+}

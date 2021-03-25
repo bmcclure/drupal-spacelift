@@ -1,0 +1,15 @@
+single_featured_case_study__background: 'bg-light'
+single_featured_case_study__title: 'Related Featured Case Study Headline Here'
+single_featured_case_study__button_title: 'ALL CASE STUDIES'
+single_featured_case_study__url: '#placeholder'
+single_featured_case_study__teaser:
+    image: 'https://placeimg.com/960/540/any'
+    title: 'Case Study Title Goes Here'
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros.'
+    bullet_1: 'Aliquam tincidunt mauris eu risus'
+    bullet_2: 'Vestibulum auctor dapibus neque'
+    bullet_3: 'Cras ornare tristique elit'
+    url: '#'
+    subheadline: 'CASE STUDY'
+    button_title: 'Continue Reading'
+

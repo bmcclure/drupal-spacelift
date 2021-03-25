@@ -9,7 +9,7 @@ import ProductTeaserBlockData from './ProductTeaserBlock.yml';
  */
 export default { title: 'Molecules/Product Teaser Block' };
 
-export const ProductTeaserBlockExample = () => (
+export const productTeaserBlock = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: ProductTeaserBlock(ProductTeaserBlockData),

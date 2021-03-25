@@ -10,41 +10,30 @@
  * - product_toggle__modifiers - array of modifiers to add to the base classname
  * - product_toggle__blockname - blockname prepended to the base classname
  * - product_toggle__extra_classes - extra classes
-*/
-
+ */
 #}
+
 {% set product_toggle__base_class = product_toggle__base_class|default('ProductToggle') %}
 {% set product_toggle__extra_classes = product_toggle__extra_classes|default(['bg-light']) %}
 
 <div {{ suit(product_toggle__base_class, product_toggle__modifiers, product_toggle__blockname, product_toggle__extra_classes) }}>
   <div class="grid-x  vertical-center">
     <div class="cell medium-auto text-center medium-text-left">
-      <div
-        {{ suit('title', replace__modifiers, replace__base_class, ['h5'] ) }}>VIEW OPTIONS FOR
+      <div {{ suit('title', replace__modifiers, replace__base_class, ['h5'] ) }}>
+        VIEW OPTIONS FOR
       </div>
     </div>
     <div class="cell medium-shrink">
       <div class="grid-x RadioButtons">
         <div class="ProductToggle-buttonWrapper RadioButtons-combo cell small-6 medium-shrink">
-          <input name="ProductType" type="radio" id="ProductToggle1" class="RadioButtons-input"
-                 value="presets" checked v-model="productToggle" @change="onProductToggleChange()"/>
-          <label for="ProductToggle1"
-                 id="ProductToggleLabel1"
-                 class="button ProductToggle-button RadioButtons-button button white">
+          <input name="ProductType" type="radio" id="ProductToggle1" class="RadioButtons-input" value="presets" checked v-model="productToggle" @change="onProductToggleChange()"/>
+          <label for="ProductToggle1" id="ProductToggleLabel1" class="button ProductToggle-button RadioButtons-button button white">
             PRE&#8209;SETS
           </label>
         </div>
         <div class="ProductToggle-buttonWrapper RadioButtons-combo cell small-6 medium-shrink">
-          <input name="ProductType" type="radio" id="ProductToggle2"
-                 class="RadioButtons-input"
-                 value="custom"
-                 v-model="productToggle"
-                 @change="onProductToggleChange()"
-          />
-          <label
-            for="ProductToggle2"
-            id="ProductToggleLabel2"
-            class="ProductToggle-button RadioButtons-button button white">
+          <input name="ProductType" type="radio" id="ProductToggle2" class="RadioButtons-input" value="custom" v-model="productToggle" @change="onProductToggleChange()"/>
+          <label for="ProductToggle2" id="ProductToggleLabel2" class="ProductToggle-button RadioButtons-button button white">
             CUSTOM
           </label>
         </div>

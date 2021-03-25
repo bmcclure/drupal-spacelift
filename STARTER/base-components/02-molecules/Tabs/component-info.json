@@ -1,0 +1,10 @@
+{
+  "name": "Tabs",
+  "description": "Tabs",
+  "entries": {
+    "scss": [
+      "_Tab.scss",
+      "Tabs.scss"
+    ]
+  }
+}

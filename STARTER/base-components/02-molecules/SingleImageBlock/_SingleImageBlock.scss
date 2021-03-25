@@ -1,9 +1,0 @@
-$SingleImageBlock-aspectMobile: 66.67% !default;
-$SingleImageBlock-aspectDesktop: 33.33% !default;
-
-.SingleImageBlock {
-  padding-top: $SingleImageBlock-aspectMobile;
-  @include breakpoint(large) {
-    padding-top: $SingleImageBlock-aspectDesktop; // divided in half due to flex child 50% width
-  }
-}

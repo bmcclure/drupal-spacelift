@@ -9,7 +9,7 @@ import IndividualResourceDownloadsIconData from './IndividualResourceDownloadsIc
  */
 export default { title: 'Molecules/Individual Resource Downloads Icon' };
 
-export const IndividualResourceDownloadsIconExample = () => (
+export const individualResourceDownloadsIcon = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualResourceDownloadsIcon(

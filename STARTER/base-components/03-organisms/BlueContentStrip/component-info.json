@@ -1,0 +1,9 @@
+{
+  "name": "BlueContentStrip",
+  "description": "Blue Content Strip",
+  "entries": {
+    "scss": [
+      "BlueContentStrip.scss"
+    ]
+  }
+}

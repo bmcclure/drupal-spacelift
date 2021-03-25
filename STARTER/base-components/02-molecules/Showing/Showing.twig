@@ -2,10 +2,11 @@
 /**
  * @file
  * Showing molecule. Used in Pagination, and throughout
-*/
+ */
 #}
+
 {% set showing__base_class = showing__base_class|default('Showing') %}
 
 <div {{ suit(showing__base_class, showing__modifiers, showing__blockname, showing__extra_classes) }}>
-  <span  {{ suit('title', showing__modifiers, showing__base_class) }}>SHOWING:</span> #-## of ##
+  <span {{ suit('title', showing__modifiers, showing__base_class) }}>SHOWING:</span> #-## of ##
 </div>

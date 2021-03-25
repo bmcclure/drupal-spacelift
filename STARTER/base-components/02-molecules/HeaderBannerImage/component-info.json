@@ -1,0 +1,9 @@
+{
+  "name": "HeaderBannerImage",
+  "description": "Header Banner Image",
+  "entries": {
+    "scss": [
+      "HeaderBannerImage.scss"
+    ]
+  }
+}

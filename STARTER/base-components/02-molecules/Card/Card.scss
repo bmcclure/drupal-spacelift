@@ -1,0 +1,45 @@
+$Card-background: white !default;
+$Card-headerColor: black !default;
+$Card-bodyColor: gray !default;
+$Card-paddingAspectRatio: 50% !default;
+
+.Card {
+  $self: &;
+
+  a {
+    background: $Card-background;
+    display: block;
+
+    h3 {
+      color: $Card-headerColor;
+    }
+  }
+
+  &-text {
+    padding: 1rem;
+
+    @include breakpoint(medium) {
+      padding: 1.25rem;
+    }
+
+    @include breakpoint(large) {
+      padding: 2rem 1.5rem;
+    }
+
+    #{$self}--tight-space & {
+      padding: 1rem 0.5rem;
+
+      @include breakpoint(medium) {
+        padding: 1.25rem 0.5rem;
+      }
+    }
+
+    p {
+      color: $Card-bodyColor;
+    }
+  }
+
+  &-image {
+    padding-top: $Card-paddingAspectRatio;
+  }
+}

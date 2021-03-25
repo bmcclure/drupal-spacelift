@@ -9,7 +9,7 @@ import DualCalloutStripsData from './DualCalloutStrips.yml';
  */
 export default { title: 'Organisms/Dual Callout Strip' };
 
-export const DualCalloutStripsExample = () => (
+export const dualCalloutStrips = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: DualCalloutStrips(DualCalloutStripsData),

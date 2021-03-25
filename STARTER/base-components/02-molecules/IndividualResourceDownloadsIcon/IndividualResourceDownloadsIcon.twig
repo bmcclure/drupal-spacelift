@@ -24,17 +24,14 @@
  * - individual_resource_downloads_icon__icon
  * - individual_resource_downloads_icon__body
  * - individual_resource_downloads_icon__url
-*/
+ */
 #}
+
 {% set individual_resource_downloads_icon__base_class = individual_resource_downloads_icon__base_class|default('IndividualResourceDownloadsIcon') %}
 {% set individual_resource_downloads_icon__extra_classes = individual_resource_downloads_icon__extra_classes|default(['']) %}
 
-
-<div
-  {{ suit(individual_resource_downloads_icon__base_class, individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__blockname, individual_resource_downloads_icon__extra_classes) }}
->
-  <div
-    {{ suit('icon', individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__base_class) }}>
+<div {{ suit(individual_resource_downloads_icon__base_class, individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__blockname, individual_resource_downloads_icon__extra_classes) }}>
+  <div {{ suit('icon', individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__base_class) }}>
     <a href="{{ individual_resource_downloads_icon__url }}">
       {{ individual_resource_downloads_icon__icon }}
     </a>

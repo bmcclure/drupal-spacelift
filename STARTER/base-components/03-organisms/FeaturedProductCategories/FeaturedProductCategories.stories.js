@@ -9,7 +9,7 @@ import FeaturedProductCategoriesData from './FeaturedProductCategories.yml';
  */
 export default { title: 'Organisms/Featured Product Categories' };
 
-export const FeaturedProductCategoriesExample = () => (
+export const featuredProductCategories = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedProductCategories(FeaturedProductCategoriesData),

@@ -1,0 +1,50 @@
+$HalfCalloutStrip-linkColor: white !default;
+
+.HalfCalloutStrip {
+  .bg-blue {
+    a {
+      color: $HalfCalloutStrip-linkColor;
+    }
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  &-container {
+    height: 100%;
+    padding: 1rem;
+
+    @include breakpoint(medium) {
+      padding: 1.5rem;
+    }
+  }
+
+  .IndividualResourceDownloadsThumbnail {
+    width: 100%;
+  }
+
+  &:first-child {
+    @include breakpoint(large) {
+      .IndividualResourceDownloadsThumbnail {
+        margin-left: auto;
+        max-width: 600px;
+        padding-left: 50px;
+        padding-right: 4rem;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    @include breakpoint(large) {
+      .IndividualResourceDownloadsThumbnail {
+        max-width: 600px;
+        padding-left: 4rem;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+  }
+}

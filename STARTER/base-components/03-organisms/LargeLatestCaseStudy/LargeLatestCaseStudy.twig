@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * LargeLatestCaseStudy
+ * used on templates/CaseStudiesListing
+ *
+ * Available variables:
+ * - large_latest_case_study__base_class - the base class name
+ * - large_latest_case_study__modifiers - array of modifiers to add to the base classname
+ * - large_latest_case_study__blockname - blockname prepended to the base classname
+ * - large_latest_case_study__extra_classes - extra classes
+ * -
+ * - large_latest_case_study__title
+ * - large_latest_case_study__post.
+*/
+#}
+
+{% set large_latest_case_study__base_class = large_latest_case_study__base_class|default('LargeLatestCaseStudy') %}
+{% set large_latest_case_study__extra_classes = large_latest_case_study__extra_classes|default(['SingleFeaturedCaseStudy']) %}
+
+<section {{ suit(large_latest_case_study__base_class, large_latest_case_study__modifiers, large_latest_case_study__blockname, large_latest_case_study__extra_classes) }}>
+  <div class="grid-container">
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__level: 2,
+      heading: large_latest_case_study__title,
+      heading__extra_classes: ['title'],
+    } %}
+    {% include '@molecules/IndividualCaseStudyTeaser/IndividualCaseStudyTeaser.twig' with {
+      individual_case_study_teaser__image    : large_latest_case_study__post.image,
+      individual_case_study_teaser__title    : large_latest_case_study__post.title,
+      individual_case_study_teaser__body     : large_latest_case_study__post.body,
+      individual_case_study_teaser__bullet_1 : large_latest_case_study__post.bullet_1,
+      individual_case_study_teaser__bullet_2 : large_latest_case_study__post.bullet_2,
+      individual_case_study_teaser__bullet_3 :large_latest_case_study__post.bullet_3,
+      individual_case_study_teaser__url      :large_latest_case_study__post.url,
+      individual_case_study_teaser__subheadline  : large_latest_case_study__post.subheadline,
+      individual_case_study_teaser__button_title : large_latest_case_study__post.button_title,
+    } %}
+  </div>
+</section>

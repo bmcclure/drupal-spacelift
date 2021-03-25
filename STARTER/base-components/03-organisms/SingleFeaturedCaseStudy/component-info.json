@@ -1,0 +1,9 @@
+{
+  "name": "SingleFeaturedCaseStudy",
+  "description": "Single Featured Case Study",
+  "entries": {
+    "scss": [
+      "SingleFeaturedCaseStudy.scss"
+    ]
+  }
+}

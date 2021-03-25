@@ -9,7 +9,7 @@ import OtherPagesTeaserBlockData from './OtherPagesTeaserBlock.yml';
  */
 export default { title: 'Molecules/Other Pages Teaser Block' };
 
-export const OtherPagesTeaserBlockExample = () => (
+export const otherPagesTeaserBlock = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: OtherPagesTeaserBlock(OtherPagesTeaserBlockData),

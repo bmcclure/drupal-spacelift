@@ -51,7 +51,6 @@ module.exports = async ({ config }) => {
     ],
   });
 
-  // StyleLint
   config.plugins.push(
     new _StyleLintPlugin({
       configFile: path.resolve(__dirname, './.stylelintrc'),

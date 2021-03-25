@@ -1,0 +1,50 @@
+$IndividualProductTeaserTiny-hoverBackground: gray !default;
+$IndividualProductTeaserTiny-textColor: #686868 !default;
+$IndividualProductTeaserTiny-smallFontSize: 0.875rem !default;
+
+.IndividualProductTeaserTiny {
+  padding: 0.5rem;
+
+  &:hover {
+    background: $IndividualProductTeaserTiny-hoverBackground;
+  }
+
+  &--noHover {
+    &:hover {
+      background: initial;
+    }
+  }
+
+  &-title {
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  &-text {
+    padding-left: 0.5rem;
+  }
+
+  &-teaser {
+    color: $IndividualProductTeaserTiny-textColor;
+
+    p {
+      font-size: $IndividualProductTeaserTiny-smallFontSize;
+      margin-bottom: 0;
+    }
+  }
+
+  &-price {
+    align-items: flex-end;
+    color: $IndividualProductTeaserTiny-textColor;
+    display: flex;
+
+    p {
+      font-size: $IndividualProductTeaserTiny-smallFontSize;
+      margin-bottom: 0;
+    }
+  }
+
+  &WithPrice {
+    margin-bottom: 0.5rem;
+  }
+}

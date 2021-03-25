@@ -6,7 +6,8 @@
  * - heading__base_class - the base class
  * - heading__modifiers - array of modifiers to add to the base classname
  * - heading__blockname - blockname prepended to the base classname
- * - heading__extra_classes = extra classes
+ * - heading__extra_classes - extra classes
+ * - heading__attributes - additional HTML attributes to add to the heading tag
  *
  * - heading - the content of the heading (typically text)
  *
@@ -19,17 +20,23 @@
 #}
 {% set heading__base_class = heading__base_class|default('h' ~ heading__level) %}
 
-<h{{ heading__level }} {{ suit(heading__base_class, heading__modifiers, heading__blockname, heading__extra_classes) }}>
-  {% if heading__url %}
-    {% include "@atoms/links/Link/Link.twig" with {
-      "link__content": heading,
-      "link__url": heading__url,
-      "link__attributes": heading__link_attributes,
-      "link__base_class": heading__link_base_class,
-      "link__modifiers": heading__link_modifiers,
-      "link__blockname": heading__link_blockname|default(heading__base_class),
-    } %}
-  {% else %}
-    {{ heading }}
-  {% endif %}
-</h{{ heading__level }}>
+{% spaceless %}
+  <h{{ heading__level }}
+    {{ suit(heading__base_class, heading__modifiers, heading__blockname, heading__extra_classes) }}
+    {% for attribute, value in heading__attributes %}
+      {{ attribute }}="{{ value }}"
+    {% endfor %}>
+    {% if heading__url %}
+      {% include '@atoms/links/Link/Link.twig' with {
+        link__content: heading,
+        link__url: heading__url,
+        link__attributes: heading__link_attributes,
+        link__base_class: heading__link_base_class,
+        link__modifiers: heading__link_modifiers,
+        link__blockname: heading__link_blockname|default(heading__base_class),
+      } %}
+    {% else %}
+      {{ heading }}
+    {% endif %}
+  </h{{ heading__level }}>
+{% endspaceless %}

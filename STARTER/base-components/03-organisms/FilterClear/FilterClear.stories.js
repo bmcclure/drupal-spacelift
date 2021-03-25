@@ -9,7 +9,7 @@ import FilterClearData from './FilterClear.yml';
  */
 export default { title: 'Organisms/FilterClear' };
 
-export const FilterClearExample = () => (
+export const filterClear = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FilterClear(FilterClearData),

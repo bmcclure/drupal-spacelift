@@ -1,0 +1,19 @@
+$IndividualOfficeLocation-text: gray !default;
+$IndividualOfficeLocation-hoverText: red !default;
+
+.IndividualOfficeLocation {
+  &-image.lozad[data-loaded="true"] {
+    opacity: 0.25;
+  }
+
+  a {
+    @include transition;
+
+    color: $IndividualOfficeLocation-text;
+
+    &:hover {
+      color: $IndividualOfficeLocation-hoverText;
+      text-decoration: underline;
+    }
+  }
+}

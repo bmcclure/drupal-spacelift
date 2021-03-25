@@ -22,13 +22,13 @@
     "imageminEnabled": false
   },
   "sources": {
-    "scss": ["src/scss/**/*.scss", "components/*/scss/**/*.scss"],
+    "scss": ["src/scss/**/*.scss", "base-components/*/scss/**/*.scss"],
     "images": "images/**/*.+(jpeg|jpg|png|gif|svg)",
     "fonts": "src/fonts/*.{ttf,otf}",
-    "js": ["src/js/**/*.js", "components/*/js/**/*.js"],
+    "js": ["src/js/**/*.js", "base-components/*/js/**/*.js"],
     "icons": "src/icons",
     "iconFiles": "*.svg",
-    "twig": ["templates/**/*.html.twig", "components/*/templates/**/*.html.twig"]
+    "twig": ["templates/**/*.html.twig", "base-components/*/templates/**/*.html.twig"]
   },
   "assets": {},
   "browserSync": {

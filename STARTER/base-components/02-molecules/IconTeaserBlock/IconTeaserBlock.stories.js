@@ -9,7 +9,7 @@ import IconTeaserBlockData from './IconTeaserBlock.yml';
  */
 export default { title: 'Molecules/Icon Teaser Block' };
 
-export const IconTeaserBlockExample = () => (
+export const iconTeaserBlock = () => (
   <div
     dangerouslySetInnerHTML={{ __html: IconTeaserBlock(IconTeaserBlockData) }}
   />

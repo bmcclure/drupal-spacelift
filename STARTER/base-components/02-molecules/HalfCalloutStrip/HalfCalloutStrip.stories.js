@@ -9,7 +9,7 @@ import HalfCalloutStripData from './HalfCalloutStrip.yml';
  */
 export default { title: 'Molecules/Half Callout Strip' };
 
-export const HalfCalloutStripExample = () => (
+export const halfCalloutStrip = () => (
   <div
     dangerouslySetInnerHTML={{ __html: HalfCalloutStrip(HalfCalloutStripData) }}
   />

@@ -1,0 +1,9 @@
+{
+  "name": "ProductCategoryTeaserBlock",
+  "description": "Product Category Teaser Block",
+  "entries": {
+    "scss": [
+      "ProductCategoryTeaserBlock.scss"
+    ]
+  }
+}

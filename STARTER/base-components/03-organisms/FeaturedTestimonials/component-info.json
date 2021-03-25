@@ -1,0 +1,12 @@
+{
+  "name": "FeaturedTestimonials",
+  "description": "Featured Testimonials",
+  "entries": {
+    "scss": [
+      "FeaturedTestimonials.scss"
+    ],
+    "js": [
+      "FeaturedTestimonials.js"
+    ]
+  }
+}

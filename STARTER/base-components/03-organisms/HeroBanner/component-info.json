@@ -1,0 +1,12 @@
+{
+  "name": "HeroBanner",
+  "description": "Hero Banner",
+  "entries": {
+    "scss": [
+      "HeroBanner.scss"
+    ],
+    "js": [
+      "HeroBanner.js"
+    ]
+  }
+}

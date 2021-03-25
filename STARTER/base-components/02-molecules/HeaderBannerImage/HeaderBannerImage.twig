@@ -14,6 +14,9 @@
 
 {% set header_banner_image__base_class = header_banner_image__base_class|default('HeaderBannerImage') %}
 
-<div {{ suit(header_banner_image__base_class, header_banner_image__modifiers, header_banner_image__blockname, header_banner_image__extra_classes) }}
-     style="background: url({{ header_banner_image__image }}) no-repeat center; background-size: cover;">
-</div>
+{% spaceless %}
+  <div
+    {{ suit(header_banner_image__base_class, header_banner_image__modifiers, header_banner_image__blockname, header_banner_image__extra_classes) }}
+    style="background: url({{ header_banner_image__image }}) no-repeat center; background-size: cover;">
+  </div>
+{% endspaceless %}

@@ -1,0 +1,9 @@
+{
+  "name": "AddToCart",
+  "description": "Add To Cart",
+  "entries": {
+    "scss": [
+      "AddToCart.scss"
+    ]
+  }
+}

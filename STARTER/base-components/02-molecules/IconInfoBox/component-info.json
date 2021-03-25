@@ -1,0 +1,9 @@
+{
+  "name": "IconInfoBox",
+  "description": "Icon Info Box",
+  "entries": {
+    "scss": [
+      "IconInfoBox.scss"
+    ]
+  }
+}

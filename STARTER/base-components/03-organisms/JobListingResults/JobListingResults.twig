@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * JobListingResults
+ * used on the Careers Listing Page
+ *
+ * Available variables:
+ * - job_listing_results__base_class - the base class name
+ * - job_listing_results__modifiers - array of modifiers to add to the base classname
+ * - job_listing_results__blockname - blockname prepended to the base classname
+ * - job_listing_results__extra_classes - extra classes
+ * -
+ * - job_listing_results__title
+ * - job_listing_results__footer
+ * - job_listing_results__button_title
+ * - job_listing_results__url
+ * - job_listing_results__teasers
+*/
+#}
+
+{% set job_listing_results__base_class = job_listing_results__base_class|default('JobListingResults') %}
+{% set job_listing_results__extra_classes = job_listing_results__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(job_listing_results__base_class, job_listing_results__modifiers, job_listing_results__blockname, job_listing_results__extra_classes) }}>
+  <div class="grid-container">
+    <header {{ suit('header', job_listing_results__modifiers, job_listing_results__base_class, ['text-center'] ) }}>
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__level: 2,
+        heading: job_listing_results__title,
+      } %}
+    </header>
+    <section {{ suit('posts', job_listing_results__modifiers, job_listing_results__base_class, ['FlexRow', 'medium-up-2'] ) }}>
+      {% for teaser in job_listing_results__teasers %}
+        {% include '@molecules/HorizontalCard/HorizontalCard.twig' with {
+          horizontal_card__image: teaser.image,
+          horizontal_card__name: teaser.name,
+          horizontal_card__subtitle: teaser.subtitle,
+          horizontal_card__job_description: teaser.job_description,
+          horizontal_card__job_posteddate: teaser.job_posteddate,
+          horizontal_card__job_url: teaser.job_url,
+        } %}
+      {% endfor %}
+    </section>
+    <footer class="wysiwyg text-center">
+      <p>{{ job_listing_results__footer }} <a href="{{ job_listing_results__url }}"><b>{{ job_listing_results__button_text }}</b></a></p>
+    </footer>
+  </div>
+</section>

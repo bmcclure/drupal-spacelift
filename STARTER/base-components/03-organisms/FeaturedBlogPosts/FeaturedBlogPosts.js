@@ -1,47 +1,49 @@
 import $ from 'jquery';
-import 'slick-carousel';
-import AOS from "aos";
+import AOS from 'aos';
 import lozad from 'lozad';
-//
-$(function () {
+
+Drupal.behaviors.FeaturedBlogPostsComponent = {
+  attach: (context) => {
     'use strict';
 
-    var medium = 640;
+    const medium = 640;
 
-    function initFeaturedBlogSlider() {
-        $('.FeaturedBlogPosts-slider').on('init', function (event, slick) {
-            // console.log("initialized");
-            AOS.init();
-            const observer = lozad(); // lazy loads elements with default selector as ".lozad"
-            observer.observe();
+    const initFeaturedBlogSlider = () => {
+      $('.FeaturedBlogPosts-slider', context)
+        .on('init', function (event, slick) {
+          // console.log("initialized");
+          AOS.init();
+          const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+          observer.observe();
+        })
+        .slick({
+          arrows: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         });
-
-        $('.FeaturedBlogPosts-slider').slick({
-            arrows: true,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        });
-    }
+    };
 
     if (window.innerWidth < medium) {
-        if (!$('.slider').hasClass('slick-initialized')) {
-            initFeaturedBlogSlider();
-        }
-
+      if (!$('.slider', context).hasClass('slick-initialized')) {
+        initFeaturedBlogSlider();
+      }
     }
-    $(window).resize(function (e) {
-        if (window.innerWidth < medium) {
-            if (!$('.slider').hasClass('slick-initialized')) {
-                initFeaturedBlogSlider();
-            }
 
-        } else {
-            if ($('.FeaturedBlogPosts-slider').hasClass('slick-initialized')) {
-                $('.FeaturedBlogPosts-slider').slick('unslick');
-            }
+    $(window).resize(() => {
+      if (window.innerWidth < medium) {
+        if (!$('.slider', context).hasClass('slick-initialized')) {
+          initFeaturedBlogSlider();
         }
+
+      }
+      else {
+        const $slider = $('.FeaturedBlogPosts-slider', context);
+
+        if ($slider.hasClass('slick-initialized')) {
+          $slider.slick('unslick');
+        }
+      }
     });
-
-});
-
+  },
+};

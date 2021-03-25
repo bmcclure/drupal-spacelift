@@ -9,7 +9,7 @@ import CustomFacetDisplayData from './CustomFacetDisplay.yml';
  */
 export default { title: 'Organisms/Custom Facet Display' };
 
-export const CustomFacetDisplayExample = () => (
+export const customFacetDisplay = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: CustomFacetDisplay(CustomFacetDisplayData),

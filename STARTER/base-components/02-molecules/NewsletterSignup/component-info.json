@@ -1,0 +1,9 @@
+{
+  "name": "NewsletterSignup",
+  "description": "Newsletter Signup",
+  "entries": {
+    "scss": [
+      "NewsletterSignup.scss"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "CompleteOrder",
+  "description": "Complete Order",
+  "entries": {
+    "scss": [
+      "CompleteOrder.scss"
+    ]
+  }
+}

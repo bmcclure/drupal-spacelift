@@ -1,0 +1,9 @@
+{
+  "name": "CustomTag",
+  "description": "Custom Tag",
+  "entries": {
+    "scss": [
+      "CustomTag.scss"
+    ]
+  }
+}

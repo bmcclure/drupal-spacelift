@@ -9,7 +9,7 @@ import HeaderBannerImageData from './HeaderBannerImage.yml';
  */
 export default { title: 'Molecules/Header Banner Image' };
 
-export const HeaderBannerImageExample = () => (
+export const headerBannerImage = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: HeaderBannerImage(HeaderBannerImageData),

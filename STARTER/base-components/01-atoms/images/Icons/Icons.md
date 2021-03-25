@@ -13,7 +13,7 @@ The SVG component is found here:
 See available variables in that file
 as well as instructions for Drupal. Examples of usage below:
 
-Simple: (no BEM renaming)
+Simple: (no SUIT renaming)
 
 ```
 {% include "@atoms/images/Icons/Icon.twig" with {
@@ -30,7 +30,7 @@ Simple: (no BEM renaming)
 </svg>
 ```
 
-Complex (BEM classes):
+Complex (SUIT classes):
 
 ```
 {% include "@atoms/images/Icons/Icon.twig" with {

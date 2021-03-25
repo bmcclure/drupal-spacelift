@@ -9,6 +9,6 @@ import SearchResultData from './SearchResult.yml';
  */
 export default { title: 'Molecules/Search Result' };
 
-export const SearchResultExample = () => (
+export const searchResult = () => (
   <div dangerouslySetInnerHTML={{ __html: SearchResult(SearchResultData) }} />
 );

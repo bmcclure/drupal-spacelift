@@ -1,0 +1,9 @@
+{
+  "name": "UtilityBar",
+  "description": "Utility Bar",
+  "entries": {
+    "scss": [
+      "UtilityBar.scss"
+    ]
+  }
+}

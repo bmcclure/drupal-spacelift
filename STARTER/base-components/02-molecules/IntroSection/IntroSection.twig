@@ -12,17 +12,18 @@
  * -
  * - intro_section__title
  * - intro_section__body
-*/
+ */
 #}
+
 {% set intro_section__base_class = intro_section__base_class|default('IntroSection') %}
 {% set intro_section__extra_classes = intro_section__extra_classes|default(['section-header']) %}
 
 <header {{ suit(intro_section__base_class, intro_section__modifiers, intro_section__blockname, intro_section__extra_classes) }}>
-    <div class="grid-container short text-center">
-      {% include '@atoms/text/Heading/Heading.twig' with {
-        heading__level: 2,
-        heading: intro_section__title,
-      } %}
-        <p>{{ intro_section__body }}</p>
-    </div>
+  <div class="grid-container short text-center">
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__level: 2,
+      heading: intro_section__title,
+    } %}
+    <p>{{ intro_section__body }}</p>
+  </div>
 </header>

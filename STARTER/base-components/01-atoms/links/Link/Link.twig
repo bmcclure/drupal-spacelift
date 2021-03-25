@@ -1,7 +1,7 @@
 {#
 /**
  * Available variables:
- * - link__content - the content of the link (typically text)
+ * - link__content - the content of the link (typically text but could be HTML)
  * - link__url - the url this link should poing to
  * - link__attributes - array of attribute,value pairs
  * - link__base_class - the base class name
@@ -21,8 +21,7 @@
     {% for attribute, value in link__attributes %}
       {{ attribute }}="{{ value }}"
     {% endfor %}
-    href="{{ link__url }}"
-    title="{{ link__content }}">
+    href="{{ link__url }}">
     {% block link__content %}
       {{ link__content }}
     {% endblock %}

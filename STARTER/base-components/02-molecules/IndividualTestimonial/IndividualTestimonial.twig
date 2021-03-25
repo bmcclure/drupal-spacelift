@@ -13,7 +13,7 @@
  * - individual_testimonial__type
  * - individual_testimonial__testimonial
  * - individual_testimonial__citation
-*/
+ */
 #}
 
 {% set individual_testimonial__base_class = individual_testimonial__base_class|default('IndividualTestimonial') %}
@@ -21,14 +21,13 @@
 <div {{ suit(individual_testimonial__base_class, individual_testimonial__modifiers, individual_testimonial__blockname, individual_testimonial__extra_classes) }}>
   <div {{ suit('row', individual_testimonial__modifiers, individual_testimonial__base_class) }}>
     {% if individual_testimonial__image %}
-      <div
-        {{ suit('image', individual_testimonial__modifiers, individual_testimonial__base_class, ['lozad'] ) }}
-        class="IndividualTestimonial-image lozad" data-background-image="{{ individual_testimonial__image }}"
-           style="background:url(assets/images/placeholder.png) no-repeat center; background-size: cover;">
+      <div {{ suit('image', individual_testimonial__modifiers, individual_testimonial__base_class, ['lozad'] ) }}
+        class="IndividualTestimonial-image lozad"
+        data-background-image="{{ individual_testimonial__image }}"
+        style="background:url(assets/images/placeholder.png) no-repeat center; background-size: cover;">
       </div>
     {% endif %}
-
-    <blockquote {{ suit('quote', individual_testimonial__modifiers, individual_testimonial__base_class) }}>
+    <blockquote {{ suit('quote', individual_testimonial__modifiers, individual_testimonial__base_class, ['Blockquote']) }}>
       <p>{{ individual_testimonial__testimonial }}</p>
       <footer><cite>{{ individual_testimonial__citation }}</cite></footer>
     </blockquote>

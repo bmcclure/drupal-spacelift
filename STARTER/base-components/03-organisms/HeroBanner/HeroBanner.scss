@@ -1,0 +1,154 @@
+$HeroBanner-text-width-medium: 500px !default;
+$HeroBanner-text-width-large: 600px !default;
+$HeroBanner-white: #fff !default;
+$HeroBanner-overlay: blue !default;
+$HeroBanner-overlayAlt: pink !default;
+
+.HeroBanner {
+  $self: &;
+
+  color: $HeroBanner-white;
+
+  .white {
+    color: $HeroBanner-white;
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  &-openBlock {
+    background-size: cover !important; /* sorry */
+    padding: 1.5rem 20px 1rem;
+    position: relative;
+    border-bottom: 1px solid $HeroBanner-white;
+    @include breakpoint(medium) {
+      padding: 3rem 20px 2rem;
+
+    }
+    @include breakpoint(large) {
+      border-right: 1px solid $HeroBanner-white;
+    }
+
+    &Overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $HeroBanner-overlay;
+      opacity: .85;
+      @include breakpoint(medium) {
+        opacity: .75;
+      }
+    }
+
+    #{$self}-openBlockTextwrap {
+      position: relative;
+      @include breakpoint(medium) {
+        max-width: $HeroBanner-text-width-medium;
+      }
+      @include breakpoint(xlarge) {
+        max-width: $HeroBanner-text-width-large;
+        margin-left: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-left: 40px;
+        h1, p {
+          max-width: 400px;
+        }
+
+      }
+    }
+  }
+
+  &-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $HeroBanner-white;
+    border-bottom: 1px solid $HeroBanner-white;
+    padding: 1rem;
+    position: relative;
+    @include breakpoint(medium) {
+      padding: 2rem;
+    }
+
+    &Overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $HeroBanner-overlayAlt;
+      opacity: .85;
+      @include transition;
+      @include breakpoint(xlarge) {
+        background: $HeroBanner-overlay;
+        opacity: .35;
+      }
+    }
+
+    &--two {
+      @include breakpoint(medium) {
+        border-right: 1px solid $HeroBanner-white;
+      }
+    }
+
+    &Container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      @include breakpoint(medium) {
+        max-width: 250px;
+      }
+    }
+
+    &Icon {
+      width: 80px;
+      padding-right: 1rem;
+      @include breakpoint(medium) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+
+    &Text {
+      width: calc(100% - 80px);
+      @include breakpoint(medium) {
+        width: 100%;
+      }
+    }
+
+    &Body {
+      margin-bottom: .75rem;
+    }
+
+    &Hidden {
+      @include transition;
+      @include breakpoint(xlarge) {
+        max-height: 0;
+        overflow: hidden;
+      }
+    }
+
+    &:hover {
+      color: $HeroBanner-white;
+
+      #{$self}-blockHidden {
+        @include breakpoint(xlarge) {
+          max-height: 400px;
+        }
+      }
+
+      @include breakpoint(xlarge) {
+        #{$self}-blockOverlay {
+          background: $HeroBanner-overlayAlt;
+          opacity: .85;
+        }
+      }
+    }
+  }
+}
+

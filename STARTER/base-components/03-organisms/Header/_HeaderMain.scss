@@ -1,0 +1,55 @@
+$Header-mainBackground: #fff !default;
+$Header-borderBottom: 1px solid pink !default;
+$Header-active-color: pink !default;
+
+.Header-main {
+  background: $Header-mainBackground;
+  border-bottom: $Header-borderBottom;
+
+  &Logo {
+    margin: .25rem 0.5rem 0.5rem;
+    max-width: 104px;
+    @include breakpoint(medium) {
+      max-width: 163px;
+      margin: 0 1rem 1rem;
+    }
+  }
+
+}
+
+.sticky {
+  //z-index: 1000;
+
+  &.is-stuck {
+    //z-index: 1000;
+
+    .admin-bar & {
+      padding-top: 32px;
+
+    }
+  }
+
+}
+
+#main-nav {
+  .active > a {
+    color: $Header-active-color;
+  }
+}
+
+#Header-mainRightMenuDropdown {
+  justify-content: flex-end;
+
+  &.dropdown.menu > li.is-dropdown-submenu-parent > a {
+    @include breakpoint(small only) {
+      padding-right: .5rem; /* OVERRIDE for foundation. */
+    }
+  }
+}
+
+.CartCount {
+  font-size: rem-calc(12);
+  @include breakpoint(medium) {
+    font-size: rem-calc(14);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "SingleImageBlock",
+  "description": "Single Image Block",
+  "entries": {
+    "scss": [
+      "SingleImageBlock.scss"
+    ]
+  }
+}

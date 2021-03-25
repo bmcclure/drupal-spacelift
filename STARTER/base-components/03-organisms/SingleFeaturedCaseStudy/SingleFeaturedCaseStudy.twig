@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Single Featured Case Study
+ * used on Flexible Template
+ *
+ * Available variables:
+ * - single_featured_case_study__base_class - the base class name
+ * - single_featured_case_study__modifiers - array of modifiers to add to the base classname
+ * - single_featured_case_study__blockname - blockname prepended to the base classname
+ * - single_featured_case_study__extra_classes - extra classes
+ * -
+ * - single_featured_case_study__background - bg-light, bg-blue
+ * - single_featured_case_study__title
+ * - single_featured_case_study__button_title
+ * - single_featured_case_study__url
+ * - single_featured_case_study__teaser - should be just 1 featured
+*/
+#}
+
+{% set single_featured_case_study__base_class = single_featured_case_study__base_class|default('SingleFeaturedCaseStudy') %}
+{% set single_featured_case_study__extra_classes = single_featured_case_study__extra_classes|default([single_featured_case_study__background]) %}
+{% if single_featured_case_study__teaser %}
+  <section {{ suit(single_featured_case_study__base_class, single_featured_case_study__modifiers, single_featured_case_study__blockname, single_featured_case_study__extra_classes) }}>
+    <div class="grid-container">
+      <header class="title grid-x grid-margin-x vertical-center">
+        <div class="cell medium-auto">
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__level: 2,
+            heading: single_featured_case_study__title,
+          } %}
+        </div>
+        <div class="cell medium-shrink medium-text-right">
+          <a href="{{ single_featured_case_study__url }}" class="button"
+             title="{{ single_featured_case_study__button_title }}">{{ single_featured_case_study__button_title }}
+            <span
+              class="fas fa-caret-right"></span></a>
+        </div>
+      </header>
+      {% include '@molecules/IndividualCaseStudyTeaser/IndividualCaseStudyTeaser.twig' with {
+        individual_case_study_teaser__image    : single_featured_case_study__teaser.image,
+        individual_case_study_teaser__title    : single_featured_case_study__teaser.title,
+        individual_case_study_teaser__body     : single_featured_case_study__teaser.body,
+        individual_case_study_teaser__bullet_1 : single_featured_case_study__teaser.bullet_1,
+        individual_case_study_teaser__bullet_2 : single_featured_case_study__teaser.bullet_2,
+        individual_case_study_teaser__bullet_3 :single_featured_case_study__teaser.bullet_3,
+        individual_case_study_teaser__url      :single_featured_case_study__teaser.url,
+        individual_case_study_teaser__subheadline  : single_featured_case_study__teaser.subheadline,
+        individual_case_study_teaser__button_title : single_featured_case_study__teaser.button_title,
+      } %}
+    </div>
+  </section>
+
+{% endif %}

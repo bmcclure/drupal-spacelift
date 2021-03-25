@@ -7,6 +7,6 @@ import Breadcrumb from './Breadcrumb.twig';
  */
 export default { title: 'Molecules/Breadcrumb' };
 
-export const BreadcrumbExample = () => (
+export const breadcrumb = () => (
   <div dangerouslySetInnerHTML={{ __html: Breadcrumb() }} />
 );

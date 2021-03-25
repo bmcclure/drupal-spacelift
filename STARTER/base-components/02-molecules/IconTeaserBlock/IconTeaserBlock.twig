@@ -11,19 +11,22 @@
  * - icon_teaser_block__icon - icon
  * - icon_teaser_block__title
  * - icon_teaser_block__url
-*/
+ */
 #}
 {% set icon_teaser_block__base_class = 'IconTeaserBlock' %}
 {% set icon_teaser_block__extra_classes = icon_teaser_block__extra_classes|default(['FlexRow-item']) %}
 
-
 <div {{ suit(icon_teaser_block__base_class, icon_teaser_block__modifiers, icon_teaser_block__blockname, icon_teaser_block__extra_classes) }}>
-  <a
-    {{ suit('container', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}
-    href="{{ icon_teaser_block__url }}" title="{{ icon_teaser_block__title }}">
-    <div {{ suit('icon', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>{{ icon_teaser_block__icon }}</div>
+  <a {{ suit('container', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}
+    href="{{ icon_teaser_block__url }}"
+    title="{{ icon_teaser_block__title }}">
+    <div {{ suit('icon', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>
+      {{ icon_teaser_block__icon }}
+    </div>
     <div {{ suit('text', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>
-      <h4 {{ suit('textTitle', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>{{ icon_teaser_block__title }} </h4>
+      <h4 {{ suit('textTitle', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>
+        {{ icon_teaser_block__title }}
+      </h4>
       <span class="fas fa-long-arrow-alt-right"></span>
     </div>
   </a>

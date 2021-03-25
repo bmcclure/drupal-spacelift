@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * My Account Menu
+ * @todo THIS IS HARDCODED. how does this need to be for Drupal?
+ *
+ * Available variables:
+ * - replace__base_class - the base class name
+ * - replace__modifiers - array of modifiers to add to the base classname
+ * - replace__blockname - blockname prepended to the base classname
+ * - replace__extra_classes - extra classes
+ * -
+*/
+#}
+{% set replace__base_class = replace__base_class|default('MyAccountMenu') %}
+{% set replace__extra_classes = replace__extra_classes|default(['']) %}
+{% set right_menu = [
+  {
+    'name' : 'Sign In',
+    'url'  : '#',
+  },
+  {
+    'name' : 'Account Dashboard',
+    'url'  : '#',
+  },
+  {
+    'name' : 'Account Information',
+    'url'  : '#',
+  },
+  {
+    'name' : 'Addresses',
+    'url'  : '#',
+  },
+  {
+    'name' : 'Orders/Quotes',
+    'url'  : '#',
+  },
+  {
+    'name' : 'Payment Options',
+    'url'  : '#',
+  },
+  {
+    'name' : 'Documents',
+    'url'  : '#',
+  },
+  {
+    'name' : 'All My Data',
+    'url'  : '#',
+  },
+  {
+    'name' : 'My Jobs',
+    'url'  : '#',
+  },
+]
+%}
+
+<div class="MyAccountMenu cell auto medium-shrink ">
+  <ul id="MyAccountMenu-dropdown" class="MyAccountMenu-dropdown dropdown menu" data-dropdown-menu>
+    <li class="MyAccountMenu-account">
+      <a href="#" class="h6 show-for-medium MyAccountMenu-title"><span class="far fa-user"></span> SIGN IN</a>
+      <button type="button" data-open="OffcanvasMyAccount" class="MyAccountMenu-title hide-for-medium h6"><span
+          class="far fa-user"></span></button>
+      {% if right_menu %}
+      <ul class="MyAccountMenu-dropdownMenu menu show-for-medium">
+        {% for menuItem in right_menu %}
+        <li class="MyAccountMenu-dropdownMenuItem"><a href="{{ menuItem.url }}">{{ menuItem.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    <li><a href="#" class="h6 MyAccountMenu-title"><span class="far fa-stopwatch"></span><span
+          class="show-for-medium">  QUICK ORDER</span></a></li>
+    <li>
+      <button type="button" data-open="OffcanvasCart" class="MyAccountMenu-title Header-cartButton h6"><span
+          class="far fa-shopping-cart"></span><span class="show-for-medium">  CART</span> <span
+          class="CartCount">(6)</span></button>
+    </li>
+  </ul>
+</div>

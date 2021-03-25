@@ -1,9 +1,0 @@
-{
-  "name": "sections",
-  "description": "Sections",
-  "entries": {
-    "scss": [
-      "title-bar/_title-bar.scss"
-    ]
-  }
-}

@@ -9,7 +9,7 @@ import FeaturedCaseStudiesData from './FeaturedCaseStudies.yml';
  */
 export default { title: 'Organisms/Featured Case Studies' };
 
-export const FeaturedCaseStudiesExample = () => (
+export const featuredCaseStudies = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedCaseStudies(FeaturedCaseStudiesData),

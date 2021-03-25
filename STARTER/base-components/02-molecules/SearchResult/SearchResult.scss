@@ -1,0 +1,26 @@
+$SearchResult-borderBottom: 1px solid #eee !default;
+
+.SearchResult {
+  border-bottom: $SearchResult-borderBottom;
+  padding: 2rem 0;
+
+  &-type {
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    text-align: right;
+  }
+
+  &-image {
+    margin-bottom: 1rem;
+
+    @include breakpoint(large) {
+      margin-bottom: 0;
+    }
+  }
+
+  &--download {
+    .SearchResult-image {
+      @include drop-shadow;
+    }
+  }
+}

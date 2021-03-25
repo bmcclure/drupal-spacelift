@@ -1,0 +1,33 @@
+job_listing_results__title:  'Apply For An Open Position Headline (H2)'
+job_listing_results__footer: 'Don''t see your position, but really want to work for MSI?'
+job_listing_results__button_title: 'Contact Us'
+job_listing_results__url: '#placeholder'
+job_listing_results__teasers:
+  - id: 0
+    image: 'https://placeimg.com/800/450/any'
+    name: 'AIM Implementation Specialist'
+    subtitle: 'Full-Time | Milwaukee, WI'
+    job_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisue volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nib, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilis fermentum. Aliquam porttitor mauris sit amet orci.'
+    job_posteddate: 'Jan 26, 2020'
+    job_url: '#outside_Url'
+  - id: 1
+    image: 'https://placeimg.com/800/450/any'
+    name: 'AIM Implementation Specialist'
+    subtitle: 'Full-Time | Milwaukee, WI'
+    job_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisue volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nib, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilis fermentum. Aliquam porttitor mauris sit amet orci.'
+    job_posteddate: 'Jan 26, 2020'
+    job_url: '#outside_Url'
+  - id: 2
+    image: 'https://placeimg.com/800/450/any'
+    name: 'AIM Implementation Specialist'
+    subtitle: 'Full-Time | Milwaukee, WI'
+    job_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisue volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nib, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilis fermentum. Aliquam porttitor mauris sit amet orci.'
+    job_posteddate: 'Jan 26, 2020'
+    job_url: '#outside_Url'
+  - id: 3
+    image: 'https://placeimg.com/800/450/any'
+    name: 'AIM Implementation Specialist'
+    subtitle: 'Full-Time | Milwaukee, WI'
+    job_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisue volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nib, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilis fermentum. Aliquam porttitor mauris sit amet orci.'
+    job_posteddate: 'Jan 26, 2020'
+    job_url: '#outside_Url'

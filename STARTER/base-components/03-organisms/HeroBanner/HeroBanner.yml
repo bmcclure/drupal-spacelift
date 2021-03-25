@@ -1,0 +1,17 @@
+hero_banner__image: 'https://placeimg.com/2240/1260/nature'
+hero_banner__title: 'We’re The Last Step On The Job H1 Headline Here'
+hero_banner__body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis suspendisse urna nibh viverra non semper.'
+
+hero_banner__image_1: 'https://placeimg.com/2240/1260/people'
+hero_banner__icon_1: 'https://placeimg.com/2240/1260/any'
+hero_banner__title_1: "View Products"
+hero_banner__body_1: 'Testing 2: Lorem ipsum dolor sit amet consect adipiscing elit donec odio quisque.'
+hero_banner__cta_1: 'Products Overview'
+hero_banner__url_1: '#'
+
+hero_banner__image_2: 'https://placeimg.com/2240/1260/tech'
+hero_banner__icon_2: 'https://placeimg.com/2240/1260/any'
+hero_banner__title_2: 'Owner Services'
+hero_banner__body_2: 'Lorem ipsum dolor sit amet consect adipiscing elit donec odio quisque.'
+hero_banner__cta_2: 'Services Overview'
+hero_banner__url_2: '#'

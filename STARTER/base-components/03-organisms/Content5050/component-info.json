@@ -1,0 +1,9 @@
+{
+  "name": "Content5050",
+  "description": "Content 50-50",
+  "entries": {
+    "scss": [
+      "Content5050.scss"
+    ]
+  }
+}

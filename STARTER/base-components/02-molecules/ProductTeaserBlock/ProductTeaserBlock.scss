@@ -1,0 +1,65 @@
+$ProductTeaserBlock-background: white !default;
+$ProductTeaserBlock-border: 1px solid #484848 !default;
+$ProductTeaserBlock-textBackground: #eee !default;
+$ProductTeaserBlock-imagePadding: $aspect-ratio-2-3 !default;
+
+.ProductTeaserBlock {
+  margin-bottom: 0.5rem;
+
+  &-container {
+    background: $ProductTeaserBlock-background;
+    border: 1px solid $ProductTeaserBlock-border;
+  }
+
+  &-title {
+    align-items: center;
+    display: flex;
+    min-height: 72px;
+    padding: 1rem;
+
+    .ie & {
+      height: 72px;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      width: 100%;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-image {
+    @include transition;
+
+    display: block;
+    padding-top: $ProductTeaserBlock-imagePadding;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &-text {
+    background: $ProductTeaserBlock-textBackground;
+    border-top: $ProductTeaserBlock-border;
+    padding: 1.25rem 1rem;
+
+    .bg-light & {
+      background: $ProductTeaserBlock-background;
+    }
+  }
+
+  a {
+    color: $ProductTeaserBlock-background;
+    display: block;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .fas {
+    padding-left: 0;
+  }
+}

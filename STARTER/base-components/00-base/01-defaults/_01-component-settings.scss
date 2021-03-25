@@ -30,6 +30,9 @@ $aspect-ratio-1-3: 33.3333%;
 $mixin-body-copy--font-family: $font-family-body;
 $mixin-wrapper--container-max-width: map-get($breakpoints, xlarge);
 $mixin-wrapper--outer-container-break: map-get($breakpoints, small);
+$mixin-Scrollbar--color: color(accent) color(background-section);
+$mixin-Scrollbar--trackBackground: color(border-gray);
+$mixin-Scrollbar--thumbColor: color(accent);
 
 /// Atom overrides
 $ButtonLinkFontFamily: $header-font-family;
@@ -41,10 +44,6 @@ $RadioInputFontFamily: $header-font-family;
 $CheckboxInputFontFamily: $header-font-family;
 $LabelFontFamily: $header-font-family;
 $RadioInputFontFamily: $header-font-family;
-$LinkButton-family: $header-font-family;
-$LinkButton-color: color(text);
-$LinkButton-hover: color(secondary-dark);
-$LinkButton-icon: color(primary);
 
 /// Molecule overrides
 $AddtoCart-buttonTextColor: color(text-inverse);
@@ -55,6 +54,7 @@ $Breadcrumb-fontFamily: $header-font-family;
 $Card-background: color(background);
 $Card-headerColor: color(primary);
 $Card-bodyColor: color(text);
+$Card-paddingAspectRatio: $aspect-ratio-2-3;
 $HorizontalCard-background: color(background);
 $HorizontalCard-border: 1px solid color(border-gray);
 $HorizontalCard-listLinkColor: color(secondary);
@@ -108,9 +108,8 @@ $ResourceResult-title: color(primary);
 $ResourceResult-subtitle: color(text);
 $SearchInput-icon: color(primary);
 $SearchInput-placeholder: color(text);
-$SearchInput-withButtonbackground: color(primary);
+$SearchInput-withButtonBackground: color(primary);
 $SearchInput-withButtonText: color(text-inverse);
-//$SearchInput-withButtonHover: darken($red, 5%); // TODO: See if this can use color(primary-dark)
 $SearchInput-withButtonHover: color(primary-dark);
 $SearchResult-borderBottom: 1px solid color(muted);
 $Showing-color: color(secondary-dark);
@@ -120,28 +119,6 @@ $SingleImageBlock-aspectDesktop: $aspect-ratio-1-3;
 /// Organism overrides
 $BodyCopy-border:  1px solid color(border-gray);
 $BodyCopy-background: color(background);
-$CustomizationCallout-image-large-height: 195%;
-$CustomizationCallout-image-xlarge-height: 230%;
-$CustomizationCallout-border-color: color(border-gray);
-$CustomizationCalloutVariation-padding-top-medium: 72%;
-$CustomizationCalloutVariation-padding-top-xlarge: 40%;
-$CustomTag-stroke: color(border-gray);
-$CustomTag-hole: color(white);
-$FeaturedVideoBlock-span-color: color(text-inverse);
-$FeaturedVideoBlock-caption: color(secondary-dark);
-$Footer-social-button: color(text-inverse);
-$Footer-social-button-hover: color(primary);
-$FooterAccordionMenu-link-color: color(text);
-$FooterAccordionMenu-link-color-hover: color(primary);
-$FooterAccordionMenu-active: color(text-inverse);
-$FooterAccordionMenu-border-color: color(border-gray);
-$FooterAccordionMenu-toggle: color(primary);
-$SocialMediaIcons-background: color(primary);
-$SocialMediaIcons-border-color: color(primary);
-$SocialMediaIcons-border-radius: 0;
-$SocialMediaIcons-color: color(text-inverse);
-$SocialMediaIcons-hover-background: transparent;
-$SocialMediaIcons-fontsize: 14px;
 
 /// Template overrides
 

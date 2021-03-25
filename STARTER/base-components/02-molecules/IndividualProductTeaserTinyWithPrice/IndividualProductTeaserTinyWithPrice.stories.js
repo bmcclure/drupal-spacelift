@@ -10,7 +10,7 @@ import IndividualProductTeaserTinyWithPriceData from './IndividualProductTeaserT
 
 export default { title: 'Molecules/Individual Product Teaser Tiny With Price' };
 
-export const IndividualProductTeaserTinyWithPriceExample = () => (
+export const individualProductTeaserTinyWithPrice = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualProductTeaserTinyWithPrice(

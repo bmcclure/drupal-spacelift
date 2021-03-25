@@ -1,0 +1,33 @@
+$IndividualResourceDownloadsIcon-borderTop: 1px solid #484848 !default;
+$IndividualResourceDownloadsIcon-icon: blue !default;
+$IndividualResourceDownloadsIcon-subtitle: gray !default;
+
+.IndividualResourceDownloadsIcon {
+  border-top: 1px solid $IndividualResourceDownloadsIcon-borderTop;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.75rem 0 0.5rem;
+
+  &:first-child {
+    border: none;
+  }
+
+  &-icon {
+    width: 40px;
+    padding-right: 1rem;
+
+    svg {
+      path {
+        fill: $IndividualResourceDownloadsIcon-icon;
+      }
+    }
+  }
+
+  &-text {
+    width: calc(100% - 40px);
+  }
+
+  &-subtitle {
+    color: $IndividualResourceDownloadsIcon-subtitle;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "BodyCopy",
+  "description": "Body Copy",
+  "entries": {
+    "scss": [
+      "BodyCopy.scss"
+    ]
+  }
+}

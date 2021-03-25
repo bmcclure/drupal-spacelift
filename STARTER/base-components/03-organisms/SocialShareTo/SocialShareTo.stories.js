@@ -9,7 +9,7 @@ import SocialShareToData from './SocialShareTo.yml';
  */
 export default { title: 'Organisms/Social Share To' };
 
-export const SocialShareToExample = () => (
+export const socialShareTo = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: SocialShareTo(SocialShareToData),

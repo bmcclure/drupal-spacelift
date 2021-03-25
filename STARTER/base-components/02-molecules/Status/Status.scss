@@ -1,0 +1,27 @@
+.Status-list {
+  @include list-reset;
+
+  margin-bottom: $space;
+}
+
+.Status {
+  display: block;
+  margin-bottom: $space-one-half;
+  padding: $space-one-half;
+  text-align: center;
+
+  &--warning {
+    background-color: color(warning);
+    color: color(text);
+  }
+
+  &--error {
+    background-color: color(error);
+    color: color(text);
+  }
+
+  &--status {
+    background-color: color(message);
+    color: color(text);
+  }
+}

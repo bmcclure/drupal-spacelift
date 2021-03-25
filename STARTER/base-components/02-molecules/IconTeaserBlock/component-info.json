@@ -1,0 +1,9 @@
+{
+  "name": "IconTeaserBlock",
+  "description": "Icon Teaser Block",
+  "entries": {
+    "scss": [
+      "IconTeaserBlock.scss"
+    ]
+  }
+}

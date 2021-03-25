@@ -1,0 +1,11 @@
+$Showing-color: blue !default;
+
+.Showing {
+  font-size: 1rem;
+  font-weight: 400;
+
+  &-title {
+    color: $Showing-color;
+    font-family: 'Selawik Semibold', selawik, sans-serif;
+  }
+}

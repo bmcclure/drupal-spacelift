@@ -9,7 +9,7 @@ import CompleteOrderData from './CompleteOrder.yml';
  */
 export default { title: 'Organisms/Complete Order' };
 
-export const CompleteOrderExample = () => (
+export const completeOrder = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: CompleteOrder(CompleteOrderData),

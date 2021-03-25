@@ -17,35 +17,36 @@
  * - resource_result__caption - if there is one, show it! Will show for documents, videos, but NOT downloads
  * - resource_result__url
  * - resource_result__video - true/false
-*/
+ */
 #}
+
 {% set resource_result__base_class = resource_result__base_class|default('ResourceResult') %}
+
 {% if (resource_result__video == true) %}
-  {% set resource_result__extra_classes = resource_result__extra_classes|default(['ResourceResultVideo','ResourceCategoryIconBlock']) %}
+  {% set resource_result__extra_classes = resource_result__extra_classes|default(['ResourceResultVideo', 'ResourceCategoryIconBlock']) %}
 {% else %}
   {% set resource_result__extra_classes = resource_result__extra_classes|default(['ResourceCategoryIconBlock']) %}
 {% endif %}
 
 <div {{ suit(resource_result__base_class, resource_result__modifiers, resource_result__blockname, resource_result__extra_classes) }}>
-  <a class="ResourceResult-container ResourceCategoryIconBlock-container" href="{{ resource_result__url }}"
-     title="{{ resource_result__title }}"
+  <a class="ResourceResult-container ResourceCategoryIconBlock-container" href="{{ resource_result__url }}" title="{{ resource_result__title }}"
     {% if (resource_result__video == true) %}
       data-lity
-    {% endif %}
-  >
+    {% endif %}>
     <div
       {% if (resource_result__video == true) %}
         {{ suit('image', replace__modifiers, replace__base_class, ['lozad', 'ResourceResultVideo-image'] ) }}
       {% else %}
         {{ suit('image', replace__modifiers, replace__base_class, ['lozad'] ) }}
-
       {% endif %}
       data-background-image="{{ resource_result__image }}"
-      style="background: url(assets/images/placeholder.png) no-repeat bottom left; background-size: contain;"></div>
-    <div class="ResourceResult-icon ResourceCategoryIconBlock-icon">{{ resource_result__icon }}</div>
+      style="background: url(assets/images/placeholder.png) no-repeat bottom left; background-size: contain;">
+    </div>
+    <div class="ResourceResult-icon ResourceCategoryIconBlock-icon">
+      {{ resource_result__icon }}
+    </div>
     <div class="ResourceResult-text ResourceCategoryIconBlock-titleContainer">
       <div class="full-width">
-
         {% include '@atoms/text/Heading/Heading.twig' with {
           heading__base_class: '',
           heading__level: 4,
@@ -53,7 +54,6 @@
           heading__extra_classes: ['HeaderFont--regular', 'ResourceResult-title'],
         } %}
         <p class="ResourceResult-subtitle"><small>{{ resource_result__subtitle }}</small></p>
-
         {% if resource_result__caption %}
           <p class="ResourceResult-caption">{{ resource_result__caption }}</p>
         {% endif %}

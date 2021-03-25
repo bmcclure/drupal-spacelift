@@ -1,0 +1,9 @@
+{
+  "name": "FilterClear",
+  "description": "Filter Clear",
+  "entries": {
+    "scss": [
+      "FilterClear.scss"
+    ]
+  }
+}

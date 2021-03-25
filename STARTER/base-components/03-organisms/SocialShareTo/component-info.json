@@ -1,0 +1,9 @@
+{
+  "name": "SocialShareTo",
+  "description": "Social Share To",
+  "entries": {
+    "scss": [
+      "SocialShareTo.scss"
+    ]
+  }
+}

@@ -17,11 +17,12 @@
  * - other_pages_teaser_block__body
  * - other_pages_teaser_block__button_title
  * - other_pages_teaser_block__url
-*/
+ */
 #}
+
+{# Todo: Refactor this to be an example of a card #}
 {% set other_pages_teaser_block__base_class = other_pages_teaser_block__base_class|default('OtherPagesTeaserBlock') %}
 {% set other_pages_teaser_block__extra_classes = other_pages_teaser_block__extra_classes|default(['']) %}
-
 
 {% include '@molecules/Card/Card.twig' with {
   card__image: other_pages_teaser_block__image,

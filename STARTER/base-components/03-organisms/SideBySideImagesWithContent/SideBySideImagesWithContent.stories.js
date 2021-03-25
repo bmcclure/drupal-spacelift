@@ -9,7 +9,7 @@ import SideBySideImagesWithContentData from './SideBySideImagesWithContent.yml';
  */
 export default { title: 'Organisms/Side by Side Images with Content' };
 
-export const SideBySideImagesWithContentExample = () => (
+export const sideBySideImagesWithContent = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: SideBySideImagesWithContent(SideBySideImagesWithContentData),

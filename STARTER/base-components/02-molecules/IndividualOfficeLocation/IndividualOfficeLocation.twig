@@ -16,11 +16,12 @@
  * - individual_office_location__mobile
  * - individual_office_location__fax
  * - individual_office_location__address
-*/
+ */
 #}
+{# Todo: Refactor this into an example of a Horizontal Card #}
 {% include '@molecules/HorizontalCard/HorizontalCard.twig' with {
   horizontal_card__base_class: 'HorizontalCard',
-  horizontal_card__extra_classes: ['IndividualOfficeLocation','FlexRow-item'],
+  horizontal_card__extra_classes: ['IndividualOfficeLocation', 'FlexRow-item'],
   horizontal_card__image:individual_office_location__image,
   horizontal_card__name: individual_office_location__name,
   horizontal_card__subtitle: individual_office_location__subtitle,

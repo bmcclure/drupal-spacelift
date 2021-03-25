@@ -9,7 +9,7 @@ import IntroSectionData from './IntroSection.yml';
  */
 export default { title: 'Molecules/Individual Testimonial' };
 
-export const IntroSectionExample = () => (
+export const introSection = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IntroSection(IntroSectionData),

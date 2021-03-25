@@ -1,5 +1,5 @@
 {
-  "name": "MSI",
+  "name": "{{Starter}}",
   "version": "8.1.2",
   "license": "MIT",
   "dependencies": {

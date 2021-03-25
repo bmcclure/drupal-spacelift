@@ -482,6 +482,7 @@ function _spacelift_get_files_to_alter() {
     'base-components/00-base/02-motions/motions.twig',
     'base-components/01-atoms/images/Icons/Icon.twig',
     'base-components/02-molecules/IndividualCaseStudyTeaser/IndividualCaseStudyTeaser.twig',
+    'base-components/02-molecules/Tabs/Tabs.twig',
     'base-components/02-molecules/menus/main-menu/main-menu.twig',
   ];
 

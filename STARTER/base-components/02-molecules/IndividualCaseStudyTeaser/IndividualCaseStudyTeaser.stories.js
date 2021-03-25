@@ -12,7 +12,7 @@ import '../../../src/js/aos-init';
  */
 export default { title: 'Molecules/Individual Case Study Teaser' };
 
-export const IndividualCaseStudyTeaserExample = () => (
+export const individualCaseStudyTeaser = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualCaseStudyTeaser(IndividualCaseStudyTeaserData),

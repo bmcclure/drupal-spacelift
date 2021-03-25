@@ -1,0 +1,42 @@
+$HeaderBanner5050-border: 1px solid #fff !default;
+$HeaderBanner5050-background: #484848 !default;
+$HeaderBanner5050-text: #fff !default;
+
+.HeaderBanner5050 {
+  border-bottom: $HeaderBanner5050-border;
+
+  &-text {
+    background: $HeaderBanner5050-background;
+    background: rgba(64, 64, 65, .75);
+    color: $HeaderBanner5050-text;
+    position: relative;
+    @include breakpoint(medium) {
+      border-right: $HeaderBanner5050-border;
+    }
+
+    //p {
+    //  margin-bottom: .5rem;
+    //}
+
+    &Wrap {
+      padding: 2rem 25px;
+      @include breakpoint(medium) {
+        max-width: 600px;
+        margin-left: auto;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+      @include breakpoint(xlarge) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+    }
+  }
+
+  &-title, p {
+    color: $HeaderBanner5050-text;
+    @include breakpoint(medium) {
+      max-width: 400px;
+    }
+  }
+}

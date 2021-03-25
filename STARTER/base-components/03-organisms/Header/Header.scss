@@ -1,0 +1,17 @@
+@import 'HeaderMain';
+@import 'Hamburger';
+
+.Header {
+  &-wrap {
+    z-index: 100;
+
+    &.is-stuck {
+      z-index: 100;
+      //@include box-shadow;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

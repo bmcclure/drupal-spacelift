@@ -1,0 +1,7 @@
+replace__title: 'Gallery of Images Headline'
+replace__images:
+  - id: 0
+    url: https://placeimg.com/640/480/people
+    caption: 'caption'
+  - id: 1
+    url: https://placeimg.com/640/480/any

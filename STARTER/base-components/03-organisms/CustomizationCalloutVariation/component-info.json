@@ -1,0 +1,9 @@
+{
+  "name": "CustomizationCalloutVariation",
+  "description": "Customization Callout Variation",
+  "entries": {
+    "scss": [
+      "CustomizationCalloutVariation.scss"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * ImageGallery
+ * used in templates/CaseStudyDetail
+ *
+ * Available variables:
+ * - replace__base_class - the base class name
+ * - replace__modifiers - array of modifiers to add to the base classname
+ * - replace__blockname - blockname prepended to the base classname
+ * - replace__extra_classes - extra classes
+ * -
+ * - replace__title
+ * - replace__images
+*/
+#}
+
+{% set replace__class =  ['FlexRow','medium-up-2','justify-center'] %}
+{% set replace__count = replace__images|length %}
+{% if replace__count > 2 %}
+  {% set replace__class = ['ImageGallery-slider', 'MSISlider'] %}
+{% endif %}
+
+{% set replace__base_class = replace__base_class|default('ImageGallery') %}
+{% set replace__extra_classes = replace__extra_classes|default(['']) %}
+
+{% if replace__images %}
+  <section {{ suit(replace__base_class, replace__modifiers, replace__blockname, replace__extra_classes) }}>
+    <div class="grid-container">
+      <header class="section-header text-center">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__base_class: '',
+          heading__level: 2,
+          heading: replace__title,
+        } %}
+      </header>
+      <div
+        {{ suit('images', replace__modifiers, replace__base_class, replace__class) }}>
+        {% for image in replace__images %}
+          <div {{ suit('block', replace__modifiers, replace__base_class, ['FlexRow-item', 'text-center'] ) }}>
+            <div {{ suit('image', replace__modifiers, replace__base_class, ['lozad'] ) }}
+              class="ImageGallery-image lozad" data-background-image="{{ image.url }}"
+              style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>
+            {% if image.caption %}
+              <div class="ImageGallery-caption h3">{{ image.caption }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+    <script defer src="/components/03-organisms/ImageGallery/dist/ImageGallery.js?v=1.1.0"></script>
+
+  </section>
+
+{% endif %}

@@ -9,7 +9,7 @@ import FeaturedVideoBlockData from './FeaturedVideoBlock.yml';
  */
 export default { title: 'Organisms/Featured Video' };
 
-export const FeaturedVideoBlockExample = () => (
+export const featuredVideoBlock = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedVideoBlock(FeaturedVideoBlockData),

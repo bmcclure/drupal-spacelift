@@ -13,8 +13,9 @@
  * -
  * - newsletter_signup__title
  * - newsletter_signup__body
-*/
+ */
 #}
+
 {% set newsletter_signup__base_class = newsletter_signup__base_class|default('NewsletterSignup') %}
 {% set newsletter_signup__extra_classes = newsletter_signup__extra_classes|default(['']) %}
 
@@ -22,8 +23,7 @@
   <div class="Footer-line Line invisible"></div>
   <h3 class="HeaderFont--regular">Newsletter Signup</h3>
   <p>Lorem ipsum dolor sit amet consectetuer.</p>
-  {# @todo this will need to use a Drupal form #}
-
+  {# Todo: This will need to use a Drupal form #}
   <form action="">
     <label for="" class="sr-only">Email</label>
     <div {{ suit('row', newsletter_signup__modifiers, newsletter_signup__base_class) }}>

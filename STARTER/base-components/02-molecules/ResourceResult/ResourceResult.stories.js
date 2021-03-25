@@ -10,7 +10,7 @@ import ResourceResultVideoData from './ResourceResult--video.yml';
  */
 export default { title: 'Molecules/Resource Result' };
 
-export const ResourceResultExample = () => (
+export const resourceResult = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: ResourceResult(ResourceResultData),
@@ -18,7 +18,7 @@ export const ResourceResultExample = () => (
   />
 );
 
-export const ResourceResultVideoExample = () => (
+export const resourceResultVideo = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: ResourceResult(ResourceResultVideoData),

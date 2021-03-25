@@ -1,0 +1,9 @@
+{
+  "name": "IndividualTestimonial",
+  "description": "IndividualTestimonial",
+  "entries": {
+    "scss": [
+      "IndividualTestimonial.scss"
+    ]
+  }
+}

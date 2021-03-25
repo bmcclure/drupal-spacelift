@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * LargeLatestPost
+ * used on templates/post-listing
+ *
+ * Available variables:
+ * - large_latest_post__base_class - the base class name
+ * - large_latest_post__modifiers - array of modifiers to add to the base classname
+ * - large_latest_post__blockname - blockname prepended to the base classname
+ * - large_latest_post__extra_classes - extra classes
+ * -
+ * - large_latest_post__title
+ * - large_latest_post__teaser
+*/
+#}
+
+{% set large_latest_post__base_class = large_latest_post__base_class|default('LargeLatestPost') %}
+{% set large_latest_post__extra_classes = large_latest_post__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(large_latest_post__base_class, large_latest_post__modifiers, large_latest_post__blockname, large_latest_post__extra_classes) }}>
+  <div class="grid-container short">
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__level: 2,
+      heading: large_latest_post__title,
+      heading__extra_classes: ['title'],
+    } %}
+    {% include '@molecules/IndividualPostTeaser/IndividualPostTeaser.twig' with {
+      individual_post_teaser__image: large_latest_post__teaser.image,
+      individual_post_teaser__title: large_latest_post__teaser.title,
+      individual_post_teaser__body: large_latest_post__teaser.body,
+      individual_post_teaser__url: large_latest_post__teaser.url,
+      individual_post_teaser__date: large_latest_post__teaser.date,
+    } %}
+  </div>
+</section>

@@ -9,7 +9,7 @@ import NewsletterSignupData from './NewsletterSignup.yml';
  */
 export default { title: 'Molecules/Newsletter Signup' };
 
-export const NewsletterSignupExample = () => (
+export const newsletterSignup = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: NewsletterSignup(NewsletterSignupData),

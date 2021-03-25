@@ -1,0 +1,75 @@
+$AddToCart-buttonTextColor: white !default;
+$AddToCart-buttonBackground: #003d4c !default;
+
+.AddToCart {
+  display: flex;
+  margin-bottom: 1rem;
+
+  &-toggle {
+    display: flex;
+    width: 116px;
+  }
+
+  &-minus,
+  &-plus {
+    background: color(secondary);
+    color: color(text-inverse);
+    cursor: pointer;
+    height: 45px;
+    padding: 0.25rem 0.325rem;
+    width: 25px;
+  }
+
+  &-input {
+    -webkit-appearance: none;
+    border-left: 0;
+    border-right: 0;
+    height: 45px;
+    margin-bottom: 0;
+    text-align: center;
+    width: calc(100% - 50px);
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &-button {
+    border: 0;
+    flex: 0 1 auto;
+    margin-bottom: 0;
+    margin-left: 0.25rem;
+    padding: 0.9rem; /* needs more just for this guy, to match design */
+    width: auto;
+
+    .fas.fa-cart-plus {
+      padding-left: 0;
+      padding-right: 0.25rem;
+    }
+  }
+}
+
+#AddedToCartModal {
+  max-width: 450px;
+}
+
+/* copying styling I need that is from Goodway, using Goodway classes */
+.commerce-cart-block--contents__links {
+  display: flex;
+  flex-wrap: wrap;
+
+  .keepBrowsing,
+  .checkout {
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: 50%;
+    }
+  }
+}

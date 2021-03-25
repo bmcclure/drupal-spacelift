@@ -133,3 +133,34 @@ $mixin-Transition--timingFunction: ease-out;
 @mixin space-stack-page {
   margin-bottom: $space-double;
 }
+
+/// Mixin - Scrollbar
+/// Adds a styled scrollbar to an element with overflow
+$mixin-Scrollbar--width: thin !default;
+$mixin-Scrollbar--color: yellow lightgray !default;
+$mixin-Scrollbar--webkitWidth: 4px !default;
+$mixin-Scrollbar--trackBackground: gray !default;
+$mixin-Scrollbar--thumbColor: yellow !default;
+@mixin scrollbar(
+  $scrollbar-width: $mixin-Scrollbar--width,
+  $scrollbar-color: $mixin-Scrollbar--color,
+  $webkit-width: $mixin-Scrollbar--webkitWidth,
+  $track-background: $mixin-Scrollbar--trackBackground,
+  $thumb-color: $mixin-Scrollbar--thumbColor
+) {
+  scrollbar-width: $scrollbar-width;
+  scrollbar-color: $scrollbar-color;
+
+  &::-webkit-scrollbar {
+    width: $webkit-width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    position: relative;
+  }
+}

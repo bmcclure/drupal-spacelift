@@ -1,0 +1,7 @@
+.DualCalloutStrips {
+  padding: 0;
+
+  @media print { /* Currently putting print styles WITH the component */
+    display: none;
+  }
+}

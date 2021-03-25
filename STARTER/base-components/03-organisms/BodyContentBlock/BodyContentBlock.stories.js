@@ -9,7 +9,7 @@ import BodyContentBlockData from './BodyContentBlock.yml';
  */
 export default { title: 'Organisms/Body Content Block' };
 
-export const BodyContentBlockExample = () => (
+export const bodyContentBlock = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: BodyContentBlock(BodyContentBlockData),

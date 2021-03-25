@@ -35,6 +35,9 @@
         {% include '@atoms/links/Link/Link.twig' with {
           link__content: zoom_image,
           link__url: '#',
+          link__attributes: {
+            'title': 'Test Title'
+          }
         } %}
       </div>
     {% endfor %}

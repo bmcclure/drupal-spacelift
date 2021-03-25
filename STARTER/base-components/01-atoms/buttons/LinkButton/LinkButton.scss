@@ -3,21 +3,35 @@ $LinkButton-color: #484848 !default;
 $LinkButton-hover: red !default;
 $LinkButton-icon: blue !default;
 
-.LinkButton {
-  color: $LinkButton-color;
+@mixin LinkButton(
+  $font-family: $LinkButton-family,
+  $font-weight: 400,
+  $text-transform: uppercase,
+  $padding: 0.5rem,
+  $font-size: rem-calc(14),
+  $color: $LinkButton-color,
+  $hover-color: $LinkButton-hover,
+  $icon-color: $LinkButton-icon,
+  $icon-padding: 0 0.325rem 0 0,
+) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  text-transform: $text-transform;
+  padding: $padding;
+  font-size: $font-size;
+  color: $color;
   cursor: pointer;
-  font-family: $LinkButton-family;
-  font-size: rem-calc(14);
-  font-weight: 400;
-  padding: .5rem;
-  text-transform: uppercase;
 
   &:hover {
-    color: $LinkButton-hover;
+    color: $hover-color;
   }
 
   .fal {
-    color: $LinkButton-icon;
-    padding-right: 0.325rem;
+    color: $icon-color;
+    padding: $icon-padding;
   }
+}
+
+.LinkButton {
+  @include LinkButton;
 }

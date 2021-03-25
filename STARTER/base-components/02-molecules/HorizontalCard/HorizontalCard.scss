@@ -1,0 +1,102 @@
+$HorizontalCard-background: white !default;
+$HorizontalCard-border: 1px solid gray !default;
+$HorizontalCard-listLinkColor: blue !default;
+$HorizontalCard-listLinkHover: red !default;
+
+.HorizontalCard {
+  &-container {
+    background: $HorizontalCard-background;
+    border: $HorizontalCard-border;
+
+    @include breakpoint(medium) {
+      height: 100%;
+    }
+  }
+
+  &-header {
+    padding: 1rem 1.5rem;
+  }
+
+  &-body {
+    height: 100%;
+    padding: 1.5rem;
+    border-top: 0;
+    flex-flow: column wrap;
+
+    @include breakpoint(large) {
+      flex-flow: row wrap;
+    }
+  }
+
+  &-image {
+    min-width: 74px;
+    min-height: 74px;
+    margin-right: 1rem;
+
+    @include breakpoint(large) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &-button {
+    margin-top: 1rem;
+
+    @include breakpoint(large) {
+      margin-top: 0;
+    }
+  }
+
+  &-list {
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      @include transition;
+
+      color: $HorizontalCard-listLinkColor;
+
+      &:hover {
+        color: $HorizontalCard-listLinkHover;
+      }
+    }
+
+    .fas {
+      color: $HorizontalCard-listLinkHover;
+      width: 1.75rem;
+    }
+  }
+
+  &-tinyIcon {
+    position: relative;
+    top: 3px;
+
+    svg {
+      max-width: 25px;
+      max-height: 20px;
+
+      path {
+        @include transition;
+
+        fill: $HorizontalCard-listLinkColor !important; // sorry, it wouldn't take it
+      }
+    }
+  }
+
+  a:hover {
+    svg {
+      path {
+        fill: $HorizontalCard-listLinkHover !important; // sorry
+      }
+    }
+  }
+
+  .button,
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+}

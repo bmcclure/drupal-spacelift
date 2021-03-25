@@ -10,7 +10,7 @@ import BodyCopyShareData from './BodyCopy--withShare.yml';
  */
 export default { title: 'Organisms/Body Copy' };
 
-export const BodyCopyExample = () => (
+export const bodyCopy = () => (
   <div>
     <section style={{ paddingBottom: '10rem', textAlign: 'center' }}>
       <h1>Body Copy</h1>

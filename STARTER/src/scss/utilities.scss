@@ -1,4 +1,9 @@
-/* General utility styling classes */
+////
+/// Utilities
+/// General utility classes used throughout the theme
+////
+
+/// Section - Adds standard margins and padding
 section,
 .section {
   padding: 2rem 0;
@@ -20,6 +25,7 @@ section,
   }
 }
 
+// Grid Container
 .grid-container {
   width: 100%;
 
@@ -39,6 +45,7 @@ hr {
   max-width: 1394px;
 }
 
+/// Flexbox Helpers
 .vertical-center {
   align-items: center;
   display: flex;
@@ -53,7 +60,7 @@ hr {
   width: 100%;
 }
 
-/* Text */
+/// Text Helpers
 .wysiwig,
 .wysiwyg {
   a {
@@ -150,7 +157,7 @@ sup {
   text-transform: uppercase;
 }
 
-/* If you're using lozad, this makes it smoother */
+/// Lozad - adds additional styles to lozad elements to make them smoother
 .lozad {
   opacity: 0;
   transition: ease all .3s;
@@ -161,13 +168,13 @@ sup {
 }
 
 .reveal {
-  &:focus, &:focus-within {
+  &:focus,
+  &:focus-within {
     outline: none; /* does not seem necessary */
   }
 }
 
-/* To be removed? */
-// if using slick slider
+/// Slick Slider
 .slick-slide {
   padding: 1rem;
 
@@ -176,12 +183,11 @@ sup {
   }
 }
 
-// fix for IE if you're not using full width slick sliders
 .slick-dots {
-  left: 0;
+  left: 0; // Fix for IE if you're not using full width slick sliders
 }
 
-/* Mostly Foundation Overrides */
+/// Foundation overrides
 .tooltip {
   border: 1px solid color(border-gray);
 
@@ -196,4 +202,50 @@ sup {
 
 .sr-only {
   display: none; // @todo where was the class coming from on the markserv-frontend-components?
+}
+
+/// Color Utility Classes
+.white {
+  color: color(background);
+}
+
+.bg-light {
+  background: color(background-section);
+
+  + .bg-light {
+    padding-top: 0; // This fixes the too much padding problem if two sections have bg-light in a row
+  }
+}
+
+.bg-dark {
+  background: color(text);
+}
+
+.bg-yellow {
+  background: color(accent);
+}
+
+.bg-dark-blue {
+  background: color(secondary-dark);
+}
+
+.bg-blue {
+  background: color(secondary);
+}
+
+.bg-blue, .bg-dark-blue, .bg-dark {
+  color: color(text-inverse);
+
+  h1, h2, h3, h4, h5, p, a {
+    color: color(text-inverse);
+  }
+}
+
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal;
 }

@@ -1,0 +1,9 @@
+{
+  "name": "HeadlineIntroBanner",
+  "description": "Headline Intro Banner",
+  "entries": {
+    "scss": [
+      "HeadlineIntroBanner.scss"
+    ]
+  }
+}

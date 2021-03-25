@@ -1,0 +1,9 @@
+{
+  "name": "MyAccountMenu",
+  "description": "My Account Menu",
+  "entries": {
+    "scss": [
+      "MyAccountMenu.scss"
+    ]
+  }
+}

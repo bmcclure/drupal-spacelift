@@ -10,7 +10,7 @@ import IndividualOfficeLocationData from './IndividualOfficeLocation.yml';
 
 export default { title: 'Molecules/Individual Office Location' };
 
-export const IndividualOfficeLocationExample = () => (
+export const individualOfficeLocation = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualOfficeLocation(IndividualOfficeLocationData),

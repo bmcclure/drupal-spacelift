@@ -1,0 +1,9 @@
+{
+  "name": "ProductToggle",
+  "description": "Product Toggle",
+  "entries": {
+    "scss": [
+      "ProductToggle.scss"
+    ]
+  }
+}

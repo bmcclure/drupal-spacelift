@@ -1,0 +1,12 @@
+{
+  "name": "Footer",
+  "description": "Footer",
+  "entries": {
+    "scss": [
+      "Footer.scss"
+    ],
+    "js": [
+      "Footer.js"
+    ]
+  }
+}

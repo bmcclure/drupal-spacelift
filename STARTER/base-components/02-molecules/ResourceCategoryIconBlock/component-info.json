@@ -1,0 +1,9 @@
+{
+  "name": "ResourceCategoryIconBlock",
+  "description": "Resource Category Icon Block",
+  "entries": {
+    "scss": [
+      "ResourceCategoryIconBlock.scss"
+    ]
+  }
+}

@@ -11,23 +11,20 @@
  * - individual_product_teaser_tiny__image - image
  * - individual_product_teaser_tiny__title
  * - individual_product_teaser_tiny__url
-*/
+ */
 #}
+
 {% set individual_product_teaser_tiny__base_class = individual_product_teaser_tiny__base_class|default('IndividualProductTeaserTiny') %}
 {% set individual_product_teaser_tiny__extra_classes = individual_product_teaser_tiny__extra_classes|default(['grid-x']) %}
 
-
-<a href="{{ individual_product_teaser_tiny__url }}"
-  {{ suit(individual_product_teaser_tiny__base_class, individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__blockname, individual_product_teaser_tiny__extra_classes) }}>
-  <div
-    {{ suit('wrapper', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class, ['cell', 'small-4'] ) }}>
-    <div
-      {{ suit('image', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class ) }}
+<a href="{{ individual_product_teaser_tiny__url }}" {{ suit(individual_product_teaser_tiny__base_class, individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__blockname, individual_product_teaser_tiny__extra_classes) }}>
+  <div {{ suit('wrapper', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class, ['cell', 'small-4'] ) }}>
+    <div {{ suit('image', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class ) }}
       class="IndividualProductTeaserTiny-image "
-      style="background: url({{ individual_product_teaser_tiny__image }}) no-repeat center; background-size: cover; padding-top: 100%;"></div>
+      style="background: url({{ individual_product_teaser_tiny__image }}) no-repeat center; background-size: cover; padding-top: 100%;">
+    </div>
   </div>
-  <div
-    {{ suit('text', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class, ['cell', 'small-8'] ) }}>
+  <div {{ suit('text', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class, ['cell', 'small-8'] ) }}>
     <div {{ suit('title', individual_product_teaser_tiny__modifiers, individual_product_teaser_tiny__base_class ) }}>
       {{ individual_product_teaser_tiny__title }}
     </div>

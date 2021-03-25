@@ -1,0 +1,9 @@
+{
+  "name": "FeaturedServices",
+  "description": "Featured Services",
+  "entries": {
+    "scss": [
+      "FeaturedServices.scss"
+    ]
+  }
+}

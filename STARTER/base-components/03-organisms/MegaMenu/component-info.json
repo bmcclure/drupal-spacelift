@@ -1,0 +1,12 @@
+{
+  "name": "MegaMenu",
+  "description": "Mega Menu",
+  "entries": {
+    "scss": [
+      "MegaMenu.scss"
+    ],
+    "js": [
+      "MegaMenu.js"
+    ]
+  }
+}

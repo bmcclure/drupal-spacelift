@@ -1,0 +1,22 @@
+$IndividualCaseStudyTeaser-text: #484848 !default;
+$IndividualCaseStudyTeaser-icon: gray !default;
+
+.IndividualCaseStudyTeaser {
+  .wysiwyg {
+    ul li {
+      color: $IndividualCaseStudyTeaser-text;
+
+      &::before {
+        color: $IndividualCaseStudyTeaser-icon;
+      }
+    }
+  }
+
+  &-bullets {
+    li {
+      @include breakpoint(large) {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

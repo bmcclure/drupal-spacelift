@@ -9,6 +9,6 @@ import IconInfoBoxData from './IconInfoBox.yml';
  */
 export default { title: 'Molecules/Icon Info Box' };
 
-export const iconInfoBoxExample = () => (
+export const iconInfoBox = () => (
   <div dangerouslySetInnerHTML={{ __html: IconInfoBox(IconInfoBoxData) }} />
 );

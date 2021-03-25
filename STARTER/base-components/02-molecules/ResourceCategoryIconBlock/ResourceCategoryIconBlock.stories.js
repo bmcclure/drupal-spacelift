@@ -9,7 +9,7 @@ import ResourceCategoryIconBlockData from './ResourceCategoryIconBlock.yml';
  */
 export default { title: 'Molecules/Resource Category Icon Block' };
 
-export const ResourceCategoryIconBlockExample = () => (
+export const resourceCategoryIconBlock = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: ResourceCategoryIconBlock(ResourceCategoryIconBlockData),

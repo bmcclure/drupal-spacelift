@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Icon Info Boxes
+ *
+ * Available variables:
+ * - icon_info_boxes__base_class - the base class name
+ * - icon_info_boxes__modifiers - array of modifiers to add to the base classname
+ * - icon_info_boxes__blockname - blockname prepended to the base classname
+ * - icon_info_boxes__extra_classes - extra classes
+ * -
+ * - icon_info_boxes__background - bg-light or bg-white
+ * - icon_info_boxes__box_background - boxes-white / boxes-light
+ * - icon_info_boxes__title
+ * - icon_info_boxes__boxes
+*/
+#}
+{% set icon_info_boxes__base_class = icon_info_boxes__base_class|default('IconInfoBoxes') %}
+{% set icon_info_boxes__extra_classes = icon_info_boxes__extra_classes|default([icon_info_boxes__background]) %}
+
+{% if icon_info_boxes__boxes %}
+
+  <section {{ suit(icon_info_boxes__base_class, icon_info_boxes__modifiers, icon_info_boxes__blockname, icon_info_boxes__extra_classes) }} >
+    <div class="grid-container">
+      <header class="section-header text-center">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__level: 2,
+          heading: icon_info_boxes__title,
+        } %}
+      </header>
+      <div
+        {{ suit('row', icon_info_boxes__modifiers, icon_info_boxes__base_class, ['FlexRow', 'medium-up-2','large-up-3', icon_info_boxes__box_background] ) }}>
+        {% for box in icon_info_boxes__boxes %}
+          {% include '@molecules/IconInfoBox/IconInfoBox.twig' with {
+            icon_info_box__icon: box.icon,
+            icon_info_box__title: box.title,
+            icon_info_box__body: box.body,
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

@@ -1,0 +1,9 @@
+{
+  "name": "IndividualOfficeLocation",
+  "description": "Individual Office Location",
+  "entries": {
+    "scss": [
+      "IndividualOfficeLocation.scss"
+    ]
+  }
+}

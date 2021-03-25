@@ -1,0 +1,9 @@
+{
+  "name": "Status",
+  "description": "Status message",
+  "entries": {
+    "scss": [
+      "Status.scss"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "FeaturedCaseStudies",
+  "description": "Featured Case Studies",
+  "entries": {
+    "scss": [
+      "FeaturedCaseStudies.scss"
+    ],
+    "js": [
+      "FeaturedCaseStudies.js"
+    ]
+  }
+}

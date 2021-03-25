@@ -1,0 +1,166 @@
+{#
+/**
+ * @file
+ * used on Homepage
+ *
+ * Available variables:
+ * - hero_banner__base_class - the base class name
+ * - hero_banner__modifiers - array of modifiers to add to the base classname
+ * - hero_banner__blockname - blockname prepended to the base classname
+ * - hero_banner__extra_classes - extra classes
+ * -
+ * - hero_banner__image
+ * - hero_banner__title
+ * - hero_banner__body
+ * -
+ * - hero_banner__image_1
+ * - hero_banner__icon_1
+ * - hero_banner__title_1
+ * - hero_banner__body_1
+ * - hero_banner__cta_1
+ * - hero_banner__url_1
+ * -
+ * - hero_banner__image_2
+ * - hero_banner__icon_2
+ * - hero_banner__title_2
+ * - hero_banner__body_2
+ * - hero_banner__cta_2
+ * - hero_banner__url_2
+*/
+#}
+{% set hero_banner__base_class = hero_banner__base_class|default('HeroBanner') %}
+
+<!-- INLINE STYLING so that I can get the PHP variable. Anyone have ideas on how to do this in a better way? -->
+<style>
+  .HeroBanner-blockIcon {
+    max-width: 114px;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 640px) {
+    .HeroBanner-blockIcon {
+      margin: auto auto 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .HeroBanner-openBlock, .HeroBanner-block--two, .HeroBanner-block--three {
+      background-size: cover;
+    }
+
+    .HeroBanner-openBlock {
+      background: url({{ hero_banner__image }}) no-repeat center;
+    }
+
+    .HeroBanner-block--two {
+      background: url({{ hero_banner__image_1 }}) no-repeat center;
+    }
+
+    .HeroBanner-block--three {
+      background: url({{ hero_banner__image_2 }}) no-repeat center;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .HeroBanner {
+      position: relative;
+    }
+
+    .HeroBanner-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      opacity: 0;
+      transition: all 400ms linear;
+    }
+
+    .HeroBanner-background.show {
+      opacity: 1;
+    }
+
+    .HeroBanner-background--one {
+      background: url({{ hero_banner__image }}) no-repeat center;
+    }
+
+    .HeroBanner-background--two {
+      background: url({{ hero_banner__image_1 }}) no-repeat center;
+    }
+
+    .HeroBanner-background--three {
+      background: url({{ hero_banner__image_2 }}) no-repeat center;
+    }
+
+  }
+</style>
+
+<header id="HeroBanner" {{ suit(hero_banner__base_class, hero_banner__modifiers, hero_banner__blockname, hero_banner__extra_classes) }}>
+  <div
+    {{ suit('backgrounds', hero_banner__modifiers, hero_banner__base_class ) }}>
+    <div
+      {{ suit('background', ['one'], hero_banner__base_class, ['show'] ) }}></div>
+    <div
+      {{ suit('background', ['two'], hero_banner__base_class ) }}></div>
+    <div {{ suit('background', ['three'], hero_banner__base_class ) }}></div>
+  </div>
+  <div
+    {{ suit('container', hero_banner__modifiers, hero_banner__base_class, ['grid-x'] ) }}>
+    <div
+      {{ suit('openBlock', hero_banner__modifiers, hero_banner__base_class, ['cell', 'large-6'] ) }}>
+      <div
+        {{ suit('openBlockOverlay', hero_banner__modifiers, hero_banner__base_class ) }}></div>
+      <div
+        {{ suit('openBlockTextwrap', hero_banner__modifiers, hero_banner__base_class ) }}>
+        {% include '@atoms/accents/Line/Line.twig' %}
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__base_class: '',
+          heading__level: 1,
+          heading: hero_banner__title,
+          heading__extra_classes: ['white'],
+          heading__more: "itemprop='headline'"
+        } %}
+        <p class="large">{{ hero_banner__body }}</p>
+      </div>
+    </div>
+    <a id="HeroBanner-block--two" href="{{ hero_banner__url1 }}"
+      {{ suit('block', ['two'], hero_banner__base_class, ['cell','medium-6','large-3'] ) }}
+       data-herobanner="two">
+      <div class="HeroBanner-blockOverlay"></div>
+      <div class="HeroBanner-blockContainer medium-text-center">
+        <div class="HeroBanner-blockIcon">
+          <div class="HeroBanner-blockIconContainer"
+               style="background: url({{ hero_banner__icon_1 }}) no-repeat center; background-size: cover; padding-top: 100%;"></div>
+        </div>
+        <div class="HeroBanner-blockText">
+          <h3 class="uppercase white">{{ hero_banner__title_1 }}</h3>
+          <div class="HeroBanner-blockHidden">
+            <p class="HeroBanner-blockBody">{{ hero_banner__body_1 }}</p>
+            <span class="link">{{ hero_banner__cta_1 }} <span class="fas fa-caret-right"></span></span>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a id="HeroBanner-block--three" href="{{ hero_banner__url_2 }}"
+      {{ suit('block', ['three'], hero_banner__base_class, ['cell','medium-6','large-3'] ) }}
+       data-herobanner="three">
+      <div class="HeroBanner-blockOverlay"></div>
+      <div class="HeroBanner-blockContainer medium-text-center">
+        <div class="HeroBanner-blockIcon">
+          <div class="HeroBanner-blockIconContainer"
+               style="background: url({{ hero_banner__icon_2 }}) no-repeat center; background-size: cover; padding-top: 100%;"></div>
+        </div>
+        <div class="HeroBanner-blockText">
+          <h3 class="uppercase white">{{ hero_banner__title_2 }}</h3>
+          <div class="HeroBanner-blockHidden">
+            <p class="HeroBanner-blockBody">{{ hero_banner__body_2 }}</p>
+            <span class="link">{{ hero_banner__cta_2 }} <span class="fas fa-caret-right"></span></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</header>
+<!--<script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+<script defer src="/components/03-organisms/HeroBanner/dist/HeroBanner.js?v=1.1.0"></script>

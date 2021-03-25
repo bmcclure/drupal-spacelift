@@ -1,0 +1,50 @@
+{#
+/**
+* @file
+* OffcanvasSearchWithDropdown
+*
+* Available variables:
+* - offcanvas_search__base_class - the base class name
+* - offcanvas_search__modifiers - array of modifiers to add to the base classname
+* - offcanvas_search__blockname - blockname prepended to the base classname
+* - offcanvas_search__extra_classes - extra classes
+* -
+* - c
+* - offcanvas_search__view_more
+* - offcanvas_search__teasers
+* - offcanvas_search__categories
+*/
+#}
+
+{% set offcanvas_search__base_class = offcanvas_search__base_class|default('OffcanvasSearchWithDropdown') %}
+{% set offcanvas_search__extra_classes = offcanvas_search__extra_classes|default(['']) %}
+
+<div class="hide-for-medium">
+  <span class="SearchInput-icon fas fa-search"></span>
+  <input id="offcanvas-search" class="SearchInput-input" type="text" placeholder="Search"/>
+  <div id="OffcanvasSearchWithDropdown" class="OffcanvasSearchWithDropdown SearchWithDropdown-dropdown">
+    <div class="grid-x">
+      <div class="SearchWithDropdown-left cell medium-7">
+        <div class="SearchWithDropdown-title bg-blue uppercase"><b>{{ offcanvas_search__view_more }}</b></div>
+        <div class="SearchWithDropdown-body">
+          {% for teaser in offcanvas_search__teasers %}
+            {% include '@molecules/IndividualProductTeaserTiny/IndividualProductTeaserTiny.twig' with {
+              individual_product_teaser_tiny__image: teaser.image,
+              individual_product_teaser_tiny__title: teaser.title,
+              individual_product_teaser_tiny__url: teaser.url,
+            } %}
+          {% endfor %}
+          <a href="#" class="button">{{ offcanvas_search__view_more }}</a>
+        </div>
+      </div>
+      <div class="cell medium-5">
+        <div class="SearchWithDropdown-title bg-blue uppercase"><b>Suggested Terms</b></div>
+        <div class="SearchWithDropdown-body">
+          {% for category in offcanvas_search__categories %}
+            <a class="SearchWithDropdown-bodyCategory" href="#">{{ category.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

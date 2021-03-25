@@ -1,0 +1,9 @@
+{
+  "name": "CTA",
+  "description": "Call To Action",
+  "entries": {
+    "scss": [
+      "cta.scss"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+$Form-label-font: sans-serif !default;
+$Form-required-asterisk: blue !default;
+
+/* A lot of form styling is setup in _settings.scss for Foundation */
+
+.Form {
+  label {
+    font-family: $Form-label-font;
+    margin-bottom: .25rem;
+    text-transform: uppercase;
+  }
+
+  .required-asterisk {
+    color: $Form-required-asterisk;
+  }
+
+  //select:required:invalid, select:invalid { // commented out per Melanie's QA for Firefox.
+  //  color: $medium-gray;
+  //}
+
+}

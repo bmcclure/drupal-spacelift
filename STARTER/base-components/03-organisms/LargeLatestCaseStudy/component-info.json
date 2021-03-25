@@ -1,0 +1,9 @@
+{
+  "name": "LargeLatestCaseStudy",
+  "description": "Large Latest Case Study",
+  "entries": {
+    "scss": [
+      "LargeLatestCaseStudy.scss"
+    ]
+  }
+}

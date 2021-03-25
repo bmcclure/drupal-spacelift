@@ -1,0 +1,51 @@
+$MSISlider-border: 1px solid #fff !default;
+$MSISlider-arrowBackground: red !default;
+$MSISlider-arrowBackgroundHover: red !default;
+
+.MSISlider {
+  position: relative;
+  padding-bottom: 2rem;
+
+  .slick-slide {
+    padding: 0;
+  }
+
+  .slick-prev, .slick-next {
+    width: 80px;
+    height: 27px;
+    background: $MSISlider-arrowBackground;
+    border: $MSISlider-border;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    @include transition;
+
+    &:hover {
+      background: $MSISlider-arrowBackgroundHover;
+    }
+
+    &::before {
+      //color: $red;
+      font-family: 'Font Awesome 5 Pro', sans-serif;
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+
+  .slick-next {
+    right: calc(50% - 83px);
+
+    &::before {
+      content: '\f30b';
+
+    }
+  }
+
+  .slick-prev {
+    left: calc(50% - 83px);
+
+    &::before {
+      content: '\f30a';
+    }
+  }
+}

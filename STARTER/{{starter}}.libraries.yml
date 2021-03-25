@@ -5,7 +5,9 @@ global:
     base:
       dist/css/app.css: {}
   js:
-    dist/js/scripts.js: {}
+    dist/js/aos-init.js: { }
+    dist/js/lozad-init.js: { }
+    dist/js/scripts.js: { }
 
 ### IE 11 support for SVG use:
 sprite:
@@ -24,12 +26,3 @@ sprite:
 #    dist/js/02-molecules/tabs/tabs.js: {}
 #  dependencies:
 #    - core/drupal
-
-### Plugin Libraries:
-aos:
-  js:
-    dist/js/aos-init.js: {}
-
-lozad:
-  js:
-    dist/js/lozad-init.js: {}

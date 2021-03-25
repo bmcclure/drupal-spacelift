@@ -23,7 +23,7 @@
  * - individual_resource_downloads_thumbnail__body - body content
  * - individual_resource_downloads_thumbnail__url - URL
  *
-*/
+ */
 #}
 
 {% set individual_resource_downloads_thumbnail__base_class = individual_resource_downloads_thumbnail__base_class|default('IndividualResourceDownloadsThumbnail') %}
@@ -31,8 +31,7 @@
 <div {{ suit(individual_resource_downloads_thumbnail__base_class, individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__blockname, individual_resource_downloads_thumbnail__extra_classes) }}>
   <div {{ suit('image', individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__base_class) }}>
     <a href="{{ individual_resource_downloads_thumbnail__url }}>">
-      <img class="lozad" data-src="{{ individual_resource_downloads_thumbnail__image }}"
-           src="pdf_thumbnail_placeholder.png" alt="{{ individual_resource_downloads_thumbnail__title }}">
+      <img class="lozad" data-src="{{ individual_resource_downloads_thumbnail__image }}" src="pdf_thumbnail_placeholder.png" alt="{{ individual_resource_downloads_thumbnail__title }}">
     </a>
   </div>
   <div {{ suit('text', individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__base_class) }}>

@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * OfficeLocationsListing
+ *
+ * Available variables:
+ * - office_locations_listing__base_class - the base class name
+ * - office_locations_listing__modifiers - array of modifiers to add to the base classname
+ * - office_locations_listing__blockname - blockname prepended to the base classname
+ * - office_locations_listing__extra_classes - extra classes
+ * -
+ * - office_locations_listing__title
+ * - office_locations_listing__body
+ * - office_locations_listing__teasers
+*/
+#}
+
+{% set office_locations_listing__base_class = office_locations_listing__base_class|default('OfficeLocationsListing') %}
+{% set office_locations_listing__extra_classes = office_locations_listing__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(office_locations_listing__base_class, office_locations_listing__modifiers, office_locations_listing__blockname, office_locations_listing__extra_classes) }}>
+  <header class="section-header">
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell xlarge-8">
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__level: 2,
+            heading: office_locations_listing__title,
+          } %}
+          <p>{{ office_locations_listing__body }}</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="grid-container">
+    <div class="FlexRow medium-up-2">
+      {% for teaser in office_locations_listing__teasers %}
+        {% include '@molecules/IndividualOfficeLocation/IndividualOfficeLocation.twig' with {
+          individual_office_location__image: teaser.image,
+          individual_office_location__name: teaser.name,
+          individual_office_location__subtitle: teaser.subtitle,
+          individual_office_location__phone: teaser.phone,
+          individual_office_location__mobile: teaser.mobile,
+          individual_office_location__fax: teaser.fax,
+          individual_office_location__address: teaser.address,
+        } %}
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

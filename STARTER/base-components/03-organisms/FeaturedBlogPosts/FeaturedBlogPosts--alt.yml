@@ -8,27 +8,27 @@ featured_blog_posts__blogs:
     title: 'Blog Title About A Specific MSI Service Goes Here'
     body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
     url: '#'
-    date: "Jan 26, 2020"
+    date: 'Jan 26, 2020'
 
   - id: 1
     image: 'https://placeimg.com/800/450/any'
     title: 'Lorem Ipsum Dolor'
     body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
     url: '#'
-    date: "Jan 26, 2020"
+    date: 'Jan 26, 2020'
 
   - id: 2
     image: 'https://placeimg.com/800/450/any'
     title: 'Blog Title About A Specific MSI Service Goes Here'
     body: 'Lorem ipsum dolor sit amet, nec justo quisque volutpat mattis.'
     url: '#'
-    date: "Jan 26, 2020"
+    date: 'Jan 26, 2020'
   - id: 3
     image: 'https://placeimg.com/800/450/any'
     title: '4th Blog Title '
     body: 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
     url: '#'
-    date: "Jan 26, 2020"
+    date: 'Jan 26, 2020'
 
 
 

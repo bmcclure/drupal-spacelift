@@ -10,7 +10,7 @@ import IndividualProductTeaserTinyData from './IndividualProductTeaserTiny.yml';
 
 export default { title: 'Molecules/Individual Product Teaser Tiny' };
 
-export const IndividualProductTeaserTinyExample = () => (
+export const individualProductTeaserTiny = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualProductTeaserTiny(IndividualProductTeaserTinyData),

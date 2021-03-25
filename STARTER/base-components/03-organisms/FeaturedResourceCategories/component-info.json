@@ -1,0 +1,9 @@
+{
+  "name": "FeaturedResourceCategories",
+  "description": "Featured Resource Categories",
+  "entries": {
+    "scss": [
+      "FeaturedResourceCategories.scss"
+    ]
+  }
+}

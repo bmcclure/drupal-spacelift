@@ -10,7 +10,7 @@ import FeaturedTestimonialsAltData from './FeaturedTestimonials--alt.yml';
  */
 export default { title: 'Organisms/Featured Testimonials' };
 
-export const FeaturedTestimonialsExample = () => (
+export const featuredTestimonials = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedTestimonials(FeaturedTestimonialsData),
@@ -18,7 +18,7 @@ export const FeaturedTestimonialsExample = () => (
   />
 );
 
-export const FeaturedTestimonialsAltExample = () => (
+export const altFeaturedTestimonials = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: FeaturedTestimonials(FeaturedTestimonialsAltData),

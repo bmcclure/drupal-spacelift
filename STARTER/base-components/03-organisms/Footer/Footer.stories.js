@@ -9,7 +9,7 @@ import FooterData from './Footer.yml';
  */
 export default { title: 'Organisms/Footer' };
 
-export const FooterExample = () => (
+export const footer = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: Footer(FooterData),

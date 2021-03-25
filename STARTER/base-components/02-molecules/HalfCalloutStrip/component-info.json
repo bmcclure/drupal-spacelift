@@ -1,0 +1,9 @@
+{
+  "name": "HalfCalloutStrip",
+  "description": "Half Callout Strip",
+  "entries": {
+    "scss": [
+      "HalfCalloutStrip.scss"
+    ]
+  }
+}

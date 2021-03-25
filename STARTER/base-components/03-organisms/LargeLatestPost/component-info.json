@@ -1,0 +1,9 @@
+{
+  "name": "LargeLatestPost",
+  "description": "Large Latest Post",
+  "entries": {
+    "scss": [
+      "LargeLatestPost.scss"
+    ]
+  }
+}

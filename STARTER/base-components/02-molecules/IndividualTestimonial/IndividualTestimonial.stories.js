@@ -9,7 +9,7 @@ import IndividualTestimonialData from './IndividualTestimonial.yml';
  */
 export default { title: 'Molecules/Individual Testimonial' };
 
-export const IndividualTestimonialExample = () => (
+export const individualTestimonial = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: IndividualTestimonial(IndividualTestimonialData),

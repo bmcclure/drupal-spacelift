@@ -1,0 +1,9 @@
+{
+  "name": "DualCalloutStrips",
+  "description": "Dual Callout Strips",
+  "entries": {
+    "scss": [
+      "DualCalloutStrips.scss"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "FeaturedVideoBlock",
+  "description": "Featured Video Block",
+  "entries": {
+    "scss": [
+      "FeaturedVideoBlock.scss"
+    ],
+    "js": [
+      "FeaturedVideoBlock.js"
+    ]
+  }
+}

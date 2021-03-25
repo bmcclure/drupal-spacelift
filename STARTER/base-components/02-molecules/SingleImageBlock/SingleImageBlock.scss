@@ -1,0 +1,10 @@
+$SingleImageBlock-aspectMobile: $aspect-ratio-2-3 !default;
+$SingleImageBlock-aspectDesktop: $aspect-ratio-1-3 !default;
+
+.SingleImageBlock {
+  padding-top: $SingleImageBlock-aspectMobile;
+
+  @include breakpoint(large) {
+    padding-top: $SingleImageBlock-aspectDesktop; // divided in half due to flex child 50% width
+  }
+}
