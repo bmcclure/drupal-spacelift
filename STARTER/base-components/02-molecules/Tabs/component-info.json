@@ -2,6 +2,9 @@
   "name": "Tabs",
   "description": "Tabs",
   "entries": {
+    "js": [
+      "Tabs.js"
+    ],
     "scss": [
       "_Tab.scss",
       "Tabs.scss"

@@ -1,31 +1,45 @@
 {#
  # Available variables:
- # - sources: The attributes of the <source> tags for this <picture> tag.
- # - img_element: The controlling image, with the fallback image in srcset.
- # - output_image_tag: Whether or not to output an <img> tag instead of a <picture> tag.
+ # - responsive_image__base_class:
+ # - responsive_image__modifiers:
+ # - responsive_image__blockname:
+ # - responsive_image__additional_classes:
+ #
+ # - responsive_image__element: The controlling image, with the fallback image in srcset.
+ # - responsive_image__srcset: The attributes of the <source> tags for this <picture> tag.
+ # - responsive_image__sizes:
+ # - responsive_image__src:
+ # - responsive_image__alt:
+ # - responsive_image__title:
+ # - responsive_image__output_image_tag: Whether or not to output an <img> tag instead of a <picture> tag.
  #}
+
+{{ attach_library('msi/Images') }}
+
 {% set responsive_image__base_class = responsive_image__base_class|default('Image') %}
 
-{% if output_image_tag %}
+{% if responsive_image__output_image_tag %}
   {% include '@atoms/images/Image/_Image.twig' with {
     image__base_class: responsive_image__base_class,
     image__modifiers: responsive_image__modifiers,
     image__blockname: responsive_image__blockname,
-    image__srcset: image__srcset|default(img_element['#attributes'].srcset),
-    image__sizes: image__sizes|default(img_element['#attributes'].sizes),
-    image__src: image__src|default(img_element['#uri']),
-    image__alt: image__alt|default(img_element['#alt']),
-    image__title: image__title|default(img_element['#title']),
+    image__additional_classes: responsive_image__additional_classes,
+    image__srcset: responsive_image__srcset|default(responsive_image__element['#attributes'].srcset),
+    image__sizes: responsive_image__sizes|default(responsive_image__element['#attributes'].sizes),
+    image__src: responsive_image__src|default(responsive_image__element['#uri']),
+    image__alt: responsive_image__alt|default(responsive_image__element['#alt']),
+    image__title: responsive_image__title|default(responsive_image__element['#title']),
   } %}
 {% else %}
   {% include '@atoms/images/Image/_Picture.twig' with {
     picture__base_class: responsive_image__base_class,
     picture__modifiers: responsive_image__modifiers,
     picture__blockname: responsive_image__blockname,
-    image__srcset: image__srcset|default(img_element['#attributes'].srcset),
-    image__sizes: image__sizes|default(img_element['#attributes'].sizes),
-    image__src: image__src|default(img_element['#uri']),
-    image__alt: image__alt|default(img_element['#alt']),
-    image__title: image__title|default(img_element['#title']),
+    picture__additional_classes: resonsive_image__additional_classes,
+    image__srcset: resonsive_image__srcset|default(responsive_image__element['#attributes'].srcset),
+    image__sizes: resonsive_image__sizes|default(responsive_image__element['#attributes'].sizes),
+    image__src: resonsive_image__src|default(responsive_image__element['#uri']),
+    image__alt: resonsive_image__alt|default(responsive_image__element['#alt']),
+    image__title: resonsive_image__title|default(responsive_image__element['#title']),
   } %}
 {% endif %}

@@ -16,7 +16,8 @@ globals:
   expect: true
   it: true
   describe: true
-  Drupal: true
+  Drupal: readonly
+  jQuery: readonly
 parser: '@babel/eslint-parser'
 rules:
   strict: 0

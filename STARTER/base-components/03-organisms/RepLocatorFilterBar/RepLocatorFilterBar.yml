@@ -1,0 +1,8 @@
+replocator_filterbar__industries:
+  - id: 'example'
+    title: 'Industry Name'
+  - id: 'another-one'
+    title: 'Example'
+replocator_filterbar__states:
+  - abbrev: 'AL'
+    title: 'Alabama'

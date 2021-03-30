@@ -1,0 +1,9 @@
+{
+  "name": "RepLocatorFilterBar",
+  "description": "RepLocatorFilterBar",
+  "entries": {
+    "scss": [
+      "RepLocatorFilterBar.scss"
+    ]
+  }
+}

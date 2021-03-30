@@ -3,7 +3,7 @@
 
 {% spaceless %}
   <img
-    {{ suit(image__base_class, image__modifiers, image__blockname) }}
+    {{ suit(image__base_class, image__modifiers, image__blockname, image__additional_classes) }}
     {% if image__srcset %}
       srcset="{{ image__srcset }}"
     {% endif %}

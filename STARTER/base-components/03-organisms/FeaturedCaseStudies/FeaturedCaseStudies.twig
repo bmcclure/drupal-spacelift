@@ -16,7 +16,7 @@
 
 */
 #}
-{% set featured_case_studies__base_class = featured_case_studies__base_class|default('FeaturedBlogPosts') %}
+{% set featured_case_studies__base_class = featured_case_studies__base_class|default('FeaturedCaseStudies') %}
 {% set featured_case_studies__extra_classes = featured_case_studies__extra_classes|default([featured_case_studies__background]) %}
 
 
@@ -52,7 +52,5 @@
         {% endfor %}
       </div>
     </div>
-    <script defer src="/components/03-organisms/FeaturedCaseStudies/dist/FeaturedCaseStudies.js?v=1.0.0"></script>
   </section>
-
 {% endif %}

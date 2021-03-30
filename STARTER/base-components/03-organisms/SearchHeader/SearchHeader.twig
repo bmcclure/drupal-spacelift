@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * used in Search Page only
+ *
+ * Available variables:
+ * - search_header__base_class - the base class name
+ * - search_header__modifiers - array of modifiers to add to the base classname
+ * - search_header__blockname - blockname prepended to the base classname
+ * - search_header__extra_classes - extra classes
+ * -
+ * - search_header__keyword
+*/
+#}
+
+{% set search_header__title = "Search Results for " ~ search_header__keyword %}
+
+
+{% set search_header__base_class = search_header__base_class|default('SearchHeader') %}
+{% set search_header__extra_classes = search_header__extra_classes|default(['section','bg-light']) %}
+
+<header {{ suit(search_header__base_class, search_header__modifiers, search_header__blockname, search_header__extra_classes) }}>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-10 large-8 medium-offset-1 large-offset-2">
+
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__base_class: '',
+          heading__level: 1,
+          heading: search_header__title,
+          heading__extra_classes: ['SearchHeader-title'],
+          heading__attributes:  {'itemprop': 'headline'}
+        } %}
+
+        <div class="grid-x grid-margin-x vertical-center">
+          <p class="h4 cell auto ">Not what you're looking for?</p>
+          <div class="cell medium-shrink">
+            {% include '@organisms/SearchBar/SearchBar.twig' %}
+          </div>
+        </div>
+      </div>
+    </div>
+</header>

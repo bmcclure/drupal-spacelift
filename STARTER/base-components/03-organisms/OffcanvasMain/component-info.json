@@ -1,0 +1,10 @@
+{
+  "name": "OffcanvasMain",
+  "description": "OffcanvasMain",
+  "entries": {
+    "scss": [
+      "OffcanvasMain.scss"
+    ]
+  }
+}
+

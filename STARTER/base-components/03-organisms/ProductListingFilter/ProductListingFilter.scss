@@ -1,0 +1,137 @@
+$ProductListingFilter-fontFamily: sans-serif !default;
+$ProductListingFilter-link: blue !default;
+$ProductListingFilter-linkHover: pink !default;
+$ProductListingFilter-border: 1px solid pink !default;
+$ProductListingFilter-title: blue !default;
+$ProductListingFilter-icon: red !default;
+
+.ProductListingFilter {
+
+  $self: &;
+
+  &-block {
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: $ProductListingFilter-link;
+
+    &:hover {
+      font-family: $ProductListingFilter-fontFamily;
+      color: $ProductListingFilter-linkHover;
+    }
+  }
+
+  &-list {
+    list-style-type: none;
+    margin: 0;
+    font-family: 'Selawik', 'Selawik Semibold', sans-serif;
+    padding: 1rem 0 0;
+    max-height: 358px;
+    overflow-y: auto;
+
+    @include breakpoint(xlarge) {
+      max-height: 390px;
+    }
+
+    @include scrollbar();
+
+    a {
+      color: $ProductListingFilter-link;
+    }
+
+    .active a {
+      font-family: $ProductListingFilter-fontFamily;
+      color: $ProductListingFilter-linkHover;
+    }
+
+  }
+
+
+  &-accordion {
+    border-top: $ProductListingFilter-border;
+    margin-bottom: 0;
+
+    .accordion-title::before {
+      font-family: 'Font Awesome 5 Pro', sans-serif;
+      content: '\f067';
+      font-weight: 300;
+      color: $ProductListingFilter-icon;
+    }
+
+    .is-active .accordion-title::before {
+      content: '\f068';
+    }
+  }
+
+  &-accordionItem {
+    padding: .75rem 0;
+    @include breakpoint(medium) {
+      padding: 1.5rem 0;
+    }
+
+    .LinkButton {
+      padding-left: 0;
+    }
+  }
+
+  &-title {
+    font-family: $ProductListingFilter-fontFamily;
+    color: $ProductListingFilter-title;
+    border: none;
+  }
+
+  &-content {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  :last-child:not(.is-active) > .accordion-title {
+    border: none;
+  }
+
+  :last-child > .accordion-content:last-child {
+    border: none;
+  }
+
+  &-listItem {
+    &Row {
+      display: flex;
+      flex-flow: row wrap;
+      padding: .4rem 0;
+    }
+
+    &Icon {
+      flex: 0 1 auto;
+      width: 23px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        max-width: 23px;
+        width: 23px;
+
+        path {
+          fill: $ProductListingFilter-title;
+        }
+      }
+    }
+
+    &Title {
+      flex: 0 1 auto;
+      width: calc(100% - 23px);
+      padding-left: 1rem;
+    }
+  }
+
+  &-showButton {
+    margin-top: 1.5rem;
+  }
+
+  &-categories {
+    #{$self}-list {
+      padding-top: 0;
+    }
+  }
+
+}

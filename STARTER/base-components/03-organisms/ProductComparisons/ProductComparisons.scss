@@ -1,0 +1,157 @@
+$ProductComparisons-dark: black !default;
+$ProductComparisons-white: white !default;
+$ProductComparisons-border: yellow !default;
+$ProductComparisons-background: pink !default;
+$ProductComparisons-secondary: red !default;
+
+.ProductComparisons {
+  $self: &;
+
+  .grid-container {
+    @include breakpoint(large down) {
+      padding-right: 0; /* per Melanie's request per her design, the chart should overflow to the right on tablet and mobile */
+    }
+  }
+
+  &-chart {
+    padding-bottom: 1rem;
+    overflow-x: auto;
+
+    @include scrollbar();
+  }
+
+  &-row {
+    display: flex;
+    min-width: 840px; /* Hmm, unsure of how to get this width. I need a min-width so that it overflows per the design */
+
+    @include breakpoint(medium) {
+      min-width: 1100px; /* Same as above - this is based on the design */
+    }
+
+    /* purposefully using classnames here instead of first-child/nth child to lessen load on browser processing */
+    &-1 {
+      #{$self}-cell {
+        padding-top: 0;
+
+        &Content {
+          background: $ProductComparisons-dark;
+          color: $ProductComparisons-white;
+          @include header-font-family-regular;
+          @include breakpoint(medium) {
+            font-size: rem-calc(18);
+          }
+        }
+
+
+        &-1 {
+          #{$self}-cellContent {
+            background: none;
+          }
+        }
+
+        &-2 {
+          #{$self}-cellContent {
+            background: $ProductComparisons-border;
+            color: $ProductComparisons-dark;
+          }
+        }
+      }
+    }
+
+    &-last {
+      #{$self}-cell {
+        padding-bottom: 0;
+
+        &Content {
+          padding: .75rem;
+          background: $red;
+          color: $ProductComparisons-white;
+          font-family: $header-font-family;
+          text-transform: uppercase;
+
+          &:hover {
+            background: darken($red, 5%);
+          }
+        }
+
+        &-1 {
+          #{$self}-cellContent {
+            background: none;
+          }
+        }
+
+        &-2 {
+          #{$self}-cellContent {
+            background: $ProductComparisons-border;
+            color: $ProductComparisons-dark;
+
+            &ContainerShow {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &-cell {
+    width: 140px; /* I'm just following the design for this */
+    padding: 2px;
+    text-align: center;
+    @include breakpoint(medium) {
+      width: 200px;
+
+    }
+
+    &Content {
+      background: $ProductComparisons-background;
+      padding: .75rem .5rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      &Container {
+        width: 100%;
+        line-height: 1.3; /* to match design */
+      }
+    }
+
+    &-1 {
+      padding-right: 4px;
+      position: sticky;
+      background: $ProductComparisons-white;
+      left: 0;
+      top: 0;
+
+      #{$self}-cellContent {
+        background: $ProductComparisons-secondary;
+        color: $ProductComparisons-white;
+        @include header-font-family-regular;
+
+        @include breakpoint(medium) {
+          font-size: rem-calc(18);
+
+        }
+      }
+    }
+
+    &-2 {
+      border-left: 3px solid $ProductComparisons-border;
+      border-right: 3px solid $ProductComparisons-border;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &-3 {
+      padding-left: 4px;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

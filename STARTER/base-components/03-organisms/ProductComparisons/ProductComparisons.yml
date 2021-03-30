@@ -1,0 +1,47 @@
+product_comparisons__rows:
+  - id: 0
+    title: ''
+    values:
+      - label: 'MS-900 Adhesive'
+      - label: 'Economy MS-900 Markers'
+      - label: 'Adhesive Roll MS-900'
+      - label: 'MS-970 Coiled Pipe Markers'
+      - label: 'MS-975 Pipe Markers'
+  - id: 1
+    title: 'Example'
+    values:
+      - label: 'MS-900 Adhesive'
+      - label: 'Economy MS-900 Markers'
+      - label: 'Adhesive Roll MS-900'
+      - label: 'MS-970 Coiled Pipe Markers'
+      - label: 'MS-975 Pipe Markers'
+  - id: 2
+    title: 'Example'
+    values:
+      - label: 'MS-900 Adhesive'
+      - label: 'Economy MS-900 Markers'
+      - label: 'Adhesive Roll MS-900'
+      - label: 'MS-970 Coiled Pipe Markers'
+      - label: 'MS-975 Pipe Markers'
+product_comparisons__lastrow:
+  title: ''
+  values:
+    - id: 0
+      url: ''
+      label: 'Current'
+
+    - id: 1
+      url: '#'
+      label: 'View'
+
+    - id: 2
+      url: '#'
+      label: 'View'
+
+    - id: 3
+      url: '#'
+      label: 'View'
+
+    - id: 4
+      url: '#'
+      label: 'View'

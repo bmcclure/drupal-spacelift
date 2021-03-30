@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * OffcanvasMain
+ * @todo FINISH conversion
+ *
+ * Available variables:
+ * - offcanvas_main__base_class - the base class name
+ * - offcanvas_main__modifiers - array of modifiers to add to the base classname
+ * - offcanvas_main__blockname - blockname prepended to the base classname
+ * - offcanvas_main__extra_classes - extra classes
+ * -
+ * - offcanvas_main__image
+ * - offcanvas_main__title
+ * - offcanvas_main__body
+ * - offcanvas_main__button_title
+ * - offcanvas_main__url
+*/
+#}
+
+{% set offcanvas_main__base_class = offcanvas_main__base_class|default('OffcanvasMain') %}
+{% set offcanvas_main__extra_classes = offcanvas_main__extra_classes|default(['Header-offcanvas', 'off-canvas', 'position-left']) %}
+
+<div {{ suit(offcanvas_main__base_class, offcanvas_main__modifiers, offcanvas_main__blockname, offcanvas_main__extra_classes) }}
+  id="off-canvas" data-off-canvas
+     data-transition="overlap">
+
+  <div class="OffcanvasMain-container Header-offcanvasContainer">
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="OffcanvasMain-search Header-offcanvasSearch ">
+      <div class="SearchInput">
+        <h2 class="OffcanvasMain-title show-for-medium">Main Menu</h2>
+
+        {% include '@organisms/OffcanvasSearchWithDropdown/OffcanvasSearchWithDropdown.twig' with {
+          offcanvas_search__title: 'Recommended Products'
+          offcanvas_search__view_more: 'View 10 More'
+          offcanvas_search__teasers:
+        } %}
+
+        <?php include "components/03-organisms/OffcanvasSearchWithDropdown/OffcanvasSearchWithDropdown.php"; ?>
+      </div>
+    </div>
+    <?php include "components/03-organisms/OffcanvasMenu/OffcanvasMenu.php"; ?>
+  </div>
+</div>

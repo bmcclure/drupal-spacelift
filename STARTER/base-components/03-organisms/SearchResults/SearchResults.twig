@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * SearchResults
+ *
+ * Available variables:
+ * - search_results__base_class - the base class name
+ * - search_results__modifiers - array of modifiers to add to the base classname
+ * - search_results__blockname - blockname prepended to the base classname
+ * - search_results__extra_classes - extra classes
+ * -
+ * - search_results__filters
+*/
+#}
+
+{% set search_results__base_class = search_results__base_class|default('SearchResults') %}
+{% set search_results__extra_classes = search_results__extra_classes|default(['']) %}
+
+<section {{ suit(search_results__base_class, search_results__modifiers, search_results__blockname, search_results__extra_classes) }}>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-10 large-8 medium-offset-1 large-offset-2">
+        <div {{ suit('dropdown', search_results__modifiers, search_results__base_class) }}>
+          <label for="searchType" class="sr-only">Filter Your Search Results</label>
+          <select class="SearchHeader-filter" name="searchType" id="searchType">
+            <option value="">- Filter Results -</option>
+            {% for filter in search_results__filters %}
+              <option value="">{{ filter.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        {% include '@molecules/SearchResult/SearchResult.twig' with {
+          search_result__image: 'https://placeimg.com/320/180/any',
+          search_result__title: 'Example Product Title Here',
+          search_result__body: 'Lorem ipsum dolor <b>XYZ</b> teaser copy here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          search_result__url: '#',
+          search_result__backgroundTreatment: 'cover',
+          search_result__type: 'Products',
+        } %}
+        {% include '@molecules/SearchResult/SearchResult.twig' with {
+          search_result__image: 'https://placeimg.com/320/180/any',
+          search_result__title: '<b>XYZ</b> Page Title Here',
+          search_result__body: 'Lorem ipsum dolor <b>XYZ</b> teaser copy here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          search_result__url: '#',
+          search_result__backgroundTreatment: 'cover',
+          search_result__type: 'Pages',
+        } %}
+        {% include '@molecules/SearchResult/SearchResult.twig' with {
+          search_result__image: 'https://placeimg.com/320/180/any',
+          search_result__title: '<b>XYZ</b> Page Title Here',
+          search_result__body: 'Lorem ipsum dolor <b>XYZ</b> teaser copy here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          search_result__url: '#',
+          search_result__backgroundTreatment: 'contain',
+          search_result__type: 'Resource Download',
+        } %}
+        {% include '@molecules/SearchResult/SearchResult.twig' with {
+          search_result__image: 'https://placeimg.com/320/180/any',
+          search_result__title: '<b>XYZ</b> Page Title Here',
+          search_result__body: 'Lorem ipsum dolor <b>XYZ</b> teaser copy here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          search_result__url: 'https://www.youtube.com/watch?v=33qflZyEfXE',
+          search_result__backgroundTreatment: 'cover',
+          search_result__type: 'Video',
+        } %}
+      </div>
+    </div>
+  </div>
+</section>
+

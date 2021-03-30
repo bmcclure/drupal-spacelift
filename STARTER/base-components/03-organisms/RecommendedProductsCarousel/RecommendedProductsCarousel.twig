@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * RecommendedProductsCarousel
+ * used on Flexible Layout
+ *
+ * Available variables:
+ * - recommended_products_carousel__base_class - the base class name
+ * - recommended_products_carousel__modifiers - array of modifiers to add to the base classname
+ * - recommended_products_carousel__blockname - blockname prepended to the base classname
+ * - recommended_products_carousel__extra_classes - extra classes
+ * -
+ * - recommended_products_carousel__title
+ * - recommended_products_carousel__teasers
+*/
+#}
+
+{% set recommended_products_carousel__base_class = recommended_products_carousel__base_class|default('RecommendedProductsCarousel') %}
+{% set recommended_products_carousel__extra_classes = recommended_products_carousel__extra_classes|default(['bg-light']) %}
+{% set recommended_products_carousel__class = ['FlexRow','justify-center','medium-up-3','large-up-4'] %}
+{% set recommended_products_carousel__count = recommended_products_carousel__teasers|length %}
+{% if recommended_products_carousel__count > 3 %}
+  {% set recommended_products_carousel__class = ['RecommendedProductsCarousel-slider', 'MSISlider'] %}
+{% endif %}
+
+{% if recommended_products_carousel__teasers %}
+  <section  {{ suit(recommended_products_carousel__teasers__base_class, recommended_products_carousel__teasers__modifiers, recommended_products_carousel__teasers__blockname, recommended_products_carousel__teasers__extra_classes) }}>
+    <div class="grid-container">
+      <header class="section-header text-center">
+        {% include '@atoms/text/Heading/Heading.twig' with {
+          heading__base_class: '',
+          heading__level: 2,
+          heading: recommended_products_carousel__title,
+        } %}
+      </header>
+      <div {{ suit('row', recommended_products_carousel__modifiers, recommended_products_carousel__base_class, recommended_products_carousel__class ) }}>
+
+        {% for teaser in recommended_products_carousel__teasers %}
+          {% include '@molecules/ProductTeaserBlock/ProductTeaserBlock.twig' with {
+            product_teaser_block__title: teaser.title,
+            product_teaser_block__image: teaser.image,
+            product_teaser_block__body: teaser.body,
+            product_teaser_block__button_title: teaser.button_title,
+            product_teaser_block__url: teaser.url,
+          } %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+{% endif %}

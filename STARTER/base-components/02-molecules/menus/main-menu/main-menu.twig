@@ -1,12 +1,12 @@
-{#{{ attach_library('{{starter}}/main-menu') }}#}
+{#{{ attach_library('msi/main-menu') }}#}
 
 <nav>
   <a href="#" id="toggle-expand" class="toggle-expand">
     <span class="toggle-expand__open">
       {% include '@atoms/images/Icons/Icon.twig' with {
-        icon_base_class: "icon",
-        icon_blockname: "toggle-expand",
-        icon_name: "menu",
+        icon__base_class: 'Icon',
+        icon__blockname: 'toggle-expand',
+        icon__name: 'menu',
       } %}
       <span class="toggle-expand__text">Main Menu</span>
     </span>
@@ -15,8 +15,8 @@
     </span>
   </a>
   <div id="main-nav" class="main-nav">
-    {% include "@molecules/menus/_menu.twig" with {
-      menu_class: "main-menu",
+    {% include '@molecules/menus/_menu.twig' with {
+      menu_class: 'main-menu',
       items: menu_items,
     } %}
 </div>

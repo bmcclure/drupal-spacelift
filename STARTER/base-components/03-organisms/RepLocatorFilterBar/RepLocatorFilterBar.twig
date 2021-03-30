@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * RepLocatorFilterBar
+ * used on templates/RepLocator
+ *
+ * Available variables:
+ * - replocator_filterbar__base_class - the base class name
+ * - replocator_filterbar__modifiers - array of modifiers to add to the base classname
+ * - replocator_filterbar__blockname - blockname prepended to the base classname
+ * - replocator_filterbar__extra_classes - extra classes
+ * -
+ * - replocator_filterbar__industries
+ * - replocator_filterbar__states
+*/
+#}
+
+{% set replocator_filterbar__base_class = replocator_filterbar__base_class|default('RepLocatorFilterBar') %}
+{% set replocator_filterbar__extra_classes = replocator_filterbar__extra_classes|default(['bg-blue']) %}
+
+<div {{ suit( replocator_filterbar__base_class, replocator_filterbar__modifiers, replocator_filterbar__blockname, replocator_filterbar__extra_classes) }}>
+  <div class="grid-container">
+    <div {{ suit('row', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['grid-x', 'grid-margin-x','vertical-center'] ) }}>
+      <div {{ suit('industry', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['cell','medium-shrink'] ) }}>
+        <div class="grid-x grid-margin-x vertical-center">
+          <label for="industry"
+            {{ suit('label', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['cell','large-shrink', 'HeaderFont','uppercase','white'] ) }}>Select
+            An Industry</label>
+          <select name="industry" id="industry"
+            {{ suit('select', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['cell','large-auto'] ) }}>
+            {% for industry in  replocator_filterbar__industries %}
+              <option value="{{ industry.id }}">{{ industry.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div {{ suit('state', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['cell',' medium-auto'] ) }}>
+        <div class="grid-x grid-margin-x vertical-center">
+          <label for="state"
+            {{ suit('label', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['cell','large-shrink', 'HeaderFont','uppercase','white'] ) }}>
+            Select A State</label>
+          <select name="state" id="state"
+            {{ suit('select', replocator_filterbar__modifiers, replocator_filterbar__base_class, ['cell','large-shrink'] ) }}>
+            {% for state in  replocator_filterbar__states %}
+              <option value='{{ state.abbrev }}'>{{ state.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,9 @@
  * - listItems - TBD
  */
 #}
+
+{{ attach_library('msi/Lists') }}
+
 {% set ol__base_class = ol__base_class|default('Ol') %}
 
 <ol {{ suit(ol__base_class, ol__modifiers, ol__blockname) }}>

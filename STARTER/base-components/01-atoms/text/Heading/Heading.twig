@@ -18,6 +18,7 @@
  * - heading__link_blockname - override the link block name (defaults to heading__base_class)
  */
 #}
+
 {% set heading__base_class = heading__base_class|default('h' ~ heading__level) %}
 
 {% spaceless %}

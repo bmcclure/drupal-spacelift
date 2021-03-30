@@ -1,0 +1,9 @@
+.ProductInformation {
+  padding: 0;
+  &-body {
+    padding: 2rem 0;
+    @include breakpoint(medium) {
+      padding: 3rem 0;
+    }
+  }
+}

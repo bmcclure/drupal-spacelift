@@ -1,0 +1,9 @@
+{
+  "name": "Subsection",
+  "description": "Subsection",
+  "entries": {
+    "scss": [
+      "Subsection.scss"
+    ]
+  }
+}

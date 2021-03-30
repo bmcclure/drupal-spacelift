@@ -1,0 +1,9 @@
+{
+  "name": "ProductPresetOptions",
+  "description": "ProductPresetOptions",
+  "entries": {
+    "scss": [
+      "ProductPresetOptions.scss"
+    ]
+  }
+}

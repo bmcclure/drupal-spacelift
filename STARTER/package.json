@@ -1,5 +1,5 @@
 {
-  "name": "{{Starter}}",
+  "name": "MSI",
   "version": "8.1.2",
   "license": "MIT",
   "dependencies": {
@@ -10,6 +10,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "foundation-sites": "^6.6.3",
     "jquery": "^3.6.0",
+    "jquery-once": "^2.2.3",
     "js-cookie": "^2.2.1",
     "lity": "^2.4.1",
     "lozad": "^1.16.0",

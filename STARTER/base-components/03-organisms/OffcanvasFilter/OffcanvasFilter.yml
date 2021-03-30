@@ -1,0 +1,422 @@
+offcanvas_filter__types_title: "PRODUCT TYPES"
+offcanvas_filter__types_items:
+  - id: 1
+    name: 'Coiled Pipe Markers 2'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+    </svg>'
+  - id: 2
+    name: 'Self-Adhesive Pipe Markers'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 3
+    name: 'Carrier Pipe Markers'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 4
+    name: 'Duct Markers'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 5
+    name: 'Stencils'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 6
+    name: 'Locator Tacks'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 7
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 8
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 9
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 10
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 11
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 12
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 13
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 14
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 15
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+  - id: 16
+    name: 'Lorem Ipsum Dolor'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+
+offcanvas_filter__industries_title: "INDUSTRIES"
+offcanvas_filter__industries_items:
+  - id: 0
+    name: 'Oil & Gas'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+    status: 'active'
+
+  - id: 1
+    name: 'Health Care'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+
+  - id: 2
+    name: 'Mechanical Contractors'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+
+  - id: 3
+    name: 'Electrical Contractors'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+
+  - id: 4
+    name: 'Power Generation'
+    icon: '<?xml version="1.0" encoding="utf-8"?>
+                      <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <style type="text/css">
+                      	.st0{fill:#DBA317;}
+                      </style>
+                      <g>
+                      	<path class="st0" d="M48.8,98.1c-12.5,0-23.9-4.7-32.5-12.5c-1-0.9-1-2.5-0.1-3.4l3.3-3.3c0.9-0.9,2.3-0.9,3.2-0.1
+                      		c6.9,6.2,16,9.9,26,9.9c21.6,0,39.1-17.5,39.1-39.1c0-21.6-17.5-39.1-39.1-39.1C37.9,10.6,28.1,15,21,22.1l9.6,9.5
+                      		c1.5,1.5,0.5,4-1.6,4H3.9c-1.3,0-2.3-1-2.3-2.3V8.5c0-2.1,2.5-3.1,4-1.7l8.8,8.7C23.1,6.7,35.3,1.2,48.7,1.2
+                      		c26.7,0,48.4,21.6,48.4,48.3C97.2,76.2,75.5,98,48.8,98.1z M61.3,67.7L44.1,55.1V22.3c0-1.3,1-2.3,2.3-2.3h4.7c1.3,0,2.3,1,2.3,2.3
+                      		v28.1l13.4,9.7c1,0.8,1.3,2.2,0.5,3.3l-2.8,3.8C63.8,68.2,62.3,68.4,61.3,67.7z"/>
+                      </g>
+                      </svg>'
+
+offcanvas_filter__checkboxes_title: "MATERIAL"
+offcanvas_filter__checkboxes_items:
+  - id: 0
+    name: 'Lorem Ipsum'
+    url: '#'
+    status: 'active'
+
+  - id: 1
+    name: 'Dolor'
+    url: '#'
+
+offcanvas_filter__checkboxes_title2: "OUTDOOR"
+offcanvas_filter__checkboxes_items2:
+  - id: 0
+    name: 'Outdoor'
+    url: '#'
+    status: 'active'
+  - id: 1
+    name: 'Indoor'
+    url: '#'
+
+
+offcanvas_filter__blocks_title:
+offcanvas_filter__blocks:
+  - id: 0
+    name: 'Pipe Markers'
+    status: 'active'
+
+  - id: 1
+    name: 'Tags'
+
+  - id: 2
+    name: 'Signs'
+
+  - id: 3
+    name: 'Tape'
+
+  - id: 4
+    name: 'Electrical'
+
+  - id: 5
+    name: 'Fire Protection'
+
+  - id: 6
+    name: 'Solar'
+
+  - id: 7
+    name: 'Health & Safety'
+
+  - id: 8
+    name: 'Ammonia'
+
+  - id: 9
+    name: 'Mounting Options & Accessories'

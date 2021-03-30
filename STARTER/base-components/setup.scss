@@ -7,6 +7,14 @@
 /// files that output styles directly, those styles will be included in every component's css file.
 ////
 
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/contain';
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
+@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
+
 /// Import project-specific colors
 @import '00-base/00-colors/01-colors-used';
 
@@ -19,15 +27,53 @@
 /// Import mixin definitions
 @import '00-base/01-defaults/02-mixins';
 
+/// Import Foundation dependencies
 /// @todo See if this is needed here - remove if not:
 @import '~foundation-sites/scss/global';
+@import '~foundation-sites/scss/forms/forms';
+@import '~foundation-sites/scss/typography/typography';
+@import '~foundation-sites/scss/components/button';
+@import '~foundation-sites/scss/components/button-group';
+@import '~foundation-sites/scss/components/close-button';
+@import '~foundation-sites/scss/components/label';
+//@import '~foundation-sites/scss/components/progress-bar';
+//@import '~foundation-sites/scss/components/slider';
+//@import '~foundation-sites/scss/components/switch';
+//@import '~foundation-sites/scss/components/table';
+//@import '~foundation-sites/scss/omponents/badge';
+@import '~foundation-sites/scss/components/breadcrumbs';
+//@import '~foundation-sites/scss/components/callout';
+//@import '~foundation-sites/scss/components/card';
+@import '~foundation-sites/scss/components/dropdown';
+@import '~foundation-sites/scss/components/pagination';
+@import '~foundation-sites/scss/components/tooltip';
+@import '~foundation-sites/scss/components/accordion';
+@import '~foundation-sites/scss/components/media-object';
+//@import '~foundation-sites/scss/components/orbit';
+@import '~foundation-sites/scss/components/responsive-embed';
+//@import '~foundation-sites/scss/components/tabs';
+//@import '~foundation-sites/scss/components/thumbnail';
+@import '~foundation-sites/scss/components/menu';
+@import '~foundation-sites/scss/components/menu-icon';
+@import '~foundation-sites/scss/components/accordion-menu';
+@import '~foundation-sites/scss/components/drilldown';
+@import '~foundation-sites/scss/components/dropdown-menu';
+@import '~foundation-sites/scss/components/off-canvas';
+@import '~foundation-sites/scss/components/reveal';
+@import '~foundation-sites/scss/components/sticky';
+//@import '~foundation-sites/scss/components/title-bar';
+//@import '~foundation-sites/scss/components/top-bar';
+//@import '~foundation-sites/scss/components/float';
+@import '~foundation-sites/scss/components/flex';
+@import '~foundation-sites/scss/components/visibility';
+//@import '~foundation-sites/scss/prototype/prototype';
 
 /// These Foundation mixins are commented out here because they are not needed by every component. Instead, @import the
 /// required Foundation library at the start of each component SCSS file that @includes mixins from these Foundation
 /// components.
 /// See 01-atoms/buttons/Button/Button.scss for an example.
 
-///@include foundation-xy-grid-classes;  ***
+//@include foundation-xy-grid-classes;
 ///@include foundation-flex-classes;  ***?
 ///@include foundation-typography;  ***
 ///@include foundation-forms;  *

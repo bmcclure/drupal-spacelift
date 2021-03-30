@@ -24,10 +24,25 @@
 <article class="SearchResult">
   <div class="grid-x grid-margin-x">
     {% if search_result__image %}
-      <a class="SearchResult-image cell medium-3" href="{{ search_result__url }}" title="{{ search_result__title }}">
-        <div class="SearchResult-imageBackground lozad" data-background-image="{{ search_result__image }}" style="background: url(assets/images/placeholder.png) no-repeat center; background-size: {{ search_result__background_treatment }}; padding-top: 100%;">
-        </div>
-      </a>
+      {% if search_result__type == 'Video' %}
+        <a class="SearchResult-image cell medium-3" data-lity href="{{ search_result__url }}"
+           title="{{ search_result__title }}">
+          <div class="FeaturedVideoBlock-image SearchResult-imageBackground lozad text-center"
+               data-background-image="{{ search_result__image }}"
+               style="background: url(assets/images/placeholder.png) no-repeat center; background-size: {{ search_result__background_treatment }};">
+            <div class="FeaturedVideoBlock-container">
+              <span class="far fa-play-circle"></span>
+            </div>
+          </div>
+        </a>
+      {% else %}
+        <a class="SearchResult-image cell medium-3" href="{{ search_result__url }}" title="{{ search_result__title }}">
+          <div class="SearchResult-imageBackground lozad" data-background-image="{{ search_result__image }}"
+               style="background: url(assets/images/placeholder.png) no-repeat center; background-size: {{ search_result__background_treatment }}; padding-top: 100%;">
+          </div>
+        </a>
+      {% endif %}
+
     {% endif %}
     <div class="SearchResult-text cell medium-auto">
       <h3><a href="{{ search_result__url }}" title="{{ search_result__title }}">{{ search_result__title }}</a></h3>

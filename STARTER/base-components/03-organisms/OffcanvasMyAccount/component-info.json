@@ -1,0 +1,10 @@
+{
+  "name": "OffcanvasMyAccount",
+  "description": "OffcanvasMyAccount",
+  "entries": {
+    "scss": [
+      "OffcanvasMyAccount.scss"
+    ]
+  }
+}
+

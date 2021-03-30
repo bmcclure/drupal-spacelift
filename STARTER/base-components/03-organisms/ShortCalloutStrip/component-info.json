@@ -1,0 +1,9 @@
+{
+  "name": "ShortCalloutStrip",
+  "description": "ShortCalloutStrip",
+  "entries": {
+    "scss": [
+      "ShortCalloutStrip.scss"
+    ]
+  }
+}

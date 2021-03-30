@@ -1,0 +1,9 @@
+{
+  "name": "ReusableCalloutStrip",
+  "description": "ReusableCalloutStrip",
+  "entries": {
+    "scss": [
+      "ReusableCalloutStrip.scss"
+    ]
+  }
+}

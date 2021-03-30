@@ -1,0 +1,9 @@
+reusable_callout_strip__title: "Contact Our Support Center H2 Headline"
+reusable_callout_strip__body: "<ul>
+               			<li>Get product information questions answered</li>
+               			<li>Have a SCR check over your order to make sure it’s right</li>
+               			<li>Check the status of your order and shipping inquiries</li>
+               			<li>Ask about our services for your job or project</li>
+               		  </ul>"
+reusable_callout_strip__button_title: 'Contact Us Today'
+reusable_callout_strip__url: '#'

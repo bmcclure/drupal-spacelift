@@ -1,0 +1,23 @@
+$ResourcesSearchBar-grid-padding: 10px;
+$ResourcesSearchBar-white: #fff !default;
+
+.ResourcesSearchBar {
+  $self: &;
+
+  border-top: 4px solid $ResourcesSearchBar-white;
+  border-bottom: 4px solid $ResourcesSearchBar-white;
+  padding: .5rem 0;
+
+  &-label {
+    padding: $ResourcesSearchBar-grid-padding;
+    padding-bottom: 5px; // overriding because the line height adds too much space and I don't want to change the line height
+    flex: 0 1 auto;
+    width: 100%;
+    color: $ResourcesSearchBar-white;
+    @include breakpoint(medium) {
+      padding-bottom: 10px;
+      flex-shrink: 1;
+      width: auto;
+    }
+  }
+}

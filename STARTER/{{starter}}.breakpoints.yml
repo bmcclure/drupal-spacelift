@@ -1,28 +1,28 @@
-{{ starter }}.small:
+{{starter}}.small:
   label: Small
   mediaQuery: ''
   weight: 0
   multipliers:
     - 1x
-{{ starter }}.medium:
+{{starter}}.medium:
   label: Medium
   mediaQuery: 'all and (min-width: 640px) and (max-width: 1023px)'
   weight: 1
   multipliers:
     - 1x
-{{ starter }}.large:
+{{starter}}.large:
   label: Large
   mediaQuery: 'all and (min-width: 1024px) and (max-width: 1199px)'
   weight: 2
   multipliers:
     - 1x
-{{ starter }}.xlarge:
+{{starter}}.xlarge:
   label: X-Large
   mediaQuery: 'all and (min-width: 1200px) and (max-width: 1439px)'
   weight: 3
   multipliers:
     - 1x
-{{ starter }}.xxlarge:
+{{starter}}.xxlarge:
   label: XX-Large
   mediaQuery: 'all and (min-width: 1440px)'
   weight: 4

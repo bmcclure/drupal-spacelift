@@ -1,0 +1,12 @@
+{
+  "name": "ProductsTopHalf",
+  "description": "ProductsTopHalf",
+  "entries": {
+    "scss": [
+      "ProductsTopHalf.scss"
+    ],
+    "js": [
+      "ProductsTopHalf.js"
+    ]
+  }
+}

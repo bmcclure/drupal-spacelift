@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * ProductListingFilter-accordion
+ *
+ * Available variables:
+ * - productlistingfilter_accordion__base_class - the base class name
+ * - productlistingfilter_accordion__modifiers - array of modifiers to add to the base classname
+ * - productlistingfilter_accordion__blockname - blockname prepended to the base classname
+ * - productlistingfilter_accordion__extra_classes - extra classes
+ * -
+ * - productlistingfilter_accordion__title
+ * - productlistingfilter_accordion__items
+ * - productlistingfilter_accordion__checkboxes
+*/
+#}
+
+{% set productlistingfilter_accordion__base_class = productlistingfilter_accordion__base_class|default('ProductListingFilter') %}
+{% set productlistingfilter_accordion__extra_classes = productlistingfilter_accordion__extra_classes|default(['accordion']) %}
+
+<ul class="ProductListingFilter-accordion accordion" data-accordion data-multi-expand="true"
+    data-allow-all-closed="true">
+
+  <li class="ProductListingFilter-accordionItem accordion-item is-active" data-accordion-item>
+    <a href="#" class="ProductListingFilter-title accordion-title">{{ productlistingfilter_accordion__title }}</a>
+    <div class="ProductListingFilter-content accordion-content" data-tab-content>
+      <button class="LinkButton"><i class="fal fa-times"></i> CLEAR</button>
+      <div>
+        {% if productlistingfilter_accordion__items %}
+          <ul class="ProductListingFilter-list">
+            {% for item in productlistingfilter_accordion__items %}
+              <li class="ProductListingFilter-listItem">
+                <a class="ProductListingFilter-listItemRow" href="#">
+                  <span class="ProductListingFilter-listItemIcon">{{ item.icon }}</span>
+                  <span class="ProductListingFilter-listItemTitle">{{ item.name }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if productlistingfilter_accordion__checkboxes %}
+          <ul data-drupal-facet-id="deposit_type_p" data-drupal-facet-alias="deposit-type-p" class="Checkboxes">
+            {% for checkbox in productlistingfilter_accordion__checkboxes %}
+              <li class="Checkbox facet-item">
+                <input type="checkbox" class="Checkbox-input" id="{{ checkbox.id }}"
+                  {% if checkbox.status == 'active' %}
+                    checked
+                  {% endif %}
+                >
+                <label for="{{ checkbox.id }}" class="Label">
+                  <span class="facet-item__value">{{ checkbox.name }}</span>
+                </label>
+                <a href="#={{ checkbox.url }}"
+                   style="display: none;">
+                  <span class="facet-item__value">{{ checkbox.name }}<</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+      </div>
+      <div>
+        <button class="ProductListingFilter-showButton LinkButton"><i class="fal fa-minus"></i> SHOW LESS
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * OffcanvasFilter
+ *
+ * Available variables:
+ * - offcanvas_filter__base_class - the base class name
+ * - offcanvas_filter__modifiers - array of modifiers to add to the base classname
+ * - offcanvas_filter__blockname - blockname prepended to the base classname
+ * - offcanvas_filter__extra_classes - extra classes
+ * -
+*/
+#}
+
+{% set offcanvas_filter__base_class = offcanvas_filter__base_class|default('OffcanvasFilter') %}
+{# {% set offcanvas_filter__extra_classes = offcanvas_filter__extra_classes|default(['off-canvas', 'position-left']) %} #}
+
+<div
+  id="OffcanvasFilter" {{ suit(offcanvas_filter__base_class, offcanvas_filter__modifiers, offcanvas_filter__blockname, offcanvas_filter__extra_classes) }}
+  data-off-canvas data-transition="overlap"
+  data-auto-focus="false">
+  <header {{ suit('header', offcanvas_filter__modifiers, offcanvas_filter__base_class) }}>
+    <div class="grid-container">
+      <div class="grid-x vertical-center">
+        <h2 class="OffcanvasFilter-title cell shrink">Filter Results</h2>
+        <div class="cell auto">
+          <a href="#" class="button white">CLEAR ALL</a>
+        </div>
+      </div>
+    </div>
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </header>
+  <div class="OffcanvasFilter-body">
+    <div class="grid-container">
+      <div class="ProductListingFilter">
+        <div id="ProductFilter-mobile">
+          <div id="ProductFilters-wrapper">
+            {% include '@organisms/ProductListingFilter/inc/ProductListingFilter-accordion.twig' with {
+              productlistingfilter_accordion__title: offcanvas_filter__types_title,
+              productlistingfilter_accordion__items: offcanvas_filter__types_items,
+            } %}
+            {% include '@organisms/ProductListingFilter/inc/ProductListingFilter-accordion.twig' with {
+              productlistingfilter_accordion__title: offcanvas_filter__industries_title,
+              productlistingfilter_accordion__items: offcanvas_filter__industries_items,
+            } %}
+            {% include '@organisms/ProductListingFilter/inc/ProductListingFilter-accordion.twig' with {
+              productlistingfilter_accordion__title: offcanvas_filter__checkboxes_title,
+              productlistingfilter_accordion__checkboxes: offcanvas_filter__checkboxes_items,
+            } %}
+
+            {% include '@organisms/ProductListingFilter/inc/ProductListingFilter-accordion.twig' with {
+              productlistingfilter_accordion__title: offcanvas_filter__checkboxes_title2,
+              productlistingfilter_accordion__checkboxes: offcanvas_filter__checkboxes_items2,
+            } %}
+          </div>
+        </div>
+      </div>
+      <div class="OffcanvasFilter-buttons">
+        <a href="#" class="button OffcanvasMain-button" role="menuitem">VIEW RESULTS</a>
+      </div>
+    </div>
+  </div>
+</div>

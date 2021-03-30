@@ -40,6 +40,10 @@
         heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
       } %}
       <p class="SectionFade-two">{{ card__body }}</p>
+      {% if card__button_title %}
+        <span class="link SectionFade-three">{{ card__button_title }} <span class="fas fa-caret-right"></span></span>
+
+      {% endif %}
     </div>
     {% if card__url %}
   </a>

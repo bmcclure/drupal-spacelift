@@ -1,0 +1,9 @@
+{
+  "name": "SideBySideImages",
+  "description": "SideBySideImages",
+  "entries": {
+    "scss": [
+      "SideBySideImages.scss"
+    ]
+  }
+}

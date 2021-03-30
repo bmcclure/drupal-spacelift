@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Subsection
+ * Used in Customization Callout component
+ *
+ * Available variables:
+ * - subsection__base_class - the base class name
+ * -
+ * - subsection__heading_level - heading level
+ * - subsection__heading - heading content
+ * - subsection__content - WYSIWYG content
+ */
+#}
+
+{% set subsection__base_class = subsection__base_class|default('Subsection') %}
+{% set subsection__heading_level = subsection__heading_level|default(3) %}
+
+{% include '@atoms/text/Heading/Heading.twig' with {
+  heading__level: subsection__heading_level,
+  heading: subsection__heading,
+  heading__extra_classes: ['Subsection-heading'],
+} %}
+
+{% include '@atoms/text/Paragraph.twig' with {
+  paragraph__blockname: subsection__base_class,
+  paragraph__content: subsection__content,
+} %}

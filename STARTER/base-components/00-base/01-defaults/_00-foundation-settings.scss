@@ -8,7 +8,8 @@
 @import 'base-components/00-base/00-colors/01-colors-used';
 
 /// Foundation for Sites Settings
-@import '~foundation-sites/scss/util/util';
+@import '~foundation-sites/scss/util/unit';
+@import '~foundation-sites/scss/util/color';
 
 /// 1.1 Global Colors
 $global-font-size: 100%;
@@ -44,13 +45,13 @@ $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
 /// 2. Breakpoints
-$breakpoints: (
-  small: 0,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px
-);
+//$breakpoints: (
+//  small: 0,
+//  medium: 640px,
+//  large: 1024px,
+//  xlarge: 1200px,
+//  xxlarge: 1440px
+//);
 $print-breakpoint: large;
 $breakpoint-classes: (small medium large xlarge xxlarge);
 
@@ -116,7 +117,7 @@ $code-background: color(background-section);
 $code-border: 1px solid color(border-gray);
 $code-padding: rem-calc(2 5 1);
 $anchor-color: color(primary);
-$anchor-color-hover: color(secondary-dark);
+$anchor-color-hover: color(primary-dark);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -686,3 +687,5 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: rem-calc(50); //$grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+
+@import '~foundation-sites/scss/util/util';

@@ -1,0 +1,9 @@
+{
+  "name": "SearchHeader",
+  "description": "SearchHeader",
+  "entries": {
+    "scss": [
+      "SearchHeader.scss"
+    ]
+  }
+}

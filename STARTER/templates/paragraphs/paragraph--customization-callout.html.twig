@@ -1,0 +1,91 @@
+{#
+/**
+ * @file
+ * Customization Callout paragraph template.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   - id: The paragraph ID.
+ *   - bundle: The type of the paragraph, for example, "image" or "text".
+ *   - authorid: The user ID of the paragraph author.
+ *   - createdtime: Formatted creation date. Preprocess functions can
+ *     reformat it by calling format_date() with the desired parameters on
+ *     $variables['paragraph']->getCreatedTime().
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('msi/customization-callout') }}
+
+{%
+  set classes = [
+  paragraph.bundle|clean_class
+] %}
+
+{% set customization_callout__base_class = 'CustomizationCallout' %}
+{% set image_entity = paragraph.field_media.entity.field_media_image.entity | merge({'#image_style': 'thumbnail'}) %}
+
+{# Todo: Remove hard-coded IDs unless they're absolutely necessary #}
+<section {{ suit(customization_callout__base_class) }}>
+  <div {{ suit('top', [], customization_callout__base_class, ['bg-yellow']) }}>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div {{ suit('top-image', [], customization_callout__base_class, ['cell', 'medium-4']) }}>
+          {# TODO: Figure out responsive background images #}
+          {% include '@atoms/images/Image/BackgroundImage.twig' with {
+            background_image__base_class: 'top-image-container',
+            background_image__modifiers: customization_callout__modifiers,
+            background_image__blockname: customization_callout__base_class,
+            background_image__additional_classes: ['lozad'],
+            background_image__attributes: {'data-background-image': file_url(image_entity.uri.value)},
+          } %}
+        </div>
+        <div {{ suit('top-text', [], customization_callout__base_class, ['cell', 'medium-8']) }}>
+          <div class="grid-x grid-margin-x vertical-center">
+            <div class="cell large-8">
+              {{ content.field_heading_paragraph }}
+              {{ content.field_content_paragraph }}
+            </div>
+            <div class="cell large-4 large-text-right">
+              {{ content.field_button_paragraph }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div {{ suit('bottom', [], customization_callout__base_class) }}>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell large-4 show-for-large"></div>
+        {% for key, item in content.subsections if key|first != '#' %}
+          <div {{ suit('bottom-left', [], customization_callout__base_class, ['cell', 'medium-6', 'large-4']) }}>
+            {{ item }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

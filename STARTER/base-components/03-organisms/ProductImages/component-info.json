@@ -1,0 +1,12 @@
+{
+  "name": "ProductImages",
+  "description": "ProductImages",
+  "entries": {
+    "scss": [
+      "ProductImages.scss"
+    ],
+    "js": [
+      "ProductImages.js"
+    ]
+  }
+}

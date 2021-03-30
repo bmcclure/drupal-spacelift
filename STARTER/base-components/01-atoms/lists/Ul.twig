@@ -8,6 +8,9 @@
  * - listItems - TBD
  */
 #}
+
+{{ attach_library('msi/Lists') }}
+
 {% set ul__base_class = ul__base_class|default('Ul') %}
 
 <ul {{ suit(ul__base_class, ul__modifiers, ul__blockname) }}>

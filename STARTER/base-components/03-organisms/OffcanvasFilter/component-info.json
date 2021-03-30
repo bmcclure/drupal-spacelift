@@ -1,0 +1,9 @@
+{
+  "name": "OffcanvasFilter",
+  "description": "OffcanvasFilter",
+  "entries": {
+    "scss": [
+      "OffcanvasFilter.scss"
+    ]
+  }
+}

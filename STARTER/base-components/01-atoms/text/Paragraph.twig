@@ -4,6 +4,7 @@
  * - paragraph__base_class - the base classname
  * - paragraph__modifiers - array of modifiers to add to the base classname
  * - paragraph__blockname - blockname prepended to the base classname
+ * - paragraph__extra_classes - extra classes
  * - paragraph__content - the content of the paragraph (typically text)
  *
  * Available blocks:
@@ -11,9 +12,10 @@
  *   for example: A formatted text field in Drupal
  */
 #}
-{% set paragraph__base_class = paragraph__base_class|default('paragraph') %}
 
-<p {{ suit(paragraph__base_class, paragraph__modifiers, paragraph__blockname) }}>
+{% set paragraph__base_class = paragraph__base_class|default('Paragraph') %}
+
+<p {{ suit(paragraph__base_class, paragraph__modifiers, paragraph__blockname, paragraph__extra_classes) }}>
   {% block paragraph__content %}
     {{ paragraph__content }}
   {% endblock %}

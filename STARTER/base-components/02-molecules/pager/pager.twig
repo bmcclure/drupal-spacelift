@@ -33,7 +33,8 @@
 
 {% if items %}
   <nav {{ suit(pager__base_class) }} role="navigation" aria-labelledby="pagination-heading{{ pager__uid }}">
-    <h4 id="pagination-heading{{ pager__uid }}" {{ suit('sr-only') }}>{{ 'Pagination' ~ pager__uid|t }}</h4>
+    <h4 id="pagination-heading{{ pager__uid }}" {{ suit('sr-only') }}>{{ 'SHOWING' ~ pager__uid|t }}</h4>
+    <div class="pager-summary"></div>
     <ul {{ suit('items', [], pager__base_class, ['js-pager__items']) }}>
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}

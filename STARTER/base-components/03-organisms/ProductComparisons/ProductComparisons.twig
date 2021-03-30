@@ -1,0 +1,94 @@
+{#
+/**
+* @file
+* ProductComparisons
+*
+* Available variables:
+* - product_comparisons__base_class - the base class name
+* - product_comparisons__modifiers - array of modifiers to add to the base classname
+* - product_comparisons__blockname - blockname prepended to the base classname
+* - product_comparisons__extra_classes - extra classes
+* -
+* - product_comparisons__title
+* - product_comparisons__rows
+* - product_comparisons__lastrow
+*/
+#}
+
+{% set product_comparisons__base_class = product_comparisons__base_class|default('product_comparisonsMe') %}
+{% set product_comparisons__extra_classes = product_comparisons__extra_classes|default(['']) %}
+
+{% if product_comparisons__rows %}
+  {% set i = 0 %}
+
+  <section class="ProductComparisons">
+    <div class="grid-container">
+      <header class="section-header">
+        <div class="Line"></div>
+        <h2>Product Comparisons</h2>
+      </header>
+      <div class="ProductComparisons-chart">
+        {% for row in product_comparisons__rows %}
+          {% set i = i + 1 %}
+
+          {% if row.values %}
+            {% set a = 1 %}
+
+            <div class="ProductComparisons-row ProductComparisons-row-{{ i }}">
+              <div class="ProductComparisons-title ProductComparisons-cell ProductComparisons-cell-{{ a }}">
+                <div class="ProductComparisons-cellContent">
+                  <div class="ProductComparisons-cellContentContainer">{{ row.title }}</div>
+                </div>
+              </div>
+              {% for value in row.values %}
+                {% set a = a + 1 %}
+                <div class="ProductComparisons-cell ProductComparisons-cell-{{ a }}">
+                  <div class="ProductComparisons-cellContent">
+                    <div class="ProductComparisons-cellContentContainer">{{ value.label }}</div>
+                  </div>
+                </div>
+              {% endfor %}
+
+            </div>
+          {% endif %}
+
+        {% endfor %}
+        <!-- last row (includes buttons, has a different need) -->
+        {% if product_comparisons__lastrow %}
+        {% set b = 'last' %}
+
+        {% if product_comparisons__lastrow.values %}
+        {% set c = 1 %}
+
+        <div class="ProductComparisons-row ProductComparisons-row-{{ b }}">
+          <div class="ProductComparisons-title ProductComparisons-cell ProductComparisons-cell-{{ c }}">
+            <div class="ProductComparisons-cellContent">
+              <div class="ProductComparisons-cellContentContainer">{{ product_comparisons__lastrow.title }}</div>
+            </div>
+          </div>
+          {% for value2 in product_comparisons__lastrow.values %}
+          {% set c = c + 1 %}
+          <div class="ProductComparisons-cell ProductComparisons-cell-{{ c }}">
+            {% set htmlTag = "div" %}
+            {% set caret = "" %}
+            {% if value2.url is not empty %}
+              {% set htmlTag = "a" %}
+              {% set caret =  '<span class="fas fa-caret-right"></span>' %}
+            {% endif %}
+            <{{ htmlTag }} href="{{ value2.url }}" class="ProductComparisons-cellContent">
+            <div class="ProductComparisons-cellContentContainer">{{ value2.label }} <span
+                class="show-for-medium ProductComparisons-cellContentContainerShow">Product</span>
+              {{ caret }}
+            </div>
+          </{{ htmlTag }}>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% endif %}
+      {% endif %}
+      <!-- end last row -->
+    </div>
+    </div>
+  </section>
+{% endif %}

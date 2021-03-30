@@ -13,15 +13,15 @@
 {% endif %}
 
 {% if grid_label %}
-  {% include "@atoms/text/Heading/Heading.twig" with {
-    "heading__level": 2,
-    "heading": grid_label,
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    'heading__level': 2,
+    'heading': grid_label,
   } %}
 {% endif %}
-<div {{ bem(grid_base_class, grid_modifiers, grid_blockname) }}>
+<div {{ suit(grid_base_class, grid_modifiers, grid_blockname) }}>
   {% block grid_content %}
     {% for item in items %}
-      {% include "@organisms/grid/_grid-examples.twig" %}
+      {% include '@organisms/grid/_grid-examples.twig' %}
     {% endfor %}
   {% endblock %}
 </div>

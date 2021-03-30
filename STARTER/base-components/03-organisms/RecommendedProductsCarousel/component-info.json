@@ -1,0 +1,12 @@
+{
+  "name": "RecommendedProductsCarousel",
+  "description": "RecommendedProductsCarousel",
+  "entries": {
+    "scss": [
+      "RecommendedProductsCarousel.scss"
+    ],
+    "js": [
+      "RecommendedProductsCarousel.js"
+    ]
+  }
+}

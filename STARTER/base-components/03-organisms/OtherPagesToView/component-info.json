@@ -1,0 +1,12 @@
+{
+  "name": "OtherPagesToView",
+  "description": "OtherPagesToView",
+  "entries": {
+    "scss": [
+      "OtherPagesToView.scss"
+    ],
+    "js": [
+      "OtherPagesToView.js"
+    ]
+  }
+}

@@ -5,6 +5,8 @@
 @import 'Select/Select';
 @import 'Textfields/Textfields';
 
+@include foundation-forms;
+
 fieldset {
   legend {
     color: color(text);

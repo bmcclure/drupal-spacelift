@@ -1,0 +1,12 @@
+{
+  "name": "ProductCustomVariableOptions",
+  "description": "ProductCustomVariableOptions",
+  "entries": {
+    "scss": [
+      "ProductCustomVariableOptions.scss"
+    ],
+    "js": [
+      "ProductCustomVariableOptions.js"
+    ]
+  }
+}

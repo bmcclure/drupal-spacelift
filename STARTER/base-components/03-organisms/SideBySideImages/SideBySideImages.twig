@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Side by side images, used in Content 5050
+ *
+ * Available variables:
+ * - sidebyside_images__base_class - the base class name
+ * - sidebyside_images__modifiers - array of modifiers to add to the base classname
+ * - sidebyside_images__blockname - blockname prepended to the base classname
+ * - sidebyside_images__extra_classes - extra classes
+ * -
+ * - sidebyside_images__image
+ * - sidebyside_images__image2
+*/
+#}
+
+{% set sidebyside_images__base_class = sidebyside_images__base_class|default('SideBySideImages') %}
+{% set sidebyside_images__extra_classes = sidebyside_images__extra_classes|default(['cell']) %}
+
+{% if sidebyside_images__image and sidebyside_images__image2 %}
+
+  <div {{ suit(sidebyside_images__base_class, sidebyside_images__modifiers, sidebyside_images__blockname, sidebyside_images__extra_classes) }}">
+  <div {{ suit('row', sidebyside_images__modifiers, sidebyside_images__base_class, ['FlexRow', 'small-up-2'] ) }}>
+    <div class="FlexRow-item">
+      <div {{ suit('image', sidebyside_images__modifiers, sidebyside_images__base_class, ['lozad'] ) }}
+        data-background-image="{{ sidebyside_images__image }}"
+        style="background:url(/assets/images/placeholder.png) no-repeat center;background-size: cover;"></div>
+    </div>
+    <div class="FlexRow-item">
+      <div {{ suit('image', sidebyside_images__modifiers, sidebyside_images__base_class, ['lozad'] ) }}
+        data-background-image="{{ sidebyside_images__image2 }}"
+        style="background:url(/assets/images/placeholder.png) no-repeat center;background-size: cover;">
+      </div>
+    </div>
+  </div>
+  </div>
+
+{% endif %}

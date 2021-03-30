@@ -1,0 +1,15 @@
+recommended_products_carousel__title: 'Lorem Ipsum Dolor (Recommended Products Carousel)'
+recommended_products_carousel__teasers:
+  - id: 0
+    title: 'Economy MS-900 Markers'
+    image: 'https://placeimg.com/320/180/any'
+    body: 'Lorem ipsum dolor sit amet, cectetuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
+    button_title: 'CHOOSE OPTIONS'
+    url: '#placeholder'
+  - id: 1
+    title: 'Economy MS-900 Markers'
+    image: 'https://placeimg.com/320/180/any'
+    body: 'Lorem ipsum dolor sit amet, cectetuer adipiscing elit donec odio nec justo quisque volutpat mattis.'
+    button_title: 'CHOOSE OPTIONS'
+    url: '#placeholder'
+

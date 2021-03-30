@@ -1,0 +1,29 @@
+{#
+# Available variables:
+# - background_image__base_class:
+# - background_image__modifiers:
+# - background_image__blockname:
+# - background_image__additional_classes:
+# - background_image__attributes: Additional attributes for the div tag, e.g. `data-src`
+#
+# - background_image__element: The controlling image, with the fallback image in srcset.
+# - background_image__src:
+# - background_image__title:
+#}
+
+{{ attach_library('msi/Images') }}
+
+{% set background_image__base_class = background_image__base_class|default('BackgroundImage') %}
+
+<div
+  {{ suit(
+    background_image__base_class,
+    background_image__modifiers,
+    background_image__blockname,
+    background_image__additional_classes)
+  }}
+  {% for attribute, value in background_image__attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}>
+  {# No content #}
+</div>

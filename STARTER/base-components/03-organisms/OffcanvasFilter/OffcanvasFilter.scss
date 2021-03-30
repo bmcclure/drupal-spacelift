@@ -1,0 +1,40 @@
+$OffCanvasFilter-headerOffset: calc(100vh - 104px); /* 104 is the header height on the off canvas filter */
+$OffCanvasFilter-background: pink !default;
+$OffCanvasFilter-headerBackground: blue !default;
+$OffCanvasFilter-border: 1px solid black !default;
+
+.OffcanvasFilter {
+  background: $OffCanvasFilter-background;
+
+  &-header {
+    background: $OffCanvasFilter-headerBackground;
+    padding: .5rem 0;
+    border-bottom: $OffCanvasFilter-border;
+
+    .button, h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  &-title {
+    padding-right: 1rem;
+  }
+
+  &-body {
+    background: $OffCanvasFilter-background;
+    padding-top: 1rem;
+    height: $OffCanvasFilter-headerOffset;
+    overflow-y: scroll;
+    position: relative;
+  }
+
+  //&-buttons {
+  //
+  //}
+
+  .ProductListingFilter-accordion {
+    &:first-of-type {
+      border-top: 0;
+    }
+  }
+}

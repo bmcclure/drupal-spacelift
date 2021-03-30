@@ -1,0 +1,11 @@
+$RepLocatorResults-showing: black !default;
+
+.RepLocatorResults {
+  &-showing {
+    color: $RepLocatorResults-showing;
+  }
+
+  &-posts {
+    padding-top: 1.75rem;
+  }
+}

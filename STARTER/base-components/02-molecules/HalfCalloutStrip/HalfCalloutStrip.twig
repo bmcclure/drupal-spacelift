@@ -10,6 +10,7 @@
  * - half_callout_strip__blockname - blockname prepended to the base classname
  * - half_callout_strip__extra_classes - extra classes
  * - half_callout_strip__page_or_download - is it a page or download?
+ * -
  * - half_callout_strip__image - image
  * - half_callout_strip__title
  * - half_callout_strip__body - textarea
@@ -22,28 +23,38 @@
 {% set half_callout_strip__base_class = half_callout_strip__base_class|default('HalfCalloutStrip') %}
 {% set half_callout_strip__extra_classes = half_callout_strip__extra_classes|default(['FlexRow-item']) %}
 
-{% if ( half_callout_strip__page_or_download == 'page') %}
-  <div {{ suit(half_callout_strip__base_class, half_callout_strip__modifiers, half_callout_strip__blockname, half_callout_strip__extra_classes) }}>
-    <div  {{ suit('container', half_callout_strip__modifiers, half_callout_strip__base_class, ['bg-blue']) }}>
-      <div class="IndividualResourceDownloadsThumbnail">
-        <div class="IndividualResourceDownloadsThumbnail-image">
-          <a href="{{  half_callout_strip__url }}">
-            <img class="lozad" data-src="{{ half_callout_strip__image }}"
-                 src="https://placeimg.com/320/180/any"
-                 alt="{{ half_callout_strip__title }}"
-            >
+<div {{ suit(half_callout_strip__base_class, half_callout_strip__modifiers, half_callout_strip__blockname, half_callout_strip__extra_classes) }}>
+  <div {{ suit('container', half_callout_strip__modifiers, half_callout_strip__base_class, ['bg-blue']) }}>
+    <div class="IndividualResourceDownloadsThumbnail">
+      <div class="IndividualResourceDownloadsThumbnail-image">
+        <a href="{{ half_callout_strip__url }}"
+          {% if ( half_callout_strip__page_or_download == 'download') %}
+            target="_blank"
+          {% endif %}
+        >
+          <img class="lozad" data-src="{{ half_callout_strip__image }}"
+               src="https://placeimg.com/320/180/any"
+               alt="{{ half_callout_strip__title }}"
+          >
+        </a>
+      </div>
+      <div class="IndividualResourceDownloadsThumbnail-text">
+        <h3 class="HeaderFont--regular">
+          <a href="{{ half_callout_strip__url }}"
+            {% if ( half_callout_strip__page_or_download == 'download') %}
+              target="_blank"
+            {% endif %}
+          >
+            {{ half_callout_strip__title }}
           </a>
-        </div>
-        <div class="IndividualResourceDownloadsThumbnail-text">
-          <h3 class="HeaderFont--regular">
-            <a href="{{  half_callout_strip__url }}">
-              {{  half_callout_strip__title }}
-            </a>
-          </h3>
-          <p>{{  half_callout_strip__body }}</p>
-          <a href="{{  half_callout_strip__url }}" class="link">{{ half_callout_strip__button_title }} <span class="fas fa-caret-right"></span></a>
-        </div>
+        </h3>
+        <p>{{ half_callout_strip__body }}</p>
+        {% if ( half_callout_strip__page_or_download == 'page') %}
+          <a href="{{ half_callout_strip__url }}" class="link">{{ half_callout_strip__button_title }} <span
+              class="fas fa-caret-right"></span></a>
+        {% endif %}
+
       </div>
     </div>
   </div>
-{% endif %}
+</div>

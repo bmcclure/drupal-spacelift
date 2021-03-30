@@ -1,0 +1,26 @@
+$ProductWarningBox-background: pink !default;
+$ProductWarningBox-text: white !default;
+
+.ProductWarningBox {
+  background: $ProductWarningBox-background;
+  padding: .5rem 1rem;
+  color: $ProductWarningBox-text;
+  margin-bottom: 2rem;
+
+  .link {
+    text-decoration: underline;
+  }
+
+  &-reveal {
+    padding: 2rem;
+    @include breakpoint(large) {
+      max-width: 980px;
+      width: 980px;
+    }
+
+    .IndividualResourceDownloadsIcon {
+      border: none;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

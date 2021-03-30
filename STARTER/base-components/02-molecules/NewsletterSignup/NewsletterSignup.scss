@@ -2,6 +2,8 @@ $NewsletterSignup-background: #eee !default;
 $NewsletterSignup-placeholder: #484848 !default;
 $NewsletterSignup-active: red !default;
 
+@include foundation-forms;
+
 .NewsletterSignup {
   input[type='email'] {
     background: $NewsletterSignup-background;

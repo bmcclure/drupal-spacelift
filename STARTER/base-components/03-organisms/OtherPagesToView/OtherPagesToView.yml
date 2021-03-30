@@ -1,0 +1,34 @@
+other_pages__background: 'bg-white'
+other_pages__title: "Headline Advertising Other Pages Of Interest"
+other_pages__teasers:
+  - id: 0
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit.'
+    button_title: 'Service Details'
+    url: '#'
+  - id: 1
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit.'
+    button_title: 'Service Details'
+    url: '#'
+  - id: 2
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit.'
+    button_title: 'Service Details'
+    url: '#'
+  - id: 3
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit.'
+    button_title: 'Service Details'
+    url: '#'
+  - id: 4
+    image: 'https://placeimg.com/320/180/any'
+    title: 'Material Take Off'
+    body: 'Lorem ipsum dolor sit amet, consectetuer ading elit. Donec odio quisque volupat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non, semper suscipit.'
+    button_title: 'Service Details'
+    url: '#'
+

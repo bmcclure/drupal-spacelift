@@ -12,6 +12,9 @@
  * @see template_preprocess_form_element_label()
  */
 #}
+
+{{ attach_library('msi/Forms') }}
+
 {%
   set classes = [
     title_display == 'after' ? 'option',

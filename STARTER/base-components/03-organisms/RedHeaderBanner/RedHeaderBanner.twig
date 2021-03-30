@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Red Header Banner
+ *
+ * Available variables:
+ * - red_header_banner__base_class - the base class name
+ * - red_header_banner__modifiers - array of modifiers to add to the base classname
+ * - red_header_banner__blockname - blockname prepended to the base classname
+ * - red_header_banner__extra_classes - extra classes
+ * -
+ * - red_header_banner__image
+ * - red_header_banner__title
+ * - red_header_banner__headline
+ * - red_header_banner__body
+*/
+#}
+
+{% set red_header_banner__base_class = red_header_banner__base_class|default('RedHeaderBanner') %}
+{% set red_header_banner__extra_classes = red_header_banner__extra_classes|default(['']) %}
+
+<header {{ suit(red_header_banner__base_class, red_header_banner__modifiers, red_header_banner__blockname, red_header_banner__extra_classes) }}>
+  <div {{ suit('image', red_header_banner__modifiers, red_header_banner__base_class ) }}
+    style="background: url({{ red_header_banner__image }}) no-repeat center; background-size: cover;"></div>
+  <div class="grid-container">
+    <div {{ suit('text', red_header_banner__modifiers, red_header_banner__base_class) }}>
+      <p
+        {{ suit('super', red_header_banner__modifiers, red_header_banner__base_class, ['HeaderFont', 'headline','oversize'] ) }}>
+        {{ red_header_banner__title }}</p>
+
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__base_class: '',
+        heading__level: 1,
+        heading: red_header_banner__title,
+        heading__extra_classes: ['title', 'white'],
+        heading__attributes:  {'itemprop': 'headline'}
+      } %}
+      <p class="large">{{ red_header_banner__body }}</p>
+    </div>
+  </div>
+</header>

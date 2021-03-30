@@ -1,0 +1,21 @@
+.SearchResults {
+  padding-top: 0;
+  padding-bottom: 1rem;
+
+  &-dropdown {
+    margin: 1rem 0;
+    @include breakpoint(medium) {
+      max-width: 400px;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+
+  .FeaturedVideoBlock-container > span {
+    font-size: 35px;
+  }
+}

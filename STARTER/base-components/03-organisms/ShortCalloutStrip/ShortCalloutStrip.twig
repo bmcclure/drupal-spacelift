@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * ShortCalloutStrip
+ * used on templates/CaseStudyDetail.php
+ * FYI I KNOW THIS LOOKS LIKE IT COULD BE MERGED WITH REUSABLE CALLOUTSTRIP, BUT IT'S NOT THE SAME LAYOUT
+ *
+ * Available variables:
+ * - short_callout_strip__base_class - the base class name
+ * - short_callout_strip__modifiers - array of modifiers to add to the base classname
+ * - short_callout_strip__blockname - blockname prepended to the base classname
+ * - short_callout_strip__extra_classes - extra classes
+ * -
+ * - short_callout_strip__title
+ * - short_callout_strip__button_title
+ * - short_callout_strip__url
+*/
+#}
+
+{% set short_callout_strip__base_class = short_callout_strip__base_class|default('ShortCalloutStrip') %}
+{% set short_callout_strip__extra_classes = short_callout_strip__extra_classes|default([' ReusableCalloutStrip','AngledBackground','reverse','bg-dark-blue']) %}
+
+<section {{ suit(short_callout_strip__base_class, short_callout_strip__modifiers, short_callout_strip__blockname, short_callout_strip__extra_classes) }}
+  data-aos="SectionFade">
+  <div class="AngledBackground-text grid-container">
+    <div class="grid-x grid-padding-y text-center large-text-left vertical-center">
+      <div class="ReusableCalloutStrip-text cell large-8">
+        <div class="ReusableCalloutStrip-text-container">
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 2,
+            heading: short_callout_strip__title,
+            heading__extra_classes: ['ShortCalloutStrip-title','ReusableCalloutStrip-title','SectionFade-one'],
+          } %}
+        </div>
+      </div>
+      <div class="ReusableCalloutStrip-right cell large-4 large-text-right ">
+        <a href="{{ short_callout_strip__url }}" class="button SectionFade-three">{{ short_callout_strip__button_title }} <span
+            class="fas fa-caret-right"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -14,6 +14,9 @@
  *   for example: to insert an icon
  */
 #}
+
+{{ attach_library('msi/Buttons') }}
+
 {% set button__base_class = button__base_class|default('Button') %}
 
 {% set additional_attributes = {

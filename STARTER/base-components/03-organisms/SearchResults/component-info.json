@@ -1,0 +1,9 @@
+{
+  "name": "SearchResults",
+  "description": "SearchResults",
+  "entries": {
+    "scss": [
+      "SearchResults.scss"
+    ]
+  }
+}

@@ -10,7 +10,10 @@ import '../base-components/storybook.scss';
 import '../src/scss/app.scss';
 
 // If in a Drupal project, it's recommended to import a symlinked version of drupal.js.
-import './_drupal.js';
+import './_drupal';
+
+// Import jQuery globally
+import './jquery-global';
 
 addDecorator((storyFn) => {
   useEffect(() => Drupal.attachBehaviors(), []);

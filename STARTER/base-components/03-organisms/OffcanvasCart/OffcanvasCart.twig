@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * OffcanvasCart
+ *
+ * Available variables:
+ * - offcanvas_cart__base_class - the base class name
+ * - offcanvas_cart__modifiers - array of modifiers to add to the base classname
+ * - offcanvas_cart__blockname - blockname prepended to the base classname
+ * - offcanvas_cart__extra_classes - extra classes
+ * -
+ * - offcanvas_cart__total
+ * - offcanvas_cart__subtotal
+ * - offcanvas_cart__teasers
+*/
+#}
+
+{% set offcanvas_cart__base_class = offcanvas_cart__base_class|default('OffcanvasCart') %}
+{#{% set offcanvas_cart__extra_classes = offcanvas_cart__extra_classes|default(['off-canvas', 'position-right']) %}#}
+
+<div id="OffcanvasCart"
+  {{ suit(offcanvas_cart__base_class, offcanvas_cart__modifiers, offcanvas_cart__blockname, offcanvas_cart__extra_classes) }}
+     data-transition="overlap">
+  <button class="close-button" aria-label="Close menu" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="grid-container">
+    <div {{ suit('top', offcanvas_cart__modifiers, offcanvas_cart__base_class, ['grid-x'] ) }}>
+      <div class="cell shrink">
+        <b>{{ offcanvas_cart__total }}</b> Items
+      </div>
+      <div class="cell auto text-center">
+        Subtotal: <b>{{ offcanvas_cart__subtotal }}</b>
+      </div>
+    </div>
+    <div {{ suit('buttons', offcanvas_cart__modifiers, offcanvas_cart__base_class, ['grid-x'] ) }}>
+      <a href="#" class="cell small-6 button"><span class="fas fa-check-circle"></span> CHECKOUT</a>
+      <a href="#" class="cell small-6 button"><span class="fas fa-shopping-cart"></span> VIEW CART</a>
+    </div>
+    <hr>
+    <div {{ suit('products', offcanvas_cart__modifiers, offcanvas_cart__base_class) }}>
+      {% for teaser in offcanvas_cart__teasers %}
+        {% include '@molecules/IndividualProductTeaserTinyWithPrice/IndividualProductTeaserTinyWithPrice.twig' with {
+          individual_product_teaser_tiny_with_price__image: teaser.image,
+          individual_product_teaser_tiny_with_price__title: teaser.title,
+          individual_product_teaser_tiny_with_price__body: teaser.body,
+          individual_product_teaser_tiny_with_price__url: teaser.url,
+          individual_product_teaser_tiny_with_price__price: teaser.price,
+          individual_product_teaser_tiny_with_price__quantity: teaser.quantity,
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</div
+>

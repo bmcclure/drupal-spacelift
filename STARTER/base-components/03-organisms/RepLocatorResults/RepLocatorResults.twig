@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * RepLocatorResults
+ * used on RepLocator page template only
+ *
+ * Available variables:
+ * - replocator_results__base_class - the base class name
+ * - replocator_results__modifiers - array of modifiers to add to the base classname
+ * - replocator_results__blockname - blockname prepended to the base classname
+ * - replocator_results__extra_classes - extra classes
+ * -
+ * - replocator_results__teasers
+*/
+#}
+
+{% set replocator_results__base_class = replocator_results__base_class|default('RepLocatorResults') %}
+{% set replocator_results__extra_classes = replocator_results__extra_classes|default(['bg-light']) %}
+
+<section class="RepLocatorResults ">
+  <div class="grid-container">
+
+    {% include '@organisms/ResourcesHeader/ResourcesHeader.twig' with {
+      resources_header__title: replocator_results__title,
+      resources_header__number: replocator_results__number,
+    } %}
+
+    <section class="RepLocatorResults-posts FlexRow medium-up-2">
+      {% for teaser in replocator_results__teasers %}
+
+        {% include '@molecules/HorizontalCard/HorizontalCard.twig' with {
+          horizontal_card__image: teaser.image,
+          horizontal_card__name: teaser.name,
+          horizontal_card__subtitle: teaser.subtitle,
+          horizontal_card__email: teaser.email,
+          horizontal_card__phone: teaser.phone,
+          horizontal_card__mobile: teaser.mobile,
+          horizontal_card__fax: teaser.fax,
+          horizontal_card__states:teaser.states,
+          horizontal_card__contractor: teaser.contractor,
+        } %}
+      {% endfor %}
+
+    </section>
+    <hr>
+    {% include '@molecules/pager/pager.twig' %}
+    {% include '@organisms/EmailARep/EmailARep.twig' %}
+  </div>
+</section>

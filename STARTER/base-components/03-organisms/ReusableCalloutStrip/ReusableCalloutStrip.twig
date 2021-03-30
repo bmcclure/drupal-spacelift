@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Reusable callout Strip
+ * used on Product Category Listing
+ *
+ * Available variables:
+ * - reusable_callout_strip__base_class - the base class name
+ * - reusable_callout_strip__modifiers - array of modifiers to add to the base classname
+ * - reusable_callout_strip__blockname - blockname prepended to the base classname
+ * - reusable_callout_strip__extra_classes - extra classes
+ * -
+ * - reusable_callout_strip__title
+ * - reusable_callout_strip__body
+ * - reusable_callout_strip__button_title
+ * - reusable_callout_strip__url
+*/
+#}
+
+{% set reusable_callout_strip__base_class = reusable_callout_strip__base_class|default('ReusableCalloutStrip') %}
+{% set reusable_callout_strip__extra_classes = reusable_callout_strip__extra_classes|default(['AngledBackground','reverse','bg-dark-blue']) %}
+
+<section
+  {{ suit(reusable_callout_strip__base_class, reusable_callout_strip__modifiers, reusable_callout_strip__blockname, reusable_callout_strip__extra_classes) }}data-aos="SectionFade">
+  <div class="AngledBackground-text grid-container">
+    <div class="grid-x grid-padding-y large-up-2 vertical-center">
+      <div {{ suit('text', reusable_callout_strip__modifiers, reusable_callout_strip__base_class, ['cell'] ) }}>
+        <div {{ suit('textContainer', reusable_callout_strip__modifiers, reusable_callout_strip__base_class) }}>
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__level: 2,
+            heading: reusable_callout_strip__title,
+            heading__extra_classes: ['ReusableCalloutStrip-title','SectionFade-one'],
+          } %}
+          <a href="{{ reusable_callout_strip__url }}" class="button SectionFade-three">{{ reusable_callout_strip__button_title }} <span
+              class="fas fa-caret-right"></span></a>
+        </div>
+      </div>
+      <div {{ suit('right', reusable_callout_strip__modifiers, reusable_callout_strip__base_class, ['cell'] ) }}>
+        <div class="wysiwyg styled-bullets SectionFade-two">{{ reusable_callout_strip__body }}</div>
+      </div>
+    </div>
+  </div>
+</section>

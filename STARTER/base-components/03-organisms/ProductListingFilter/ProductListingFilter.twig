@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * ProductListingFilter
+ * used on the ProductListing template
+ *
+ * Available variables:
+ * - products_listing_filter__base_class - the base class name
+ * - products_listing_filter__modifiers - array of modifiers to add to the base classname
+ * - products_listing_filter__blockname - blockname prepended to the base classname
+ * - products_listing_filter__extra_classes - extra classes
+ * -
+ * - products_listing_filter__results
+*/
+#}
+
+{% set products_listing_filter__base_class = products_listing_filter__base_class|default('ProductListingFilter') %}
+
+<div  {{ suit(products_listing_filter__base_class, products_listing_filter__modifiers, products_listing_filter__blockname, products_listing_filter__extra_classes) }}>
+  <div {{ suit('block', products_listing_filter__modifiers, products_listing_filter__base_class, ['ProductListingFilter-header'] ) }}>
+    <h2>Filter Results</h2>
+    <div class="cell">{{ products_listing_filter__results }} Results</div>
+  </div>
+  <div id="ProductListingFilter-blocks" class=""> <!-- just need something to move blocks into -->
+
+  </div>
+</div>

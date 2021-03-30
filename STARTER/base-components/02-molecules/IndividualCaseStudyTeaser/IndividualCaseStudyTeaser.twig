@@ -12,18 +12,18 @@
  *
  * - individual_case_study_teaser__title - title
  * - individual_case_study_teaser__image - image of pdf thumbnail
+ * - individual_case_study_teaser__subheadline
  * - individual_case_study_teaser__body - body content
  * - individual_case_study_teaser__bullet_1
  * - individual_case_study_teaser__bullet_2
  * - individual_case_study_teaser__bullet_3
  * - individual_case_study_teaser__url - URL
- * - individual_case_study_teaser__subheadline - URL
- * - individual_case_study_teaser__button_title - URL
+ * - individual_case_study_teaser__button_title
  *
  */
 #}
 
-{{ attach_library('{{starter}}/aos') }}
+{{ attach_library('msi/aos') }}
 
 {% set individual_case_study_teaser__base_class = individual_case_study_teaser__base_class|default('IndividualCaseStudyTeaser') %}
 {% set individual_case_study_teaser__extra_classes = individual_case_study_teaser__extra_classes|default(['Card','FlexRow-item']) %}

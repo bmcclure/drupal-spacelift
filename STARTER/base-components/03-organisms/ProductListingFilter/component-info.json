@@ -1,0 +1,12 @@
+{
+  "name": "ProductListingFilter",
+  "description": "ProductListingFilter",
+  "entries": {
+    "scss": [
+      "ProductListingFilter.scss"
+    ],
+    "js": [
+      "ProductListingFilter.js"
+    ]
+  }
+}

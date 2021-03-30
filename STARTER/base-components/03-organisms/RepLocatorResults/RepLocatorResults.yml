@@ -1,0 +1,24 @@
+replocator_results__title: 'Rep Locator Results'
+replocator_results__number: '##'
+
+replocator_results__teasers:
+  - id: 0
+    image: 'https://placeimg.com/800/450/any'
+    name: 'Brad Angell'
+    subtitle: 'CONTRACTOR'
+    email: 'placeholder@test.com'
+    phone: '(800) 234-0135 ext.1125'
+    mobile: '(262) 123-4567'
+    fax: '(414) 973-1331'
+    states: 'Wisconsin, Iowa, Minnesota, Illinois, Michigan, Montana, Nebraska, Kansas'
+    contractor: true
+  - id: 1
+    image: 'https://placeimg.com/800/450/any'
+    name: 'Brad Angell'
+    subtitle: 'CONTRACTOR'
+    email: 'placeholder@test.com'
+    phone: '(800) 234-0135 ext.1125'
+    mobile: '(262) 123-4567'
+    fax: '(414) 973-1331'
+    states: 'Wisconsin, Iowa, Minnesota, Illinois, Michigan, Montana, Nebraska, Kansas'
+    contractor: true

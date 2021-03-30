@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Other Pages To View
+ * Used on the Category Listing Page
+ *
+ * Available variables:
+ * - other_pages__base_class - the base class name
+ * - other_pages__modifiers - array of modifiers to add to the base classname
+ * - other_pages__blockname - blockname prepended to the base classname
+ * - other_pages__extra_classes - extra classes
+ * -
+ * - other_pages__background - 'bg-white'; // bg-white or bg-blue
+ * - other_pages__title
+ * - other_pages__teasers
+*/
+#}
+{% set other_pages__class = ['FlexRow','medium-up-3','large-up-4'] %}
+{% set other_pages__count = other_pages__teasers|length %}
+{% if other_pages__count > 4 %}
+  {% set other_pages__class = ['OtherPagesToView-slider', 'MSISlider'] %}
+{% endif %}
+
+{% set other_pages__base_class = other_pages__base_class|default('OtherPagesToView') %}
+{% set other_pages__extra_classes = other_pages__extra_classes|default(['']) %}
+
+<section {{ suit(other_pages__base_class, other_pages__modifiers, other_pages__blockname, other_pages__extra_classes) }}>
+  <div class="grid-container">
+
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__level: 2,
+      heading: other_pages__title,
+    } %}
+    <div class="{{ other_pages__class }}">
+      {% for teaser in other_pages__teasers %}
+        {% include '@molecules/OtherPagesTeaserBlock/OtherPagesTeaserBlock.twig' with {
+          other_pages_teaser_block__image: teaser.image,
+          other_pages_teaser_block__title: teaser.type,
+          other_pages_teaser_block__body: teaser.body,
+          other_pages_teaser_block__button_title: teaser.button_title,
+          other_pages_teaser_block__url: teaser.button_url,
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

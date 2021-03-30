@@ -2,40 +2,41 @@
 
 /**
  * @file
- * Functions to support theming in the {{Starter}} theme.
+ * Functions to support theming in the MSI theme.
  */
 
 use Drupal\Core\Url;
-
-/**
- * Implements template_preprocess_html().
- */
-function {{starter}}_preprocess_html(array &$variables) {
-  if (!empty($variables['page']['sidebar_first'])) {
-    $sidebar_left = $variables['page']['sidebar_first'];
-  }
-
-  if (!empty($variables['page']['sidebar_second'])) {
-    $sidebar_right = $variables['page']['sidebar_second'];
-  }
-
-  // Dynamic sidebars.
-  if (!empty($sidebar_left) && !empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'two-sidebars';
-  }
-  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'one-sidebar';
-    $variables['attributes']['class'][] = 'sidebar-second';
-  }
-  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'one-sidebar';
-    $variables['attributes']['class'][] = 'sidebar-first';
-  }
-  else {
-    $variables['attributes']['class'][] = 'no-sidebars';
-  }
-}
-
+//
+///**
+// * Implements template_preprocess_html().
+// */
+//function {{starter}}_preprocess_html(array &$variables) {
+//  die('Got here');
+//  if (!empty($variables['page']['sidebar_first'])) {
+//    $sidebar_left = $variables['page']['sidebar_first'];
+//  }
+//
+//  if (!empty($variables['page']['sidebar_second'])) {
+//    $sidebar_right = $variables['page']['sidebar_second'];
+//  }
+//
+//  // Dynamic sidebars.
+//  if (!empty($sidebar_left) && !empty($sidebar_right)) {
+//    $variables['attributes']['class'][] = 'two-sidebars';
+//  }
+//  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
+//    $variables['attributes']['class'][] = 'one-sidebar';
+//    $variables['attributes']['class'][] = 'sidebar-second';
+//  }
+//  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
+//    $variables['attributes']['class'][] = 'one-sidebar';
+//    $variables['attributes']['class'][] = 'sidebar-first';
+//  }
+//  else {
+//    $variables['attributes']['class'][] = 'no-sidebars';
+//  }
+//}
+//
 /**
  * Implements template_preprocess_page.
  */
@@ -46,4 +47,44 @@ function {{starter}}_preprocess_page(array &$variables) {
     '#title' => $site_name,
     '#url' => Url::fromRoute('<front>'),
   ];
+}
+
+/**
+ * Implements template_preprocess_paragraph
+ */
+function {{starter}}_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  $paragraph = $variables['paragraph'];
+  $paragraphType = $paragraph->bundle();
+  $variables['paragraph_id'] = $paragraph->id();
+
+  switch ($paragraphType) {
+    case 'customization_callout':
+      $media = $paragraph->get('field_media')->entity;
+      //      print_r(array_keys($media));
+      //      $variables['content']['customization_callout__image_url'] = _{{starter}}_get_image_field_url($paragraph, 'field_media');
+      break;
+    case 'heading':
+      // Convert the heading level value into just the number
+      $heading_level = $paragraph->get('field_heading_level')->value;
+      $variables['heading_level'] = substr($heading_level, 1);
+      break;
+    default:
+      break;
+  }
+}
+
+function _{{starter}}_get_image_field_url(\Drupal\Core\Entity\EntityInterface $entity, string $field_name) {
+  if ($entity->hasField($field_name)) {
+    /** @var \Drupal\Core\Field\FieldItemInterface $field */
+    $field = $entity->get($field_name);
+
+    if ($field->isEmpty()) {
+      return '';
+    }
+    else {
+      $image = $field->entity;
+      return file_create_url($image->getFileUri());
+    }
+  }
 }

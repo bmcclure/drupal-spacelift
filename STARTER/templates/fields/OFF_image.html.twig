@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+{% include '@atoms/images/Image/ResponsiveImage.twig' with {
+  responsive_image__additional_classes: [style_name ? 'image-style-' ~ style_name|clean_class],
+  responsive_image__src: attributes.src,
+  responsive_image__title: attributes.title,
+  responsive_image__alt: attributes.alt,
+} %}

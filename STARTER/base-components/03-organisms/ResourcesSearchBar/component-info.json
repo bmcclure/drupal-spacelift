@@ -1,0 +1,9 @@
+{
+  "name": "ResourcesSearchBar",
+  "description": "ResourcesSearchBar",
+  "entries": {
+    "scss": [
+      "ResourcesSearchBar.scss"
+    ]
+  }
+}

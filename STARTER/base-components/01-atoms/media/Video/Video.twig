@@ -14,6 +14,9 @@
  *   for example: to insert an html5 video component
  */
 #}
+
+{{ attach_library('msi/Media') }}
+
 {% set video__base_class = video__base_class|default('video') %}
 
 <div {{ suit(video__base_class, video__modifiers, video__blockname) }}>

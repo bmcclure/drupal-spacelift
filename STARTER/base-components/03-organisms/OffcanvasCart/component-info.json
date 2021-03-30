@@ -1,0 +1,9 @@
+{
+  "name": "OffcanvasCart",
+  "description": "Offcanvas Cart",
+  "entries": {
+    "scss": [
+      "OffcanvasCart.scss"
+    ]
+  }
+}

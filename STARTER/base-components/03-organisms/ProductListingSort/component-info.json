@@ -1,0 +1,9 @@
+{
+  "name": "ProductListingSort",
+  "description": "ProductListingSort",
+  "entries": {
+    "scss": [
+      "ProductListingSort.scss"
+    ]
+  }
+}

@@ -10,8 +10,11 @@
  * - replace__blockname - blockname prepended to the base classname
  * - replace__extra_classes - extra classes
  * -
-*/
+ */
 #}
+
+{{ attach_library('msi/') }}
+
 {% set replace__base_class = replace__base_class|default('MyAccountMenu') %}
 {% set replace__extra_classes = replace__extra_classes|default(['']) %}
 {% set right_menu = [

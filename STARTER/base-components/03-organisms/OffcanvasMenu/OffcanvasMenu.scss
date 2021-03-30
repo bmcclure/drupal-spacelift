@@ -1,0 +1,229 @@
+$offcanvas-first-tier-background: $light-gray !default;
+$offcanvas-first-tier-text: $dark-blue !default;
+$offcanvas-second-tier-background: $light-gray !default;
+$offcanvas-second-tier-text: $dark-gray !default;
+$offcanvas-third-tier-background: $light-gray !default;
+$offcanvas-third-tier-text: $dark-gray !default;
+$offcanvas-active-background: $primary-color !default;
+$offcanvas-active-text: $white !default;
+$offcanvas-border-color: $medium-gray !default;
+
+
+/**
+ OVERRIDES for foundation
+ */
+
+.is-open .is-accordion-submenu.invisible {
+  visibility: visible; /* I am not sure why that invisible class is getting added by Foundation, but this needs to be visible */
+}
+
+/* Drilldown 'go back' arrow */
+.drilldown .js-drilldown-back > a::before {
+  border: inset 4px;
+  content: "";
+  border-left-width: 0;
+  border-right-style: solid;
+  border-color: transparent $red transparent transparent;
+  vertical-align: baseline;
+  margin-right: .5rem;
+}
+
+.js-drilldown-back a {
+  font-size: 0 !important; /* This hides the foundation 'back' text so that I can replace it with the ::after 'Go BacK' */
+
+  &::after {
+    content: 'GO BACK';
+    font-size: rem-calc(12);
+    font-family: $header-font-family;
+    line-height: 1;
+    padding-top: 4px;
+  }
+}
+
+/** END overrides for foundation **/
+
+.OffcanvasMenu {
+  border-top: 1px solid $medium-gray;
+  background: $offcanvas-first-tier-background;
+  padding: 1rem 1rem 0;
+  //height: calc(100vh - 104px); /* height of dropdown scroll area - subtracting whats needed for the contact support button */
+  overflow-y: scroll;
+  position: relative;
+
+  @include breakpoint(medium) {
+    //height: calc(100vh - 204px); /* Since tablet on up has more buttons on the bottom of the screen we don't want to cover up */
+  }
+
+  a:focus, a:focus-within, .button:focus, .button:focus-within {
+    outline: none; /* Requested by melanie. This is bad for accessibility. */
+  }
+
+  @include scrollbar();
+
+  a {
+    font-family: $header-font-family;
+    font-size: rem-calc(16);
+    padding: 0.7rem 0;
+    color: $offcanvas-first-tier-text;
+
+    &:not(.button) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+
+  &-menu {
+    z-index: 1; // for weird Safari bug
+  }
+
+
+  .OffcanvasMenu-menu > .OffcanvasMenu-menuParent {
+    background: $offcanvas-first-tier-background;
+    border-bottom: 1px solid $offcanvas-border-color;
+
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    > a {
+      text-transform: uppercase;
+    }
+
+    > .OffcanvasMenu-menuChildren {
+      background: $offcanvas-second-tier-background;
+
+      a {
+        font-size: rem-calc(14);
+        font-weight: 400;
+        font-family: $body-font-family;
+        color: $offcanvas-second-tier-text;
+
+        &.link {
+          color: $primary-color;
+          font-family: $header-font-family;
+        }
+      }
+
+      > .OffcanvasMenu-parent a { /* the class added via JS, to match the design */
+        font-size: 1rem;
+        color: $dark-blue;
+        text-transform: uppercase;
+        font-family: $header-font-family;
+      }
+
+      > .OffcanvasMenu-menuChild {
+        > a {
+          font-family: $header-font-family;
+          color: $dark-blue;
+          font-size: 1rem;
+          text-transform: uppercase;
+        }
+
+        &.has-description {
+          > a {
+            text-transform: none;
+          }
+        }
+
+        p {
+          margin-bottom: .5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        > .OffcanvasMenu-grandchildren {
+
+          &--noMenu .OffcanvasMenu-grandchild {
+            //padding-left: .5rem;
+            margin-left: .5rem;
+          }
+        }
+      }
+    }
+
+    .MegaMenu-teasers.FlexRow {
+      margin-left: 0;
+      padding-top: 0;
+
+      .FlexRow-item {
+        a {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  .Header-utilityMenu {
+    li {
+      width: 100%;
+    }
+  }
+
+
+  .cta-banner__button {
+    padding: .75rem .25rem;
+    font-size: 1rem;
+  }
+
+
+  // Commenting this out for now, since I don't know what Drupals active classes look like
+  // Leaving it here in case it's useful in the future
+  //.current-page-parent, .current-page-ancestor { // .current-menu-parent, .current-menu-ancestor
+  //  background: $offcanvas-active-background;
+  //
+  //  > a {
+  //    color: $offcanvas-active-text;
+  //
+  //  }
+  //
+  //}
+  //
+  //.current_page_item, .active {
+  //  background: $offcanvas-active-background;
+  //
+  //  > a {
+  //    background: $offcanvas-active-background;
+  //    color: $offcanvas-active-text;
+  //  }
+  //}
+  //
+  //.active, .current-page-ancestor, .current-page-parent {
+  //  > .submenu-toggle::after {
+  //    border-color: $offcanvas-active-text transparent transparent;
+  //  }
+  //}
+
+  .button {
+    color: $white;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.OffcanvasMenu .OffcanvasMenu-menu > .OffcanvasMenu-menuParent.is-MegaMenu-product > .OffcanvasMenu-menuChildren > .OffcanvasMenu-menuChild > a {
+  text-transform: none;
+}
+
+.OffcanvasMenu-menuParent .OffcanvasMenu-grandchild {
+  border-bottom: 1px solid $medium-gray;
+}
+
+.OffcanvasMenu .OffcanvasMenu-menu > .OffcanvasMenu-menuParent > .OffcanvasMenu-menuChildren.OffcanvasMenu--utility > .OffcanvasMenu-parent,
+.OffcanvasMenu .OffcanvasMenu-menu > .OffcanvasMenu-menuParent > .OffcanvasMenu-menuChildren.OffcanvasMenu--utility {
+  a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: $dark-gray;
+    text-transform: none;
+  }
+}
+
+.OffcanvasMenu--utilityChild {
+  border-top: 1px solid $medium-gray;
+}

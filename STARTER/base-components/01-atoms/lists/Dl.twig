@@ -8,6 +8,9 @@
  * - listItems - TBD
  */
 #}
+
+{{ attach_library('msi/Lists') }}
+
 {% set dl__base_class = dl__base_class|default('Dl') %}
 
 <dl {{ suit(dl__base_class, dl__modifiers, dl__blockname) }}>

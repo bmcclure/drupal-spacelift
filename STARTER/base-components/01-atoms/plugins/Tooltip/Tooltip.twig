@@ -16,6 +16,9 @@
  *   for example: to insert the image and/or link components
  */
 #}
+
+{{ attach_library('msi/Plugins') }}
+
 {% set tooltip__base_class = tooltip__base_class|default('Tooltip') %}
 {% set attributes = attributes
   .setAttribute('data-tooltip')

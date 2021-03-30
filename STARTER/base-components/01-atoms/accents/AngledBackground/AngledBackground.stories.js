@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AngledBackground from './AngledBackground.twig';
+import AngledBackground from './AngledBackground-demo.twig';
 
 /**
  * Add storybook definition for angled backgrounds

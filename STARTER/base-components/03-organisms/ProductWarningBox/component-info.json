@@ -1,0 +1,9 @@
+{
+  "name": "ProductWarningBox",
+  "description": "ProductWarningBox",
+  "entries": {
+    "scss": [
+      "ProductWarningBox.scss"
+    ]
+  }
+}

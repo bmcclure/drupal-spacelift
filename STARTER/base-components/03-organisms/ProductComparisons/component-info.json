@@ -1,0 +1,9 @@
+{
+  "name": "ProductComparisons",
+  "description": "ProductComparisons",
+  "entries": {
+    "scss": [
+      "ProductComparisons.scss"
+    ]
+  }
+}

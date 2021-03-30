@@ -1,0 +1,9 @@
+{
+  "name": "RedHeaderBanner",
+  "description": "RedHeaderBanner",
+  "entries": {
+    "scss": [
+      "RedHeaderBanner.scss"
+    ]
+  }
+}

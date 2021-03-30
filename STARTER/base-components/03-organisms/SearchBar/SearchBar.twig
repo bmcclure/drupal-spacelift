@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * used within Resources Search Bar and in the Search Header (search results page)
+ *
+*/
+#}
+
+{% set searchbar__base_class = searchbar__base_class|default('SearchBar') %}
+{% set searchbar__extra_classes = searchbar__extra_classes|default(['vertical-center']) %}
+
+<div {{ suit(searchbar__base_class, searchbar__modifiers, searchbar__blockname, searchbar__extra_classes) }}>
+  <div {{ suit('inputWrap', searchbar__modifiers, searchbar__base_class, ['SearchInput'] ) }}>
+        <span
+          {{ suit('searchIcon', searchbar__modifiers, searchbar__base_class, ['SearchInput-icon', 'fas','fa-search'] ) }}></span>
+    <input {{ suit('input', searchbar__modifiers, searchbar__base_class, ['SearchInput-input'] ) }}
+      type="text"
+      placeholder="Search"/>
+  </div>
+  <div {{ suit('buttonWrap', searchbar__modifiers, searchbar__base_class, ['SearchInput'] ) }}>
+    <button {{ suit('button', searchbar__modifiers, searchbar__base_class, ['button'] ) }}>Search <span
+        class="fas fa-caret-right"></span>
+    </button>
+  </div>
+</div>

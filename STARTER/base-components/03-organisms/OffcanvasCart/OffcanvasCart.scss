@@ -1,0 +1,28 @@
+$OffcanvasCart-close: red !default;
+
+.OffcanvasCart {
+  .close-button {
+    color: $OffcanvasCart-close;
+  }
+
+  padding-top: 1rem;
+  z-index: 110 !important;
+  width: 95%;
+  @include breakpoint(medium) {
+    width: 75%;
+  }
+  @include breakpoint(large) {
+    width: 600px;
+  }
+
+  .button {
+    margin-bottom: 0;
+  }
+
+  &-top {
+    margin-bottom: 1rem;
+    padding-right: 1.5rem;
+  }
+
+  @include scrollbar();
+}

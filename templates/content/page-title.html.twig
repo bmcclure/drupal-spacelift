@@ -15,9 +15,9 @@
 
 {{ title_prefix }}
 {% if title %}
-  {% include "@atoms/text/headings/_heading.twig" with {
-    "heading_level": 1,
-    "heading": title,
+  {% include '@atoms/text/Heading/Heading.twig' with {
+    heading__level: 1,
+    heading: title,
   } %}
 {% endif %}
 {{ title_suffix }}

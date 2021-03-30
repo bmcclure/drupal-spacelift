@@ -1,0 +1,9 @@
+{
+  "name": "ProductInformation",
+  "description": "ProductInformation",
+  "entries": {
+    "scss": [
+      "ProductInformation.scss"
+    ]
+  }
+}

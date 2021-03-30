@@ -1,0 +1,28 @@
+$RepLocatorFilterBar-border: 4px solid #fff !default;
+$RepLocatorFilterBar-select: blue !default;
+
+.RepLocatorFilterBar {
+  padding: 1rem 0;
+  border-top: $RepLocatorFilterBar-border;
+  border-bottom: $RepLocatorFilterBar-border;
+
+  &-label {
+    font-size: 1rem;
+  }
+
+  &-select {
+    margin-bottom: 0;
+    color: $RepLocatorFilterBar-select;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28210, 39, 40%29'></polygon></svg>");
+  }
+
+  &-industry {
+    padding-bottom: 1rem;
+    @include breakpoint(medium) {
+      padding-bottom: 0;
+    }
+    @include breakpoint(large) {
+      padding-right: 1rem;
+    }
+  }
+}

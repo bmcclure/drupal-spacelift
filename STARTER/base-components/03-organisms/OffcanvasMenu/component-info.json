@@ -1,0 +1,10 @@
+{
+  "name": "OffcanvasMenu",
+  "description": "OffcanvasMenu",
+  "entries": {
+    "scss": [
+      "OffcanvasMenu.scss"
+    ]
+  }
+}
+

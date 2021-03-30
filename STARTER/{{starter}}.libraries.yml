@@ -4,10 +4,16 @@ global:
   css:
     base:
       dist/css/app.css: {}
+      /libraries/font-awesome-pro/css/all.min.css: {}
   js:
     dist/js/aos-init.js: { }
     dist/js/lozad-init.js: { }
     dist/js/scripts.js: { }
+  dependencies:
+    - {{starter}}/foundation-core
+    - {{starter}}/body-copy
+    - {{starter}}/links
+    - {{starter}}/text
 
 ### IE 11 support for SVG use:
 sprite:
@@ -15,14 +21,134 @@ sprite:
     dist/js/svgxuse.min.js:
       { attributes: { defer: true } }
 
+### Plugin Libraries:
+slick:
+  js:
+    /libraries/slick/slick/slick.min.js: { weight: -3, minified: true }
+  css:
+    base:
+      /libraries/slick/slick/slick.css: {}
+  dependencies:
+    - core/jquery
+
 ### Component-specific Libraries:
+accents:
+  css:
+    component:
+      dist/css/components/Accents.css: {}
+add-to-cart:
+  css:
+    component:
+      dist/css/components/AddToCart.css: {}
+blockquote:
+  css:
+    component:
+      dist/css/components/Blockquote.css: {}
+blue-content-strip:
+  css:
+    component:
+      dist/css/components/BlueContentStrip.css: {}
+body-copy:
+  css:
+    component:
+      dist/css/components/BodyCopy.css: {}
+breadcrumb:
+  css:
+    component:
+      dist/css/components/Breadcrumb.css: {}
+customization-callout:
+  css:
+    component:
+      dist/css/components/CustomizationCallout.css: {}
+featured-blog-posts:
+  css:
+    component:
+      dist/css/components/FeaturedBlogPosts.css: {}
+  dependencies:
+    - {{starter}}/slick
+links:
+  css:
+    component:
+      dist/css/components/Links.css: {}
+my-account-menu:
+  css:
+    component:
+      dist/css/components/MyAccountMenu.css: {}
+  dependencies:
+    - {{starter}}/foundation-dropdownMenu
+tabs:
+  js:
+    dist/js/components/Tabs.js: {}
+  css:
+    component:
+      dist/css/components/Tabs.css: {}
+  dependencies:
+    - core/drupal
+subsection:
+  css:
+    component:
+      dist/css/components/Subsection.css: {}
+text:
+  css:
+    component:
+      dist/css/components/Text.css: {}
+
 #main-menu:
 #  js:
 #    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
 #  dependencies:
 #    - core/drupal
-#tabs:
-#  js:
-#    dist/js/02-molecules/tabs/tabs.js: {}
-#  dependencies:
-#    - core/drupal
+
+### Foundation Libraries:
+foundation-core:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-core.js: {}
+foundation-accordion:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-accordion.js: {}
+foundation-accordionMenu:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-accordionMenu.js: {}
+foundation-drilldown:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-drilldown.js: {}
+foundation-dropdown:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-dropdown.js: {}
+foundation-dropdownMenu:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-dropdownMenu.js: {}
+foundation-offcanvas:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-offcanvas.js: {}
+foundation-reveal:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-reveal.js: {}
+foundation-smoothScroll:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-smoothScroll.js: {}
+foundation-sticky:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-sticky.js: {}
+foundation-toggler:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-toggler.js: {}
+foundation-tooltip:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-tooltip.js: {}
+foundation-util-triggers:
+  version: 6.6.3
+  js:
+    dist/js/foundation/foundation-util-triggers.js: {}
