@@ -1,151 +1,151 @@
 <?php
-
-/**
- * @file
- * The main theme file for Spacelift.
- *
- * Extends some entities user preprocess hooks and offers some helper functions.
- */
-
-use Drupal\block\Entity\Block;
-use Drupal\Core\Language\LanguageInterface;
-use Drupal\Core\Url;
-
-/**
- * Implements hook_html_head_alter().
- */
-function spacelift_html_head_alter(&$head_elements) {
-  // HTML5 charset declaration.
-  $head_elements['system_meta_content_type']['#attributes'] = ['charset' => 'utf-8'];
-
-  // Optimize mobile viewport.
-  $head_elements['mobile_viewport'] = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-      'name' => 'viewport',
-      'content' => 'width=device-width, initial-scale=1',
-    ],
-  ];
-
-  $head_elements['x_ua_compatible'] = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-      'http-equiv' => 'x-ua-compatible',
-      'content' => 'IE=edge',
-    ],
-    '#weight' => -1001,
-  ];
-}
-
-/**
- * Implements hook_preprocess_block().
- */
-function spacelift_preprocess_block(&$variables) {
-  $block_id = $variables['elements']['#id'];
-  /** @var \Drupal\block\BlockInterface $block */
-  $block = Block::load($block_id);
-  $region = $block->getRegion();
-  $variables['region'] = $region;
-  $variables['id'] = $block_id;
-  $variables['content']['#attributes']['block'] = $block_id;
-
-  if ($variables['elements']['#configuration']['provider'] === 'block_content') {
-    /** @var \Drupal\block_content\BlockContentInterface $blockContent */
-    $blockContent = $variables['elements']['content']['#block_content'];
-    $variables['block_type'] = $blockContent->bundle();
-  }
-
-  if ($variables['base_plugin_id'] === 'language_block') {
-    $languageManager = \Drupal::languageManager();
-    $language = $languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
-    $variables['current_language'] = $language->getName();
-  }
-
-  if ($variables['elements']['#base_plugin_id'] === 'menu_block' && $region === 'sidebar_second') {
-    $parent = $variables['elements']['#configuration']['parent'];
-    $parentPath = '';
-    $parentUrlActive = FALSE;
-
-    if (substr_count($parent, ':') >= 2) {
-      [, $type, $uuid] = explode(':', $parent);
-      /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $link */
-      $link = \Drupal::getContainer()->get('entity.repository')->loadEntityByUuid($type, $uuid);
-      $parentUrl = $link->getUrlObject();
-      $currentUrl = Url::fromRouteMatch(\Drupal::routeMatch())->getInternalPath();
-      $parentPath = $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/' . $parentUrl->getInternalPath());
-      $parentUrlActive = ($parentUrl->getInternalPath() == $currentUrl);
-    }
-
-    $variables['parent_url'] = $parentPath;
-    $variables['parent_url_active'] = $parentUrlActive;
-  }
-}
-
-/**
- * Implements hook_preprocess_commerce_product().
- */
-function spacelift_preprocess_commerce_product(&$variables) {
-  $variables['view_mode'] = $variables['elements']['#view_mode'];
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
- */
-function spacelift_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
-  // Remove the block and replace dashes with underscores in the block ID to
-  // use for the hook name.
-  if (isset($variables['attributes']['block'])) {
-    $hook = str_replace(['block-', '-'], [
-      '',
-      '_',
-    ], $variables['attributes']['block']);
-
-    $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
-  }
-}
-
-function spacelift_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  if ($variables['elements']['#base_plugin_id'] == 'menu_block') {
-    $block_id = $variables['elements']['#id'];
-    /** @var \Drupal\block\BlockInterface $block */
-    $block = Block::load($block_id);
-    $region = $block->getRegion();
-    $suggestions[] = $variables['theme_hook_original'] . '__menu__region_' . $region;
-  }
-}
-
-function spacelift_theme_suggestions_user_alter(array &$suggestions, array $variables) {
-  $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['elements']['#view_mode'];
-}
-
-/**
- * Adds interior regions into $variables array.
- *
- * @param array $variables
- *   The preprocess variables.
- * @param array $includedRegions
- *   The theme regions to include.
- */
-function spacelift_set_interior_regions(array &$variables, array $includedRegions) {
-  /** @var \Drupal\block\BlockRepositoryInterface $blockRepository */
-  $blockRepository = \Drupal::service('block.repository');
-  /** @var \Drupal\Core\Entity\EntityViewBuilderInterface $viewBuilder */
-  $viewBuilder = \Drupal::service('entity_type.manager')->getViewBuilder('block');
-  $allBlocks = $blockRepository->getVisibleBlocksPerRegion();
-  $regions = array_intersect(array_keys($allBlocks), $includedRegions);
-  $blocks = array_filter($allBlocks, function ($key) use ($regions) {
-    return in_array($key, $regions);
-  }, ARRAY_FILTER_USE_KEY);
-
-  foreach ($blocks as $region => $blockList) {
-    /**
-     * @var string $blockKey
-     * @var \Drupal\block\BlockInterface $block
-     */
-    foreach ($blockList as $blockKey => $block) {
-      $variables[$region][$blockKey] = $viewBuilder->view($block);
-    }
-  }
-}
+//
+///**
+// * @file
+// * The main theme file for Spacelift.
+// *
+// * Extends some entities user preprocess hooks and offers some helper functions.
+// */
+//
+//use Drupal\block\Entity\Block;
+//use Drupal\Core\Language\LanguageInterface;
+//use Drupal\Core\Url;
+//
+///**
+// * Implements hook_html_head_alter().
+// */
+//function spacelift_html_head_alter(&$head_elements) {
+//  // HTML5 charset declaration.
+//  $head_elements['system_meta_content_type']['#attributes'] = ['charset' => 'utf-8'];
+//
+//  // Optimize mobile viewport.
+//  $head_elements['mobile_viewport'] = [
+//    '#type' => 'html_tag',
+//    '#tag' => 'meta',
+//    '#attributes' => [
+//      'name' => 'viewport',
+//      'content' => 'width=device-width, initial-scale=1',
+//    ],
+//  ];
+//
+//  $head_elements['x_ua_compatible'] = [
+//    '#type' => 'html_tag',
+//    '#tag' => 'meta',
+//    '#attributes' => [
+//      'http-equiv' => 'x-ua-compatible',
+//      'content' => 'IE=edge',
+//    ],
+//    '#weight' => -1001,
+//  ];
+//}
+//
+///**
+// * Implements hook_preprocess_block().
+// */
+//function spacelift_preprocess_block(&$variables) {
+//  $block_id = $variables['elements']['#id'];
+//  /** @var \Drupal\block\BlockInterface $block */
+//  $block = Block::load($block_id);
+//  $region = $block->getRegion();
+//  $variables['region'] = $region;
+//  $variables['id'] = $block_id;
+//  $variables['content']['#attributes']['block'] = $block_id;
+//
+//  if ($variables['elements']['#configuration']['provider'] === 'block_content') {
+//    /** @var \Drupal\block_content\BlockContentInterface $blockContent */
+//    $blockContent = $variables['elements']['content']['#block_content'];
+//    $variables['block_type'] = $blockContent->bundle();
+//  }
+//
+//  if ($variables['base_plugin_id'] === 'language_block') {
+//    $languageManager = \Drupal::languageManager();
+//    $language = $languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
+//    $variables['current_language'] = $language->getName();
+//  }
+//
+//  if ($variables['elements']['#base_plugin_id'] === 'menu_block' && $region === 'sidebar_second') {
+//    $parent = $variables['elements']['#configuration']['parent'];
+//    $parentPath = '';
+//    $parentUrlActive = FALSE;
+//
+//    if (substr_count($parent, ':') >= 2) {
+//      [, $type, $uuid] = explode(':', $parent);
+//      /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $link */
+//      $link = \Drupal::getContainer()->get('entity.repository')->loadEntityByUuid($type, $uuid);
+//      $parentUrl = $link->getUrlObject();
+//      $currentUrl = Url::fromRouteMatch(\Drupal::routeMatch())->getInternalPath();
+//      $parentPath = $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/' . $parentUrl->getInternalPath());
+//      $parentUrlActive = ($parentUrl->getInternalPath() == $currentUrl);
+//    }
+//
+//    $variables['parent_url'] = $parentPath;
+//    $variables['parent_url_active'] = $parentUrlActive;
+//  }
+//}
+//
+///**
+// * Implements hook_preprocess_commerce_product().
+// */
+//function spacelift_preprocess_commerce_product(&$variables) {
+//  $variables['view_mode'] = $variables['elements']['#view_mode'];
+//}
+//
+///**
+// * Implements hook_theme_suggestions_HOOK_alter().
+// */
+//function spacelift_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+//  // Remove the block and replace dashes with underscores in the block ID to
+//  // use for the hook name.
+//  if (isset($variables['attributes']['block'])) {
+//    $hook = str_replace(['block-', '-'], [
+//      '',
+//      '_',
+//    ], $variables['attributes']['block']);
+//
+//    $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+//  }
+//}
+//
+//function spacelift_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+//  if ($variables['elements']['#base_plugin_id'] == 'menu_block') {
+//    $block_id = $variables['elements']['#id'];
+//    /** @var \Drupal\block\BlockInterface $block */
+//    $block = Block::load($block_id);
+//    $region = $block->getRegion();
+//    $suggestions[] = $variables['theme_hook_original'] . '__menu__region_' . $region;
+//  }
+//}
+//
+//function spacelift_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+//  $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['elements']['#view_mode'];
+//}
+//
+///**
+// * Adds interior regions into $variables array.
+// *
+// * @param array $variables
+// *   The preprocess variables.
+// * @param array $includedRegions
+// *   The theme regions to include.
+// */
+//function spacelift_set_interior_regions(array &$variables, array $includedRegions) {
+//  /** @var \Drupal\block\BlockRepositoryInterface $blockRepository */
+//  $blockRepository = \Drupal::service('block.repository');
+//  /** @var \Drupal\Core\Entity\EntityViewBuilderInterface $viewBuilder */
+//  $viewBuilder = \Drupal::service('entity_type.manager')->getViewBuilder('block');
+//  $allBlocks = $blockRepository->getVisibleBlocksPerRegion();
+//  $regions = array_intersect(array_keys($allBlocks), $includedRegions);
+//  $blocks = array_filter($allBlocks, function ($key) use ($regions) {
+//    return in_array($key, $regions);
+//  }, ARRAY_FILTER_USE_KEY);
+//
+//  foreach ($blocks as $region => $blockList) {
+//    /**
+//     * @var string $blockKey
+//     * @var \Drupal\block\BlockInterface $block
+//     */
+//    foreach ($blockList as $blockKey => $block) {
+//      $variables[$region][$blockKey] = $viewBuilder->view($block);
+//    }
+//  }
+//}
