@@ -32,6 +32,7 @@
   "require": {
     "php": ">7.0",
     "drupal/components": "^2.1",
-    "drupal/emulsify_twig": "^2.0"
+    "drupal/emulsify_twig": "^2.0",
+    "drupal/twig_tweak": "^3.0"
   }
 }
