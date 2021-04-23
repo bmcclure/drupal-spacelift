@@ -45,7 +45,6 @@
       position: absolute;
       top: 0;
       width: 44%;
-      z-index: 0;
     }
   }
 
@@ -62,17 +61,15 @@
     transform: skewY(21deg);
     transform-origin: 0;
     width: 100%;
-    z-index: 1;
-
 
     @include breakpoint(large) {
       left: 44%;
     }
   }
 
-  &-text {
+  > * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
 }
 

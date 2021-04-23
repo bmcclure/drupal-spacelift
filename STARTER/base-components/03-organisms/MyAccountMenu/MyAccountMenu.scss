@@ -7,6 +7,9 @@ $MyAccountMenu-linkFont: sans-serif !default;
 $MyAccountMenu-linkColor: blue !default;
 $MyAccountMenu-linkSize: 12px !default;
 
+@include foundation-menu;
+@include foundation-dropdown-menu;
+
 .MyAccountMenu {
   $self: &;
 
@@ -17,10 +20,11 @@ $MyAccountMenu-linkSize: 12px !default;
   .far {
     color: $MyAccountMenu-icon;
     font-size: 1.125rem;
+
     @include breakpoint(medium only) { /* This is to match Melanie's design. */
-      width: 100%;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       text-align: center;
+      width: 100%;
     }
     @include breakpoint(large) {
       font-size: 1rem;
@@ -38,40 +42,41 @@ $MyAccountMenu-linkSize: 12px !default;
       @include breakpoint(small only) {
         display: none !important; /* all screens by default show the arrow, but melanie has it removed from mobile */
       }
+
       @include breakpoint(medium only) { /* this is to match the tablet ONLY design, overriding Foundation styles */
         //right: -2px !important;
         //bottom: 1rem;
         //position: absolute;
         //top: auto;
-
-        position: relative;
         display: inline-block !important;
-        margin-left: 9px;
         margin-bottom: 2px;
+        margin-left: 9px;
+        position: relative;
       }
     }
   }
 
-
   &-dropdown #{$self}-title {
-    text-align: center;
-    padding: .75rem;
     line-height: 1;
+    padding: 0.75rem;
+    text-align: center;
+
     @include breakpoint(medium) {
-      padding: .75rem .75rem;
+      padding: 0.75rem 0.75rem;
     }
   }
 
   &-dropdownMenu #{$self}-account #{$self}-title {
-    padding-right: .75rem;
+    padding-right: 0.75rem;
+
     @include breakpoint(large) {
       padding-right: 1.5rem;
     }
   }
 
   .Header-cartButton {
-    cursor: pointer;
     color: $MyAccountMenu-cartButton;
+    cursor: pointer;
     padding-right: 0;
   }
 
@@ -81,7 +86,9 @@ $MyAccountMenu-linkSize: 12px !default;
     justify-content: flex-end;
 
     #{$self}-account {
-      &:hover, &:focus, &:focus-within {
+      &:hover,
+      &:focus,
+      &:focus-within {
         #{$self}-dropdownMenu {
           &::after {
             display: block;
@@ -92,18 +99,18 @@ $MyAccountMenu-linkSize: 12px !default;
 
     #{$self}-dropdownMenu {
       &::before {
-        content: '';
-        width: 10px;
-        height: 10px;
         background: $MyAccountMenu-dropdownBackground;
         border: $MyAccountMenu-dropdownBorder;
-        display: none;
-        position: absolute;
         border-bottom: 0;
         border-right: 0;
+        content: '';
+        display: none;
+        height: 10px;
         margin-left: 1rem;
+        position: absolute;
         top: -4px;
         transform: rotate(45deg);
+        width: 10px;
         z-index: 100;
       }
     }
@@ -114,18 +121,18 @@ $MyAccountMenu-linkSize: 12px !default;
     padding-right: 20px;
 
     &::after {
-      content: '';
-      width: 10px;
-      height: 10px;
       background: $MyAccountMenu-dropdownBackground;
       border: 1px solid $medium-gray;
-      display: none;
-      position: absolute;
       border-bottom: 0;
       border-right: 0;
+      content: '';
+      display: none;
+      height: 10px;
       margin-left: 1.25rem;
+      position: absolute;
       top: -6px;
       transform: rotate(45deg);
+      width: 10px;
       z-index: 100;
     }
 
@@ -133,12 +140,12 @@ $MyAccountMenu-linkSize: 12px !default;
       border-bottom: $MyAccountMenu-dropdownBorder;
 
       a {
-        text-transform: uppercase;
-        font-family: $MyAccountMenu-linkFont;
         color: $MyAccountMenu-linkColor;
+        font-family: $MyAccountMenu-linkFont;
         font-size: $MyAccountMenu-linkSize;
         padding-left: 0;
         padding-right: 0;
+        text-transform: uppercase;
 
         &:hover {
           color: $MyAccountMenu-icon;
@@ -148,10 +155,6 @@ $MyAccountMenu-linkSize: 12px !default;
       &:last-child {
         border-bottom: none;
       }
-
     }
   }
 }
-
-
-

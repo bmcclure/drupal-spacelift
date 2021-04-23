@@ -7,6 +7,7 @@ $IconInfoBox-lightBackground: lightgray !default;
     display: flex;
     flex-wrap: wrap;
     padding: 2rem 1.5rem;
+    height: 100%;
 
     @include breakpoint(large) {
       padding: 2.5rem 1.5rem;
@@ -21,9 +22,17 @@ $IconInfoBox-lightBackground: lightgray !default;
     padding-top: 5px;
     width: 50px;
 
-    svg {
+    svg, img {
       max-height: 30px;
       max-width: 30px;
+    }
+    img {
+      object-fit: contain;
+    }
+    svg {
+      path {
+        fill: color(accent-dark);
+      }
     }
   }
 

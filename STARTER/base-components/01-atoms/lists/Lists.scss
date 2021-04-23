@@ -1,0 +1,56 @@
+/* Mixin - list-reset
+ * Reset list item defaults when no margin, padding, list styles needed
+*/
+
+ul,
+ol {
+  /// Any styles to be applied to all ordered and unordered lists
+}
+
+ul {
+  list-style-type: disc;
+
+  /// With the .styled-bullets utility class
+  .styled-bullets & {
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    padding-left: 26px;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    li::before {
+      color: color(accent);
+      content: '\f14a';
+      font-family: $font-family-fontawesome;
+      margin: 0 7px 0 -26px;
+      padding-right: 5px;
+
+      .bg-secondary &,
+      .bg-dark-blue &,
+      .bg-dark &,
+      .bg-blue & {
+        color: color(text-inverse);
+      }
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+.list-item {
+  /// Any styles to be applied to any list items in a text_long field
+}
+
+.text-long {
+  ol,
+  ul {
+    li {
+      //@extend .list-item;
+    }
+  }
+}

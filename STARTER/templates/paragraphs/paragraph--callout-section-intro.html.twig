@@ -37,11 +37,36 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{{ attach_library('msi/callout-section-intro') }}
+
+{% set headline_intro_banner__base_class = headline_intro_banner__base_class|default('HeadlineIntroBanner') %}
+{% set headline_intro_banner__extra_classes = headline_intro_banner__extra_classes|default(['section','bg-dark-blue']) %}
+
+<header
+  {{ suit(headline_intro_banner__base_class, headline_intro_banner__modifiers, headline_intro_banner__blockname, headline_intro_banner__extra_classes) }}>
+  <div class="grid-container">
+    {% include '@atoms/accents/Line/Line.twig' %}
+
+    <div class="grid-x grid-margin-x">
+      <div class="title cell large-5">
+         {% include '@atoms/text/Heading/Heading.twig' with {
+         heading__level: 1,
+         heading: paragraph.field_heading_paragraph.entity.field_heading.value,
+         heading__extra_classes: ['title', 'white'],
+         heading__attributes: {'itemprop': 'headline'}
+         } %}
+{#         {{ content.field_heading_paragraph }}#}
+        {{ content.field_button_paragraph }}
+
+      </div>
+      <div class="cell large-7">
+        {{ content.field_content_paragraph }}
+      </div>
+    </div>
+  </div>
+</header>
+

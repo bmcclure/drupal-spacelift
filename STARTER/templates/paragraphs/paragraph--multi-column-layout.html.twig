@@ -37,11 +37,23 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{{ attach_library('msi/accents') }}
+{{ attach_library('msi/multi-column-layout') }}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% set extra_classes = [] %}
+
+{% if paragraph.field_theme.value == 'blue' %}
+    {% set extra_classes = extra_classes|merge(['AngledBackground', 'bg-dark-blue']) %}
+{% endif %}
+
+{% set multi_column_layout__base_class = 'MultiColumnLayout' %}
+
+<section {{ attributes }} {{ suit(multi_column_layout__base_class, [], '', extra_classes) }}>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x grid-margin-y">
+      {% for key, item in content.field_columns if key|first != '#'%}
+        {{ item }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

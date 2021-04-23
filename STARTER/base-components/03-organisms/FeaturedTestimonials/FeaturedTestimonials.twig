@@ -18,13 +18,13 @@
 #}
 {% set featured_testimonials__class = [] %}
 {% set featured_testimonials__count = featured_testimonials__teasers|length %}
+
 {% if featured_testimonials__count > 1 %}
   {% set featured_testimonials__class = ['FeaturedTestimonials-slider', 'MSISlider'] %}
 {% endif %}
 
 {% set featured_testimonials__base_class = featured_testimonials__base_class|default('FeaturedTestimonials') %}
 {% set featured_testimonials__extra_classes = featured_testimonials__extra_classes|default([featured_testimonials__background]) %}
-
 
 <section {{ suit(featured_testimonials__base_class, featured_testimonials__modifiers, featured_testimonials__blockname, featured_testimonials__extra_classes) }}>
   <div class="grid-container">

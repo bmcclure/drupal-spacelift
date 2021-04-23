@@ -37,11 +37,21 @@
  */
 #}
 
+{{ attach_library('msi/header-banner-image') }}
+
 {%
   set classes = [
     paragraph.bundle|clean_class
   ]
 %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% set header_banner_image__base_class = 'HeaderBannerImage' %}
+{% set image_entity = paragraph.field_media.entity.field_media_image.entity | merge({'#image_style': 'thumbnail'}) %}
+
+
+{% spaceless %}
+  {% include '@atoms/images/Image/BackgroundImage.twig' with {
+    background_image__base_class: header_banner_image__base_class,
+    background_image__attributes: {'style': "background: url(" ~ file_url(image_entity.uri.value) ~ ") no-repeat center; background-size: cover;"},
+  } %}
+{% endspaceless %}

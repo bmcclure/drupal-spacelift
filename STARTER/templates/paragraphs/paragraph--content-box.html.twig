@@ -37,11 +37,12 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+    paragraph.bundle|clean_class,
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% embed '@molecules/ContentBox/ContentBox.twig' %}
+  {% block content_box__content %}
+    {{ content.field_subcomponents }}
+  {% endblock %}
+{% endembed %}

@@ -37,13 +37,13 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{{ attach_library('msi/lists') }}
 
-{# TODO: Hook up this template with front-end component(s) #}
-<div {{ attributes }}>
+{% set classes = [
+  paragraph.bundle|clean_class,
+  (paragraph.field_bullet_point_style.value == 'checkbox') ? 'styled-bullets'
+] %}
+
+<div {{ attributes.addClass(classes) }}>
   {{ content }}
 </div>

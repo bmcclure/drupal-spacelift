@@ -1,9 +1,0 @@
-{
-  "name": "SearchWithDropdown",
-  "description": "Search With Dropdown",
-  "entries": {
-    "scss": [
-      "SearchWithDropdown.scss"
-    ]
-  }
-}

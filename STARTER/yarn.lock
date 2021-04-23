@@ -3153,7 +3153,7 @@ ajv@^7.0.2:
 
 "aluminum-capsule@git+ssh://git@github.com:TopFloorTech/node-aluminum-capsule.git#2.x":
   version "2.0.0"
-  resolved "git+ssh://git@github.com:TopFloorTech/node-aluminum-capsule.git#a92cb34943da36c5ad076d28af2bcf028dfba7fc"
+  resolved "git+ssh://git@github.com:TopFloorTech/node-aluminum-capsule.git#6c3de95e891d8264acda7eae971f9bca3b229acb"
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/eslint-parser" "^7.13.10"

@@ -20,4 +20,14 @@ $ResourcesSearchBar-white: #fff !default;
       width: auto;
     }
   }
+
+  .SearchForm-inputWrapper {
+    @include breakpoint(medium) {
+      max-width: 400px;
+    }
+
+    > .SearchForm-input {
+      background-color: color(background);
+    }
+  }
 }

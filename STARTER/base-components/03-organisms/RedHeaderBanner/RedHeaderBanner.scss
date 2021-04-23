@@ -18,6 +18,7 @@ $RedHeaderBanner-text: #fff !default;
     bottom: 0;
     opacity: .125;
     filter: grayscale(1);
+    overflow: hidden;
   }
 
   &-text {
@@ -34,7 +35,10 @@ $RedHeaderBanner-text: #fff !default;
     }
   }
 
-  &-title {
+  &-title, h1, .white {
     color: $RedHeaderBanner-text;
+  }
+  .title {
+    margin-bottom: .75em;
   }
 }

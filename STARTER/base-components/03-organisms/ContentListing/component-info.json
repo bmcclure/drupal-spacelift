@@ -1,0 +1,9 @@
+{
+  "name": "ContentListing",
+  "description": "Content Listing",
+  "entries": {
+    "scss": [
+      "ContentListing.scss"
+    ]
+  }
+}

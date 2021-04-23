@@ -7,6 +7,8 @@
  * can be found in the html.html.twig template in this directory.
  *
  * Available variables:
+ * - main__base_class
+ * - main__modifiers
  *
  * General utility variables:
  * - base_path: The base URL path of the Drupal installation. Will usually be
@@ -44,34 +46,87 @@
  */
 #}
 
-{% if page.sidebar|render %} {# this may or may not correctly filter sidebar #}
-  {% set sidebar = TRUE %}
+{% set main__base_class = main_base__class|default('Main') %}
+{% set main__modifiers = [] %}
+
+{% if page.sidebar_first|render %}
+  {% set first_sidebar = TRUE %}
 {% endif %}
 
-{% extends '@templates/_default.twig' %}
+{% if page.sidebar_second|render %}
+  {% set second_sidebar = TRUE %}
+{% endif %}
+
+{% if first_sidebar %}
+  {% if second_sidebar %}
+    {% set main__modifiers = 'with-both-sidebars' %}
+  {% else %}
+    {% set main__modifiers = 'with-first-sidebar' %}
+  {% endif %}
+{% elseif second_sidebar %}
+  {% set main__modifiers = 'with-second-sidebar' %}
+{% endif %}
+
+<div {{ suit('LayoutContainer') }}>
   {% block page_header %}
     {% if page.header %}
       {{ page.header }}
     {% endif %}
   {% endblock %}
 
-  {% block page_system %}
-    {{ page.breadcrumb }}
+  {% block page_breadcrumbs %}
+    {% if page.breadcrumb %}
+      {{ page.breadcrumb }}
+    {% endif %}
+  {% endblock %}
+
+  {% block page_featured %}
     {{ page.highlighted }}
     {{ page.help }}
     {{ messages }}
-  {% endblock %}
 
-  {% block page_sidebar %}
-    {{ page.sidebar }}
-  {% endblock %}
-
-  {% block page_content %}
-    {{ page.content }}
-  {% endblock %}
-
-  {% block page_footer %}
-    {% if page.footer %}
-      {{ page.footer }}
+    {% if page.featured %}
+      {{ page.featured }}
     {% endif %}
   {% endblock %}
+
+  <div {{ suit(main__base_class, main__modifiers) }}>
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {% block page_first_sidebar %}
+      {% if first_sidebar %}
+        {{ page.sidebar_first }}
+      {% endif %}
+    {% endblock %}
+
+    <main role="main" {{ suit('content', [], main__base_class) }}>
+      {% block page_content %}
+        {{ page.content }}
+      {% endblock %}
+    </main>
+
+    {% block page_second_sidebar %}
+      {% if second_sidebar %}
+        {{ page.sidebar_second }}
+      {% endif %}
+    {% endblock %}
+  </div>
+
+  {% block page_content_second %}
+    {% if page.content_second %}
+      {{ page.content_second }}
+    {% endif %}
+  {% endblock %}
+
+  {% block page_footer_top %}
+    {% if page.footer_top %}
+      {{ page.footer_top }}
+    {% endif %}
+  {% endblock %}
+
+  {% block page_footer_bottom %}
+    {% if page.footer_bottom %}
+      {{ page.footer_bottom }}
+    {% endif %}
+  {% endblock %}
+</div>

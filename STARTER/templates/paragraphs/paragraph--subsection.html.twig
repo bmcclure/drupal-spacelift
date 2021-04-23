@@ -39,14 +39,8 @@
 
 {{ attach_library('msi/subsection') }}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
-
 {% set subsection__base_class = 'Subsection' %}
 
-<div {{ attributes }} {{ suit(subsection__base_class, [], '', classes) }}>
+<div {{ attributes }} {{ suit(subsection__base_class) }}>
   {{ content }}
 </div>

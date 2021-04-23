@@ -10,13 +10,13 @@
  * - checkbox__item_checked - boolean - whether the checkbox is selected
  */
 #}
-{% set checkbox__base_class = checkbox__base_class|default('Checkbox') %}
 
+{% set checkbox__base_class = checkbox__base_class|default('Checkbox') %}
 {% set checkbox__id = 'checkbox' ~ key %}
 
 <li {{ suit(checkbox__base_class, checkbox__modifiers) }}>
   <input id="{{ checkbox__id }}" name="checkbox" type="checkbox" class="Checkbox-input" {% if checkbox__item_checked %}checked="{{ checkbox__item_checked }}"{% endif %}>
-  {% include "@atoms/forms/Label/Label.twig" with {
+  {% include '@atoms/forms/Label/Label.twig' with {
     label__for: checkbox__id,
     label__content: checkbox__item,
   } %}

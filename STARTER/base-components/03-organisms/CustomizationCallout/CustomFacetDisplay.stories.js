@@ -9,7 +9,7 @@ import CustomizationCalloutData from './CustomizationCallout.yml';
  */
 export default { title: 'Organisms/Customization Callout' };
 
-export const customizationCallout = () => (
+export const CustomizationCalloutExample = () => (
   <div
     dangerouslySetInnerHTML={{
       __html: CustomizationCallout(CustomizationCalloutData),

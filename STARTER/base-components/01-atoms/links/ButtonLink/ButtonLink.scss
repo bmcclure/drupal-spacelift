@@ -1,0 +1,116 @@
+@include foundation-button;
+
+$ButtonLinkFontFamily: sans-serif !default;
+$ButtonLinkBorderColor: gray !default;
+
+// TODO: Refactor classes to be based on the .ButtonLink component class
+.link,
+.button[class] {
+  cursor: pointer;
+  font-family: $ButtonLinkFontFamily;
+  font-size: rem-calc(14);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(16);
+  }
+
+  [class^='fa'] {
+    @include transition;
+
+    padding-left: .5rem;
+    position: relative;
+  }
+
+  &:hover {
+    .fa-caret-right {
+      transform: translateX(3px);
+    }
+  }
+}
+
+.button {
+  border: 1px solid $ButtonLinkBorderColor;
+  font-weight: 600;
+
+  &.outline {
+    background: transparent; /* backup */
+    background: rgba(255, 255, 255, .125);
+
+    &:hover {
+      background: color(primary);
+    }
+  }
+
+  &.white {
+    @include transition;
+
+    background: color(background);
+    border-color: color(secondary-dark);
+    color: color(secondary-dark);
+
+    &:hover,
+    &:focus,
+    &.active {
+      background: color(secondary);
+      color: color(text-inverse);
+    }
+  }
+
+  &.dark {
+    background: color(secondary);
+    color: color(text-inverse);
+    border: 1px solid color(secondary);
+
+    &:hover {
+      background: color(background);
+      color: color(secondary);
+    }
+  }
+
+  &--iconLeft[class] {
+    [class^='fa'] {
+      padding-left: 0;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.ButtonLink {
+  font-family: $header-font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: rem-calc(14);
+  cursor: pointer;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(16);
+  }
+
+  [class^='fa'],
+  &::after {
+    @include transition;
+
+    content: '\f0da';
+    display: inline-block;
+    font-family: $font-family-fontawesome;
+    font-weight: bold;
+    position: relative;
+    padding-left: 0.5rem;
+  }
+
+  &:hover {
+    .fa-caret-right,
+    &::after {
+      transform: translateX(3px);
+    }
+  }
+
+  &--hollow {
+    @include button-hollow;
+    @include button-hollow-style;
+
+    background-color: transparent;
+  }
+}

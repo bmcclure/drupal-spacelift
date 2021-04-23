@@ -1,9 +1,0 @@
-{
-  "name": "SearchInput",
-  "description": "Search Input",
-  "entries": {
-    "scss": [
-      "SearchInput.scss"
-    ]
-  }
-}

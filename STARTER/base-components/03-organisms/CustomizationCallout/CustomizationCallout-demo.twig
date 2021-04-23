@@ -1,0 +1,128 @@
+{#
+/**
+ * @file
+ * Customization Callout
+ * used on Homepage
+ *
+ * Available variables:
+ * - customization_callout__base_class - the base class name
+ * - customization_callout__modifiers - array of modifiers to add to the base classname
+ * - customization_callout__blockname - blockname prepended to the base classname
+ * - customization_callout__extra_classes - extra classes
+ * -
+ * - customization_callout__image_url - image url
+ * - customization_callout__image - image entity
+ * - customization_callout__title
+ * - customization_callout__body
+ * - customization_callout__title2
+ * - customization_callout__body2
+ * - customization_callout__title3
+ * - customization_callout__body3
+ * - customization_callout__button_title
+ * - customization_callout__url
+ */
+#}
+
+{{ attach_library('msi/customization-callout') }}
+
+{% set customization_callout__base_class = customization_callout__base_class|default('CustomizationCallout') %}
+{% set customization_callout__extra_classes = customization_callout__extra_classes|default(['']) %}
+
+{# Todo: Remove hard-coded IDs unless they're absolutely necessary #}
+<section id="CustomizationCallout" {{ suit(
+  customization_callout__base_class,
+  customization_callout__modifiers,
+  customization_callout__blockname,
+  customization_callout__extra_classes
+) }}>
+  <div {{ suit(
+    'top',
+    customization_callout__modifiers,
+    customization_callout__base_class,
+    ['bg-yellow']
+  ) }}>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div {{ suit(
+          'top-image',
+          customization_callout__modifiers,
+          customization_callout__base_class,
+          ['cell', 'medium-4']
+        ) }}>
+          {# TODO: Figure out responsive background images #}
+          {% include '@atoms/images/Image/BackgroundImage.twig' with {
+            background_image__base_class: 'top-image-container',
+            background_image__modifiers: customization_callout__modifiers,
+            background_image__blockname: customization_callout__base_class,
+            background_image__extra_classes: ['lozad'],
+            background_image__attributes: {'data-background-image': customization_callout__image_src},
+          } %}
+        </div>
+        <div {{ suit(
+          'top-text',
+          customization_callout__modifiers,
+          customization_callout__base_class,
+          ['cell', 'medium-8']
+        ) }}>
+          <div class="grid-x grid-margin-x vertical-center">
+            <div class="cell large-8">
+              {{ content.field_sub }}
+              {% include '@atoms/text/Heading/Heading.twig' with {
+                heading__base_class: '',
+                heading__level: 2,
+                heading: customization_callout__title,
+              } %}
+              <p>{{ customization_callout__body }}</p>
+            </div>
+            <div class="cell large-4 large-text-right">
+              <a href="{{ customization_callout__url }}" class="button">
+                {{ customization_callout__button_title }}
+                <span class="fas fa-caret-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div {{ suit(
+    'bottom',
+    customization_callout__modifiers,
+    customization_callout__base_class
+  ) }}>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell large-4 show-for-large">
+        </div>
+        <div {{ suit(
+          'subsection',
+          [],
+          customization_callout__base_class,
+          ['cell', 'medium-6', 'large-4']
+        ) }}>
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 3,
+            heading: customization_callout__title2,
+            heading__extra_classes: ['uppercase']
+          } %}
+          <p>{{ customization_callout__body2 }}</p>
+        </div>
+        <div {{ suit(
+          'subsection',
+          ['last'],
+          customization_callout__base_class,
+          ['cell', 'medium-6', 'large-4']
+        ) }}>
+          {% include '@atoms/text/Heading/Heading.twig' with {
+            heading__base_class: '',
+            heading__level: 3,
+            heading: customization_callout__title3,
+            heading__extra_classes: ['uppercase']
+          } %}
+          <p>{{ customization_callout__body3 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

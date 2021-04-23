@@ -48,7 +48,7 @@
 {% set image_entity = paragraph.field_media.entity.field_media_image.entity | merge({'#image_style': 'thumbnail'}) %}
 
 {# Todo: Remove hard-coded IDs unless they're absolutely necessary #}
-<section {{ suit(customization_callout__base_class) }}>
+<section {{ attributes }} {{ suit(customization_callout__base_class) }}>
   <div {{ suit('top', [], customization_callout__base_class, ['bg-yellow']) }}>
     <div class="grid-container">
       <div class="grid-x">
@@ -80,8 +80,9 @@
     <div class="grid-container">
       <div class="grid-x">
         <div class="cell large-4 show-for-large"></div>
-        {% for key, item in content.subsections if key|first != '#' %}
-          <div {{ suit('bottom-left', [], customization_callout__base_class, ['cell', 'medium-6', 'large-4']) }}>
+        {% for key, item in content.field_subsections if key|first != '#' %}
+          {% set modifiers = (loop.index == paragraph.field_subsections.getvalue|length) ? ['last'] : [] %}
+          <div {{ suit('subsection', modifiers, customization_callout__base_class, ['cell', 'medium-6', 'large-4']) }}>
             {{ item }}
           </div>
         {% endfor %}

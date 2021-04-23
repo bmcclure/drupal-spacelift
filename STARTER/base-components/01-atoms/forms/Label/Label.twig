@@ -12,8 +12,8 @@
  *   for example: to insert an input element
  */
 #}
-{% set label__base_class = label__base_class|default('Label') %}
 
+{% set label__base_class = label__base_class|default('Label') %}
 {% set additional_attributes = {
   'class': suit(label__base_class, label__modifiers, label__blockname),
   'for': label__for,

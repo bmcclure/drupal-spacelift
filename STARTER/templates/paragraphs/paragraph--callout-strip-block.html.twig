@@ -37,11 +37,52 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{{ attach_library('msi/half-callout-strip') }}
+{{ attach_library('msi/individual-resource-downloads-thumbnail') }}
+
+{% set half_callout_strip__base_class = half_callout_strip__base_class|default('HalfCalloutStrip') %}
+{% set half_callout_strip__extra_classes = half_callout_strip__extra_classes|default(['FlexRow-item']) %}
+
+{#{{ content.field_resource_link }}#}
+ {% if ( paragraph.field_link_to.value == 'resource') %}
+{#   dump resource link:#}
+{#   <pre>#}
+{# {{ dump(paragraph.field_resource_link.entity) }}#}
+{#     </pre>#}
+   {% set link = '#placeholder' %}
+ {% endif %}
+{% if paragraph.field_link_to.value == 'page' %}
+  {% set link = paragraph.field_link.0.url %}
+{% endif %}
+
+<div {{ suit(half_callout_strip__base_class, half_callout_strip__modifiers, half_callout_strip__blockname, half_callout_strip__extra_classes) }}>
+  <div {{ suit('container', half_callout_strip__modifiers, half_callout_strip__base_class, ['bg-blue']) }}>
+    <div class="IndividualResourceDownloadsThumbnail">
+      <div class="IndividualResourceDownloadsThumbnail-image">
+        {{ content.field_media }}
+      </div>
+      <div class="IndividualResourceDownloadsThumbnail-text">
+        <h3 class="HeaderFont--regular">
+          <a href="{{ link }}"
+            {% if ( paragraph.field_link_to.value == 'resource') %}
+              target="_blank"
+            {% endif %}
+          >
+            {{ content.field_heading }}
+          </a>
+        </h3>
+
+        <p>{{ content.field_caption }}</p>
+
+        {% if ( paragraph.field_link_to.value == 'page') %}
+          <a href="{{ link }}" class="link">{{ paragraph.field_link.0.title }} <span
+              class="fas fa-caret-right"></span></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

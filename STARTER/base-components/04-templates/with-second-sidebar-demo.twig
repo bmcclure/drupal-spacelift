@@ -1,0 +1,15 @@
+{% set second_sidebar = true %}
+
+{% extends '@templates/_default.twig' %}
+
+{% block page_content %}
+  {% include '@templates/placeholder/place-holder.twig' with {
+    'place_holder': 'Primary Content',
+  } %}
+{% endblock %}
+
+{% block page_second_sidebar %}
+  {% include '@templates/placeholder/place-holder.twig' with {
+    'place_holder': 'Secondary Content',
+  } %}
+{% endblock %}

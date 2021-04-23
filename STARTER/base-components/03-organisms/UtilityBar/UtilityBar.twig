@@ -1,68 +1,70 @@
 {#
 /**
  * @file
- * Used in the Header / header-main
-
+ * Utility bar - used in the Header
  *
  * Available variables:
  * - utility_bar__base_class - the base class name
  * - utility_bar__modifiers - array of modifiers to add to the base classname
  * - utility_bar__blockname - blockname prepended to the base classname
  * - utility_bar__extra_classes - extra classes
- * -
 */
 #}
+
+{{ attach_library('msi/utility-bar') }}
+
 {% set utility_bar__base_class = utility_bar__base_class|default('UtilityBar') %}
-{% set  utility_bar__menu = [
-  {
-    'name' : 'News',
-    'url'  : '#'
-  },
-  {
-    'name' : 'Blog',
-    'url'  : '#'
-  },
-  {
-    'name' : 'Careers',
-    'url'  : '#'
-  },
-  {
-    'name' : 'About Us',
-    'url'  : '#'
-  },
-  {
-    'name' : 'Rep Locator',
-    'url'  : '#'
-  },
-] %}
 
 <div class="UtilityBar">
   <div class="grid-container">
     <div class="grid-x grid-margin-x">
       <div class="cell medium-shrink text-center medium-text-left">
-        <ul class="UtilityBar-list">
-          <li class="UtilityBar-listItem">
-            <a href="tel:8002340135"><span class="fas fa-phone-square-alt"></span> (800) 234-0135</a>
-          </li>
-          <li class="UtilityBar-listItem">
-            <a href="#"><span class="fas fa-envelope-square"></span> Contact Us</a>
-          </li>
-        </ul>
+        {% block utility_bar__list %}
+          <ul class="UtilityBar-list">
+            <li class="UtilityBar-listItem">
+              <a href="tel:8002340135"><span class="fas fa-phone-square-alt"></span> (800) 234-0135</a>
+            </li>
+            <li class="UtilityBar-listItem">
+              <a href="#"><span class="fas fa-envelope-square"></span> Contact Us</a>
+            </li>
+          </ul>
+        {% endblock %}
       </div>
       <div class="cell show-for-medium medium-auto">
         <nav class="UtilityBar-menu" role="navigation">
-          {% if utility_bar__menu %}
+          {% block utility_bar__menu %}
+            {% set  utility_bar__menu_items = [
+              {
+                'name' : 'News',
+                'url'  : '#'
+              },
+              {
+                'name' : 'Blog',
+                'url'  : '#'
+              },
+              {
+                'name' : 'Careers',
+                'url'  : '#'
+              },
+              {
+                'name' : 'About Us',
+                'url'  : '#'
+              },
+              {
+                'name' : 'Rep Locator',
+                'url'  : '#'
+              },
+            ] %}
             <ul class='UtilityBar-list UtilityBar-listRight'>
-              {% for menuItem in utility_bar__menu %}
-                <li class='UtilityBar-listItem UtilityBar-listRightItem'><a
-                    href='{{ menuItem.url }}'>{{ menuItem.name }}</a></li>
+              {% for menuItem in utility_bar__menu_items %}
+                <li class='UtilityBar-listItem UtilityBar-listRightItem'>
+                  <a href='{{ menuItem.url }}'>{{ menuItem.name }}</a>
+                </li>
               {% endfor %}
             </ul>
-          {% endif %}
-
+          {% endblock %}
         </nav>
       </div>
-
     </div>
   </div>
 </div>

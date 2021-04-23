@@ -3,8 +3,8 @@
   "description": "Links",
   "entries": {
     "scss": [
-      "ButtonLink/_ButtonLink.scss",
-      "Link/_Link.scss"
+      "ButtonLink/ButtonLink.scss",
+      "Link/Link.scss"
     ]
   }
 }

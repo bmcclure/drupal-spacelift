@@ -1,41 +1,87 @@
-/* Tab Navigation */
-.Tabs-nav {
-  @include list-reset;
+$Tabs-backgroundColor: color(border-gray) !default;
+$Tabs-backgroundColor-active: color(background) !default;
+$Tabs-backgroundColor-hover: color(background-section) !default;
+$Tabs-color: color(text) !default;
+$Tabs-color-light: color(text-inverse) !default;
+$Tabs-borderColor: darken($Tabs-backgroundColor, 10%) !default;
 
-  border-bottom: 1px solid color(border-gray);
+@import 'Tab';
 
-  @include breakpoint(large) {
-    border-left: 1px solid color(border-gray);
-    display: flex;
+.Tabs {
+  border-bottom: 2px solid $Tabs-borderColor;
+  margin: 1rem 0;
+
+  /// Tab Navigation
+  &-nav {
+    @include list-reset;
+    @include wrapper;
+
+    @include breakpoint(large) {
+      display: flex;
+    }
+
+    /// Drupal Local Tasks variant
+    &--localTasks {
+      padding: 1rem 0 0;
+
+      > li {
+        margin-right: 2px;
+      }
+
+      a {
+        background-color: $Tabs-backgroundColor;
+        border: 2px solid $Tabs-borderColor;
+        border-bottom-width: 0;
+        border-radius: 5px 5px 0 0;
+        color: $Tabs-color-light;
+        display: block;
+        padding: rem-calc(3) 1rem;
+        text-decoration: none;
+
+        &.is-active {
+          background-color: $Tabs-backgroundColor-active;
+          border-bottom: 2px solid $Tabs-backgroundColor-active;
+          color: $Tabs-color;
+          //padding: rem-calc(4) 1rem;
+          margin-bottom: -2px;
+
+          &:hover {
+            border-bottom-color: $Tabs-backgroundColor-hover;
+          }
+        }
+
+        &:focus,
+        &:hover {
+          background-color: $Tabs-backgroundColor-hover;
+          color: $Tabs-color;
+        }
+      }
+    }
   }
-}
 
-/* Tab Content (hidden only in full #tabs js version) */
-.Tabs-tab {
-  display: none;
+  /// Tab Content (hidden only in full #tabs js version)
+  &-tab {
+    display: none;
 
-  &.is-active {
-    display: block;
+    &.is-active {
+      display: block;
+    }
   }
-}
 
-.Tabs-content {
-  padding: 1.5rem;
-}
-
-/* No-js fallback */
-.Tabs.no-js {
-  .Tabs-tab.is-active {
-    display: block;
+  &-content {
+    padding: 1.5rem;
   }
-}
 
-/* Drupal Local Tasks variant */
-.Tabs-nav--localTasks {
-  margin: 1em 0 0.5em;
-  padding: 0;
-}
+  &-link {
+    &--localTasks {
+      padding: 0.3em 1.5em;
+    }
+  }
 
-.Tabs-link--localTasks {
-  padding: 0.3em 1.5em;
+  /// No-js fallback
+  &.no-js {
+    .Tabs-tab.is-active {
+      display: block;
+    }
+  }
 }

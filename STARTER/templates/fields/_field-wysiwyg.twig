@@ -57,9 +57,10 @@
   {% endif %}
 {% else %}
   <div{{ attributes.addClass('text-long') }}>
-    <div{{ title_attributes }}>
-      {{ label }}
-    </div>
+    {# why would you ever need the label for this field? #}
+{#    <div{{ title_attributes }}>#}
+{#      {{ label }}#}
+{#    </div>#}
     {% if multiple %}
       <div>
     {% endif %}

@@ -3,23 +3,21 @@ global:
   version: VERSION
   css:
     base:
-      dist/css/app.css: {}
-      /libraries/font-awesome-pro/css/all.min.css: {}
+      dist/css/app.css: { }
+      /libraries/font-awesome-pro/css/all.min.css: { }
   js:
     dist/js/aos-init.js: { }
     dist/js/lozad-init.js: { }
-    dist/js/scripts.js: { }
+    dist/js/scripts.js: { attributes: { defer: true } }
   dependencies:
     - {{starter}}/foundation-core
-    - {{starter}}/body-copy
     - {{starter}}/links
     - {{starter}}/text
 
 ### IE 11 support for SVG use:
 sprite:
   js:
-    dist/js/svgxuse.min.js:
-      { attributes: { defer: true } }
+    dist/js/svgxuse.min.js: { attributes: { defer: true } }
 
 ### Plugin Libraries:
 slick:
@@ -27,75 +25,203 @@ slick:
     /libraries/slick/slick/slick.min.js: { weight: -3, minified: true }
   css:
     base:
-      /libraries/slick/slick/slick.css: {}
+      /libraries/slick/slick/slick.css: { }
   dependencies:
     - core/jquery
+
+lity:
+  js:
+    /libraries/lity/dist/lity.min.js: { }
+  css:
+    base:
+      /libraries/lity/dist/lity.min.css: { }
 
 ### Component-specific Libraries:
 accents:
   css:
     component:
-      dist/css/components/Accents.css: {}
+      dist/css/components/Accents.css: { }
 add-to-cart:
   css:
     component:
-      dist/css/components/AddToCart.css: {}
+      dist/css/components/AddToCart.css: { }
 blockquote:
   css:
     component:
-      dist/css/components/Blockquote.css: {}
+      dist/css/components/Blockquote.css: { }
 blue-content-strip:
   css:
     component:
-      dist/css/components/BlueContentStrip.css: {}
-body-copy:
-  css:
-    component:
-      dist/css/components/BodyCopy.css: {}
+      dist/css/components/BlueContentStrip.css: { }
 breadcrumb:
   css:
     component:
-      dist/css/components/Breadcrumb.css: {}
+      dist/css/components/Breadcrumb.css: { }
+buttons:
+  css:
+    component:
+      dist/css/components/Buttons.css: { }
+callout-section:
+  css:
+    component:
+      dist/css/components/ReusableCalloutStrip.css: { }
+callout-section-intro:
+  css:
+    component:
+      dist/css/components/HeadlineIntroBanner.css: { }
+card:
+  css:
+    component:
+      dist/css/components/Card.css: { }
+content-box:
+  css:
+    component:
+      dist/css/components/ContentBox.css: { }
+content-listing:
+   css:
+     component:
+       dist/css/components/ContentListing.css: { }
+cta:
+  css:
+    component:
+      dist/css/components/CTA.css: { }
 customization-callout:
   css:
     component:
-      dist/css/components/CustomizationCallout.css: {}
+      dist/css/components/CustomizationCallout.css: { }
+dual-callout-strip:
+  css:
+    component:
+      dist/css/components/DualCalloutStrips.css: { }
 featured-blog-posts:
   css:
     component:
-      dist/css/components/FeaturedBlogPosts.css: {}
+      dist/css/components/FeaturedBlogPosts.css: { }
   dependencies:
     - {{starter}}/slick
+featured-video-block:
+  css:
+    component:
+      dist/css/components/FeaturedVideoBlock.css: { }
+flex-row:
+  css:
+    component:
+      dist/css/components/FlexRow.css: { }
+forms:
+  css:
+    component:
+      dist/css/components/Forms.css: { }
+grid-teaser:
+  css:
+    component:
+      dist/css/components/GridTeaser.scss: { }
+half-callout-strip:
+  css:
+    component:
+      dist/css/components/HalfCalloutStrip.css: { }
+header:
+  css:
+    component:
+      dist/css/components/Header.css: { }
+header-banner-image:
+  css:
+    component:
+      dist/css/components/HeaderBannerImage.css: { }
+icon-infobox:
+  css:
+    component:
+      dist/css/components/IconInfoBox.css: { }
+icon-intro:
+  css:
+    component:
+      dist/css/components/IntroWithIcons.css: { }
+images:
+  css:
+    component:
+      dist/css/components/Images.css: { }
+individual-resource-downloads-thumbnail:
+  css:
+    component:
+      dist/css/components/IndividualResourceDownloadsThumbnail.css: { }
+individual-testimonial:
+  css:
+    component:
+      dist/css/components/IndividualTestimonial.css: { }
 links:
   css:
     component:
-      dist/css/components/Links.css: {}
+      dist/css/components/Links.css: { }
+lists:
+  css:
+    component:
+      dist/css/components/Lists.css: { }
+media:
+  css:
+    component:
+      dist/css/components/Media.css: { }
+multi-column-layout:
+  css:
+    component:
+      dist/css/components/MultiColumnLayout.css: { }
 my-account-menu:
   css:
     component:
-      dist/css/components/MyAccountMenu.css: {}
+      dist/css/components/MyAccountMenu.css: { }
   dependencies:
     - {{starter}}/foundation-dropdownMenu
-tabs:
-  js:
-    dist/js/components/Tabs.js: {}
+plugins:
   css:
     component:
-      dist/css/components/Tabs.css: {}
+      dist/css/components/Plugins.css: { }
+red-header-banner:
+  css:
+    component:
+      dist/css/components/RedHeaderBanner.css: { }
+resource-category-icon-block:
+  css:
+    component:
+      dist/css/components/ResourceCategoryIconBlock.css: { }
+reusable-callout-strip:
+  css:
+    component:
+      dist/css/components/ReusableCalloutStrip.css: { }
+search-form:
+  css:
+    component:
+      dist/css/components/SearchForm.css: { }
   dependencies:
-    - core/drupal
+short-callout-strip:
+  css:
+    component:
+      dist/css/components/ShortCalloutStrip.css: { }
+status:
+  css:
+    component:
+      dist/css/components/Status.css: { }
 subsection:
   css:
     component:
-      dist/css/components/Subsection.css: {}
+      dist/css/components/Subsection.css: { }
+tabs:
+  js:
+    dist/js/components/Tabs.js: { }
+  css:
+    component:
+      dist/css/components/Tabs.css: { }
+  dependencies:
+    - core/drupal
 text:
   css:
     component:
-      dist/css/components/Text.css: {}
+      dist/css/components/Text.css: { }
+utility-bar:
+  css:
+    component:
+      dist/css/components/UtilityBar.css: { }
 
 #main-menu:
 #  js:
-#    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
+#    dist/js/02-molecules/menus/main-menu/main-menu.js: { }
 #  dependencies:
 #    - core/drupal
 
@@ -103,52 +229,54 @@ text:
 foundation-core:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-core.js: {}
+    dist/js/foundation/foundation-core.js: { }
 foundation-accordion:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-accordion.js: {}
+    dist/js/foundation/foundation-accordion.js: { }
 foundation-accordionMenu:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-accordionMenu.js: {}
+    dist/js/foundation/foundation-accordionMenu.js: { }
 foundation-drilldown:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-drilldown.js: {}
+    dist/js/foundation/foundation-drilldown.js: { }
 foundation-dropdown:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-dropdown.js: {}
+    dist/js/foundation/foundation-dropdown.js: { }
 foundation-dropdownMenu:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-dropdownMenu.js: {}
+    dist/js/foundation/foundation-dropdownMenu.js: { }
 foundation-offcanvas:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-offcanvas.js: {}
+    dist/js/foundation/foundation-offcanvas.js: { }
 foundation-reveal:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-reveal.js: {}
+    dist/js/foundation/foundation-reveal.js: { }
 foundation-smoothScroll:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-smoothScroll.js: {}
+    dist/js/foundation/foundation-smoothScroll.js: { }
 foundation-sticky:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-sticky.js: {}
+    dist/js/foundation/foundation-sticky.js: { }
 foundation-toggler:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-toggler.js: {}
+    dist/js/foundation/foundation-toggler.js: { }
 foundation-tooltip:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-tooltip.js: {}
+    dist/js/foundation/foundation-tooltip.js: { }
+  dependencies:
+    - {{starter}}/plugins
 foundation-util-triggers:
   version: 6.6.3
   js:
-    dist/js/foundation/foundation-util-triggers.js: {}
+    dist/js/foundation/foundation-util-triggers.js: { }

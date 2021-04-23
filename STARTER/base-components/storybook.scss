@@ -4,7 +4,6 @@
 ////
 
 @import '~normalize.css/normalize';
-@import '../src/scss/fonts/fontawesome';
 @import 'base-components/setup';
 @import 'base-components/00-base/00-colors/02-colors-demo';
 @import 'base-components/00-base/02-motions/motions-demo';
@@ -20,7 +19,9 @@
 @import 'base-components/03-organisms/**/*.scss';
 @import 'base-components/04-templates/**/*.scss';
 
-/// Manually loading theme fonts here because the path is different
+/// Manually loading theme fonts here because the paths are different
+@import 'base-components/00-base/01-defaults/03-fontawesome';
+
 @font-face {
   font-family: 'Selawik';
   font-style: normal;

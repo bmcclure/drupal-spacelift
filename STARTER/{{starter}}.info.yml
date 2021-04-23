@@ -22,7 +22,6 @@ ckeditor_stylesheets:
   - dist/css/app.css
 
 regions:
-  utility: Utility
   header: Header
   breadcrumb: Breadcrumbs
   featured: Featured
@@ -36,7 +35,8 @@ regions:
 logo: images/logo.png
 
 # Remove unwanted system stylesheets
-# stylesheets-remove:
+stylesheets-remove:
+  - '@classy/css/components/menu.css'
 #   - '@stable/css/system/components/align.module.css'
 #   - '@stable/css/system/components/fieldgroup.module.css'
 #   - '@stable/css/system/components/container-inline.module.css'

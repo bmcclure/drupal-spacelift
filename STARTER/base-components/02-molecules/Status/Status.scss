@@ -24,4 +24,10 @@
     background-color: color(message);
     color: color(text);
   }
+
+  > span {
+    @include wrapper;
+
+    display: block;
+  }
 }

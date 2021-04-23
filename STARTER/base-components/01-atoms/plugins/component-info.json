@@ -3,7 +3,7 @@
   "description": "JS Plugins",
   "entries": {
     "scss": [
-      "Tooltip/_Tooltip.scss"
+      "Tooltip/Tooltip.scss"
     ]
   }
 }

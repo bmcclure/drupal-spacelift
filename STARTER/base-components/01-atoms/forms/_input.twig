@@ -13,4 +13,6 @@
 
 {{ attach_library('msi/Forms') }}
 
-<input{{ attributes.addClass('form-item__textfield') }} />{{ children }}
+{% set input__base_class = input__base_class|default('Input') %}
+
+<input {{ suit(input__base_class, input__modifiers, input__blockname, input__extra_classes) }} />{{ children }}

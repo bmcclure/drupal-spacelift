@@ -1,8 +1,9 @@
 <?php
-/**
- * only used here
- */
 
+/**
+ * @file
+ * Only used here.
+ */
 
 $wysiwyg = '
 <p><a href="https://goo.gl/maps/RwfLnAjhmHuWPbhE7" target="_blank">
@@ -18,5 +19,5 @@ Milwaukee, WI 53224
 ?>
 
 <div class="Footer-contact">
-	<?= $wysiwyg ?>
+  <?php echo $wysiwyg; ?>
 </div>

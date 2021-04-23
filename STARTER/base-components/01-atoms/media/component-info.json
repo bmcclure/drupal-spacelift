@@ -3,7 +3,7 @@
   "description": "Media",
   "entries": {
     "scss": [
-      "Video/_Video.scss"
+      "Video/Video.scss"
     ]
   }
 }

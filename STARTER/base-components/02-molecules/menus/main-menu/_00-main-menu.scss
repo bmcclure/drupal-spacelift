@@ -1,4 +1,4 @@
-/* Nav */
+/// Main Navigation
 .main-nav {
   display: none;
 
@@ -18,7 +18,7 @@
   }
 }
 
-/* UL */
+/// UL
 .main-menu {
   @include list-reset;
 
@@ -31,11 +31,7 @@
   }
 }
 
-/*
- * Sub Navigation
- */
-
-/* UL (Nested) */
+/// UL (Nested)
 .main-menu--sub {
   border-bottom: none;
   height: 0;
@@ -77,7 +73,7 @@
     }
   }
 
-  /* See main-menu.js */
+  /// See main-menu.js
   &-open {
     height: auto;
   }
@@ -85,6 +81,6 @@
 
 .main-menu--sub-2 {
   @include breakpoint(medium) {
-    display: none; /* Never shown on large screens */
+    display: none; /// Never shown on large screens
   }
 }

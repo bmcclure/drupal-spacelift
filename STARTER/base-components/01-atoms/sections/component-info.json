@@ -1,0 +1,9 @@
+{
+  "name": "Sections",
+  "description": "Sections",
+  "entries": {
+    "scss": [
+      "TitleBar/TitleBar.scss"
+    ]
+  }
+}

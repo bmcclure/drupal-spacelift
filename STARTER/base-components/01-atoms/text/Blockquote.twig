@@ -15,9 +15,7 @@
 
 {% set blockquote__base_class = blockquote__base_class|default('blockquote') %}
 
-<blockquote
-  {{ suit(blockquote__base_class, blockquote__modifiers, blockquote__blockname) }}
->
+<blockquote{{ suit(blockquote__base_class, blockquote__modifiers, blockquote__blockname) }}>
   {% block blockquote__content %}
     {{ blockquote__content }}
   {% endblock %}

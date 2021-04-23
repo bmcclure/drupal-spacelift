@@ -1,6 +1,8 @@
 <?php
+
 /**
- * Case Studies Listing Page
+ * @file
+ * Case Studies Listing Page.
  */
 
 include "components/03-organisms/RedHeaderBanner/RedHeaderBanner.php";

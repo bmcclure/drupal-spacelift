@@ -4,7 +4,7 @@
   <ul class="FormItem--radios Radios">
 {% endif %}
   {% for key, radio in radios %}
-    {% include "@atoms/forms/Radios/_Radio.twig" with {
+    {% include '@atoms/forms/Radios/_Radio.twig' with {
       radio__item: radio.title,
       radio__item_checked: radio.checked,
     } %}

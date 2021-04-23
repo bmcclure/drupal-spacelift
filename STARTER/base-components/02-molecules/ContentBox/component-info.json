@@ -1,0 +1,9 @@
+{
+  "name": "ContentBox",
+  "description": "Content Wrapper Box",
+  "entries": {
+    "scss": [
+      "ContentBox.scss"
+    ]
+  }
+}

@@ -106,7 +106,7 @@ $mixin-Transition--timingFunction: ease-out;
 /// Mixin - Box Shadow (Hover)
 /// @todo Make configurable and overridable
 @mixin box-shadow-hover {
-  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, .15);
+  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.15);
 }
 
 /// Mixin - Drop Shadow
@@ -124,7 +124,7 @@ $mixin-Transition--timingFunction: ease-out;
 /// Mixin - Header Font Family (Regular)
 /// @todo See if we can replace with standard "font" rule
 @mixin header-font-family-regular {
-  font-family: 'Selawik', 'Selawik Semibold', sans-serif;
+  font-family: 'Selawik', 'Selawik Semibold', sans-serif !important; /* this is getting overridden by Headings, hence the important */
   font-weight: 400;
 }
 

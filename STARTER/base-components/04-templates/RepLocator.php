@@ -1,6 +1,8 @@
 <?php
+
 /**
- * Rep Locator Page
+ * @file
+ * Rep Locator Page.
  */
 
 include "components/03-organisms/RedHeaderBanner/RedHeaderBanner.php";

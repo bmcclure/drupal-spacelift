@@ -10,19 +10,30 @@
  * - resource_category_icon_block__extra_classes - extra classes
  *
  * - resource_category_icon_block__icon- image
- * - resource_category_icon_block__body
+ * - resource_category_icon_block__title
  * - resource_category_icon_block__url
  */
 #}
 
 {% set resource_category_icon_block__base_class = resource_category_icon_block__base_class|default('ResourceCategoryIconBlock') %}
 
-<div {{ suit(resource_category_icon_block__base_class, resource_category_icon_block__modifiers, resource_category_icon_block__blockname, resource_category_icon_block__extra_classes) }}>
-  <a {{ suit('container', resource_category_icon_block__modifiers, resource_category_icon_block__base_class ) }} href="{{ resource_category_icon_block__url }}" title="{{ resource_category_icon_block__title }}">
+<div {{ suit(
+  resource_category_icon_block__base_class,
+  resource_category_icon_block__modifiers,
+  resource_category_icon_block__blockname,
+  resource_category_icon_block__extra_classes
+) }}>
+  <a {{ suit('container', resource_category_icon_block__modifiers, resource_category_icon_block__base_class ) }}
+    href="{{ resource_category_icon_block__url }}"
+    title="{{ resource_category_icon_block__title }}">
     <div {{ suit('icon', resource_category_icon_block__modifiers, resource_category_icon_block__base_class ) }}>
       {{ resource_category_icon_block__icon }}
     </div>
-    <div {{ suit('titleContainer', resource_category_icon_block__modifiers, resource_category_icon_block__base_class ) }}>
+    <div {{ suit(
+      'titleContainer',
+      resource_category_icon_block__modifiers,
+      resource_category_icon_block__base_class
+    ) }}>
       {% include '@atoms/text/Heading/Heading.twig' with {
         heading__base_class: '',
         heading__level: 4,

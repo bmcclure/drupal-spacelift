@@ -2,7 +2,6 @@
 /**
  * @file
  * Header
- * @todo PLEASE SEE ORIGINAL in markserv-frontend-components for how the real site header should be laid out
  *
  * Available variables:
  * - header__base_class - the base class name
@@ -12,20 +11,55 @@
  * - header__image - image
 */
 #}
+
+{{ attach_library('msi/header') }}
+
 {% set header__base_class = header__base_class|default('Header') %}
+{# If `directory` is defined, set the path relative for Drupal.
+ # Otherwise, set the path relative to the Component Library. #}
+{% set header__logo_src = directory ? '/' ~ directory ~ '/images/logo.jpg' : header__image %}
 
-<header {{ suit(header__base_class, header__modifiers, header__blockname, header__extra_classes) }}
-  role="banner"
-  data-sticky-container>
-
-  <div {{ suit('wrap', header__modifiers, header__base_class ) }}
-    data-sticky-on="small" data-sticky
-    data-options="marginTop:0;"
-    style="width:100%;">
-    {% include '@organisms/Header/_HeaderMain.twig' with {
-      header_main__image: header__image,
-    } %}
+<header {{ suit(header__base_class, header__modifiers, header__blockname, header__extra_classes) }} role="banner">
+  <div {{ suit('wrap', [], header__base_class) }}>
+    <div {{ suit('main', [], header__base_class) }} id="top-bar-menu">
+      {% block header__utility_bar %}
+        {% include '@organisms/UtilityBar/UtilityBar.twig' %}
+      {% endblock %}
+      <div class="grid-container">
+        <div class="grid-x vertical-center">
+          <div class="hide-for-large cell shrink hamburger">
+            <a data-toggle="off-canvas">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </a>
+          </div>
+          <div {{ suit('logo', [], header__base_class, ['cell', 'auto', 'large-shrink']) }}>
+            {% block header__branding %}
+              {% include '@atoms/images/Image/ResponsiveImage.twig' with {
+                responsive_image__url: '/',
+                responsive_image__src: 'https://placeimg.com/163/77/tech',
+                responsive_image__alt: 'Site Logo',
+                responsive_image__base_class: 'Logo',
+              } %}
+            {% endblock %}
+          </div>
+          {% block header__search %}
+            {% include '@molecules/SearchForm/SearchForm.twig' with {
+              search_form__extra_classes: ['cell', 'auto', 'show-for-medium']
+            } %}
+          {% endblock %}
+          {% block header__account_menu %}
+            {% include '@organisms/MyAccountMenu/MyAccountMenu.twig' %}
+          {% endblock %}
+        </div>
+      </div>
+      <div class="show-for-large">
+        {% block header__main_nav %}
+          {# <?php include "components/03-organisms/MegaMenu/MegaMenu.php"; ?> #}
+        {% endblock %}
+      </div>
+    </div>
   </div>
-
-</header> <!-- end .header -->
+</header>
 

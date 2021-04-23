@@ -10,8 +10,8 @@
  * - radio__item_checked - boolean - whether the radio is selected
  */
 #}
-{% set radio__base_class = radio__base_class|default('Radio') %}
 
+{% set radio__base_class = radio__base_class|default('Radio') %}
 {% set radio__id = 'radio' ~ key %}
 
 <li {{ suit(radio__base_class, radio__modifiers) }}>

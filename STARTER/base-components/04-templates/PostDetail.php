@@ -1,7 +1,10 @@
 <?php
+
 /**
- * Post Detail Page
+ * @file
+ * Post Detail Page.
  */
+
 include "components/02-molecules/Breadcrumb/Breadcrumb.php";
 include "components/02-molecules/HeaderBannerImage/HeaderBannerImage.php";
 include "components/03-organisms/BodyCopyWithShare/BodyCopyWithShare.php";

@@ -17,22 +17,22 @@
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
 
-{% set list_item_label = item_label %}
-{% set li_base_class = item_base_class|default(menu_class ~ '__item') %}
-{% set li_modifiers = item_modifiers %}
-{% set li_blockname = item_blockname %}
+{% set list_item__label = item_label %}
+{% set li__base_class = item_base_class|default(menu_class ~ '__item') %}
+{% set li__modifiers = item_modifiers %}
+{% set li__blockname = item_blockname %}
 
-{% extends "@atoms/lists/_ListItem.twig" %}
-  {% block list_item_content %}
+{% extends '@atoms/lists/_ListItem.twig' %}
+  {% block list_item__content %}
     {# if drupal #}
     {% if directory %}
       {{ link(item.title, item.url, suit(item_base_class|default(menu_class ~ '__link'), item_modifiers)) }}
     {% else %}
-      {% include "@atoms/links/Link/Link.twig" with {
-        link_content: item.title,
-        link_url: item.url,
-        link_base_class: item_base_class|default(menu_class ~ '__link'),
-        link_modifiers: item_modifiers,
+      {% include '@atoms/links/Link/Link.twig' with {
+        link__content: item.title,
+        link__url: item.url,
+        link__base_class: item_base_class|default(menu_class ~ '__link'),
+        link__modifiers: item_modifiers,
       } %}
     {% endif %}
     {% if item.below %}

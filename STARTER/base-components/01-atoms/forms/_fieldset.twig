@@ -32,28 +32,32 @@
     'form-wrapper',
   ]
 %}
+
 <fieldset{{ attributes.addClass(classes) }}>
-  {%
-    set legend_classes = [
-      'h2',
-      required ? 'js-form-required',
-      required ? 'form-required',
-    ]
-  %}
+  {% set legend_classes = [
+    'h2',
+    required ? 'js-form-required',
+    required ? 'form-required',
+  ] %}
   {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
   <legend{{ legend.attributes.addClass(legend_classes) }}>{{ legend.title }}</legend>
+
   {% if errors %}
     <div>
       {{ errors }}
     </div>
   {% endif %}
+
   {% if prefix %}
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
+
   {{ children }}
+
   {% if suffix %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
+
   {% if description.content %}
     <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>
   {% endif %}

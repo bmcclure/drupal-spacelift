@@ -21,6 +21,10 @@ $IntroWithIcons-titleFontFamily: sans-serif !default;
 
   }
 
+  &-blocks > .grid-x {
+    height: 100%;
+  }
+
   &-block {
     padding: 3rem 1rem;
     //border: 1px solid $medium-gray;
@@ -45,10 +49,14 @@ $IntroWithIcons-titleFontFamily: sans-serif !default;
     &Icon {
       margin-bottom: 1rem;
 
-      svg {
-        max-width: 75px;
-        max-height: 75px;
+      svg, img {
+        width: 75px;
+        height: 75px;
         margin: auto;
+      }
+
+      img {
+        object-fit: contain;
       }
     }
 

@@ -25,7 +25,7 @@ section,
   }
 }
 
-// Grid Container
+/// Grid Container
 .grid-container {
   width: 100%;
 
@@ -36,7 +36,7 @@ section,
 
   &.short {
     @media (min-width: 1024px) {
-      max-width: 825px; // for XL screens
+      max-width: 825px;
     }
   }
 }
@@ -160,9 +160,9 @@ sup {
 /// Lozad - adds additional styles to lozad elements to make them smoother
 .lozad {
   opacity: 0;
-  transition: ease all .3s;
+  transition: ease all 0.3s;
 
-  &[data-loaded="true"] {
+  &[data-loaded='true'] {
     opacity: 1;
   }
 }
@@ -170,7 +170,7 @@ sup {
 .reveal {
   &:focus,
   &:focus-within {
-    outline: none; /* does not seem necessary */
+    outline: none;
   }
 }
 
@@ -197,11 +197,11 @@ sup {
 }
 
 .off-canvas-wrapper {
-  overflow: initial; /* set to initial so that I can use position:sticky for product images */
+  overflow: initial; // Set to initial so that I can use position:sticky for product images
 }
 
 .sr-only {
-  display: none; // @todo where was the class coming from on the markserv-frontend-components?
+  display: none; // @TODO: where was the class coming from on the markserv-frontend-components?
 }
 
 /// Color Utility Classes
@@ -249,3 +249,124 @@ sup {
   width: 1px;
   word-wrap: normal;
 }
+
+.Heading-wrapper {
+  padding-top: 2rem;
+}
+
+/// Custom animations
+a {
+  .Zoom {
+    overflow: hidden;
+    position: relative;
+
+    &-image,
+    img {
+      @include transition;
+    }
+  }
+
+  &:hover {
+    @include breakpoint(large) {
+      .Zoom {
+        &-image,
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.demo-animation {
+  background-color: color(background-section);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 3rem;
+
+  .Zoom-image {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/// AOS Animations
+[data-aos='fade-up'] {
+  @include transition;
+
+  transform: translate(0, 20px);
+}
+
+[data-aos='fade-right'] {
+  @include transition;
+
+  transform: translate3d(-20px, 0, 0);
+}
+
+[data-aos='fade-left'] {
+  @include transition;
+
+  transform: translate3d(20px, 0, 0);
+}
+
+[data-aos^='counter'] {
+  @include transition;
+
+  transform: scale(.1);
+
+  &.aos-animate {
+    transform: scale(1);
+  }
+}
+
+[data-aos='SectionFade'] {
+  .SectionFade-one,
+  .SectionFade-two,
+  .SectionFade-three,
+  .SectionFade-four {
+    @include transition;
+
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition: 0.6s ease-out;
+  }
+
+  .SectionFade-two {
+    transition-delay: 0.3s;
+  }
+
+  .SectionFade-three {
+    transition-delay: 0.5s;
+  }
+
+  .SectionFade-four {
+    transition-delay: 0.7s;
+  }
+
+  &.aos-animate {
+    .SectionFade-one,
+    .SectionFade-two,
+    .SectionFade-three,
+    .SectionFade-four {
+      @include transition;
+
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+}
+
+.demo-aos-animation {
+  background-color: color(background-section);
+  border-radius: 2px;
+  color: color(text);
+  cursor: pointer;
+  padding: 3rem;
+  text-align: center;
+
+  span {
+    display: block;
+    margin: 0.25rem;
+  }
+}
+

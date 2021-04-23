@@ -1,6 +1,8 @@
 <?php
+
 /**
- * Contact Us Page
+ * @file
+ * Contact Us Page.
  */
 
 include "components/03-organisms/RedHeaderBanner/RedHeaderBanner.php";

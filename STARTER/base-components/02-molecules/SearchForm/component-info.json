@@ -1,0 +1,9 @@
+{
+  "name": "SearchForm",
+  "description": "Site Search Form",
+  "entries": {
+    "scss": [
+      "SearchForm.scss"
+    ]
+  }
+}

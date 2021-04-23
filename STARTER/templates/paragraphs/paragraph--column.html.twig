@@ -37,11 +37,6 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
-
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+<div {{ attributes }} {{ suit('column', [], 'MultiColumnLayout', ['cell', 'large-auto']) }}>
+  {{ content }}
+</div>

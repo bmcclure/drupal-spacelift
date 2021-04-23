@@ -17,11 +17,13 @@ export default { title: 'Atoms/Images' };
 export const image = () => (
   <div dangerouslySetInnerHTML={{ __html: Image(ImageData) }} />
 );
+
 export const figure = () => (
   <div dangerouslySetInnerHTML={{ __html: Figure(FigureData) }} />
 );
 
 const items = [];
+
 svgIcons.keys().forEach((key) => {
   const iconName = svgIcons(key).split('static/media/').pop().split('.')[0];
   const icon = {};

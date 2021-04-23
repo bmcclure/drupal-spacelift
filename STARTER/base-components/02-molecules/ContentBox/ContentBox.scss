@@ -1,0 +1,40 @@
+$ContentBox-border: 1px solid #333 !default;
+$ContentBox-background: #fff !default;
+
+.ContentBox {
+  padding-bottom: 4rem;
+  position: relative;
+
+  &-container {
+    background: $ContentBox-background;
+    border: $ContentBox-border;
+    margin-bottom: -8rem;
+    padding: 1.5rem;
+    position: relative;
+    top: -8rem;
+
+    @include breakpoint(medium) {
+      padding: 3rem 2rem;
+    }
+  }
+
+  &-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .MultiColumnLayout {
+    > .grid-container {
+      padding: 0;
+
+      > .grid-x.grid-margin-x {
+        margin-left: 0;
+        margin-right: 0;
+
+        > .cell {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

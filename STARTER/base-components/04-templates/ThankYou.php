@@ -1,6 +1,8 @@
 <?php
+
 /**
- * Contact Us Page
+ * @file
+ * Contact Us Page.
  */
 
 include "components/02-molecules/HeaderBannerImage/HeaderBannerImage.php";

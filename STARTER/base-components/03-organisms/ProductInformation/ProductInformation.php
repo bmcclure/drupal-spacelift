@@ -1,6 +1,8 @@
 <?php
+
 /**
- * ProductInformation
+ * @file
+ * ProductInformation.
  */
 
 $headline = "Product Information";
@@ -24,86 +26,91 @@ $title3 = "Product Downloads";
 <section class="ProductInformation">
     <div class="grid-container">
         <header class="ProductInformation-header">
-            <h2 class="title-bar"><?= $headline ?></h2>
+            <h2 class="title-bar"><?php echo $headline ?></h2>
         </header>
         <div class="ProductInformation-body">
             <div class="grid-x grid-margin-x grid-margin-y grid-padding-x large-up-3">
                 <div class="cell">
                     <div class="Line"></div>
-                    <h2 class="title"><?= $title1 ?></h2>
-                    <div class="wysiwyg"><?= $wysiwyg1 ?></div>
+                    <h2 class="title"><?php echo $title1 ?></h2>
+                    <div class="wysiwyg"><?php echo $wysiwyg1 ?></div>
                 </div>
                 <div class="cell">
                     <div class="Line"></div>
-                    <h2 class="title"><?= $title2 ?></h2>
-                    <div class="wysiwyg"><?= $wysiwyg2 ?></div>
+                    <h2 class="title"><?php echo $title2 ?></h2>
+                    <div class="wysiwyg"><?php echo $wysiwyg2 ?></div>
 
                 </div>
                 <div class="cell">
                     <div class="Line"></div>
-                    <h2 class="title"><?= $title3 ?></h2>
+                    <h2 class="title"><?php echo $title3 ?></h2>
 
                     <div class="IndividualResourceDownloadsIcon-list">
-						<?php include "components/02-molecules/IndividualResourceDownloadsIcon/IndividualResourceDownloadsIcon.php" ?>
-						<?php
+                        <?php include "components/02-molecules/IndividualResourceDownloadsIcon/IndividualResourceDownloadsIcon.php" ?>
+                        <?php
 
-						// BEGIN DELETE ME VARIATIONS
-
-
-						$icon          = file_get_contents( 'assets/images/yellow-icon.svg' ); //'<span class="fas fa-file-spreadsheet"></span>';
-						$title         = '22 05 53 Identification for Plumbing Piping and Equipment'; // should pull title automatically
-						$type          = 'Specification Document';
-						$teaser_copy   = '';
-						$pdf_thumbnail = '/components/02-molecules/IndividualResourceDownloadsIcon/pdf_thumbnail_placeholder.png';
-						$url           = "#placeholder";
-						?>
+                        // BEGIN DELETE ME VARIATIONS.
+                        // '<span class="fas fa-file-spreadsheet"></span>';.
+                        $icon = file_get_contents('assets/images/yellow-icon.svg');
+                        // Should pull title automatically.
+                        $title         = '22 05 53 Identification for Plumbing Piping and Equipment';
+                        $type          = 'Specification Document';
+                        $teaser_copy   = '';
+                        $pdf_thumbnail = '/components/02-molecules/IndividualResourceDownloadsIcon/pdf_thumbnail_placeholder.png';
+                        $url           = "#placeholder";
+                        ?>
 
                         <div class="IndividualResourceDownloadsIcon">
                             <div class="IndividualResourceDownloadsIcon-icon">
-                                <a href="<?= $url ?>">
-									<?= $icon ?>
+                                <a href="<?php echo $url ?>">
+          <?php echo $icon ?>
                                 </a>
                             </div>
                             <div class="IndividualResourceDownloadsIcon-text">
                                 <h5 class="IndividualResourceDownloadsIcon-title HeaderFont--regular">
-                                    <a href="<?= $url ?>">
-										<?= $title ?>
+                                    <a href="<?php echo $url ?>">
+                                        <?php echo $title ?>
                                     </a>
                                 </h5>
-                                <h6 class="IndividualResourceDownloadsIcon-subtitle uppercase"><?= $type ?></h6>
-								<?php if ( $teaser_copy ) { ?><p><?= $teaser_copy ?></p><?php } ?>
+                                <h6 class="IndividualResourceDownloadsIcon-subtitle uppercase"><?php echo $type ?></h6>
+                                <?php if ($teaser_copy) {
+                                  ?><p><?php echo $teaser_copy ?></p><?php
+                                } ?>
                             </div>
                         </div>
 
-						<?php
-						$icon          = file_get_contents( 'assets/images/yellow-icon.svg' ); //'<span class="fas fa-file-spreadsheet"></span>';
-						$title         = 'ANSI/ASME Standard for Pipe Identification'; // should pull title automatically
-						$type          = 'Standards Document';
-						$teaser_copy   = 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.';
-						$pdf_thumbnail = '/components/02-molecules/IndividualResourceDownloadsIcon/pdf_thumbnail_placeholder.png';
-						$url           = "#placeholder";
-						?>
+                        <?php
+                        // '<span class="fas fa-file-spreadsheet"></span>';
+                        $icon = file_get_contents('assets/images/yellow-icon.svg');
+                        // Should pull title automatically.
+                        $title         = 'ANSI/ASME Standard for Pipe Identification';
+                        $type          = 'Standards Document';
+                        $teaser_copy   = 'Lorem ipsum dolor sit amet, cecte tuer adipiscing elit donec odio nec justo quisque volutpat mattis.';
+                        $pdf_thumbnail = '/components/02-molecules/IndividualResourceDownloadsIcon/pdf_thumbnail_placeholder.png';
+                        $url           = "#placeholder";
+                        ?>
 
                         <div class="IndividualResourceDownloadsIcon">
                             <div class="IndividualResourceDownloadsIcon-icon">
-                                <a href="<?= $url ?>">
-									<?= $icon ?>
+                                <a href="<?php echo $url ?>">
+          <?php echo $icon ?>
                                 </a>
                             </div>
                             <div class="IndividualResourceDownloadsIcon-text">
                                 <h5 class="IndividualResourceDownloadsIcon-title HeaderFont--regular">
-                                    <a href="<?= $url ?>">
-										<?= $title ?>
+                                    <a href="<?php echo $url ?>">
+                                        <?php echo $title ?>
                                     </a>
                                 </h5>
-                                <h6 class="IndividualResourceDownloadsIcon-subtitle uppercase"><?= $type ?></h6>
-								<?php if ( $teaser_copy ) { ?><p><?= $teaser_copy ?></p><?php } ?>
+                                <h6 class="IndividualResourceDownloadsIcon-subtitle uppercase"><?php echo $type ?></h6>
+                                <?php if ($teaser_copy) {
+                                  ?><p><?php echo $teaser_copy ?></p><?php
+                                } ?>
                             </div>
                         </div>
-						<?php
-						// END DELETE ME VARIATIONS
-
-						?>
+                        <?php
+                        // END DELETE ME VARIATIONS.
+                        ?>
                     </div>
                 </div>
             </div>

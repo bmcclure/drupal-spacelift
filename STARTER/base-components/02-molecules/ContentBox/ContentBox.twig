@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Content Box
+ *
+ * @todo schema microdata for article
+ * Used exclusively for Case Studies and Single Posts?? PLEASE NOTE the styling difference for this -- it has a negative
+ * margin because it NEEDS to go with the HeaderBannerImage
+ * MUST go below an image banner, e.g. HeaderBannerImage to look "right"
+ *
+ * Available variables:
+ * - content_box__background_class: Utility class to set section background color (default: 'bg-light')
+ * - content_box__content: Inner HTML content of the box
+ *
+ * Available blocks:
+ * - content_box__content
+*/
+#}
+
+{{ attach_library('msi/content-box') }}
+
+{% set content_box__base_class = content_box__base_class|default('ContentBox') %}
+{% set content_box__background_class = content_box__background_class|default(['bg-light']) %}
+{% set content_box__extra_classes = content_box__extra_classes|default([])|merge(content_box__background_class) %}
+
+<div {{ suit(content_box__base_class, content_box__modifiers, content_box__blockname, content_box__extra_classes) }}>
+  <div class="grid-container">
+    <div {{ suit('container', [], content_box__base_class ) }}>
+      <div class="grid-x grid-padding-x sticky-container">
+        <div class="cell">
+          {% block content_box__content %}
+            {{ content_box__content }}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

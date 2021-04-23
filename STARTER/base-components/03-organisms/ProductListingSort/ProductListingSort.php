@@ -1,7 +1,10 @@
 <?php
+
 /**
- * ProductsListingSort
- * used on the ProductListing page
+ * @file
+ * ProductsListingSort.
+ *
+ * Used on the ProductListing page.
  */
 
 $showing = '#-## of ##';
@@ -37,6 +40,6 @@ $showing = '#-## of ##';
         </div>
     </div>
     <div class="ProductListingSort-showing show-for-medium">
-		<?php include "components/02-molecules/Showing/Showing.php"; ?>
+        <?php include "components/02-molecules/Showing/Showing.php"; ?>
     </div>
 </div>

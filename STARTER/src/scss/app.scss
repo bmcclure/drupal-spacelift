@@ -1,8 +1,14 @@
 @import '~normalize.css/normalize';
 @import 'fonts/fonts';
 @import '~foundation-sites/scss/foundation';
-@import 'utilities';
 
 // Include mixin to compile all Foundation styles
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+@include foundation-typography;
+@include foundation-visibility-classes;
+@include foundation-form-text;
+
+@import 'utilities';
+@import 'views/ResourceTypesGrid';

@@ -19,12 +19,15 @@ const headingItems = HeadingData.map((d) => Heading(d)).join('');
 export const headings = () => (
   <div dangerouslySetInnerHTML={{ __html: headingItems }} />
 );
+
 export const blockquote = () => (
   <div dangerouslySetInnerHTML={{ __html: Blockquote(BlockquoteData) }} />
 );
+
 export const preformattedText = () => (
   <div dangerouslySetInnerHTML={{ __html: Pre({}) }} />
 );
+
 export const miscellaneous = () => (
   <div dangerouslySetInnerHTML={{ __html: Paragraph({}) }} />
 );

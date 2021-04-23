@@ -1,0 +1,21 @@
+{% set title_bar__base_class = title_bar__base_class|default('TitleBar') %}
+
+<div {{ suit(title_bar__base_clase, title_bar__modifiers, title_bar__blockname, ['title-bar']) }}>
+  {% block title_bar__left %}
+    <div class="title-bar-left">
+      {% include "@atoms/buttons/Button/Button.twig" with {
+        button__base_class: 'menu-icon',
+        data_open: 'offCanvasLeft',
+      } %}
+      <span class="title-bar-title">Title Bar</span>
+    </div>
+  {% endblock %}
+  {% block title_bar__right %}
+    <div class="title-bar-right">
+      {% include "@atoms/buttons/Button/Button.twig" with {
+        button__base_class: 'menu-icon',
+        data_open: 'offCanvasRight',
+      } %}
+    </div>
+  {% endblock %}
+</div>

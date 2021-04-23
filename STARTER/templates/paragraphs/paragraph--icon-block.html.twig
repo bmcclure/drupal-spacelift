@@ -37,11 +37,23 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
+{% set image_entity = paragraph.field_media.entity.field_media_image.entity | merge({'#image_style': 'svg'}) %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% set intro_with_icons__base_class = intro_with_icons__base_class|default('IntroWithIcons') %}
+{% set intro_with_icons__extra_classes = intro_with_icons__extra_classes|default(['bg-light']) %}
+
+<div {{ suit('block', intro_with_icons__modifiers, intro_with_icons__base_class, ['cell', 'vertical-center'] ) }}>
+  <div class="full-width">
+    <div {{ suit('blockIcon', intro_with_icons__modifiers, intro_with_icons__base_class ) }}>
+      {{ content.field_media|field_value }}
+
+    </div>
+    <div {{ suit('blockTitle', intro_with_icons__modifiers, intro_with_icons__base_class ) }}>
+      {{ content.field_heading }}
+    </div>
+  </div>
+</div>
+

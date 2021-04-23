@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Search Form template.
+ *
+ * Available variables:
+ *  - search_form__has_button: (boolean) Whether or not to display form action button
+ */
+#}
+
+{{ attach_library('msi/search-form') }}
+
+{% set search_form__base_class = search_form__base_class|default('SearchForm') %}
+
+<form {{ suit(search_form__base_class, search_form__modifiers, search_form__blockname, search_form__extra_classes) }}>
+  <div {{ suit('container', [], search_form__base_class) }}>
+    {% if children %}
+      {{ children }}
+    {% else %}
+      <div {{ suit('inputWrapper', [], search_form__base_class) }}>
+        <span {{ suit('icon', [], search_form__base_class, ['fas', 'fa-search']) }}></span>
+        <input class="SearchForm-input" type="text" placeholder="Search" />
+      </div>
+      {% if search_form__has_button %}
+        <div {{ suit('buttonWrapper', [], search_form__base_class) }}>
+          <button class="SearchForm-button button">
+            Search <span class="fas fa-caret-right"></span>
+          </button>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</form>
+{% if children is empty %}
+  <div id="SearchForm-dropdown" class="SearchForm-dropdown">
+    <div class="grid-x">
+      <div class="SearchForm-left cell medium-7">
+        <div class="SearchForm-title bg-blue uppercase">
+          <strong>Recommended Products</strong>
+        </div>
+        <div class="SearchForm-body">
+          {% include '@molecules/IndividualProductTeaserTiny/IndividualProductTeaserTiny.twig' with {
+            individual_product_teaser_tiny__image: 'https://placeimg.com/800/450/any',
+            individual_product_teaser_tiny__title: 'Product Title Name Goes Here',
+            individual_product_teaser_tiny__url: '#',
+          } %}
+          <a href="#" class="button">View 10 More</a>
+        </div>
+      </div>
+      <div class="cell medium-5">
+        <div class="SearchForm-title bg-blue uppercase">
+          <strong>Suggested Terms</strong>
+        </div>
+        <div class="SearchForm-body">
+          <a class="SearchForm-bodyCategory" href="#">Category Name 1</a>
+          <a class="SearchForm-bodyCategory" href="#">Category Name 2</a>
+          <a class="SearchForm-bodyCategory" href="#">Category Name 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

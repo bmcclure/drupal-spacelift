@@ -1,0 +1,59 @@
+.ContentListing {
+  $self: &;
+
+  &-heading {
+    order: 1;
+    max-width: 100%;
+  }
+
+  &-button {
+    order: 2;
+
+    #{$self}--horizontal & {
+      order: 3;
+    }
+  }
+
+  &-intro {
+    order: 3;
+
+    #{$self}--horizontal & {
+      order: 2;
+    }
+  }
+
+  .FlexRow {
+    .Card {
+      width: 100%;
+      @include breakpoint(medium) {
+        width: 33.3333%;
+      }
+
+      img {
+        @include breakpoint(medium) {
+          height: 20vw;
+        }
+        @include breakpoint(xlarge) {
+          height: 250px;
+        }
+      }
+
+      &:first-child, &:nth-child(2) {
+        @include breakpoint(medium) {
+          width: 50%;
+          margin-bottom: 2.5rem;
+        }
+
+        img {
+          @include breakpoint(medium) {
+            height: 33vw;
+          }
+          @include breakpoint(xlarge) {
+            height: 375px;
+          }
+        }
+
+      }
+    }
+  }
+}

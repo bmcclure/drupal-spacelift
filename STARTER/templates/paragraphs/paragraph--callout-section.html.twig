@@ -37,11 +37,31 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{{ attach_library('msi/accents') }}
+{{ attach_library('msi/callout-section') }}
+
+{% set reusable_callout_strip__base_class = reusable_callout_strip__base_class|default('ReusableCalloutStrip') %}
+{% set reusable_callout_strip__extra_classes = reusable_callout_strip__extra_classes|default(['AngledBackground','reverse','bg-dark-blue']) %}
+
+<section
+  {{ suit(reusable_callout_strip__base_class, reusable_callout_strip__modifiers, reusable_callout_strip__blockname, reusable_callout_strip__extra_classes) }}data-aos="SectionFade">
+  <div class="AngledBackground-text grid-container">
+    <div class="grid-x grid-padding-y large-up-2 vertical-center">
+      <div {{ suit('text', reusable_callout_strip__modifiers, reusable_callout_strip__base_class, ['cell'] ) }}>
+        <div {{ suit('textContainer', reusable_callout_strip__modifiers, reusable_callout_strip__base_class) }}>
+          {{ content.field_heading_paragraph }}
+          {{ content.field_button_paragraph }}
+        </div>
+      </div>
+      <div {{ suit('right', reusable_callout_strip__modifiers, reusable_callout_strip__base_class, ['cell'] ) }}>
+        <div class="wysiwyg styled-bullets SectionFade-two">
+          {{ content.field_content_paragraph }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

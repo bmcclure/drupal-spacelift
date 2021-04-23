@@ -43,5 +43,28 @@
   ]
 %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{{ attach_library('msi/short-callout-strip') }}
+{{ attach_library('msi/reusable-callout-strip') }}
+
+
+{# @todo add animations back in for heading and button? #}
+
+{% set short_callout_strip__base_class = short_callout_strip__base_class|default('ShortCalloutStrip') %}
+{% set short_callout_strip__extra_classes = short_callout_strip__extra_classes|default([' ReusableCalloutStrip','AngledBackground','reverse','bg-dark-blue']) %}
+
+<section {{ suit(short_callout_strip__base_class, short_callout_strip__modifiers, short_callout_strip__blockname, short_callout_strip__extra_classes) }}
+  data-aos="SectionFade">
+  <div class="AngledBackground-text grid-container">
+    <div class="grid-x grid-padding-y text-center large-text-left vertical-center">
+      <div class="ReusableCalloutStrip-text cell large-8">
+        <div class="ReusableCalloutStrip-text-container">
+          {{ content.field_heading_paragraph }}
+        </div>
+      </div>
+      <div class="ReusableCalloutStrip-right cell large-4 large-text-right ">
+        {{ content.field_button_paragraph }}
+      </div>
+    </div>
+  </div>
+</section>
+

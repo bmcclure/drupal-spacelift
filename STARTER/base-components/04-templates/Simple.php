@@ -1,6 +1,8 @@
 <?php
+
 /**
- * Simple Page
+ * @file
+ * Simple Page.
  */
 
 include "components/02-molecules/HeaderBannerImage/HeaderBannerImage.php";

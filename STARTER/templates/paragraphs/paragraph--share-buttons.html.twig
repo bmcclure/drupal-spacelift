@@ -42,8 +42,4 @@
     paragraph.bundle|clean_class
   ]
 %}
-{{ content.field_media }}
-
-{% include '@organisms/CustomizationCallout/CustomizationCallout.twig' with {
-  customization_callout__image: content.field_media.0['#item'].entity,
-} %}
+{{ content }}

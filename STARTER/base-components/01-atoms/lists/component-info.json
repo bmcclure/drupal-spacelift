@@ -3,7 +3,7 @@
   "description": "HTML Lists",
   "entries": {
     "scss": [
-      "_Lists.scss"
+      "Lists.scss"
     ]
   }
 }

@@ -1,14 +1,16 @@
 <?php
-/**
- * ProductsImages
- * used for Preset Products???
- */
 
+/**
+ * @file
+ * ProductsImages.
+ *
+ * Used for Preset Products???
+ */
 ?>
 <div id="ProductImages-container" class="ProductImages-container">
     <div id="ProductImages" class="ProductImages">
         <div id="ProductImages-custom" class="ProductImages-custom canvas">
-			<?php include "components/03-organisms/CustomTag/CustomTag.php" ?>
+    <?php include "components/03-organisms/CustomTag/CustomTag.php" ?>
         </div>
         <p class="ProductImages-disclaimer text-center small"><em>May not be exact product representation. For reference only.</em></p>
     </div>

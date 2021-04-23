@@ -71,18 +71,29 @@
  */
 #}
 
+{{ attach_library('msi/card') }}
 
-{% embed '@molecules/Card/Card.twig' with {
-  card__extra_classes: ['grid__item'],
-  card__title: label,
-  card__body: content.body,
-  card__url: url,
-} %}
-  {% block card__img %}
-    {{ content.field_image }}
-  {% endblock %}
+{% set card__base_class = card__base_class|default('Card') %}
+{% set card__extra_classes = card__extra_classes|default(['FlexRow-item']) %}
 
-  {% block card__info %}
-    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-  {% endblock %}
-{% endembed %}
+<div {{ suit(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+  <a href=" {{ path('entity.node.canonical', {'node': node.id}) }}" title="{{ content.field_teaser_title }}">
+    <div class="Zoom">
+      {{ content.field_teaser_image }}
+      {# <div {{ suit('image', card__modifiers, card__base_class, ['Zoom-image', 'lozad'] ) }} #}
+      {# data-background-image="" #}
+      {# style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div> #}
+    </div>
+    <div {{ suit('text', card__modifiers, card__base_class ) }}
+      data-aos="SectionFade">
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__base_class: '',
+        heading__level: 3,
+        heading: content.field_teaser_title,
+        heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
+      } %}
+      <p class="SectionFade-two">{{ content.field_teaser_text }}</p>
+      <span class="link SectionFade-three">{{ content.field_teaser_link_text }} <span class="fas fa-caret-right"></span></span>
+    </div>
+  </a>
+</div>

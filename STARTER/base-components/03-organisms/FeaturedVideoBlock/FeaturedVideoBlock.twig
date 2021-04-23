@@ -18,7 +18,6 @@
 {% set featured_video_block__base_class = featured_video_block__base_class|default('FeaturedVideoBlock') %}
 {% set featured_video_block__extra_classes = featured_video_block__extra_classes|default(['cell']) %}
 
-
 <div {{ suit(featured_video_block__base_class, featured_video_block__modifiers, featured_video_block__blockname, featured_video_block__extra_classes) }}>
   <div {{ suit('image', featured_video_block__modifiers, featured_video_block__base_class, ['lozad'] ) }}
     data-background-image="{{ featured_video_block__image }}"

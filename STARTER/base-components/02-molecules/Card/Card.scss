@@ -9,6 +9,7 @@ $Card-paddingAspectRatio: 50% !default;
   a {
     background: $Card-background;
     display: block;
+    height: 100%;
 
     h3 {
       color: $Card-headerColor;
@@ -41,5 +42,9 @@ $Card-paddingAspectRatio: 50% !default;
 
   &-image {
     padding-top: $Card-paddingAspectRatio;
+  }
+
+  img {
+    object-fit: cover;
   }
 }

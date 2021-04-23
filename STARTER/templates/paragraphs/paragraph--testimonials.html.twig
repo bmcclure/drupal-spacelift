@@ -37,11 +37,30 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% set featured_testimonials__class = [] %}
+{% set featured_testimonials__count = featured_testimonials__teasers|length %}
+{% if featured_testimonials__count > 1 %}
+  {% set featured_testimonials__class = ['FeaturedTestimonials-slider', 'MSISlider'] %}
+{% endif %}
+
+<section class="FeaturedTestimonials {{ theme_class }} ">
+  <div class="grid-container">
+    <div {{ suit('row', featured_testimonials__modifiers, featured_testimonials__base_class, featured_testimonials__class ) }}>
+
+      {{ content }}
+      {# @todo need to add the formatted testimonial singlar here. #}
+      {% for teaser in featured_testimonials__teasers %}
+        {% include '@molecules/IndividualTestimonial/IndividualTestimonial.twig' with {
+          individual_testimonial__image: teaser.image,
+          individual_testimonial__type: teaser.type,
+          individual_testimonial__testimonial: teaser.testimonial,
+          individual_testimonial__citation: teaser.citation,
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,15 +1,16 @@
 <?php
 
 /**
- * Content 50/50
+ * @file
+ * Content 50/50.
  */
+
 // choices: body-content,
 // related-downloads,
 // featured-video,
 // side-by-side-images,
 // single-image,
-// side-by-side-images-with-content
-
+// side-by-side-images-with-content.
 $headline = 'Main Headline Highlighting the Different Services Performed';
 
 ?>

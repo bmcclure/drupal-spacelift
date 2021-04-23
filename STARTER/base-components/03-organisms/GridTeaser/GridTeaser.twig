@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Grid Teaser
+ *
+ * Available variables:
+ * - grid_teaser__base_class - the base class name
+ * - grid_teaser__modifiers - array of modifiers to add to the base classname
+ * - grid_teaser__blockname - blockname prepended to the base classname
+ * - grid_teaser__extra_classes - extra classes
+ * - grid_teaser__url - url the teaser is linked to
+*/
+#}
+
+{{ attach_library('msi/grid-teaser') }}
+
+{% set grid_teaser__base_class = grid_teaser__base_class|default('GridTeaser') %}
+{% set grid_teaser__extra_classes = grid_teaser__extra_classes|default(['lozad', 'FlexRow-item']) %}
+{% set grid_teaser__content %}
+  <div {{ suit(grid_teaser__base_class, grid_teaser__modifiers, grid_teaser__blockname, grid_teaser__extra_classes) }}>
+    <div class="Zoom">
+      {{ content.field_teaser_image }}
+    </div>
+    <div {{ suit('text', grid_teaser__modifiers, grid_teaser__base_class ) }} data-aos="SectionFade">
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__base_class: '',
+        heading__level: 3,
+        heading: content.field_teaser_title,
+        heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
+      } %}
+      <p class="SectionFade-two">{{ content.field_teaser_text }}</p>
+
+      {% if grid_teaser__url is not empty %}
+        <span class="link SectionFade-three">{{ content.field_teaser_link_text }} <span class="fas fa-caret-right"></span></span>
+      {% endif %}
+    </div>
+  </div>
+{% endset %}
+
+{% if grid_teaser__url is not empty %}
+  {% set link__url = grid_teaser__url %}
+
+  {% include '@atoms/links/Link/Link.twig' with {
+    link__content: grid_teaser__content
+  } %}
+{% else %}
+  {{ grid_teaser__content }}
+{% endif %}

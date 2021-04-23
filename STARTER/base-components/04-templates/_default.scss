@@ -11,7 +11,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
  * Remove this and uncomment Grid code below to use CSS Grid.
 */
 
-.main {
+.Main {
   @include wrapper;
 
   margin-bottom: 4em;
@@ -21,17 +21,21 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   }
 }
 
-.main-sidebar {
+.Sidebar {
   margin-bottom: $space-double;
 
   @include breakpoint(large) {
-    order: 2;
+    order: 1;
     width: $sidebar-width;
     margin-bottom: 0;
+
+    &--second {
+      order: 3;
+    }
   }
 }
 
-.main-content {
+.Main-content {
   width: 100%;
 
   @include breakpoint(large) {

@@ -18,15 +18,14 @@
 #}
 {% set featured_case_studies__base_class = featured_case_studies__base_class|default('FeaturedCaseStudies') %}
 {% set featured_case_studies__extra_classes = featured_case_studies__extra_classes|default([featured_case_studies__background]) %}
-
-
 {% set displayClass = 'FlexRow medium-up-2 large-up-3' %}
 {% set featured_case_studies__count = featured_case_studies__case_studies|length %}
+
 {% if featured_case_studies__count > 3 %}
   {% set displayClass = 'FeaturedCaseStudies-slider MSISlider' %}
 {% endif %}
-{% if featured_case_studies__case_studies %}
 
+{% if featured_case_studies__case_studies %}
   <section {{ suit(featured_case_studies__base_class, featured_case_studies__modifiers, featured_case_studies__blockname, featured_case_studies__extra_classes) }}>
     <div class="grid-container">
       <header class="section-header text-center">

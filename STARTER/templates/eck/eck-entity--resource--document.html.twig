@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an ECK entity.
+ *
+ * Available variables:
+ * - eck_entity: The full ECK entity with limited access to object properties
+ *   and methods. Only "getter" methods (method names starting with "get",
+ *   "has", or "is") and a few common methods such as "id" and "label" are
+ *   available. Calling other methods (such as node.delete) will result in an
+ *   exception.
+ * - content: All ECK entity items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ *
+ * @see template_preprocess_eck_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'eck-entity',
+] %}
+
+{{ attach_library('msi/individual-resource-downloads-thumbnail') }}
+
+{% set individual_resource_downloads_thumbnail__base_class = individual_resource_downloads_thumbnail__base_class|default('IndividualResourceDownloadsThumbnail') %}
+
+<div {{ suit(individual_resource_downloads_thumbnail__base_class, individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__blockname, individual_resource_downloads_thumbnail__extra_classes) }}>
+  <div {{ suit('image', individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__base_class) }}>
+    <a href="{{ file_url(content.field_document.0['#media'].field_media_document.entity.uri.value) }}" target="_blank">
+      <img class="lozad" data-src=" {{ file_url(content.field_document.0['#media'].thumbnail.entity.uri.value) }}"
+           src="" alt="{{ individual_resource_downloads_thumbnail__title }}">
+    </a>
+  </div>
+  <div {{ suit('text', individual_resource_downloads_thumbnail__modifiers, individual_resource_downloads_thumbnail__base_class) }}>
+    {% include '@atoms/text/Heading/Heading.twig' with {
+      heading__base_class: 'h3',
+      heading__level: 3,
+      heading: content.title,
+      heading__extra_classes: ['HeaderFont--regular'],
+      heading__url: file_url(content.field_document.0['#media'].field_media_document.entity.uri.value),
+      heading__link_attributes:  {'target': '_blank'},
+    } %}
+    <p class="h6 uppercase IndividualResourceDownloadsThumbnail-type">{{ content.field_resource_type }}</p>
+    {% if content.field_description %}
+      <p>{{ content.field_description }}</p>
+    {% endif %}
+  </div>
+</div>

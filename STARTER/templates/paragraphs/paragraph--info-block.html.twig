@@ -42,6 +42,31 @@
     paragraph.bundle|clean_class
   ]
 %}
+{{ attach_library('msi/icon-infobox') }}
+{{ attach_library('msi/flex-row') }}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% set icon_info_box__base_class = icon_info_box__base_class|default('IconInfoBox') %}
+{% set icon_info_box__extra_classes = icon_info_box__extra_classes|default(['FlexRow-item']) %}
+
+{% set image_entity = paragraph.field_media.entity.field_media_image.entity %}
+{% set svg =  file_url(image_entity.uri.value) %}
+
+<div {{ suit(icon_info_box__base_class, icon_info_box__modifiers, icon_info_box__blockname, icon_info_box__extra_classes) }}>
+  <div {{ suit('container', icon_info_box__modifiers, icon_info_box__base_class) }}>
+
+      <div {{ suit('icon', icon_info_box__modifiers, icon_info_box__base_class) }}>
+        {{ content.field_media }}
+      </div>
+
+    <div {{ suit('text', icon_info_box__modifiers, icon_info_box__base_class) }}>
+      {% include '@atoms/text/Heading/Heading.twig' with {
+        heading__level: 3,
+        heading: paragraph.field_heading_paragraph.entity.field_heading.value,
+        heading__extra_classes: ['h4'],
+        heading__attributes: {'itemprop': 'headline'}
+      } %}
+      {{ content.field_content_paragraph }}
+    </div>
+  </div>
+</div>
+

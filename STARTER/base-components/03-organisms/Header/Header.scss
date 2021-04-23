@@ -1,17 +1,91 @@
-@import 'HeaderMain';
-@import 'Hamburger';
+$Header-mainBackground: white !default;
+$Header-borderBottom: 1px solid pink !default;
+$Header-activeColor: pink !default;
+$Header-hamburgerColor: blue !default;
 
 .Header {
-  &-wrap {
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-    &.is-stuck {
-      z-index: 100;
-      //@include box-shadow;
-    }
+  .adminimal-admin-toolbar & {
+    top: 39px;
+  }
+
+  .toolbar-tray-open & {
+    top: 78px;
   }
 
   @media print {
     display: none;
   }
+
+  &-main {
+    background: $Header-mainBackground;
+    border-bottom: $Header-borderBottom;
+  }
+
+  &-logo img {
+    display: block;
+    margin: 0 1rem 1rem;
+    max-width: 163px;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    background-color: $Header-hamburgerColor;
+    border-radius: 1px;
+    height: 2px;
+    margin: 3px 0 3px auto;
+    transition: 0.4s;
+    width: 18px;
+  }
+
+  .hamburger {
+    padding-right: 0.5rem;
+
+    a {
+      display: block;
+      padding: 1rem 0;
+
+      &[aria-expanded='true'] {
+        .bar1 {
+          transform: rotate(-45deg) translate(-7px, 10px);
+        }
+
+        .bar2 {
+          opacity: 0;
+        }
+
+        .bar3 {
+          transform: rotate(45deg) translate(-7px, -10px);
+        }
+      }
+    }
+  }
+
+  .CartCount {
+    font-size: rem-calc(12);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(14);
+    }
+  }
 }
+
+//#main-nav {
+//  .active > a {
+//    color: $Header-active-color;
+//  }
+//}
+
+//#Header-mainRightMenuDropdown {
+//  justify-content: flex-end;
+//
+//  &.dropdown.menu > li.is-dropdown-submenu-parent > a {
+//    @include breakpoint(small only) {
+//      padding-right: .5rem; /* OVERRIDE for foundation. */
+//    }
+//  }
+//}

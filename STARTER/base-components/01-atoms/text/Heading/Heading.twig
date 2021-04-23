@@ -19,7 +19,12 @@
  */
 #}
 
-{% set heading__base_class = heading__base_class|default('h' ~ heading__level) %}
+{% set heading__base_class = heading__base_class|default('Heading') %}
+{% set heading__extra_classes = (heading__extra_classes|default([]))|merge(['h' ~ heading__level]) %}
+
+{% if heading__level == 1 %}
+  {% set heading__attributes = (heading_attributes|default([]))|merge({'itemprop': 'headline'}) %}
+{% endif %}
 
 {% spaceless %}
   <h{{ heading__level }}

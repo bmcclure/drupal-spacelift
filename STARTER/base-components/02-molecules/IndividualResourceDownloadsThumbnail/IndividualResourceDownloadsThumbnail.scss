@@ -1,6 +1,8 @@
 .IndividualResourceDownloadsThumbnail {
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
+  margin-bottom: 1rem;
 
   &-image {
     width: 100px;
@@ -20,5 +22,8 @@
 
   &-text {
     width: calc(100% - 100px);
+  }
+  &-type a {
+    color: color(secondary-dark);
   }
 }

@@ -1,7 +1,10 @@
 <?php
+
 /**
- * Flexible Layout Detail Page
+ * @file
+ * Flexible Layout Detail Page.
  */
+
 include "components/02-molecules/Breadcrumb/Breadcrumb.php";
 include "components/02-molecules/HeaderBannerImage/HeaderBannerImage.php";
 include "components/03-organisms/HeadlineIntroBanner/HeadlineIntroBanner.php";

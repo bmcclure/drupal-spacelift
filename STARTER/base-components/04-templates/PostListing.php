@@ -1,6 +1,8 @@
 <?php
+
 /**
- * Post Listing Page
+ * @file
+ * Post Listing Page.
  */
 
 include "components/03-organisms/RedHeaderBanner/RedHeaderBanner.php";

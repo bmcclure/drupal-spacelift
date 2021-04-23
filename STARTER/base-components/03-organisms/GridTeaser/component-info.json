@@ -1,0 +1,9 @@
+{
+  "name": "GridTeaser",
+  "description": "Grid Teaser",
+  "entries": {
+    "scss": [
+      "GridTeaser.scss"
+    ]
+  }
+}

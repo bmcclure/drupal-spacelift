@@ -37,11 +37,17 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+<section class="IconInfoBoxes {{ theme_class }}" >
+  <div class="grid-container">
+    <header class="section-header text-center">
+      {{ content.field_heading_paragraph }}
+    </header>
+    <div class="IconInfoBoxes-row FlexRow medium-up-2 large-up-3 {{ theme_blocks_class }}"
+      {{ content.field_info_blocks }}
+    </div>
+  </div>
+</section>

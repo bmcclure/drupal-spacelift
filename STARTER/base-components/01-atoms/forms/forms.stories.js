@@ -17,12 +17,15 @@ export default { title: 'Atoms/Forms' };
 export const checkboxes = () => (
   <div dangerouslySetInnerHTML={{ __html: Checkboxes(CheckboxData) }} />
 );
+
 export const radios = () => (
   <div dangerouslySetInnerHTML={{ __html: Radios(RadioData) }} />
 );
+
 export const select = () => (
   <div dangerouslySetInnerHTML={{ __html: Select(SelectOptionsData) }} />
 );
+
 export const textfieldExamples = () => (
   <div dangerouslySetInnerHTML={{ __html: Textfields({}) }} />
 );

@@ -1,0 +1,187 @@
+$SearchForm-breakpoint: '768px' !default;
+$SearchForm-input-backgroundColor: blue !default;
+$SearchForm-input-padding: 10px !default;
+$SearchForm-input-height: 35px !default;
+$SearchForm-dropdown-backgroundColor: pink !default;
+$SearchForm-dropdown-border: 1px solid blue !default;
+$SearchForm-icon-color: red !default;
+$SearchForm-placeholder-color: blue !default;
+$SearchForm-button-backgroundColor: pink !default;
+$SearchForm-button-color: white !default;
+$SearchForm-button-backgroundHoverColor: blue !default;
+
+.SearchForm {
+  $self: &;
+
+  @media screen and (min-width: $SearchForm-breakpoint) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  &-icon {
+    background-color: transparent;
+    border: none;
+    //color: $SearchForm-icon-color;
+    //font-size: rem-calc(14);
+    left: 26px;
+    position: absolute;
+    top: $SearchForm-input-padding;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .FormItem {
+    flex: 1 1 auto;
+    padding: $SearchForm-input-padding;
+    position: relative;
+
+    @include breakpoint(large) {
+      position: relative;
+      max-width: 450px;
+    }
+
+    &::after {
+      color: $SearchForm-icon-color;
+      content: '\f002';
+      display: block;
+      font-family: $font-family-fontawesome;
+      font-weight: 900;
+      left: $SearchForm-input-padding;
+      line-height: $SearchForm-input-height;
+      position: absolute;
+      text-align: center;
+      top: $SearchForm-input-padding;
+      width: $SearchForm-input-height;
+    }
+  }
+
+  .Input.form-text {
+    background-color: $SearchForm-input-backgroundColor;
+    height: $SearchForm-input-height;
+    margin-bottom: 0;
+    padding-left: 35px;
+
+    &::placeholder {
+      color: $SearchForm-placeholder-color;
+      font-size: rem-calc(14);
+      font-style: italic;
+    }
+  }
+
+  .FormWrapper {
+    flex: 0 1 auto;
+    margin: 0;
+    padding: $SearchForm-input-padding;
+
+    &-noPadding {
+      padding: 0;
+    }
+  }
+
+  .Input.form-submit {
+    height: $SearchForm-input-height;
+    margin: 0;
+    padding: 0.25rem 1rem;
+  }
+
+  .search-suggestions-container {
+    @include scrollbar;
+
+    background-color: $SearchForm-dropdown-backgroundColor;
+    padding-top: 4px;
+
+    @include breakpoint(medium) {
+      border: $SearchForm-dropdown-border;
+      left: calc(50% - 250px);
+      max-height: 70vh;
+      overflow-y: auto;
+      padding-top: 0;
+      position: absolute;
+      right: auto;
+      top: 7rem;
+      width: 500px;
+      z-index: 120;
+    }
+
+    @include breakpoint(large) {
+      left: 0;
+      top: 48px;
+      width: 100%;
+    }
+
+    &.visible {
+      display: block;
+    }
+
+    .button {
+      display: block;
+      margin-bottom: 0;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+  }
+
+  &-left {
+    @include breakpoint(medium) {
+      border-right: $SearchForm-dropdown-border;
+    }
+  }
+
+  &-title {
+    padding: 0.5rem 0.75rem;
+  }
+
+  &-body {
+    padding: 0.75rem;
+
+    &Category {
+      border-bottom: $SearchForm-dropdown-border;
+      display: block;
+      padding: 0.25rem 0;
+      width: 100%;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  &--withButton {
+    padding: 0;
+
+    #{$self}-icon {
+      @include transition;
+
+      background-color: $SearchForm-button-backgroundColor;
+      color: $SearchForm-button-color;
+      cursor: pointer;
+      left: auto;
+      position: relative;
+      top: auto;
+      width: 40px;
+
+      &:hover {
+        background: $SearchForm-button-backgroundHoverColor;
+      }
+    }
+
+    #{$self}-form {
+      display: flex;
+    }
+
+    #{$self}-input {
+      padding-left: 1rem;
+      width: calc(100% - 40px);
+    }
+  }
+}

@@ -37,11 +37,16 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{{ attach_library('msi/dual-callout-strip') }}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
+{% set dual_callout_strip__base_class = dual_callout_strip__base_class|default('DualCalloutStrips') %}
+{% set dual_callout_strip__extra_classes = dual_callout_strip__extra_classes|default(['FlexRow', 'medium-up-2']) %}
+
+<section {{ suit(dual_callout_strip__base_class, dual_callout_strip__modifiers, dual_callout_strip__blockname, dual_callout_strip__extra_classes) }}>
+  {{ content }}
+</section>
+
+

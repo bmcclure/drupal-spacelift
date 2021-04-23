@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'media',
+    'media--type-' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('msi/featured-video-block') }}
+
+{% set featured_video_block__base_class = featured_video_block__base_class|default('FeaturedVideoBlock') %}
+{% set featured_video_block__extra_classes = featured_video_block__extra_classes|default(['cell']) %}
+
+<div {{ suit(featured_video_block__base_class, featured_video_block__modifiers, featured_video_block__blockname, featured_video_block__extra_classes) }}>
+  <div {{ suit('image', featured_video_block__modifiers, featured_video_block__base_class, ['lozad'] ) }}
+    data-background-image="{{ content.thumbnail|field_value }}"
+    style="background-color: #eee; background-size: cover;">
+    <a class="FeaturedVideoBlock-container" href="{{ content.field_media_oembed_video|field_value }}&rel=0"
+       title="{{ content.field_media_oembed_video }}" data-lity>
+      <span class="far fa-play-circle"></span>
+    </a>
+  </div>
+  {% if content.field_default_caption %}
+    <div {{ suit('caption', featured_video_block__modifiers, featured_video_block__base_class) }} >
+      <p class="h3 HeaderFont--regular">{{ content.field_default_caption }}</p>
+    </div>
+  {% endif %}
+</div>

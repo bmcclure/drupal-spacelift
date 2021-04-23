@@ -37,10 +37,4 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+<p class="uppercase"><strong>{{ publish_date|date('U')|format_date('short_date_without_time') }}</strong></p>

@@ -44,5 +44,9 @@
 %}
 
 {# TODO: Hook up this template with front-end component(s) #}
+
+{% set video_entity = paragraph.field_media.entity.field_media_oembed_video.entity %}
+
+{#{{ dump(video_entity) }}#}
 {{ content }}
 {{ content.field_button_paragraph }}

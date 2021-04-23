@@ -58,24 +58,24 @@ $CustomizationCallout-border-color: red !default;
     @include breakpoint(large) {
       padding: 1.5rem 0;
     }
+  }
 
-    &-left {
-      border-bottom: 1px solid $CustomizationCallout-border-color;
+  &-subsection {
+    border-bottom: 1px solid $CustomizationCallout-border-color;
 
-      @include breakpoint(medium) {
-        border-bottom: 0;
-        border-right: 1px solid $CustomizationCallout-border-color;
-        padding-right: 3rem;
-      }
+    @include breakpoint(medium) {
+      border-bottom: none;
+      border-right: 1px solid $CustomizationCallout-border-color;
+      padding-right: 3rem;
     }
 
-    &-right {
-      @include breakpoint(small only) {
-        padding-top: 1rem;
-      }
+    &--last {
+      border-bottom: none;
+      padding: 1rem 0 0;
 
       @include breakpoint(medium) {
-        padding-left: 3rem;
+        border-right: none;
+        padding: 0 0 0 3rem;
       }
     }
   }
