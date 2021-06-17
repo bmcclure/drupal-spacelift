@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Column
+ *
+ * Available blocks:
+ * - column_content: Contents of the column wrapper
+ */
+#}
+
+{{ attach_library('msi/column') }}
+
+{% set column__base_class = column__base_class|default('Column') %}
+{% set column__extra_classes = column__extra_classes|default(['cell', 'large-auto']) %}
+{% set column__content = column__content|default('Column content goes here.') %}
+
+<div {{ suit(column__base_class, column__modifiers, column__blockname, column__extra_classes) }}>
+  {% block column_content %}
+    {% include '@templates/placeholder/place-holder.twig' with {place_holder: column__content} %}
+  {% endblock %}
+</div>

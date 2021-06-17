@@ -13,23 +13,23 @@
  */
 #}
 
-{% extends '@organisms/Header/Header.twig' %}
+{% embed '@organisms/Header/Header.twig' %}
+  {% block header__utility_bar %}
+  {% endblock %}
 
-{% block header__utility_bar %}
-{% endblock %}
+  {% block header__branding %}
+    {{ blocks.msi_branding }}
+  {% endblock %}
 
-{% block header__branding %}
-  {{ blocks.msi_branding }}
-{% endblock %}
+  {% block header__search %}
+    {{ blocks.search_view_filter }}
+  {% endblock %}
 
-{% block header__search %}
-  {{ blocks.search_view_filter }}
-{% endblock %}
+  {% block header__account_menu %}
+    {{ blocks.msi_account_menu }}
+  {% endblock %}
 
-{% block header__account_menu %}
-{{ blocks.msi_account_menu }}
-{% endblock %}
-
-{% block header__menu %}
-  {{ blocks.msi_main_menu }}
-{% endblock %}
+  {% block header__main_nav %}
+    {{ blocks.msi_main_menu }}
+  {% endblock %}
+{% endembed %}

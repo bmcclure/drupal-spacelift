@@ -1,0 +1,141 @@
+.HeaderBanner {
+  $self: &;
+
+  padding: 0;
+  position: relative;
+
+  &-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &-overlay {
+    position: relative;
+    background: rgba(64, 64, 65, .3);
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+    &.full_width {
+      text-align: center;
+
+      #{$self}-headlines {
+        margin-bottom: 30vh;
+      }
+    }
+
+    &.half_width {
+      background: rgba(64, 64, 65, .75);
+      padding-bottom: 3rem;
+      @include breakpoint(medium) {
+        width: 50%;
+        border-right: $HeaderBanner5050-border;
+        .grid-container {
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: 0;
+        }
+        #{$self}-headlines {
+          max-width: 400px;
+        }
+      }
+    }
+  }
+
+  .grid-container {
+    position: relative;
+  }
+
+
+  &-headline, &-subheadline, h1, h2, h3, h4, p, ul, ol {
+    color: $white;
+  }
+
+  h3 {
+    @include header-font-family-regular;
+  }
+
+  &-headline {
+    text-transform: uppercase;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+
+    &Container {
+
+      .sticky {
+        @include transition;
+
+        &.is-stuck {
+          background: $dark-blue;
+        }
+
+        @include breakpoint(large) {
+          padding: 1rem 0;
+        }
+      }
+    }
+
+    @include breakpoint(large) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    .button {
+      width: calc(50% - .5rem);
+      margin: .25rem;
+      background: transparent; /* backup */
+      background: rgba(255, 255, 255, .125);
+
+      &::after {
+        content: '\f32d';
+      }
+
+      &:hover {
+        background: color(primary);
+
+        &::after {
+          transform: none;
+        }
+      }
+
+      &:last-child {
+        background: color(primary);
+
+        &::after {
+          content: '\f0da';
+        }
+      }
+
+      @include breakpoint(medium down) {
+        text-align: left;
+        padding-right: 2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        .fas, &::after {
+          position: absolute;
+          right: .75rem;
+          top: calc(50% - .5em);
+        }
+
+      }
+      @include breakpoint(medium) {
+        width: calc(25% - 20px);
+        margin: 10px;
+      }
+    }
+  }
+}

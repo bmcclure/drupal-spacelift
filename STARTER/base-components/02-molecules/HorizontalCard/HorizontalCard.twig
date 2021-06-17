@@ -30,30 +30,40 @@
 {% set horizontal_card__extra_classes = horizontal_card__extra_classes|default(['FlexRow-item']) %}
 
 <div {{ suit(horizontal_card__base_class, horizontal_card__modifiers, horizontal_card__blockname, horizontal_card__extra_classes) }}>
+
   <div {{ suit('container', horizontal_card__modifiers, horizontal_card__base_class ) }}>
     <div {{ suit('header', horizontal_card__modifiers, horizontal_card__base_class, ['bg-dark-blue', 'grid-x', 'vertical-center'] ) }}>
-      <div {{ suit('image', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'shrink', 'lozad'] ) }}
-        data-background-image="{{ horizontal_card__image }}"
-        style="background: url(placeholder.png) no-repeat center; background-size: cover;"
-      >
-      </div>
+      {% block image %}
+
+        <div {{ suit('image', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'shrink', 'lozad'] ) }}
+          data-background-image="{{ horizontal_card__image }}"
+          style="background: url(placeholder.png) no-repeat center; background-size: cover;"
+        >
+        </div>
+      {% endblock %}
       <div {{ suit('title', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'auto'] ) }}>
-        {% include '@atoms/text/Heading/Heading.twig' with {
-          heading__base_class: 'h3',
-          heading__level: 3,
-          heading: horizontal_card__name,
-          heading__extra_classes: ['HeaderFont--regular'],
-        } %}
-        {% include '@atoms/text/Heading/Heading.twig' with {
-          heading__base_class: 'white',
-          heading__level: 6,
-          heading: horizontal_card__subtitle,
-          heading__extra_classes: ['uppercase'],
-        } %}
+        {% block title %}
+          {% include '@atoms/text/Heading.twig' with {
+            heading__base_class: 'h3',
+            heading__level: 3,
+            heading: horizontal_card__name,
+            heading__extra_classes: ['HeaderFont--regular'],
+          } %}
+          {% include '@atoms/text/Heading.twig' with {
+            heading__base_class: 'white',
+            heading__level: 6,
+            heading: horizontal_card__subtitle,
+            heading__extra_classes: ['uppercase'],
+          } %}
+        {% endblock %}
       </div>
+
       {% if horizontal_card__email %}
         <div {{ suit('button', horizontal_card__modifiers, horizontal_card__base_class, ['cell', 'large-shrink'] ) }}>
-          <a href="#" data-open="EmailARep" class="button"><span class="far fa-envelope"></span> EMAIL ME</a>
+          <a href="mailto:{{ horizontal_card__email }}" target="_blank" rel="noopener nofollow" class="button"><span
+              class="far fa-envelope"></span> EMAIL ME</a>
+          {# <a href="{{ horizontal_card__email }}" data-open="EmailARep" class="button"><span #}
+          {# class="far fa-envelope"></span> EMAIL ME</a> #}
         </div>
       {% endif %}
       {% if horizontal_card__job_url %}
@@ -66,7 +76,7 @@
     <div {{ suit('body', horizontal_card__modifiers, horizontal_card__base_class, ['grid-x', 'large-up-2'] ) }}>
       <div {{ suit('contact', horizontal_card__modifiers, horizontal_card__base_class, ['cell'] ) }}>
         {% if horizontal_card__job_description %}
-          {% include '@atoms/text/Heading/Heading.twig' with {
+          {% include '@atoms/text/Heading.twig' with {
             heading__base_class: 'h4',
             heading__level: 4,
             heading: 'Job Overview',
@@ -80,7 +90,7 @@
             </small>
           </p>
         {% else %}
-          {% include '@atoms/text/Heading/Heading.twig' with {
+          {% include '@atoms/text/Heading.twig' with {
             heading__base_class: 'h4',
             heading__level: 4,
             heading: 'Contact',
@@ -90,16 +100,14 @@
           <ul {{ suit('list', horizontal_card__modifiers, horizontal_card__base_class, ['no-bullet'] ) }}>
             {% if horizontal_card__phone %}
               <li>
-                <a href='tel:+1{{ horizontal_card__phone }}'>
-                  <span class='fas fa-phone'></span> {{ horizontal_card__phone }}
-                </a>
+                <span class='fas fa-phone'></span>
+                {{ horizontal_card__phone }}
               </li>
             {% endif %}
             {% if horizontal_card__mobile %}
               <li>
-                <a href='tel:+1{{ horizontal_card__mobile }}'>
-                  <span class='fas fa-mobile-alt'></span> {{ horizontal_card__mobile }}
-                </a>
+                <span class='fas fa-mobile-alt'></span>
+                {{ horizontal_card__mobile }}
               </li>
             {% endif %}
             {% if horizontal_card__fax %}
@@ -112,30 +120,32 @@
       </div>
       <div {{ suit('more', horizontal_card__modifiers, horizontal_card__base_class, ['cell'] ) }}>
         {% if (horizontal_card__contractor == true) %}
-          {% include '@atoms/text/Heading/Heading.twig' with {
+          {% include '@atoms/text/Heading.twig' with {
             heading__base_class: '',
             heading__level: 4,
             heading: 'States Served',
           } %}
           <p>{{ horizontal_card__states }}</p>
         {% elseif horizontal_card__industries %}
-          {% include '@atoms/text/Heading/Heading.twig' with {
+          {% include '@atoms/text/Heading.twig' with {
             heading__base_class: '',
             heading__level: 4,
             heading: 'Industries Served',
           } %}
-          <ul {{ suit('list', horizontal_card__modifiers, horizontal_card__base_class, ['no-bullet'] ) }}>
-            {% for horizontal_card__industry in horizontal_card__industries %}
-              <li>
-                <a href='{{ horizontal_card__industry.link }}'>
-                  <span class='HorizontalCard-tinyIcon'>{{ horizontal_card__industry.icon }}</span>
-                  {{ horizontal_card__industry.content }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+          {% block industries %}
+            <ul {{ suit('list', horizontal_card__modifiers, horizontal_card__base_class, ['no-bullet'] ) }}>
+              {% for horizontal_card__industry in horizontal_card__industries %}
+                <li>
+                  <a href='{{ horizontal_card__industry.link }}'>
+                    <span class='HorizontalCard-tinyIcon'>{{ horizontal_card__industry.icon }}</span>
+                    {{ horizontal_card__industry.content }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endblock %}
         {% elseif horizontal_card__address %}
-          {% include '@atoms/text/Heading/Heading.twig' with {
+          {% include '@atoms/text/Heading.twig' with {
             heading__base_class: '',
             heading__level: 4,
             heading: 'Address',

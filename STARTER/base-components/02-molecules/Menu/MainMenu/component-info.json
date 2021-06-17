@@ -1,0 +1,12 @@
+{
+  "name": "MainMenu",
+  "description": "Main Menu",
+  "entries": {
+    "scss": [
+      "_00-MainMenu.scss",
+      "_01-MainMenuItem.scss",
+      "_02-MainMenuLink.scss",
+      "_03-MainMenuToggle.scss"
+    ]
+  }
+}

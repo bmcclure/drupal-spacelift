@@ -16,7 +16,7 @@
 {% set subsection__base_class = subsection__base_class|default('Subsection') %}
 {% set subsection__heading_level = subsection__heading_level|default(3) %}
 
-{% include '@atoms/text/Heading/Heading.twig' with {
+{% include '@atoms/text/Heading.twig' with {
   heading__level: subsection__heading_level,
   heading: subsection__heading,
   heading__extra_classes: ['Subsection-heading'],

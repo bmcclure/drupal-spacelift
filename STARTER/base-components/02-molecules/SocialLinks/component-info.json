@@ -1,0 +1,9 @@
+{
+  "name": "SocialLinks",
+  "description": "Social Links",
+  "entries": {
+    "scss": [
+      "SocialLinks.scss"
+    ]
+  }
+}

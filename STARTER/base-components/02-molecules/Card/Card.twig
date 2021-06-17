@@ -18,6 +18,8 @@
 */
 #}
 
+{{ attach_library('msi/card') }}
+
 {% set card__base_class = card__base_class|default('Card') %}
 {% set card__extra_classes = card__extra_classes|default(['FlexRow-item']) %}
 
@@ -26,24 +28,39 @@
   <a href="{{ card__url }}" title="{{ card__title }}">
     {% endif %}
     <div class="Zoom">
-      <div
-        {{ suit('image', card__modifiers, card__base_class, ['Zoom-image', 'lozad'] ) }}
-        data-background-image="{{ card__image }}"
-        style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>
+      {% block image %}
+        <div
+          {{ suit('image', card__modifiers, card__base_class, ['Zoom-image', 'lozad'] ) }}
+          data-background-image="{{ card__image }}"
+          style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>
+      {% endblock %}
     </div>
     <div {{ suit('text', card__modifiers, card__base_class ) }}
       data-aos="SectionFade">
-      {% include '@atoms/text/Heading/Heading.twig' with {
-        heading__base_class: '',
-        heading__level: 3,
-        heading: card__title,
-        heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
-      } %}
-      <p class="SectionFade-two">{{ card__body }}</p>
-      {% if card__button_title %}
-        <span class="link SectionFade-three">{{ card__button_title }} <span class="fas fa-caret-right"></span></span>
+      {% block heading %}
 
-      {% endif %}
+        {% include '@atoms/text/Heading.twig' with {
+          heading__base_class: '',
+          heading__level: 3,
+          heading: card__title,
+          heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
+        } %}
+      {% endblock %}
+      {% block subheading %}
+        {% if card__subheading %}
+          <p class="uppercase">{{ card__subheading }}</p>
+        {% endif %}
+      {% endblock %}
+      <div class="SectionFade-two">
+        {% block body %}
+          {{ card__body }}
+        {% endblock %}
+      </div>
+      {% block button %}
+        {% if card__button_title %}
+          <span class="link SectionFade-three">{{ card__button_title }} <span class="fas fa-caret-right"></span></span>
+        {% endif %}
+      {% endblock %}
     </div>
     {% if card__url %}
   </a>

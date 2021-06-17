@@ -7,7 +7,7 @@ import LinkData from './Link.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Atoms/Links' };
+export default { title: 'Atoms/Links/Link' };
 
 export const link = () => (
   <div dangerouslySetInnerHTML={{ __html: Link(LinkData) }} />

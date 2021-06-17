@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Image from './Image/ResponsiveImage.twig';
+import ResponsiveImage from './Image/ResponsiveImage.twig';
 import Figure from './Image/Figure.twig';
 import Icons from './Icons/Icons.twig';
 
-import ImageData from './Image/Image.yml';
+import ResponsiveImageData from './Image/ResponsiveImage.yml';
 import FigureData from './Image/Figure.yml';
 
 const svgIcons = require.context('../../../images/icons/', true, /\.svg$/);
@@ -14,8 +14,10 @@ const svgIcons = require.context('../../../images/icons/', true, /\.svg$/);
  */
 export default { title: 'Atoms/Images' };
 
-export const image = () => (
-  <div dangerouslySetInnerHTML={{ __html: Image(ImageData) }} />
+export const responsiveImage = () => (
+  <div
+    dangerouslySetInnerHTML={{ __html: ResponsiveImage(ResponsiveImageData) }}
+  />
 );
 
 export const figure = () => (

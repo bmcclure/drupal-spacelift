@@ -1,0 +1,9 @@
+{
+  "name": "Pager",
+  "description": "Pager",
+  "entries": {
+    "scss": [
+      "pager.scss"
+    ]
+  }
+}

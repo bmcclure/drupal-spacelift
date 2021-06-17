@@ -16,6 +16,7 @@
 #}
 
 {% set link__base_class = link__base_class|default('ButtonLink') %}
+{% set link__extra_classes = link__extra_classes|default([])|merge(['button']) %}
 
 {% spaceless %}
   <a {{ suit(link__base_class, link__modifiers, link__blockname, link__extra_classes) }}

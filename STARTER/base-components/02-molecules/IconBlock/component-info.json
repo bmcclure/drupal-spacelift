@@ -1,0 +1,9 @@
+{
+  "name": "IconBlock",
+  "description": "Icon block used in the IconIntro component",
+  "entries": {
+    "scss": [
+      "IconBlock.scss"
+    ]
+  }
+}

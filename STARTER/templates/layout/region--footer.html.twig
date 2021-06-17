@@ -12,8 +12,9 @@
  * @see template_preprocess_region()
  */
 #}
-{% extends '@organisms/site/site-footer/site-footer.twig' %}
 
-{% block footer__menu %}
-  {{ content }}
-{% endblock %}
+{% embed '@organisms/site/site-footer/site-footer.twig' %}
+  {% block footer__menu %}
+    {{ content }}
+  {% endblock %}
+{% endembed %}

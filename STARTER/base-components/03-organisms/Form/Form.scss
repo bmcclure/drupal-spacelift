@@ -18,4 +18,11 @@ $Form-required-asterisk: blue !default;
   //  color: $medium-gray;
   //}
 
+  /* Override for webform */
+  .FormItem--markup {
+    margin-bottom: 2rem;
+    @include breakpoint(large) {
+      margin-bottom: 3rem;
+    }
+  }
 }

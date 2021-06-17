@@ -13,6 +13,7 @@ global:
     - {{starter}}/foundation-core
     - {{starter}}/links
     - {{starter}}/text
+    - {{starter}}/plugins
 
 ### IE 11 support for SVG use:
 sprite:
@@ -26,6 +27,7 @@ slick:
   css:
     base:
       /libraries/slick/slick/slick.css: { }
+      /libraries/slick/slick/slick-theme.css: { }
   dependencies:
     - core/jquery
 
@@ -45,18 +47,16 @@ add-to-cart:
   css:
     component:
       dist/css/components/AddToCart.css: { }
-blockquote:
-  css:
-    component:
-      dist/css/components/Blockquote.css: { }
+  dependencies:
+    - {{starter}}/products-top-half
 blue-content-strip:
   css:
     component:
       dist/css/components/BlueContentStrip.css: { }
-breadcrumb:
+breadcrumbs:
   css:
     component:
-      dist/css/components/Breadcrumb.css: { }
+      dist/css/components/Breadcrumbs.css: { }
 buttons:
   css:
     component:
@@ -73,14 +73,18 @@ card:
   css:
     component:
       dist/css/components/Card.css: { }
+column:
+  css:
+    component:
+      dist/css/components/Column.css: { }
 content-box:
   css:
     component:
       dist/css/components/ContentBox.css: { }
 content-listing:
-   css:
-     component:
-       dist/css/components/ContentListing.css: { }
+  css:
+    component:
+      dist/css/components/ContentListing.css: { }
 cta:
   css:
     component:
@@ -107,6 +111,10 @@ flex-row:
   css:
     component:
       dist/css/components/FlexRow.css: { }
+form:
+  css:
+    component:
+      dist/css/components/Form.css: { }
 forms:
   css:
     component:
@@ -123,10 +131,28 @@ header:
   css:
     component:
       dist/css/components/Header.css: { }
+header-banner:
+  css:
+    component:
+      dist/css/components/HeaderBanner.css: { }
 header-banner-image:
   css:
     component:
       dist/css/components/HeaderBannerImage.css: { }
+hero-banner:
+  css:
+    component:
+      dist/css/components/HeroBanner.css: { }
+  js:
+    dist/js/components/HeroBanner.js: { }
+horizontal-card:
+  css:
+    component:
+      dist/css/components/HorizontalCard.css: { }
+icon-block:
+  css:
+    component:
+      dist/css/components/IconBlock.css: { }
 icon-infobox:
   css:
     component:
@@ -134,19 +160,19 @@ icon-infobox:
 icon-intro:
   css:
     component:
-      dist/css/components/IntroWithIcons.css: { }
+      dist/css/components/IconIntro.css: { }
+icon-teaser-block:
+  css:
+    component:
+      dist/css/components/IconTeaserBlock.css: { }
 images:
   css:
     component:
       dist/css/components/Images.css: { }
-individual-resource-downloads-thumbnail:
+featured-resource-teaser:
   css:
     component:
-      dist/css/components/IndividualResourceDownloadsThumbnail.css: { }
-individual-testimonial:
-  css:
-    component:
-      dist/css/components/IndividualTestimonial.css: { }
+      dist/css/components/FeaturedResourceTeaser.css: { }
 links:
   css:
     component:
@@ -155,6 +181,10 @@ lists:
   css:
     component:
       dist/css/components/Lists.css: { }
+main-menu:
+  css:
+    component:
+      dist/css/components/MainMenu.css: { }
 media:
   css:
     component:
@@ -169,18 +199,52 @@ my-account-menu:
       dist/css/components/MyAccountMenu.css: { }
   dependencies:
     - {{starter}}/foundation-dropdownMenu
+pager:
+  css:
+    component:
+      dist/css/components/Pager.css: { }
 plugins:
   css:
     component:
       dist/css/components/Plugins.css: { }
+products-top-half:
+  css:
+    component:
+      dist/css/components/ProductsTopHalf.css: { }
 red-header-banner:
   css:
     component:
       dist/css/components/RedHeaderBanner.css: { }
+rep-locator-filter-bar:
+  css:
+    component:
+      dist/css/components/RepLocatorFilterBar.css: { }
+rep-locator-results:
+  css:
+    component:
+      dist/css/components/RepLocatorResults.css: { }
 resource-category-icon-block:
   css:
     component:
       dist/css/components/ResourceCategoryIconBlock.css: { }
+resources-header:
+  css:
+    component:
+      dist/css/components/ResourcesHeader.css: { }
+resource-listing:
+  css:
+    component:
+      dist/css/components/ResourceListing.css: { }
+  js:
+    dist/js/components/ResourceListing.js: { }
+resource-listing-featured:
+  css:
+    component:
+      dist/css/components/ResourceListingFeatured.css: { }
+resource-listing-teaser:
+  css:
+    component:
+      dist/css/components/ResourceListingTeaser.css: { }
 reusable-callout-strip:
   css:
     component:
@@ -190,10 +254,23 @@ search-form:
     component:
       dist/css/components/SearchForm.css: { }
   dependencies:
+selected-pages-slider:
+  js:
+    dist/js/components/SelectedPagesSlider.js: { }
+share-buttons:
+  css:
+    component:
+      dist/css/components/ShareButtons.css: { }
+  dependencies:
+    - {{starter}}/social-links
 short-callout-strip:
   css:
     component:
       dist/css/components/ShortCalloutStrip.css: { }
+social-links:
+  css:
+    component:
+      dist/css/components/SocialLinks.css: { }
 status:
   css:
     component:
@@ -210,6 +287,18 @@ tabs:
       dist/css/components/Tabs.css: { }
   dependencies:
     - core/drupal
+testimonial:
+  css:
+    component:
+      dist/css/components/Testimonial.css: { }
+testimonials:
+  js:
+    dist/js/components/Testimonials.js: { }
+  css:
+    component:
+      dist/css/components/Testimonials.css: { }
+  dependencies:
+    - {{starter}}/slick
 text:
   css:
     component:

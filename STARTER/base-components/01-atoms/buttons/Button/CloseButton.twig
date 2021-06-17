@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Template for an HTML button element
+ *
+ * Available blocks:
+ * - button__content: Used to replace the content of the button with something other than "x"
+ */
+#}
+
+{{ attach_library('msi/buttons') }}
+
+{% set button__base_class = button__base_class|default('close-button') %}
+
+<button
+  {{ suit(button__base_class, button__modifiers, button__blockname, button__extra_classes) }}
+  type="button"
+  aria-label="Close modal"
+  data-close
+>
+  {% block button__content %}
+    <span aria-hidden="true">&times;</span>
+  {% endblock %}
+</button>

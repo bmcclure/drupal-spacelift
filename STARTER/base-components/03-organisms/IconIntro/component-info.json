@@ -1,0 +1,9 @@
+{
+  "name": "IconIntro",
+  "description": "Icon intro paragraph component",
+  "entries": {
+    "scss": [
+      "IconIntro.scss"
+    ]
+  }
+}

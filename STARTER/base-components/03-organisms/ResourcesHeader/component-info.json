@@ -2,5 +2,8 @@
   "name": "ResourcesHeader",
   "description": "Resources Header",
   "entries": {
+    "scss": [
+      "ResourcesHeader.scss"
+    ]
   }
 }

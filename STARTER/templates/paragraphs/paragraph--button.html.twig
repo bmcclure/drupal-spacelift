@@ -37,14 +37,8 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
-
 {% include '@atoms/links/ButtonLink/ButtonLink.twig' with {
-  link__extra_classes: classes,
+  link__extra_classes: [paragraph.bundle|clean_class],
   link__url: content.field_link.0['#url'],
   link__content: content.field_link.0['#title'],
   link__attributes: attributes,

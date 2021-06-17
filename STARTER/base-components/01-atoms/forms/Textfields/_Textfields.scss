@@ -1,47 +1,49 @@
-.form-item {
-  @include clearfix;
+/* none of this was used here: https://dev-markserv-frontend-components.pantheonsite.io/page-contact-us.php  */
 
-  color: color(text);
-  margin-bottom: 1em;
-  max-width: 32em;
-}
-
-.form-item__label {
-  display: block;
-  font-weight: 600;
-
-  @include breakpoint(small) {
-    display: block;
-    margin-right: 2%;
-    padding: 0.6em 0;
-  }
-}
-
-.form-item__textfield {
-  border: 1px solid color(highlight-high);
-  max-width: 100%;
-  padding: 0.6em;
-
-  &:focus {
-    border-color: color(accent-high);
-  }
-
-  &::placeholder {
-    color: color(text-light);
-  }
-}
-
-.form-item__description {
-  margin-top: 0.3em;
-}
-
-.form-fieldset {
-  border: none;
-  margin-bottom: 2em;
-  padding: 0;
-
-  .form-item {
-    margin-left: 1em;
-    max-width: 31em;
-  }
-}
+//.form-item {
+//  @include clearfix;
+//
+//  color: color(text);
+//  margin-bottom: 1em;
+//  max-width: 32em;
+//}
+//
+//.form-item__label {
+//  display: block;
+//  font-weight: 600;
+//
+//  @include breakpoint(small) {
+//    display: block;
+//    margin-right: 2%;
+//    padding: 0.6em 0;
+//  }
+//}
+//
+//.form-item__textfield {
+//  border: 1px solid color(border-gray);
+//  max-width: 100%;
+//  padding: 0.6em;
+//
+//  &:focus {
+//    border-color: color(accent-high);
+//  }
+//
+//  &::placeholder {
+//    color: color(text-light);
+//  }
+//}
+//
+//.form-item__description {
+//  margin-top: 0.3em;
+//}
+//
+//.form-fieldset {
+//  border: none;
+//  margin-bottom: 2em;
+//  padding: 0;
+//
+//  .form-item {
+//    margin-left: 1em;
+//    max-width: 31em;
+//  }
+//}

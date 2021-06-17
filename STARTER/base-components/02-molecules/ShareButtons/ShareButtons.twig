@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Share Buttons
+ *
+ * Available variables:
+ * - share_buttons__title
+ * - share_buttons__url
+ * - share_buttons__sticky - true/false, should this be sticky?
+*/
+#}
+
+{{ attach_library('msi/share-buttons') }}
+{{ attach_library('msi/foundation-reveal') }}
+
+{% set share_buttons__base_class = share_buttons__base_class|default('ShareButtons') %}
+{% set social_links__base_class = social_links__base_class|default('SocialLinks') %}
+
+<div id="ShareButtons"
+  {{ suit(share_buttons__base_class, share_buttons__modifiers, share_buttons__blockname, share_buttons__extra_classes) }}
+  {% for attribute, value in share_buttons__attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+>
+  <ul {{ suit('menu', [], social_links__base_class) }}>
+    <li {{ suit('item', [], social_links__base_class) }}>
+      <a data-open="socialModal" {{ suit('link', [], social_links__base_class) }}>
+        <span class="fa fa-share"></span>
+      </a>
+    </li>
+    <li {{ suit('item', [], social_links__base_class) }}>
+      <a href="mailto:?subject={{ share_buttons__title }}&body=Check out this article: {{ share_buttons__url }}"
+         {{ suit('link', [], social_links__base_class) }}
+         rel="noopener nofollow"
+         title="{{ share_buttons__title }}"
+         target="_blank">
+        <span class="fas fa-envelope"></span>
+      </a>
+    </li>
+  </ul>
+  <div id="socialModal" {{ suit('reveal', [], share_buttons__base_class, ['reveal']) }} data-reveal>
+    <span {{ suit('label', [], share_buttons__base_class, ['subtitle', 'h6']) }}>Share This Post</span>
+    {% include '@atoms/text/Heading.twig' with {
+      heading__level: 2,
+      heading: share_buttons__title,
+      heading__extra_classes: ['title']
+    } %}
+    <ul {{ suit('menu', [], social_links__base_class) }}>
+      {% set share_buttons = [
+        {
+          title: 'Share on Facebook',
+          url: 'https://www.facebook.com/sharer.php?u=' ~ share_buttons__url,
+          icon: 'facebook-f',
+        },
+        {
+          title: 'Share on Twitter',
+          url: 'https://twitter.com/share?text=' ~ share_buttons__title ~ '&url=' ~ share_buttons__url,
+          icon: 'twitter',
+        },
+        {
+          title: 'Share on LinkedIn',
+          url: 'https://www.linkedin.com/shareArticle?mini=true&amp;url=' ~ share_buttons__url,
+          icon: 'linkedin-in',
+        },
+        {
+          title: 'Share on Pinterest',
+          url: 'https://pinterest.com/pin/create/button/?url=' ~ share_buttons__url ~ '&description=' ~ share_buttons__title,
+          icon: 'pinterest-p',
+        }
+      ] %}
+
+      {% for button in share_buttons %}
+        <li {{ suit('item', [], social_links__base_class) }}>
+          {% embed '@atoms/links/Link/Link.twig' with {
+            link__url: button.url,
+            link__base_class: 'link',
+            link__blockname: social_links__base_class,
+            link__attributes: {
+              'rel': 'noopener nofollow',
+              'target': '_blank',
+              'title': button.title,
+            },
+          } %}
+            {% block link__content %}
+              <span class="fab fa-{{ button.icon }}"></span>
+            {% endblock %}
+          {% endembed %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% include '@atoms/buttons/Button/CloseButton.twig' %}
+  </div>
+</div>

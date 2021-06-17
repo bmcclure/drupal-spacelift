@@ -22,18 +22,16 @@
  */
 #}
 
-{{ attach_library('msi/blockquote') }}
-{{ attach_library('msi/individual-testimonial') }}
+{% embed '@molecules/Testimonial/Testimonial.twig' %}
+  {% block image %}
+    {{ content.field_image|field_value }}
+  {% endblock %}
 
-{% set classes = [
-  'eck-entity',
-] %}
+  {% block testimonial %}
+    {{ content.field_content|field_value }}
+  {% endblock %}
 
-
-{# todo: image?? #}
-{#{{ dump(content.field_image) }}#}
-
-{% include '@molecules/IndividualTestimonial/IndividualTestimonial.twig' with {
-  individual_testimonial__testimonial: content.field_content,
-  individual_testimonial__citation: content.field_author,
-} %}
+  {% block citation %}
+    {{ content.field_author|field_value }}
+  {% endblock %}
+{% endembed %}

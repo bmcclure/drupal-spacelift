@@ -8,46 +8,43 @@ Drupal.behaviors.SearchWithDropdownComopnent = {
       let timer = 0;
 
       return () => {
-        const context = this;
-        const args = arguments;
         clearTimeout(timer);
         timer = setTimeout(() => {
-          callback.apply(context, args);
+          callback.apply();
         }, ms || 0);
       };
     };
 
-    const $dropdownContainer = $('.SearchWithDropdown-container', context);
-
-    $dropdownContainer.each(() => {
-      const $input = $(this).find('.SearchWithDropdown-input');
-      const $searchBox = $(this).find('.SearchWithDropdown-dropdown');
+    $('.SearchWithDropdown-container', context).each((index, element) => {
+      const $input = $(element).find('.SearchWithDropdown-input');
+      const $searchBox = $(element).find('.SearchWithDropdown-dropdown');
       // Show the searchBox after 500ms of the start of typing
-      $input.keyup(delay(() => {
-        // console.log('Time elapsed!', this.value);
-        $searchBox.show();
-      }, 500));
+      $input.keyup(
+        delay(() => {
+          $searchBox.show();
+        }, 500),
+      );
 
       // Hide the searchbox if you click outside of it
       $(document).on('click', (e) => {
-        if (e.target.id !== 'SearchWithDropdown-dropdown') {
+        if (e.currentTarget.id !== 'SearchWithDropdown-dropdown') {
           $searchBox.hide();
         }
       });
     });
 
-    const $input2 = $('#offcanvas-search', context);
     const $searchBox2 = $('#OffcanvasSearchWithDropdown', context);
 
     // Show the searchBox after 500ms of the start of typing
-    $input2.keyup(delay(() => {
-      // console.log('Time elapsed!', this.value);
-      $searchBox2.show();
-    }, 500));
+    $('#offcanvas-search', context).keyup(
+      delay(() => {
+        $searchBox2.show();
+      }, 500),
+    );
 
     // Hide the searchbox if you click outside of it
     $(document).on('click', (e) => {
-      if (e.target.id !== 'OffcanvasSearchWithDropdown') {
+      if (e.currentTarget.id !== 'OffcanvasSearchWithDropdown') {
         $searchBox2.hide();
       }
     });

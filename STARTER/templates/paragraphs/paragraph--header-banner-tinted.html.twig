@@ -56,7 +56,7 @@
         {{ suit('super', red_header_banner__modifiers, red_header_banner__base_class, ['HeaderFont', 'headline','oversize'] ) }}>
         {{ content.field_big_text }}</p>
 
-      {% include '@atoms/text/Heading/Heading.twig' with {
+      {% include '@atoms/text/Heading.twig' with {
         heading__level: 1,
         heading: paragraph.field_heading_paragraph.entity.field_heading.value,
         heading__extra_classes: ['title', 'white'],

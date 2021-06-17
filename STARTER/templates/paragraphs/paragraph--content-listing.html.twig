@@ -39,39 +39,35 @@
 
 {{ attach_library('msi/content-listing') }}
 
-{% set content_listing__base_class = 'ContentListing' %}
-{% set content_listing__modifiers = [layout_direction] %}
-{% set header_extra_classes = header_grid_classes|merge(['cell', 'grid-x', 'align-justify']) %}
-{% set body_extra_classes = body_grid_classes|merge(['cell', 'grid-x']) %}
-{% set heading_extra_classes = ['cell', 'text-center'] %}
-{% if content.field_button_paragraph['#object'] is not empty %}
-  {% set heading_extra_classes = ['cell', 'shrink'] %}
+{% set content_listing__base_class = content_listing__base_class|default('ContentListing') %}
+{% set content_listing__modifiers = content_listing__modifiers|default([])|merge([layout_direction]) %}
+{% set content_listing__extra_classes = content_listing__extra_classes|default([])|merge([theme_class]) %}
+
+{% if content.field_button_paragraph['#object'] is empty %}
+  {% set content_listing__extra_classes = content_listing__extra_classes|merge(['no-button']) %}
 {% endif %}
 
-
-<section {{ attributes }} {{ suit(content_listing__base_class, content_listing__modifiers, '', [theme_class]) }}>
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x grid-margin-y">
-      <header {{ suit('header', header_flex_direction, content_listing__base_class, header_extra_classes) }}>
-        <div {{ suit('heading', [], content_listing__base_class, heading_extra_classes) }}>
-          {{ content.field_heading_paragraph }}
-        </div>
-
-        {% if content.field_button_paragraph['#object'] is not empty %}
-          <div {{ suit('button', [], content_listing__base_class, ['cell', 'shrink']) }}>
-            {{ content.field_button_paragraph }}
-          </div>
-        {% endif %}
-
-        {% if content.field_content_paragraph['#object']  is not empty %}
-          <div {{ suit('intro', [], content_listing__base_class, ['cell']) }}>
-            {{ content.field_content_paragraph }}
-          </div>
-        {% endif %}
-      </header>
-      <div {{ suit('listing', [], content_listing__base_class, body_extra_classes) }}>
-        {{ content.field_view_paragraph }}
+<section {{ suit(content_listing__base_class, content_listing__modifiers, content_listing__blockname, content_listing__extra_classes) }}>
+  <div {{ suit('wrapper', [], content_listing__base_class) }}>
+    <header {{ suit('header', [], content_listing__base_class) }}>
+      <div {{ suit('heading', [], content_listing__base_class) }}>
+        {{ content.field_heading_paragraph }}
       </div>
+
+      {% if content.field_content_paragraph['#object']  is not empty %}
+        <div {{ suit('intro', [], content_listing__base_class) }}>
+          {{ content.field_content_paragraph }}
+        </div>
+      {% endif %}
+
+      {% if content.field_button_paragraph['#object'] is not empty %}
+        <div {{ suit('button', [], content_listing__base_class) }}>
+          {{ content.field_button_paragraph }}
+        </div>
+      {% endif %}
+    </header>
+    <div {{ suit('listing', [], content_listing__base_class) }}>
+      {{ content.field_view_paragraph }}
     </div>
   </div>
 </section>

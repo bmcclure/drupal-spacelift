@@ -1,14 +1,14 @@
 {{ attach_library('msi/aos') }}
 
 <div class="motion">
-  {% include '@atoms/text/Heading/Heading.twig' with {
+  {% include '@atoms/text/Heading.twig' with {
     heading__level: 2,
     heading: 'Emulsify Motions:',
   } %}
   <div class="motion__grid">
     {% for motion in motions %}
       <div class="motion__grid-item">
-        {% include '@atoms/text/Heading/Heading.twig' with {
+        {% include '@atoms/text/Heading.twig' with {
           heading__level: 3,
           heading: motion.name,
         } %}
@@ -16,14 +16,14 @@
       </div>
     {% endfor %}
   </div>
-  {% include '@atoms/text/Heading/Heading.twig' with {
+  {% include '@atoms/text/Heading.twig' with {
     heading__level: 2,
     heading: 'Custom Animations:',
   } %}
   <div class="motion__grid">
     {% for animation in animations %}
       <div class="motion__grid-item">
-        {% include '@atoms/text/Heading/Heading.twig' with {
+        {% include '@atoms/text/Heading.twig' with {
           heading__level: 3,
           heading: animation.name,
         } %}
@@ -42,14 +42,14 @@
       </div>
     {% endfor %}
   </div>
-  {% include '@atoms/text/Heading/Heading.twig' with {
+  {% include '@atoms/text/Heading.twig' with {
     heading__level: 2,
     heading: 'AOS Animations:',
   } %}
   <div class="motion__grid">
     {% for motion in motions %}
       <div class="motion__grid-item">
-        {% include '@atoms/text/Heading/Heading.twig' with {
+        {% include '@atoms/text/Heading.twig' with {
           heading__level: 3,
           heading: motion.name,
         } %}

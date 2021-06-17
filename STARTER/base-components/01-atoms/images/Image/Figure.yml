@@ -1,5 +1,4 @@
-output_image_tag: true
-image__url: '#'
-image__src: 'https://placeimg.com/1200/200/tech'
-image__alt: 'This is the alt text'
-image__caption: 'This is an image caption.'
+figure__link_url: '#'
+figure__src: 'https://placeimg.com/600/200/tech'
+figure__alt: 'This is the alt text'
+figure__caption_text: 'This is an image caption.'

@@ -5,8 +5,8 @@ import AngledBackground from './AngledBackground-demo.twig';
 /**
  * Add storybook definition for angled backgrounds
  */
-export default { title: 'Atoms/Angled Background' };
+export default { title: 'Atoms/Accents/Angled Background' };
 
-export const example = () => (
+export const angledBackground = () => (
   <div dangerouslySetInnerHTML={{ __html: AngledBackground({}) }} />
 );

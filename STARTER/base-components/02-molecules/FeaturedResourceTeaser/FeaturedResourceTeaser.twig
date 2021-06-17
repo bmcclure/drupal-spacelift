@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * FeaturedResourceTeaser
+ *
+ * Applies to:
+ * Catalogs
+ * Service Brochures
+ * Standards Documents
+ * Specifications Documents
+ * Product Sell Sheets
+ * Tip Sheets
+ * Technical Data Sheets
+ *
+ * Available variables:
+ * - featured_resource_teaser__title - title
+ * - featured_resource_teaser__type - type
+ * - featured_resource_teaser__image - image of pdf thumbnail
+ * - featured_resource_teaser__body - body content
+ * - featured_resource_teaser__url - URL
+ */
+#}
+
+{% set featured_resource_teaser__base_class = featured_resource_teaser__base_class|default('FeaturedResourceTeaser') %}
+
+{% embed '@atoms/links/Link/Link.twig' with {
+  link__url: featured_resource_teaser__url,
+}%}
+  {% block link__content %}
+    <div {{ suit(featured_resource_teaser__base_class, featured_resource_teaser__modifiers, featured_resource_teaser__blockname, featured_resource_teaser__extra_classes) }}>
+      {% block image %}
+        {% include '@atoms/images/Image/ResponsiveImage.twig' with {
+          responsive_image__src: featured_resource_teaser__image_src,
+          responsive_image__alt: featured_resource_teaser__title,
+          responsive_image__extra_classes: ['lozad'],
+        } %}
+      {% endblock %}
+      <div {{ suit('text', [], featured_resource_teaser__base_class) }}>
+        {% include '@atoms/text/Heading.twig' with {
+          heading__base_class: 'h3',
+          heading__level: 3,
+          heading: featured_resource_teaser__title,
+          heading__extra_classes: ['HeaderFont--regular'],
+          link__blockname: ''
+        } %}
+        <p class="h6 uppercase">{{ featured_resource_teaser__type }}</p>
+        <p>{{ featured_resource_teaser__body }}</p>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
+

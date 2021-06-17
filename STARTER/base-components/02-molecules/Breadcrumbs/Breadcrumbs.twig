@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Breadcrumbs
+ *
+ * Available variables:
+*/
+#}
+
+{{ attach_library('msi/breadcrumbs') }}
+
+{% set breadcrumbs__base_class = breadcrumbs__base_class|default('Breadcrumbs') %}
+
+{% if breadcrumb %}
+  <nav {{ suit(breadcrumbs__base_class, breadcrumbs__modifiers, breadcrumbs__blockname, breadcrumbs__extra_classes) }}
+    role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 {{ suit('visually-hidden') }} id='system-breadcrumb'>{{ 'Breadcrumbs'|t }}</h2>
+    <ol {{ suit('list', [], breadcrumbs__base_class, ['grid-container']) }}>
+      {% for item in breadcrumb %}
+        <li {{ suit('item', [], breadcrumbs__base_class) }}>
+          {% if item.url %}
+            <a {{ suit('link', [], breadcrumbs__base_class) }} href="{{ item.url }}">{{ item.text }}</a>
+          {% else %}
+            {{ item.text }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

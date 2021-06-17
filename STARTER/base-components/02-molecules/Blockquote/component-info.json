@@ -1,9 +1,0 @@
-{
-  "name": "Blockquote",
-  "description": "Blockquote",
-  "entries": {
-    "scss": [
-      "Blockquote.scss"
-    ]
-  }
-}

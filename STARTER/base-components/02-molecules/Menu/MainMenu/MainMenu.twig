@@ -1,0 +1,12 @@
+{% set main_menu__base_class = main_menu__base_class|default('MainMenu') %}
+
+{{ attach_library('msi/main-menu') }}
+{{ attach_library('msi/foundation-reveal') }}
+
+<div class="grid-container">
+  {% include '@molecules/Menu/_Menu.twig' with {
+    menu__base_class: 'menu',
+    menu__blockname: main_menu__base_class,
+    items: main_menu__items,
+  } %}
+</div>

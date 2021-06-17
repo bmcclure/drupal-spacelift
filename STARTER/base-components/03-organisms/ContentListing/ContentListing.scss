@@ -1,43 +1,104 @@
+@import '~foundation-sites/scss/xy-grid/xy-grid';
+
 .ContentListing {
   $self: &;
 
+  &-wrapper {
+    @include xy-grid-container;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    @include breakpoint(medium) {
+      #{$self}--horizontal & {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &-header {
+    align-items: center;
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0 0 2rem;
+
+    @include breakpoint(medium) {
+      #{$self}--horizontal & {
+        align-items: stretch;
+        flex: 0 1 33.3%;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        margin: 0 1.3rem 0 0;
+      }
+    }
+
+    #{$self}--vertical.no-button & {
+      justify-content: center;
+    }
+
+    //article[about="/contact-us"] & {
+    //  text-align: left;
+    //
+    //  #{$self}-heading {
+    //    text-align: left;
+    //  }
+    //
+    //  @include breakpoint(large) {
+    //    width: 75%;
+    //    margin-bottom: 3rem;
+    //  }
+    //}
+  }
+
   &-heading {
     order: 1;
-    max-width: 100%;
+    flex: 0 0 auto;
   }
 
   &-button {
+    flex: 0 0 auto;
     order: 2;
 
-    #{$self}--horizontal & {
-      order: 3;
+    @include breakpoint(medium) {
+      #{$self}--horizontal & {
+        order: 3;
+      }
+    }
+
+    .button {
+      margin: 0;
     }
   }
 
   &-intro {
+    flex: 0 0 100%;
     order: 3;
 
-    #{$self}--horizontal & {
-      order: 2;
+    @include breakpoint(medium) {
+      #{$self}--horizontal & {
+        flex: 0 0 auto;
+        order: 2;
+      }
     }
   }
 
-  .FlexRow {
-    .Card {
-      width: 100%;
-      @include breakpoint(medium) {
-        width: 33.3333%;
-      }
+  &-listing {
+    #{$self}--horizontal & {
+      flex: 0 1 66.6%
+    }
+  }
 
-      img {
-        @include breakpoint(medium) {
-          height: 20vw;
-        }
-        @include breakpoint(xlarge) {
-          height: 250px;
-        }
-      }
-
+  /**
+   * @todo: The following styles belong somewhere else.
+   * This styling should be limited to the content listing paragraph itself.
+   * Each entity shown in the view should handle its own styling
+   */
+  .ChildPages {
+    .FlexRow .Card {
       &:first-child, &:nth-child(2) {
         @include breakpoint(medium) {
           width: 50%;
@@ -55,5 +116,103 @@
 
       }
     }
+  }
+
+  .FlexRow {
+    //justify-content: center;
+
+    .Card {
+      width: 100%;
+
+      @include breakpoint(medium) {
+        width: 33.3333%;
+      }
+
+      img {
+        @include breakpoint(medium) {
+          height: 20vw;
+        }
+
+        @include breakpoint(xlarge) {
+          height: 250px;
+        }
+      }
+    }
+
+    > .GridTeaser {
+      width: 100%;
+
+      @include breakpoint(medium) {
+        width: 33.333%;
+        img {
+          height: 33vw;
+        }
+      }
+
+      @include breakpoint(large) {
+        width: 25%;
+
+        img {
+          height: 190px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .Stack {
+    .Card {
+      @include breakpoint(medium) {
+        > a {
+          display: flex;
+          flex-flow: row wrap;
+          width: 100%;
+        }
+
+        .Zoom {
+          width: 40%;
+        }
+
+        .Card-text {
+          width: 60%;
+          padding: 2rem 3rem;
+          position: relative;
+
+          .link {
+            left: 3rem;
+          }
+        }
+
+        @include breakpoint(large) {
+          ul {
+            display: flex;
+            flex-flow: wrap;
+
+            > li {
+              width: 50%;
+              padding-right: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ContentListing--horizontal {
+    .Stack .Card .Card-text {
+      padding: 0 1.5rem;
+    }
+
+    .Stack .Card .Card-text .link {
+      display: none;
+    }
+
+    //#{$self}-header {
+    //  display: block;
+    //
+    //  .Heading {
+    //    margin-bottom: 0.75em;
+    //  }
+    //}
   }
 }

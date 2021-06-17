@@ -14,8 +14,7 @@ Drupal.behaviors.MegaMenuComponent = {
 
         if ($parent.hasClass('show-MegaMenu')) {
           $parent.removeClass('show-MegaMenu');
-        }
-        else {
+        } else {
           $allMenus.removeClass('show-MegaMenu');
           $parent.addClass('show-MegaMenu');
         }

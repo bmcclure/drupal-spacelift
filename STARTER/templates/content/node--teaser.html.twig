@@ -82,21 +82,23 @@
     <div class="Zoom">
       {{ content.field_teaser_image }}
 
-{#      <div#}
-{#        {{ suit('image', card__modifiers, card__base_class, ['Zoom-image', 'lozad'] ) }}#}
-{#        data-background-image=""#}
-{#        style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div>#}
+      {# <div #}
+      {# {{ suit('image', card__modifiers, card__base_class, ['Zoom-image', 'lozad'] ) }} #}
+      {# data-background-image="" #}
+      {# style="background: url(/assets/images/placeholder.png) no-repeat center; background-size: cover;"></div> #}
     </div>
     <div {{ suit('text', card__modifiers, card__base_class ) }}
       data-aos="SectionFade">
-      {% include '@atoms/text/Heading/Heading.twig' with {
+      {% include '@atoms/text/Heading.twig' with {
         heading__base_class: '',
         heading__level: 3,
         heading: content.field_teaser_title,
         heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
       } %}
-      <p class="SectionFade-two">{{ content.field_teaser_text }}</p>
-      <span class="link SectionFade-three">{{ content.field_teaser_link_text }} <span class="fas fa-caret-right"></span></span>
+      {# needs to be a div not a p, since sometimes the field_teaser_text includes a <p> tag #}
+      <div class="SectionFade-two">{{ content.field_teaser_text }}</div>
+      <span class="link SectionFade-three">{{ content.field_teaser_link_text }}<span
+          class="fas fa-caret-right"></span></span>
     </div>
   </a>
 </div>

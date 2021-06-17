@@ -59,7 +59,7 @@
       </div>
 
     <div {{ suit('text', icon_info_box__modifiers, icon_info_box__base_class) }}>
-      {% include '@atoms/text/Heading/Heading.twig' with {
+      {% include '@atoms/text/Heading.twig' with {
         heading__level: 3,
         heading: paragraph.field_heading_paragraph.entity.field_heading.value,
         heading__extra_classes: ['h4'],

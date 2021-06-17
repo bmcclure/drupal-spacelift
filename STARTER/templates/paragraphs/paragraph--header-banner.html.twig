@@ -37,11 +37,37 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+{{ attach_library('msi/header-banner') }}
+
+{# {{ kint(content|keys) }} #}
+
+<header id="HeaderBanner" class="HeaderBanner section">
+  <div class="HeaderBanner-image">{{ content.field_background_image }}</div>
+  <div class="HeaderBanner-overlay {{ content.field_overlay_style|field_value }}">
+    <div class="grid-container">
+      <div class="HeaderBanner-headlines">
+        {{ content.field_heading_paragraph }}
+        {{ content.field_content_paragraph }}
+      </div>
+    </div>
+    <div id="HeaderBanner-buttonsContainer" class="HeaderBanner-buttonsContainer" data-sticky-container>
+      <div class="sticky" data-sticky
+           data-margin-top="0"
+           data-top-anchor="HeaderBanner-buttons-container"
+           data-btm-anchor="endofProductCategoryListing:bottom">
+        <div class="grid-container">
+          <div class="HeaderBanner-buttons">
+            {{ content.field_button_paragraphs }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+

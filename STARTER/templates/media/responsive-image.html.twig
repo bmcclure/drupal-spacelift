@@ -15,4 +15,14 @@
  * @ingroup themeable
  */
 #}
-{% include '@atoms/images/Image/ResponsiveImage.twig' %}
+
+{% set output_picture_tag = not output_image_tag %}
+
+{#{{ dump(sources.0|keys) }}#}
+
+{% embed '@atoms/images/Image/ResponsiveImage.twig' with {
+  responsive_image__srcset: sources.0.srcset,
+  responsive_image__element: img_element,
+  responsive_image__output_picture_tag: output_picture_tag,
+} %}
+{% endembed %}

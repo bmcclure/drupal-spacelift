@@ -1,0 +1,9 @@
+{
+  "name": "MultiColumnLayout",
+  "description": "Multi-column layout container",
+  "entries": {
+    "scss": [
+      "MultiColumnLayout.scss"
+    ]
+  }
+}

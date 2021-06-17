@@ -37,11 +37,17 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set resources__base_class = 'Resources' %}
 
-{# TODO: Hook up this template with front-end component(s) #}
-{{ content }}
+<section {{ attributes }} {{ suit(resources__base_class, resources__modifiers, '') }}>
+  <div {{ suit('grid-container') }}>
+    <div {{ suit('grid-x grid-margin-x grid-margin-y') }}>
+      <div {{ suit('heading', [], resources__base_class) }}>
+        {{ content.field_heading_paragraph }}
+      </div>
+      <div {{ suit('listing', [], resources__base_class) }}>
+        {{ content.field_view }}
+      </div>
+    </div>
+  </div>
+</section>

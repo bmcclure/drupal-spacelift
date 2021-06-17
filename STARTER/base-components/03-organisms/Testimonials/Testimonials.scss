@@ -1,0 +1,23 @@
+.Testimonials {
+  $self: &;
+
+  article[about="/careers"] & {
+
+
+    #{$self}-row {
+      padding-bottom: 4rem;
+
+      @include breakpoint(large) {
+        padding-bottom: 1rem;
+
+        .slick-prev {
+          left: calc(25% - 83px);
+        }
+
+        .slick-next {
+          right: calc(75% - 83px);
+        }
+      }
+    }
+  }
+}

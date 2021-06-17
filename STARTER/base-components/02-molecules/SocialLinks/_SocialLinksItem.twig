@@ -1,0 +1,34 @@
+{% if not item_modifiers %}
+  {% set item_modifiers = [] %}
+{% endif %}
+
+{# Pass original item modifiers down to children #}
+{% set original_item_modifiers = item_modifiers %}
+
+{% for modifier in item.modifiers %}
+  {% set item_modifiers = item_modifiers|merge([modifier]) %}
+{% endfor %}
+
+{% set li__label = item_label %}
+{% set li__base_class = item_base_class|default(menu_class ~ '-item') %}
+{% set li__modifiers = item_modifiers %}
+{% set li__blockname = item_blockname %}
+
+{% extends '@atoms/lists/_ListItem.twig' %}
+
+{% block li__content %}
+  {% set icon = '<span class="fab fa-' ~ item.title ~ '"></span>' %}
+  {% set attributes = {
+    'rel': 'noopener',
+    'target': '_blank',
+  } %}
+
+  {% include '@atoms/links/Link/Link.twig' with {
+    link__base_class: 'link',
+    link__blockname: menu_class,
+    link__attributes: attributes,
+    link__url: item.url,
+    link__content: icon,
+  } %}
+{% endblock %}
+

@@ -23,16 +23,24 @@
 {% set content_box__background_class = content_box__background_class|default(['bg-light']) %}
 {% set content_box__extra_classes = content_box__extra_classes|default([])|merge(content_box__background_class) %}
 
-<div {{ suit(content_box__base_class, content_box__modifiers, content_box__blockname, content_box__extra_classes) }}>
+<section {{ suit(content_box__base_class, content_box__modifiers, content_box__blockname, content_box__extra_classes) }}>
   <div class="grid-container">
     <div {{ suit('container', [], content_box__base_class ) }}>
-      <div class="grid-x grid-padding-x sticky-container">
-        <div class="cell">
-          {% block content_box__content %}
+      <div id="sticky-container" class="grid-x grid-padding-x sticky-container">
+        {% if content_box__has_share_buttons %}
+          <div class="cell small-12 large-1">
+            {% block share_buttons %}
+            {% endblock %}
+          </div>
+          <div class="cell small-12 large-10">
+        {% else %}
+          <div class="cell small-12">
+        {% endif %}
+          {% block content %}
             {{ content_box__content }}
           {% endblock %}
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

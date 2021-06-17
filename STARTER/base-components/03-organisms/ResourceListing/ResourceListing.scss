@@ -1,0 +1,170 @@
+$ResourceListing-padding-normal: rem-calc(10) !default;
+$ResourceListing-padding-tight: rem-calc(2) !default;
+$ResourceListing-headerFontFamily: sans-serif !default;
+$ResourceListing-titleColor: blue !default;
+$ResourceListing-titleHoverColor: red !default;
+$ResourceListing-textHoverColor: gray !default;
+
+.ResourceListing {
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include breakpoint(large) {
+    margin-bottom: 2rem;
+  }
+
+  &-header {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 0 1rem;
+    margin-left: -$ResourceListing-padding-normal;
+    margin-right: -$ResourceListing-padding-normal;
+
+    @include breakpoint(large) {
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-title {
+    flex: 0 1 auto;
+    padding: $ResourceListing-padding-normal;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      flex-grow: 1;
+      width: auto;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &-viewButtons {
+    flex: 0 1 auto;
+    padding: $ResourceListing-padding-normal;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: auto;
+    }
+
+    &Row {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      margin-left: -$ResourceListing-padding-tight;
+      margin-right: -$ResourceListing-padding-tight;
+    }
+
+    &Title {
+      color: $ResourceListing-titleColor;
+      flex: 0 1 auto;
+      font-family: $ResourceListing-headerFontFamily;
+      font-weight: bold;
+      padding: $ResourceListing-padding-tight;
+      padding-right: 1rem;
+      width: 100%;
+
+      @include breakpoint(large) {
+        flex-grow: 1;
+        text-align: right;
+        width: auto;
+      }
+    }
+
+    &Button {
+      flex: 0 1 auto;
+      padding: $ResourceListing-padding-tight;
+    }
+
+    .button {
+      margin-bottom: 0;
+
+      [class^='fa'] {
+        padding-left: 0;
+        padding-right: 0.5rem;
+        position: relative;
+        transition: none;
+      }
+    }
+  }
+
+  &-showing {
+    flex: 0 1 auto;
+    padding: $ResourceListing-padding-normal;
+    width: 100%;
+
+    &Title {
+      color: $ResourceListing-titleColor;
+      font-family: $ResourceListing-headerFontFamily;
+      font-size: 1rem;
+    }
+
+    @include breakpoint(medium) {
+      width: auto;
+
+      &Title {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    @include breakpoint(large) {
+      &Title {
+        display: inline-block;
+        width: auto;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &-results {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -$ResourceListing-padding-tight;
+    margin-right: -$ResourceListing-padding-tight;
+  }
+
+  &-gridView {
+    margin-left: -$ResourceListing-padding-normal;
+    margin-right: -$ResourceListing-padding-normal;
+
+    .ResourceListing-sectionTitle {
+      padding-left: $ResourceListing-padding-normal;
+      padding-right: $ResourceListing-padding-normal;
+    }
+  }
+
+  h3 {
+    flex-basis: 100%;
+
+    &:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+
+  &-line {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  &-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    [id^="pagination-heading"] {
+      font-size: 1rem;
+      margin-bottom: 0;
+      flex: 0 1 auto;
+      font-weight: 400;
+      width: auto;
+      display: block;
+    }
+  }
+}

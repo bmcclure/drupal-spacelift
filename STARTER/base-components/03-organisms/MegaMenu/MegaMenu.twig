@@ -1,0 +1,109 @@
+{#
+/**
+ * @file
+ * Mega Menu
+ */
+#}
+
+{{ attach_library('msi/mega-menu') }}
+
+{% set mega_menu__base_class = mega_menu__base_class|default('MegaMenu') %}
+
+<nav role="navigation" {{ suit(mega_menu__base_class, mega_menu__modifiers, mega_menu__blockname, mega_menu__extra_classes) }}>
+  <div {{ suit('grid-container') }}>
+    <ul class="Header-mainNavMenu">
+      <?php foreach ($main_nav as $top_level) {
+          $name = $top_level['name'];
+          $url = $top_level['url'];
+          $children = $top_level['children'];
+          $special_classes = $top_level['special_classes'];
+          echo "<li class='$special_classes' onclick=''><a href='$url'>$name</a>";
+
+      if (strpos($special_classes, 'is-MegaMenu') !== FALSE) {
+      ?>
+      <div class='MegaMenu-wrapper'>
+        <div class="MegaMenu grid-container">
+          <?php if ($children) { ?>
+          <?php
+                  echo "<ul class='MegaMenu-menu MegaMenu-topMenu'>";
+          foreach ($children as $child) {
+          $childName = $child['name'];
+          $childUrl = $child['url'];
+          $grandchildren = $child['children'];
+          $description = $child['description'];
+          $child_special_classes = $child['special_classes'];
+
+          echo "<li class='MegaMenu-columns'><a href='$childUrl'>$childName</a>";
+            if ($description) {
+            echo $description;
+            }
+            if (strpos($child_special_classes, 'MegaMenu-teasers') !== FALSE) {
+            if ($grandchildren) {
+            echo "<ul class='MegaMenu-menu MegaMenu-submenu MegaMenu-teasers FlexRow medium-up-2'>";
+              foreach ($grandchildren as $grandchild) {
+              $grandchildName = $grandchild['name'];
+              $grandchildUrl = $grandchild['url'];
+              $grandchildImage = $grandchild['image'];
+              echo "<li class='FlexRow-item'><a href='$grandchildUrl'><div class='MegaMenu-teasersImage' style='background: url($grandchildImage) no-repeat center; background-size: cover;'></div><div class='h5 HeaderFont--regular MegaMenu-teasersTitle'>$grandchildName</div></a></li>";
+              }
+              echo "</ul>";
+            }
+            }
+            elseif ($grandchildren) {
+            echo "<ul class='MegaMenu-menu MegaMenu-submenu'>";
+
+              foreach ($grandchildren as $grandchild) {
+              $grandchildName = $grandchild['name'];
+              $grandchildUrl = $grandchild['url'];
+              $greatgrandchildren = $grandchild['children'];
+              echo "<li><a href='$grandchildUrl'>$grandchildName</a>";
+                if ($greatgrandchildren) {
+                echo "<ul class='MegaMenu-menu MegaMenu-submenu MegaMenu-subsubmenu'>";
+                  foreach ($greatgrandchildren as $greatgrandchild) {
+                  $greatgrandchildName = $greatgrandchild['name'];
+                  $greatgrandchildUrl = $greatgrandchild['url'];
+                  echo "<li><a href='$greatgrandchildUrl'>$greatgrandchildName</a>";
+                    }
+                    echo "</ul>";
+                }
+                echo "</li>";
+              }
+              echo "</ul>";
+            }
+            echo "</li>";
+          }
+          echo "</ul>";
+    }
+    ?>
+  </div>
+  <div class="MegaMenu-footer">
+    <div class="grid-container">
+      <div class="MegaMenu-footerRow">
+        <div class="MegaMenu-footerItem">
+          <a href="#"><span class="fas fa-search-location"></span>
+            Find a Rep <span
+              class="fas fa-caret-right"></span></a>
+        </div>
+        <div class="MegaMenu-footerItem">
+          <a href="#"> <span class="fas fa-envelope"></span> Contact
+            Support <span
+              class="fas fa-caret-right"></span></a>
+        </div>
+        <div class="MegaMenu-footerItem">
+          <a href="tel:+18002340135"><span
+              class="fas fa-phone"></span> TALK TO A CSR
+            <span class="light">(800) 234-0135</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <?php
+          }
+          echo "</li>";
+  } ?>
+  </ul>
+  <?php } ?>
+  </div>
+
+</nav>

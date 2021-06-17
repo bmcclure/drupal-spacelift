@@ -1,0 +1,9 @@
+{
+  "name": "ResourceListingTeaser",
+  "description": "Resource listing teaser shown on the resource listing pages",
+  "entries": {
+    "scss": [
+      "ResourceListingTeaser.scss"
+    ]
+  }
+}

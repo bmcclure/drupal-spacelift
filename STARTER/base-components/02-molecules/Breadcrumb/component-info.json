@@ -1,9 +1,0 @@
-{
-  "name": "Breadcrumb",
-  "description": "Breadcrumb",
-  "entries": {
-    "scss": [
-      "Breadcrumb.scss"
-    ]
-  }
-}

@@ -1,1 +1,1 @@
-import 'lity/dist/lity.js';
+import 'lity/dist/lity';

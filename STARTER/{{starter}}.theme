@@ -5,8 +5,10 @@
  * Functions to support theming in the MSI theme.
  */
 
+use Drupal\block_content\BlockContentInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
 
 /**
  * Implements template_preprocess_page.
@@ -21,85 +23,78 @@ function {{starter}}_preprocess_page(array &$variables) {
 }
 
 /**
- * Implements template_preprocess_paragraph.
+ * Implements template_preprocess_block.
  */
-function {{starter}}_preprocess_paragraph(array &$variables) {
-  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
-  $paragraph = $variables['paragraph'];
-  $paragraphType = $paragraph->bundle();
-  $variables['paragraph_id'] = $paragraph->id();
+function {{starter}}_preprocess_block(array &$variables) {
+  $content = $variables['elements']['content'];
 
-  switch ($paragraphType) {
-    case 'heading':
-      // Convert the heading level value into just the number.
-      $heading_level = $paragraph->get('field_heading_level')->value;
-      $variables['heading_level'] = substr($heading_level, 1);
-      $parent = $paragraph->getParentEntity();
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
+    $block_content = $content['#block_content'];
+    $bundle = $block_content->bundle();
 
-      if ($parent && $parent->bundle() == 'industry') {
-        $variables['header_add_wrapper'] = TRUE;
+    switch ($bundle) {
+      case 'interactive_header_banner':
+        $background_images = [
+          'main_background_image',
+          'background_image_section_1',
+          'background_image_section_2',
+        ];
+
+        foreach ($background_images as $field) {
+          $media_id = $block_content->get("field_$field")->target_id;
+          $media_entity = Media::load($media_id);
+          $uri = $media_entity->field_media_image->entity->getFileUri();
+          $variables[$field . '_uri'] = $uri;
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_taxonomy_term().
+ */
+function {{starter}}_preprocess_taxonomy_term(&$variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $bundle = $term->bundle();
+
+  switch ($bundle) {
+    case 'resource_types':
+      if (!$term->get('field_listing_page')->isEmpty()) {
+        $listing_page = $term->get('field_listing_page')->getValue();
+        $uri = $listing_page[0]['uri'];
+        $variables['resource_page_url'] = Url::fromUri($uri)->toString();
       }
-
       break;
+  }
+}
 
-    case 'content_listing':
-      $layout_direction = $paragraph->get('field_layout_direction')->value;
-      $variables['layout_direction'] = $layout_direction;
-      $variables['header_grid_classes'] = ['small-12'];
-      $variables['body_grid_classes'] = ['small-12'];
-      $variables['header_flex_direction'] = 'row';
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ */
+function {{starter}}_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
 
-      if ($layout_direction === 'horizontal') {
-        $variables['header_grid_classes'] = ['medium-5', 'large-4'];
-        $variables['body_grid_classes'] = ['medium-7', 'large-8'];
-        $variables['header_flex_direction'] = 'column';
-      }
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function {{starter}}_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $form_id = $variables['element']['#id'];
 
-      break;
-
-    case 'article_publish_date':
-      /** @var \Drupal\node\NodeInterface $node */
-      $node = Drupal::request()->attributes->get('node');
-
-      if ($node->hasField('field_publish_date')) {
-        $variables['publish_date'] = $node->get('field_publish_date')->value;
-      }
+  switch ($form_id) {
+    case 'views-exposed-form-search-block-search-results':
+      $suggestions[] = 'form__search_block_form';
       break;
 
     default:
       break;
-  }
-
-  // TODO: See why this is needed
-  if ($paragraph->hasField('field_article_type') && !empty($paragraph->get('field_article_type'))) {
-    $field_article_type = $paragraph->get('field_article_type')->value;
-    $variables['article_type'] = $field_article_type;
-  }
-
-  if ($paragraph->hasField('field_theme') && !empty($paragraph->get('field_theme'))) {
-    $theme_utility_classes = [
-      'white' => '',
-      'blue' => 'bg-blue',
-      'gray' => 'bg-light',
-    ];
-
-    $theme_key = $paragraph->get('field_theme')->value;
-    $variables['theme_class'] = $theme_utility_classes[$theme_key];
-  }
-
-  if ($paragraph->hasField('field_block_color') && !empty($paragraph->get('field_block_color'))) {
-    $theme_utility_classes = [
-      'white' => 'boxes-white',
-      'gray' => 'boxes-light',
-    ];
-
-    $theme_key = $paragraph->get('field_block_color')->value;
-    $variables['theme_blocks_class'] = $theme_utility_classes[$theme_key];
-  }
-
-  if ($paragraph->hasField('field_link_to') && !empty($paragraph->get('field_link_to'))) {
-    $theme_key = $paragraph->get('field_link_to')->value;
-    $variables['theme_link_type'] = $theme_key;
   }
 }
 
@@ -128,23 +123,17 @@ function {{starter}}_preprocess_region(array &$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * Implements hook_form_alter().
  */
-function {{starter}}_theme_suggestions_form_alter(array &$suggestions, array $variables) {
-  $form_id = $variables['element']['#id'];
-
-  switch($form_id) {
-    case 'views-exposed-form-search-block-search-results':
-      $suggestions[] = 'form__search_block_form';
-      break;
-
-    default:
+function {{starter}}_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form['#form_id']) {
+    case '':
       break;
   }
 }
 
 /**
- * Implements template_preprocess_views_exposed_form()
+ * Implements hook_form_BASE_FORM_ID_alter().
  */
 function {{starter}}_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   switch ($form['#id']) {

@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * AddToCart, used on CompleteOrder organism
+ *
+ * Available variables:
+*/
+#}
+
+{{ attach_library('msi/add-to-cart') }}
+
+{% set add_to_cart__base_class = add_to_cart__base_class|default('AddToCart') %}
+
+<div {{ suit(add_to_cart__base_class, add_to_cart__modifiers, add_to_cart__blockname, add_to_cart__extra_classes) }}>
+  <div {{ suit('toggle', [], add_to_cart__base_class)}}>
+    <button id="AddToCart-minus" {{ suit('minus', [], add_to_cart__base_class) }}>
+      <span class="fas fa-minus"></span>
+    </button>
+    <input id="AddToCart-input" {{ suit('input', [], add_to_cart__base_class) }} type="number" value="1" min="0"/>
+    <button id="AddToCart-plus" {{ suit('plus', [], add_to_cart__base_class) }}>
+      <span class="fas fa-plus"></span>
+    </button>
+  </div>
+  {% embed '@atoms/buttons/Button/Button.twig' with {
+    button__base_class: 'button',
+    button__blockname: add_to_cart__base_class,
+    button__attributes: {
+      'data-open': 'AddedToCartModal',
+    },
+  } %}
+    {% block button__content %}
+      <span class="fas fa-cart-plus"></span>
+      ADD TO CART
+    {% endblock %}
+  {% endembed %}
+</div>
+<div id="AddedToCartModal" {{ suit('reveal', [], add_to_cart__base_class, ['reveal']) }} data-reveal>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="h3">Item(s) Added To Your Cart...</p>
+  {# include "components/02-molecules/IndividualProductTeaserTinyWithPrice/IndividualProductTeaserTinyWithPrice.php"; ?>#}
+  <hr>
+  <div class="text-center">
+    <p class="Label">ORDER TOTAL</p>
+    <p>$##.##</p>
+    <div class="commerce-cart-block--contents__links">
+      <a href="#" class="button--iconLeft button keepBrowsing dialog-cancel" data-close>
+        <span class="fas fa-times-circle"></span>
+        Keep Browsing
+      </a>
+      <a href="#" class="button--iconLeft button checkout">
+        <span class="fas fa-check-circle"></span>
+        Checkout
+      </a>
+    </div>
+  </div>
+</div>

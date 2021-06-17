@@ -1,0 +1,51 @@
+$IconBlock-background: white !default;
+$IconBlock-border: 1px solid black !default;
+$IconBlock-fontFamily: sans-serif !default;
+
+.IconBlock {
+  border-top: $IconBlock-border;
+  padding: 3rem 1rem;
+  text-align: center;
+
+  &:nth-child(odd) {
+    border-right: $IconBlock-border;
+  }
+
+  @include breakpoint(large) {
+    border-left: $IconBlock-border;
+    padding: 3rem 2rem;
+
+    &:nth-child(odd) {
+      border-right: 0;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  &-icon {
+    margin-bottom: 1rem;
+
+    svg,
+    img {
+      width: 75px;
+      height: 75px;
+      margin: auto;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &-title {
+    font-family: $IconBlock-fontFamily;
+    font-size: rem-calc(14);
+    margin-bottom: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+}

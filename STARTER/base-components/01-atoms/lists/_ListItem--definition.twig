@@ -1,5 +1,9 @@
 {% set dl__term_base_class = dl__term_base_class|default('Dl-term') %}
 {% set dl__def_base_class = dl__def_base_class|default('Dl-def') %}
 
-<dt {{ suit(dl__term_base_class, dl__term_modifiers, dl__term_blockname) }}>{{ dl__term }}</dt>
-<dd {{ suit(dl__def_base_class, dl__def_modifiers, dl__def_blockname) }}>{{ dl__def }}</dd>
+<dt {{ suit(dl__term_base_class, dl__term_modifiers, dl__term_blockname, dl__term_extra_classes) }}>
+  {{ dl__term }}
+</dt>
+<dd {{ suit(dl__def_base_class, dl__def_modifiers, dl__def_blockname, dl__dev_extra_classes) }}>
+  {{ dl__def }}
+</dd>

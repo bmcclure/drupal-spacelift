@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{% macro menu__links(items, attributes, menu__level, menu__base_class, menu__modifiers, menu__blockname, item__base_class, item__modifiers, item__blockname, directory) %}
+  {% import _self as menus %}
+
+  {% if items %}
+    {# Set classes #}
+    {% set menu__base_class = menu__base_class|default('Menu') %}
+
+    {% if not menu__modifiers %}
+      {% set menu__modifiers = [] %}
+    {% endif %}
+
+    {% if menu__level > 0 %}
+      {% set menu__modifiers = menu__modifiers|merge(['sub', 'sub-' ~ menu__level]) %}
+    {% endif %}
+
+    {% include '@molecules/Menu/_MenuList.twig' %}
+  {% endif %}
+{% endmacro %}
+
+{% import _self as menus %}
+
+{{ menus.menu__links(items, attributes, 0, menu__base_class, menu__modifiers, menu__blockname, item__base_class, item__modifiers, item__blockname, directory) }}

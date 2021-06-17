@@ -24,7 +24,7 @@
 <section {{ suit(job_listing_results__base_class, job_listing_results__modifiers, job_listing_results__blockname, job_listing_results__extra_classes) }}>
   <div class="grid-container">
     <header {{ suit('header', job_listing_results__modifiers, job_listing_results__base_class, ['text-center'] ) }}>
-      {% include '@atoms/text/Heading/Heading.twig' with {
+      {% include '@atoms/text/Heading.twig' with {
         heading__level: 2,
         heading: job_listing_results__title,
       } %}

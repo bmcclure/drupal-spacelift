@@ -1,9 +1,0 @@
-{
-  "name": "Socials",
-  "description": "Socials",
-  "entries": {
-    "scss": [
-      "Socials.scss"
-    ]
-  }
-}

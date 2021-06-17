@@ -10,10 +10,9 @@ Drupal.behaviors.FeaturedCaseStudiesComponent = {
     const large = 1024;
 
     $('.FeaturedCaseStudies-slider', context)
-      .on('init', function (event, slick) {
-        // console.log("initialized");
+      .on('init', () => {
         AOS.init();
-        const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+        const observer = lozad();
         observer.observe();
       })
       .slick({
@@ -26,15 +25,15 @@ Drupal.behaviors.FeaturedCaseStudiesComponent = {
             breakpoint: large,
             settings: {
               slidesToShow: 2,
-            }
+            },
           },
           {
             breakpoint: medium,
             settings: {
               slidesToShow: 1,
-            }
-          }
-        ]
+            },
+          },
+        ],
       });
   },
 };

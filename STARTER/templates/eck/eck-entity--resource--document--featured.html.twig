@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an ECK entity.
+ *
+ * Available variables:
+ * - eck_entity: The full ECK entity with limited access to object properties
+ *   and methods. Only "getter" methods (method names starting with "get",
+ *   "has", or "is") and a few common methods such as "id" and "label" are
+ *   available. Calling other methods (such as node.delete) will result in an
+ *   exception.
+ * - content: All ECK entity items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ *
+ * @see template_preprocess_eck_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set file_url = file_url(eck_entity.field_document.entity.field_media_document.entity.uri.value) %}
+
+{% set thumbnail_entity = eck_entity.field_document.entity.thumbnail %}
+{% set thumbnail = {
+  '#theme': 'image_style',
+  '#style_name': 'document_thumbnail',
+  '#uri': thumbnail_entity.entity.uri.value,
+  '#alt': thumbnail_entity.alt,
+  '#attributes': {class: 'lozad'},
+} %}
+
+{% embed '@molecules/ResourceListingFeatured/ResourceListingFeatured.twig' with {
+  resource_listing_featured__url: file_url,
+  resource_listing_featured__title: content.title|field_value,
+  resource_listing_featured__subtitle: content.field_resource_type|field_value,
+  resource_listing_featured__caption: content.field_description|field_value,
+}%}
+  {% block resource_listing_featured__image %}
+    {{ thumbnail }}
+  {% endblock %}
+{% endembed %}

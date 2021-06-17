@@ -1,30 +1,29 @@
 {#
 /**
  * Available variables:
- * - dl__base_class - the base classname
- * - dl__modifiers - array of modifiers to add to the base classname
- * - dl__blockname - blockname prepended to the base classname
+ * - dl__items: List items
  *
- * - listItems - TBD
+ * Available blocks:
+ * - list_content: Block of list items
  */
 #}
 
-{{ attach_library('msi/Lists') }}
+{{ attach_library('msi/lists') }}
 
 {% set dl__base_class = dl__base_class|default('Dl') %}
 
-<dl {{ suit(dl__base_class, dl__modifiers, dl__blockname) }}>
+<dl {{ suit(dl__base_class, dl__modifiers, dl__blockname, dl__extra_classes) }}>
   {% block list_content %}
-    {% for dl__item in dl__items %}
-      {% include "@atoms/lists/_ListItem--definition.twig" with {
-        dl__term: dl__item.dl__term,
-        dl__def: dl__item.dl__def,
-        dl__term_base_class: dl__item.dl__term_base_class,
-        dl__def_base_class: dl__item.dl__def_base_class,
-        dl__term_modifiers: dl__item.dl__term_modifiers,
-        dl__def_modifiers: dl__item.dl__def_modifiers,
-        dl__term_blockname: dl__item.dl__term_blockname,
-        dl__def_blockname: dl__item.dl__def_blockname,
+    {% for item in dl__items %}
+      {% include '@atoms/lists/_ListItem--definition.twig' with {
+        dl__term: item.term,
+        dl__def: item.def,
+        dl__term_base_class: item.term_base_class,
+        dl__def_base_class: item.def_base_class,
+        dl__term_modifiers: item.term_modifiers,
+        dl__def_modifiers: item.def_modifiers,
+        dl__term_blockname: item.term_blockname,
+        dl__def_blockname: item.def_blockname,
       } %}
     {% endfor %}
   {% endblock %}

@@ -3,7 +3,8 @@
   "description": "JS Plugins",
   "entries": {
     "scss": [
-      "Tooltip/Tooltip.scss"
+      "Tooltip/Tooltip.scss",
+      "MSISlider/MSISlider.scss"
     ]
   }
 }

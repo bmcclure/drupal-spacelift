@@ -1,7 +1,7 @@
 {% set cta__base_class = 'cta' %}
 
 <div {{ suit(cta__base_class, cta__modifiers, cta__blockname, cta__extra_classes) }}>
-  {% include '@atoms/text/Heading/Heading.twig' with {
+  {% include '@atoms/text/Heading.twig' with {
     heading__level: 2,
     heading: cta__heading,
   } %}

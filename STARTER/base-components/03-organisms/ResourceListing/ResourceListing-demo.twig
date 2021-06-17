@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Resource Listing
+ */
+#}
+
+{{ attach_library('msi/resource-listing') }}
+
+<div {{ suit('ResourceListing') }}>
+  <div class="grid-container">
+    <header {{ suit('ResourceListing-header') }}>
+      <div {{ suit('title', [], 'ResourceListing') }}>
+        <h2>Downloads</h2>
+        <div>2 Results</div>
+      </div>
+      <div {{ suit('viewButtons', [], 'ResourceListing') }}>
+        <div {{ suit('viewButtonsRow', [], 'ResourceListing') }}>
+          <div {{ suit('viewButtonsTitle', [], 'ResourceListing') }}>VIEW BY</div>
+          <div {{ suit('viewButtonsButton', [], 'ResourceListing') }}>
+            <div id="ListView" class="button white active">
+              <span class="fas fa-list"></span> LIST VIEW
+            </div>
+          </div>
+          <div {{ suit('viewButtonsButton', [], 'ResourceListing') }}>
+            <div id="GridView" class="button white">
+              <span class="fal fa-th-large"></span> GRID VIEW
+            </div>
+          </div>
+        </div>
+      </div>
+      <div {{ suit('showing', [], 'ResourceListing') }}>
+        <span class="ResourceListing-showingTitle">SHOWING:</span> 1-2 of 2
+      </div>
+    </header>
+    <div {{ suit('ResourceListing-results') }}>
+      {% for row in rows %}
+        {% include '@molecules/ResourceListingTeaser/ResourceListingTeaser.twig' with {
+          resource_listing_teaser__icon: row.icon,
+          resource_listing_teaser__image_src: row.image_src,
+          resource_listing_teaser__title: row.title,
+          resource_listing_teaser__subtitle: row.subtitle,
+          resource_listing_teaser__caption: row.caption,
+          resource_listing_teaser__url: row.url,
+        } %}
+      {% endfor %}
+    </div>
+    <footer {{ suit('ResourceListing-footer') }}>
+      {{ footer }}
+    </footer>
+  </div>
+</div>

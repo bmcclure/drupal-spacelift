@@ -1,16 +1,79 @@
 $RepLocatorFilterBar-border: 4px solid #fff !default;
 $RepLocatorFilterBar-select: blue !default;
 
+/* Tony, did you remove my shame.css file? I'm not sure where to put my hacky css now ha ha!
+
+This hacky thing is removing the styling from the grid-container that immediately follow sthe first Content Listing. This is because the Rep Locator filter needs to be full width.
+*/
+article[about='/rep-locator'] {
+  section.ContentListing:first-of-type {
+    padding-top: 0;
+
+    > .grid-container {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .ContentListing-header {
+      display: none;
+    }
+  }
+}
+
+/* end hack */
+
 .RepLocatorFilterBar {
+  width: 100%;
   padding: 1rem 0;
   border-top: $RepLocatorFilterBar-border;
   border-bottom: $RepLocatorFilterBar-border;
 
-  &-label {
-    font-size: 1rem;
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    @include breakpoint(large) {
+      align-items: center;
+      margin-left: -0.625rem;
+      margin-right: -0.625rem;
+    }
   }
 
-  &-select {
+  .FormItem {
+    @include breakpoint(large) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      label {
+        flex: 0 0 auto;
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+      }
+      input,
+      .form-item__dropdown {
+        flex: 1 1 0;
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+      }
+    }
+  }
+
+  &-label,
+  label {
+    font-size: 1rem;
+    color: color(text-inverse);
+    text-transform: uppercase;
+    font-family: $header-font-family;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  &-select,
+  select {
     margin-bottom: 0;
     color: $RepLocatorFilterBar-select;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28210, 39, 40%29'></polygon></svg>");
@@ -23,6 +86,16 @@ $RepLocatorFilterBar-select: blue !default;
     }
     @include breakpoint(large) {
       padding-right: 1rem;
+    }
+  }
+
+  .form-actions {
+    width: 100%;
+    @include breakpoint(medium) {
+      width: auto;
+      margin-left: 1rem;
+      margin-bottom: 0;
+      margin-top: 0;
     }
   }
 }

@@ -20,7 +20,8 @@ $AddToCart-buttonBackground: #003d4c !default;
     width: 25px;
   }
 
-  &-input {
+  &-input[type='number'] {
+    -moz-appearance: textfield;
     -webkit-appearance: none;
     border-left: 0;
     border-right: 0;
@@ -28,10 +29,6 @@ $AddToCart-buttonBackground: #003d4c !default;
     margin-bottom: 0;
     text-align: center;
     width: calc(100% - 50px);
-
-    &[type='number'] {
-      -moz-appearance: textfield;
-    }
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -43,6 +40,7 @@ $AddToCart-buttonBackground: #003d4c !default;
   &-button {
     border: 0;
     flex: 0 1 auto;
+    height: 45px;
     margin-bottom: 0;
     margin-left: 0.25rem;
     padding: 0.9rem; /* needs more just for this guy, to match design */
@@ -53,10 +51,10 @@ $AddToCart-buttonBackground: #003d4c !default;
       padding-right: 0.25rem;
     }
   }
-}
 
-#AddedToCartModal {
-  max-width: 450px;
+  &-reveal {
+    max-width: 450px;
+  }
 }
 
 /* copying styling I need that is from Goodway, using Goodway classes */

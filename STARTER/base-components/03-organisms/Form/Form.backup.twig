@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * FORM example, for now, will use Contact Form
+ *
+ * Available variables:
+ * - form__base_class - the base class name
+ * - form__modifiers - array of modifiers to add to the base classname
+ * - form__blockname - blockname prepended to the base classname
+ * - form__extra_classes - extra classes
+ * -
+ * - form__title
+ * - form__subheadline
+ * - form__button_title
+ * - form__url
+*/
+#}
+{% set form__base_class = form__base_class|default('Form') %}
+{% set form__extra_classes = form__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(form__base_class, form__modifiers, form__blockname, form__extra_classes) }}>
+  <div class="grid-container">
+    <header class="section-header">
+      {% include '@atoms/text/Heading.twig' with {
+        heading__base_class: '',
+        heading__level: 2,
+        heading: form__title,
+      } %}
+      <p>{{ form__subheadline }}</p>
+    </header>
+    <form {{ suit('form', form__modifiers, form__base_class) }}action="">
+      <div
+        {{ suit('row', form__modifiers, form__base_class, ['grid-x','grid-margin-x','medium-up-2'] ) }}>
+        <div
+          {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label>First Name <span class="required-asterisk">*</span></label>
+          <input type="text"/>
+        </div>
+        <div   {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label>Last Name <span class="required-asterisk">*</span></label>
+          <input type="text"/>
+        </div>
+        <div   {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label>Company Name <span class="required-asterisk">*</span></label>
+          <input type="text"/>
+        </div>
+        <div   {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label>Title Name <span class="required-asterisk">*</span></label>
+          <input type="text"/>
+        </div>
+        <div   {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label>Phone <span class="required-asterisk">*</span></label>
+          <input type="tel"/>
+        </div>
+        <div  {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label>Email <span class="required-asterisk">*</span></label>
+          <input type="email"/>
+        </div>
+      </div>
+      <div
+        {{ suit('row', form__modifiers, form__base_class, ['grid-x','grid-margin-x'] ) }}>
+        <div   {{ suit('inputWrapper', form__modifiers, form__base_class, ['cell'] ) }}>
+          <label for="">Questions / Comments</label>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <button class="button">SUBMIT</button>
+    </form>
+  </div>
+</section>

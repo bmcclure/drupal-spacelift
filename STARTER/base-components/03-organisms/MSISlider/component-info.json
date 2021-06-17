@@ -1,9 +1,0 @@
-{
-  "name": "MSISlider",
-  "description": "MSI Slider",
-  "entries": {
-    "scss": [
-      "MSISlider.scss"
-    ]
-  }
-}

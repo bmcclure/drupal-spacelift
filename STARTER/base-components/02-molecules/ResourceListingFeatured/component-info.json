@@ -1,0 +1,9 @@
+{
+  "name": "ResourceListingFeatured",
+  "description": "Featured resource listing shown in Resources paragraphs",
+  "entries": {
+    "scss": [
+      "ResourceListingFeatured.scss"
+    ]
+  }
+}

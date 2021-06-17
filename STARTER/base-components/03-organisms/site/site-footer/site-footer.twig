@@ -4,12 +4,12 @@
   <div {{ suit('inner', [], footer__base_class) }}>
     <div {{ suit('social', [], footer__base_class) }}>
       {% block footer__social %}
-        {% include '@molecules/menus/social/social-menu.twig' %}
+        {% include '@molecules/SocialLinks/SocialLinks.twig' %}
       {% endblock %}
     </div>
     <div {{ suit('menu', [], footer__base_class) }}>
       {% block footer__menu %}
-        {% include '@molecules/menus/inline/inline-menu.twig' %}
+        {% include '@molecules/Menu/Inline/InlineMenu.twig' %}
       {% endblock %}
     </div>
   </div>

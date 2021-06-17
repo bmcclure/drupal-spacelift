@@ -3,9 +3,9 @@ import React from 'react';
 import fullWidthTwig from './full-width-demo.twig';
 import withSecondSidebarTwig from './with-second-sidebar-demo.twig';
 
-import mainMenu from '../02-molecules/menus/main-menu/main-menu.yml';
-import socialMenu from '../02-molecules/menus/social/social-menu.yml';
-import footerMenu from '../02-molecules/menus/inline/inline-menu.yml';
+import mainMenu from '../02-molecules/Menu/MainMenu/MainMenu.yml';
+import socialMenu from '../02-molecules/SocialLinks/SocialLinks.yml';
+import footerMenu from '../02-molecules/Menu/Inline/InlineMenu.yml';
 
 /**
  * Storybook Definition.
@@ -19,6 +19,7 @@ export const fullWidth = () => (
     }}
   />
 );
+
 export const withSidebar = () => (
   <div
     dangerouslySetInnerHTML={{

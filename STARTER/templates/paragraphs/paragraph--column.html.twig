@@ -37,6 +37,8 @@
  */
 #}
 
-<div {{ attributes }} {{ suit('column', [], 'MultiColumnLayout', ['cell', 'large-auto']) }}>
-  {{ content }}
-</div>
+{% embed '@molecules/Column/Column.twig' %}
+  {% block column_content %}
+    {{ content.field_subcomponents }}
+  {% endblock %}
+{% endembed %}

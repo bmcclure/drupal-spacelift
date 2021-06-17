@@ -25,12 +25,14 @@ regions:
   header: Header
   breadcrumb: Breadcrumbs
   featured: Featured
-  sidebar_first: First sidebar
   content: Content
-  content_second: Content second
-  sidebar_second: Second sidebar
+  column_first: First column
+  column_second: Second column
+  column_third: Third column
+  content_second: Lower content
   footer_top: Footer top
   footer_bottom: Footer bottom
+  mega_menu: Mega menu blocks
 
 logo: images/logo.png
 

@@ -11,8 +11,8 @@
       <div class="cell large-3 xlarge-4">
         {% include '@molecules/NewsletterSignup/NewsletterSignup.twig' %}
         <div class="Footer-socials hide-for-medium">
-          {% include '@organisms/Socials/Socials.twig' with {
-            socials__socials: socials__socials
+          {% include '@molecules/SocialLinks/SocialLinks.twig' with {
+            menu_items: social_links__menu_items,
           } %}
         </div>
       </div>

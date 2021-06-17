@@ -46,41 +46,45 @@
  */
 #}
 
-{% set main__base_class = main_base__class|default('Main') %}
-{% set main__modifiers = [] %}
+{% set main__base_class = main__base_class|default('Main') %}
+{% set main__modifiers = main__modifiers|default([]) %}
 
-{% if page.sidebar_first|render %}
-  {% set first_sidebar = TRUE %}
+{% if page.column_first|render %}
+  {% set first_column = TRUE %}
 {% endif %}
 
-{% if page.sidebar_second|render %}
-  {% set second_sidebar = TRUE %}
+{% if page.column_second|render %}
+  {% set second_column = TRUE %}
 {% endif %}
 
-{% if first_sidebar %}
-  {% if second_sidebar %}
-    {% set main__modifiers = 'with-both-sidebars' %}
-  {% else %}
-    {% set main__modifiers = 'with-first-sidebar' %}
-  {% endif %}
-{% elseif second_sidebar %}
-  {% set main__modifiers = 'with-second-sidebar' %}
+{% if page.column_third|render %}
+  {% set third_column = TRUE %}
 {% endif %}
+
+{#{% if first_sidebar %}#}
+{#  {% if second_sidebar %}#}
+{#    {% set main__modifiers = 'with-both-sidebars' %}#}
+{#  {% else %}#}
+{#    {% set main__modifiers = 'with-first-sidebar' %}#}
+{#  {% endif %}#}
+{#{% elseif second_sidebar %}#}
+{#  {% set main__modifiers = 'with-second-sidebar' %}#}
+{#{% endif %}#}
 
 <div {{ suit('LayoutContainer') }}>
-  {% block page_header %}
+  {% block page__header %}
     {% if page.header %}
       {{ page.header }}
     {% endif %}
   {% endblock %}
 
-  {% block page_breadcrumbs %}
+  {% block page__breadcrumbs %}
     {% if page.breadcrumb %}
       {{ page.breadcrumb }}
     {% endif %}
   {% endblock %}
 
-  {% block page_featured %}
+  {% block page__featured %}
     {{ page.highlighted }}
     {{ page.help }}
     {{ messages }}
@@ -92,39 +96,50 @@
 
   <div {{ suit(main__base_class, main__modifiers) }}>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    {% block page_first_sidebar %}
-      {% if first_sidebar %}
-        {{ page.sidebar_first }}
-      {% endif %}
-    {% endblock %}
-
     <main role="main" {{ suit('content', [], main__base_class) }}>
-      {% block page_content %}
+      {% block page__content %}
         {{ page.content }}
       {% endblock %}
-    </main>
 
-    {% block page_second_sidebar %}
-      {% if second_sidebar %}
-        {{ page.sidebar_second }}
+      {% if first_column or second_column or third_column %}
+        <section {{ suit('columns') }}>
+          {% block page__first_column %}
+            {% if first_column %}
+              {{ page.column_first }}
+            {% endif %}
+          {% endblock %}
+
+          {% block page__second_column %}
+            {% if second_column %}
+              {{ page.column_second }}
+            {% endif %}
+          {% endblock %}
+
+          {% block page__third_column %}
+            {% if third_column %}
+              {{ page.column_third }}
+            {% endif %}
+          {% endblock %}
+        </section>
       {% endif %}
-    {% endblock %}
+
+      {% block page__content_second %}
+        {% if page.content_second %}
+          {{ page.content_second }}
+        {% endif %}
+      {% endblock %}
+    </main>
   </div>
 
-  {% block page_content_second %}
-    {% if page.content_second %}
-      {{ page.content_second }}
-    {% endif %}
-  {% endblock %}
 
-  {% block page_footer_top %}
+
+  {% block page__footer_top %}
     {% if page.footer_top %}
       {{ page.footer_top }}
     {% endif %}
   {% endblock %}
 
-  {% block page_footer_bottom %}
+  {% block page__footer_bottom %}
     {% if page.footer_bottom %}
       {{ page.footer_bottom }}
     {% endif %}

@@ -71,6 +71,29 @@
  */
 #}
 
-{% set grid_teaser__url = url %}
+{% set card__url = url %}
 
-{% extends '@organisms/GridTeaser/GridTeaser.twig' %}
+{% embed '@molecules/Card/Card.twig' %}
+  {% block image %}
+    {{ content.field_teaser_image }}
+  {% endblock %}
+  {% block heading %}
+    {% include '@atoms/text/Heading.twig' with {
+      heading__base_class: '',
+      heading__level: 3,
+      heading: content.field_teaser_title,
+      heading__extra_classes: ['HeaderFont--regular', 'SectionFade-one'],
+    } %}
+  {% endblock %}
+  {% block body %}
+    {{ content.field_teaser_text }}
+    {# {{ kint(content|keys) }} #}
+  {% endblock %}
+  {# FYI Page Teasers do not show the CTA button #}
+  {% block button %}
+    {% if content.field_teaser_link_text %}
+      <span class="link SectionFade-three">{{ content.field_teaser_link_text }} <span class="fas fa-caret-right"></span></span>
+    {% endif %}
+  {% endblock %}
+{% endembed %}
+{# {% extends '@organisms/GridTeaser/GridTeaser.twig' %} #}

@@ -1,0 +1,6 @@
+resource_listing_featured__image_src: 'https://placeimg.com/320/180/any'
+resource_listing_featured__title: 'Video Title Lorem Ipsum'
+resource_listing_featured__subtitle: 'Instructional Video'
+resource_listing_featured__caption: 'Caption of video would go here.'
+resource_listing_featured__url: 'https://www.youtube.com/watch?v=33qflZyEfXE'
+resource_listing_featured__video: true

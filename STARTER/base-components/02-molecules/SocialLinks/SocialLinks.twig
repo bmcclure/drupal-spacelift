@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * SocialLinks
+ *
+ * Available variables:
+ */
+#}
+
+{{ attach_library('msi/social-links') }}
+
+{% set social_links__base_class = social_links__base_class|default('SocialLinks') %}
+
+<nav {{ suit(social_links__base_class, social_links__modifiers, social_links__blockname, social_links__extra_classes) }}>
+  <ul {{ suit('menu', [], social_links__base_class) }}>
+    {% for item in menu_items %}
+      {% include '@molecules/SocialLinks/_SocialLinksItem.twig' with {
+        menu_class: social_links__base_class,
+      } %}
+    {% endfor %}
+  </ul>
+</nav>
+

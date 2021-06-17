@@ -38,18 +38,16 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
+
+{% set classes = [
   'field__item',
   'field__item-label-' ~ label_display,
-]
-%}
-{%
-set title_classes = [
+  'small-12',
+] %}
+{% set title_classes = [
   'field__item__label',
   label_display == 'visually_hidden' ? 'visually-hidden',
-]
-%}
+] %}
 
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}

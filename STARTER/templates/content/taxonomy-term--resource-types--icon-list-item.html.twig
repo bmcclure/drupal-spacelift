@@ -34,6 +34,6 @@
   {% include '@molecules/ResourceCategoryIconBlock/ResourceCategoryIconBlock.twig' with {
     resource_category_icon_block__icon: content.field_icon|field_value,
     resource_category_icon_block__title: term.description.value|striptags,
-    resource_category_icon_block__url: url,
+    resource_category_icon_block__url: resource_page_url,
   } %}
 </div>

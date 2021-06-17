@@ -1,0 +1,36 @@
+$Testimonial-imageAspectRatioMobile: $aspect-ratio-1-3 !default;
+$Testimonial-imageAspectRatioDesktop: $aspect-ratio-2-3 !default;
+
+.Testimonial {
+  &-row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    @include breakpoint(large) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &-quote {
+    flex: 1 1 auto;
+    //margin: 0 auto;
+
+    @include breakpoint(large) {
+      padding-bottom: 3rem; // this is to make space for the absolutely positioned arrows
+    }
+  }
+
+  .Image {
+    display: block;
+    flex: 0 0 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    min-width: 0;
+
+    @include breakpoint(large) {
+      flex: 0 0 50%;
+      order: 2;
+    }
+  }
+}

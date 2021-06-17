@@ -1,9 +1,0 @@
-{
-  "name": "IntroWithIcons",
-  "description": "Intro With Icons",
-  "entries": {
-    "scss": [
-      "IntroWithIcons.scss"
-    ]
-  }
-}

@@ -1,17 +1,13 @@
-socials__socials:
-  - id: 0
-    icon: 'facebook-f'
+social_links__menu_items:
+  - title: 'facebook-f'
     url: 'https://www.facebook.com/markingservices/?ref=hl'
-  - id: 1
-    icon: 'twitter'
+  - title: 'twitter'
     url: 'https://twitter.com/MarkingServices'
-  - id: 2
-    icon: 'youtube'
+  - title: 'youtube'
     url: 'https://www.youtube.com/channel/UC3yrx0Y57F7VT5pFk7L_DmA'
-  - id: 3
-    icon: 'linkedin-in'
+  - title: 'linkedin-in'
     url: 'https://www.linkedin.com/company/marking-services-inc'
-footer__copyright_menu:
+footer_copyright__menu_items:
   - id: 1
     name: 'Privacy Policy'
     url: '#'

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * IconBlock
+ *
+ * Available variables:
+ * - icon_block__icon: SVG icon displayed in the block
+ * - icon_block__title: Title for the icon block
+ */
+#}
+
+{{ attach_library('msi/icon-block') }}
+
+{% set icon_block__base_class = icon_block__base_class|default('IconBlock') %}
+{% set icon_block__extra_classes = icon_block__extra_classes|default(['cell']) %}
+
+<div {{ suit(icon_block__base_class, icon_block__modifiers, icon_block__blockname, icon_block__extra_classes) }}>
+  <div {{ suit('icon', [], icon_block__base_class) }}>
+    {% block icon %}
+      {{ icon_block__icon }}
+    {% endblock %}
+  </div>
+  <p {{ suit('title', [], icon_block__base_class, ['uppercase'] ) }}>
+    {% block title %}
+      {{ icon_block__title }}
+    {% endblock %}
+  </p>
+</div>

@@ -24,7 +24,7 @@
 <div {{ suit(product_teaser_block__base_class, product_teaser_block__modifiers, product_teaser_block__blockname, product_teaser_block__extra_classes) }}>
   <div {{ suit('container', product_teaser_block__modifiers, product_teaser_block__base_class ) }}>
     <div {{ suit('title', product_teaser_block__modifiers, product_teaser_block__base_class, ['bg-dark-blue'] ) }}>
-      {% include '@atoms/text/Heading/Heading.twig' with {
+      {% include '@atoms/text/Heading.twig' with {
         heading__base_class: 'h4',
         heading__level: 3,
         heading: product_teaser_block__title,

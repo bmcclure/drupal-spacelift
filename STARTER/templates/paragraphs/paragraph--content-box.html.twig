@@ -36,13 +36,34 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('msi/foundation-reveal') }}
+{{ attach_library('msi/foundation-sticky') }}
+{{ attach_library('msi/socials') }}
+{{ attach_library('msi/social-share-to') }}
 
-{% set classes = [
-    paragraph.bundle|clean_class,
+{% set content_box__extra_classes = [
+  paragraph.bundle|clean_class,
 ] %}
 
-{% embed '@molecules/ContentBox/ContentBox.twig' %}
-  {% block content_box__content %}
+{% embed '@molecules/ContentBox/ContentBox.twig' with {
+  content_box__has_share_buttons: has_share_buttons,
+} %}
+  {% block share_buttons %}
+    {% include '@molecules/ShareButtons/ShareButtons.twig' with {
+      share_buttons__title: teaser_title,
+      share_buttons__url: page_url|url_encode,
+      share_buttons__extra_classes: ['sticky', 'vertical'],
+      share_buttons__attributes: {
+        'data-sticky': 'data-sticky',
+        'data-sticky-on': 'large',
+        'data-margin-top': '5',
+        'data-anchor': 'sticky-container',
+        'data-margin-bottom': '1',
+      },
+    } %}
+  {% endblock %}
+
+  {% block content %}
     {{ content.field_subcomponents }}
   {% endblock %}
 {% endembed %}

@@ -1,0 +1,19 @@
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-close-button;
+
+.ShareButtons {
+  width: 100px !important; // sorry
+
+  @include breakpoint(large) {
+    padding-bottom: 3rem;
+  }
+
+  @media print { /* Currently putting print styles WITH the component */
+    display: none;
+  }
+}
+
+#sticky-container {
+  z-index: 18;
+}

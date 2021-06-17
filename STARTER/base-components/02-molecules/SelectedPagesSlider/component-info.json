@@ -1,0 +1,9 @@
+{
+  "name": "SelectedPagesSlider",
+  "description": "Slider JS for Selected pages view",
+  "entries": {
+    "js": [
+      "SelectedPagesSlider.js"
+    ]
+  }
+}

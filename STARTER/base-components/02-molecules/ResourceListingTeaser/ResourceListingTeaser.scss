@@ -1,0 +1,176 @@
+$ResourceListingTeaser-border: 1px solid gray !default;
+$ResourceListingTeaser-backgroundHoverColor: red !default;
+$ResourceListingTeaser-hoverColor: white !default;
+$ResourceListingTeaser-titleColor: red !default;
+$ResourceListingTeaser-titleHoverColor: red !default;
+$ResourceListingTeaser-subtitleColor: gray !default;
+$ResourceListingTeaser-iconBackground: yellow !default;
+$ResourceListingTeaser-iconColor: white !default;
+$ResourceListingTeaser-padding-normal: rem-calc(10) !default;
+
+.ResourceListingTeaser {
+  $self: &;
+
+  flex: 0 0 100%;
+  padding: 2px;
+
+  @include breakpoint(medium) {
+    flex: 0 0 50%;
+  }
+
+  .ResourceListing-gridView & {
+    flex: 0 0 50%;
+    padding: $ResourceListingTeaser-padding-normal;
+
+    @include breakpoint(medium) {
+      flex: 0 0 20%;
+    }
+
+    @include breakpoint(xlarge) {
+      flex: 0 0 calc(100% / 6);
+    }
+  }
+
+  &-container {
+    @include transition;
+
+    background-color: $ResourceListingTeaser-hoverColor;
+    border: $ResourceListingTeaser-border;
+    display: flex;
+    flex-flow: row nowrap;
+
+    .ResourceListing-gridView & {
+      background-color: transparent;
+      border: none;
+      flex-flow: column nowrap;
+    }
+
+    &:hover {
+      background: $ResourceListingTeaser-backgroundHoverColor;
+
+      #{$self}-title,
+      #{$self}-subtitle,
+      #{$self}-caption {
+        color: $ResourceListingTeaser-hoverColor;
+      }
+
+      .ResourceListing-gridView & {
+        background-color: transparent;
+
+        #{$self}-image {
+          @include drop-shadow-hover;
+
+          transform: scale(1.025);
+        }
+
+        #{$self}-title {
+          color: $ResourceListingTeaser-titleHoverColor;
+        }
+
+        #{$self}-subtitle,
+        #{$self}-caption {
+          color: $ResourceListingTeaser-subtitleColor;
+        }
+      }
+    }
+  }
+
+  &-image {
+    display: none;
+
+    .ResourceListing-gridView & {
+      @include drop-shadow;
+      @include transition;
+
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &-icon {
+    @include transition;
+
+    align-items: center;
+    background: $ResourceListingTeaser-iconBackground;
+    color: $ResourceListingTeaser-iconColor;
+    display: flex;
+    flex: 0 0 auto;
+    font-size: 30px;
+    justify-content: center;
+    min-height: 0;
+    min-width: 0;
+    padding: 0.75rem;
+    text-align: center;
+    width: 60px;
+
+    svg {
+      max-height: 40px;
+      width: 100%;
+
+      path {
+        fill: $ResourceListingTeaser-hoverColor;
+      }
+    }
+
+    .ResourceListing-gridView & {
+      display: none;
+    }
+  }
+
+  &-text {
+    padding: 0.5rem 1rem;
+
+    .ResourceListing-gridView & {
+      padding: 1.5rem 0;
+      width: 100%;
+    }
+  }
+
+  & &-title {
+    color: $ResourceListingTeaser-titleColor;
+    text-transform: capitalize;
+  }
+
+  &-subtitle {
+    color: $ResourceListingTeaser-subtitleColor;
+    font-size: rem-calc(14);
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  &-caption {
+    margin-bottom: 0;
+    text-transform: initial;
+  }
+
+  &--video {
+    @include breakpoint(medium) {
+      flex: 0 0 calc(100% / 3);
+    }
+
+    @include breakpoint(large) {
+      flex: 0 0 25%;
+    }
+
+    .ResourceListingTeaser-image {
+      text-align: center;
+
+      span {
+        @include breakpoint(medium) {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+.ResourceListingTeaserVideo {
+  &-image {
+    display: none;
+  }
+
+  p {
+    color: $ResourceListingTeaser-subtitleColor;
+  }
+}

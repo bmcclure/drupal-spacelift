@@ -1,0 +1,99 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('msi/flex-row') }}
+{{ attach_library('msi/rep-locator-filter-bar') }}
+{{ attach_library('msi/rep-locator-results') }}
+{{ attach_library('msi/resources-header') }}
+{{ attach_library('msi/form') }}
+{{ attach_library('msi/forms') }}
+
+{% set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  'FlexRow'
+] %}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  {# also see  '@organisms/RepLocatorFilterBar/RepLocatorFilterBar.twig #}
+  <div class="RepLocatorFilterBar bg-blue">
+    <div class="grid-container">
+      {{ exposed }}
+      {{ attachment_before }}
+    </div>
+  </div>
+
+  {% if header %}
+    {# briefly tried this.. {% embed '@organisms/RepLocatorFilterBar/RepLocatorFilterBar.twig' %} #}
+    <header class="ResourcesHeader full-width">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y medium-up-2">
+          <div class="cell">{{ header.result_1 }}</div>
+          <div class="cell medium-text-right">
+            <div class="Showing">
+              {{ header.result }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  {% endif %}
+
+  {% if rows -%}
+    <section class="RepLocatorResults bg-light">
+      <div class="grid-container">
+        <section class="RepLocatorResults-posts FlexRow medium-up-2">
+          {{ rows }}
+        </section>
+        <hr>
+      </div>
+    </section>
+  {% elseif empty -%}
+    {{ empty }}
+  {% endif %}
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

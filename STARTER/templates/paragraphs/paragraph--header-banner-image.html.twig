@@ -46,7 +46,7 @@
 %}
 
 {% set header_banner_image__base_class = 'HeaderBannerImage' %}
-{% set image_entity = paragraph.field_media.entity.field_media_image.entity | merge({'#image_style': 'thumbnail'}) %}
+{% set image_entity = paragraph.field_media.entity.field_media_image.entity|merge({'#image_style': 'thumbnail'}) %}
 
 
 {% spaceless %}

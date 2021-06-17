@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * ResourceListingFeatured
+ * Used in Resources paragraph
+ *
+ * Available variables:
+ * - resource_listing_featured__image_src
+ * - resource_listing_featured__title
+ * - resource_listing_featured__subtitle
+ * - resource_listing_featured__caption
+ * - resource_listing_featured__url - URL to the document file
+ */
+#}
+
+{{ attach_library('msi/resource-listing-featured') }}
+
+{% set resource_listing_featured__base_class = resource_listing_featured__base_class|default('ResourceListingFeatured') %}
+
+{% if (resource_listing_featured__video == true) %}
+  {% set resource_listing_featured__extra_classes = resource_listing_featured__extra_classes|default([])|merge(['ResourceListingFeaturedVideo']) %}
+{% endif %}
+
+<a {{ suit(resource_listing_featured__base_class, resource_listing_featured__modifiers, resource_listing_featured__blockname, resource_listing_featured__extra_classes) }} target="_blank" href="{{ resource_listing_featured__url }}" title="{{ resource_listing_featured__title }}">
+  <div {{ suit('container', [], resource_listing_featured__base_class) }}>
+    <div {{ suit('image', [], resource_listing_featured__base_class) }}>
+      {% block resource_listing_featured__image %}
+        {% include '@atoms/images/Image/ResponsiveImage.twig' with {
+          responsive_image__src: resource_listing_featured__image_src,
+          responsive_image__extra_classes: ['lozad'],
+        }%}
+      {% endblock %}
+    </div>
+    <div {{ suit('text', [], resource_listing_featured__base_class) }}>
+      <div class="full-width">
+        {% include '@atoms/text/Heading.twig' with {
+          heading__level: 4,
+          heading: resource_listing_featured__title,
+          heading__extra_classes: ['HeaderFont--regular', resource_listing_featured__base_class ~ '-title'],
+        } %}
+        <p {{ suit('subtitle', [], resource_listing_featured__base_class) }}>
+          <small>{{ resource_listing_featured__subtitle }}</small>
+        </p>
+        {% if resource_listing_featured__caption %}
+          <p {{ suit('caption', [], resource_listing_featured__base_class) }}>{{ resource_listing_featured__caption }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</a>

@@ -1,24 +1,56 @@
+{#
+/**
+ * @file
+ * Figure template.
+ *
+ * Available variables:
+ * - figure__link_url: (optional) A link URL to wrap the figure with
+ * - figure__caption_text: Caption text for the figure
+ * - figure__element: The controlling image, with the fallback image in srcset.
+ * - figure__srcset: The attributes of the <source> tags for this <picture> tag.
+ * - figure__sizes:
+ * - figure__src:
+ * - figure__alt:
+ * - figure__title:
+ * - figure__url:
+ * - figure__output_picture_tag: Whether or not to output a <picture> tag instead of an <img> tag.
+ *
+ * Available blocks:
+ * - figure__image: Image content of the figure
+ * - figure__caption: Figcaption element of the figure
+ */
+#}
+
 {{ attach_library('msi/Images') }}
 
-{% set image_figure__base_class = image_figure__base_class|default('Figure') %}
-{% set image_link_base_class = image_link_base_class|default('Link') %}
+{% set figure__base_class = figure__base_class|default('Figure') %}
 
-<figure {{ suit(image_figure__base_class, image_figure__modifiers, image_figure__blockname) }}>
-  {% if image_url %}
-    <a {{ suit(image_link_base_class, image_link_modifiers, image_link_blockname|default(image_figure__base_class)) }} href="{{ image_url }}">
-  {% endif %}
-    {% block figure_content %}
-      {% include '@atoms/images/Image/ResponsiveImage.twig' with {
-        responsive_image_blockname: responsive_image_blockname|default(image_figure__base_class),
-      } %}
-    {% endblock %}
-  {% if image_url %}
-    </a>
-  {% endif %}
+{% if figure__link_url %}
+  <a {{ suit('link', [], figure__base_class) }} href="{{ figure__link_url }}">
+{% endif %}
 
-  {% if image_caption %}
-    <figcaption {{ suit('caption', figcaption_modifiers, figcaption_blockname|default(image_figure__base_class)) }}>
-      {{ image_caption }}
-    </figcaption>
-  {% endif %}
+<figure {{ suit(figure__base_class, figure__modifiers, figure__blockname, figure__extra_classes) }}>
+  {% block figure__image %}
+    {% include '@atoms/images/Image/ResponsiveImage.twig' with {
+      responsive_image_blockname: figure__base_class,
+      responsive_image__element: figure__element,
+      responsive_image__srcset: figure__srcset,
+      responsive_image__sizes: figure__sizes,
+      responsive_image__src: figure__src,
+      responsive_image__alt: figure__alt,
+      responsive_image__title: figure__title,
+      responsive_image__url: figure__url,
+      responsive_image__ouput_picture_tag: false,
+    } %}
+  {% endblock %}
+
+  {% block figure__caption %}
+    {% if figure__caption_text %}
+      <figcaption {{ suit('caption', [], figure__base_class) }}>{{ figure__caption_text }}</figcaption>
+    {% endif %}
+  {% endblock %}
 </figure>
+
+{% if figure__link_url %}
+  </a>
+{% endif %}

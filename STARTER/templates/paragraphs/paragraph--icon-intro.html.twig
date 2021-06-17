@@ -36,30 +36,26 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('msi/icon-intro') }}
 
-{% set classes = [
-  paragraph.bundle|clean_class
+{% set icon_intro__extra_classes = [
+  paragraph.bundle|clean_class,
+  'bg-light',
 ] %}
 
-{% set intro_with_icons__base_class = intro_with_icons__base_class|default('IntroWithIcons') %}
-{% set intro_with_icons__extra_classes = intro_with_icons__extra_classes|default(['bg-light']) %}
+{% embed '@organisms/IconIntro/IconIntro.twig' %}
+  {% block heading %}
+    {{ content.field_heading_paragraph }}
+  {% endblock %}
 
-<header {{ suit(intro_with_icons__base_class, intro_with_icons__modifiers, intro_with_icons__blockname, intro_with_icons__extra_classes) }}>
-  <div class="grid-container">
-    <div {{ suit('container', intro_with_icons__modifiers, intro_with_icons__base_class, ['grid-x'] ) }}>
-      <div {{ suit('text', intro_with_icons__modifiers, intro_with_icons__base_class, ['cell', 'large-5'] ) }}>
-        {{ content.field_heading_paragraph }}
-        <div class="text-large">
-          {{ content.field_content_paragraph }}
-        </div>
-        {{ content.field_button_paragraph }}
-      </div>
-      <div {{ suit('blocks', intro_with_icons__modifiers, intro_with_icons__base_class, ['cell', 'large-7'] ) }}>
-        <div class="grid-x small-up-2 large-up-3">
-          {{ content.field_icon_blocks }}
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+  {% block content %}
+    {{ content.field_content_paragraph }}
+  {% endblock %}
+
+  {% block button %}
+    {{ content.field_button_paragraph }}
+  {% endblock %}
+
+  {% block icon_blocks %}
+    {{ content.field_icon_blocks }}
+  {% endblock %}
+{% endembed %}

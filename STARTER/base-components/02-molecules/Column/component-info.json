@@ -1,0 +1,9 @@
+{
+  "name": "Column",
+  "description": "Column wrapper",
+  "entries": {
+    "scss": [
+      "Column.scss"
+    ]
+  }
+}

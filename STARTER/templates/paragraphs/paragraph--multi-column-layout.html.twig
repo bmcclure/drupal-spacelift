@@ -37,23 +37,12 @@
  */
 #}
 
-{{ attach_library('msi/accents') }}
-{{ attach_library('msi/multi-column-layout') }}
-
-{% set extra_classes = [] %}
-
 {% if paragraph.field_theme.value == 'blue' %}
-    {% set extra_classes = extra_classes|merge(['AngledBackground', 'bg-dark-blue']) %}
+  {% set multi_column_layout__extra_classes = ['AngledBackground', 'bg-dark-blue'] %}
 {% endif %}
 
-{% set multi_column_layout__base_class = 'MultiColumnLayout' %}
-
-<section {{ attributes }} {{ suit(multi_column_layout__base_class, [], '', extra_classes) }}>
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x grid-margin-y">
-      {% for key, item in content.field_columns if key|first != '#'%}
-        {{ item }}
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{% embed '@molecules/MultiColumnLayout/MultiColumnLayout.twig' %}
+  {% block columns %}
+    {{ content.field_columns }}
+  {% endblock %}
+{% endembed %}

@@ -1,9 +1,0 @@
-{
-  "name": "ResourceResult",
-  "description": "Resource Result",
-  "entries": {
-    "scss": [
-      "ResourceResult.scss"
-    ]
-  }
-}

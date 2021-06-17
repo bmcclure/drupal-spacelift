@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Icon Intro
+ *
+ * Available variables:
+ * - icon_intro__heading - Heading for the introduction section
+ * - icon_intro__content - Body content for the introduction section
+ * - icon_intro__button_content - Content for the link button
+ * - icon_intro__button_url
+*/
+#}
+
+{{ attach_library('msi/icon-intro') }}
+
+{% set icon_intro__base_class = icon_intro__base_class|default('IconIntro') %}
+{% set icon_intro__extra_classes = icon_intro__extra_classes|default(['bg-light']) %}
+
+<section {{ suit(icon_intro__base_class, icon_intro__modifiers, icon_intro__blockname, icon_intro__extra_classes) }}>
+  <div class="grid-container">
+    <div {{ suit('container', [], icon_intro__base_class, ['grid-x'] ) }}>
+      <div {{ suit('text', [], icon_intro__base_class, ['cell', 'large-5']) }}>
+        {% block heading %}
+          {% if icon_intro__heading is not empty %}
+            {% include '@atoms/text/Heading.twig' with {
+              heading__level: 1,
+              heading: icon_intro__heading,
+              heading__extra_classes: ['title'],
+              heading__more: {'itemprop': 'headline'},
+            } %}
+          {% endif %}
+        {% endblock %}
+
+        {% block content %}
+          {% if icon_intro__content is not empty %}
+            <p class="large">{{ icon_intro__content }}</p>
+          {% endif %}
+        {% endblock %}
+
+        {% block button %}
+          {% if icon_intro__button_content is not empty %}
+            {% include '@atoms/links/ButtonLink/ButtonLink.twig' with {
+              link__content: icon_intro__button_content,
+              link__url: icon_intro__button_url,
+              link__extra_classes: ['SectionFade-three'],
+            } %}
+          {% endif %}
+        {% endblock %}
+      </div>
+      <div {{ suit('blocks', [], icon_intro__base_class, ['cell', 'large-7'] ) }}>
+        <div class="grid-x small-up-2 large-up-3">
+          {% block icon_blocks %}
+            {% for block in icon_intro__blocks %}
+              {% include '@molecules/IconBlock/IconBlock.twig' with {
+                icon_block__icon: block.icon,
+                icon_block__title: block.title,
+              } %}
+            {% endfor %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

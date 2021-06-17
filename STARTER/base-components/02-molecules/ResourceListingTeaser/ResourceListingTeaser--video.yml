@@ -1,0 +1,7 @@
+resource_listing_teaser__icon: '<span class="far fa-play-circle"></span>'
+resource_listing_teaser__image_src: 'https://placeimg.com/320/180/any'
+resource_listing_teaser__title: 'Video Title Lorem Ipsum'
+resource_listing_teaser__subtitle: 'Instructional Video'
+resource_listing_teaser__caption: 'Caption of video would go here.'
+resource_listing_teaser__url: 'https://www.youtube.com/watch?v=33qflZyEfXE'
+resource_listing_teaser__video: true

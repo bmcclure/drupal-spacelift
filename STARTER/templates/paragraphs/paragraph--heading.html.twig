@@ -40,24 +40,23 @@
 {% set classes = [
   paragraph.bundle|clean_class
 ] %}
-{#{{ header_parent_entity }}#}
-{% if header_add_wrapper %}
-<header class="Heading-wrapper">
-  <div class="grid-container text-center">
-    {% endif %}
 
-    {% if paragraph.field_include_line_accent.value %}
-      {% include '@atoms/accents/Line/Line.twig' %}
-    {% endif %}
+{% if add_wrapper %}
+  <header {{ suit('Heading-wrapper') }}>
+    <div {{ suit('grid-container text-center') }}>
+{% endif %}
 
-    {% include '@atoms/text/Heading/Heading.twig' with {
-      heading__level: heading_level,
-      heading: content.field_heading|field_value,
-      heading__additional_classes: classes,
-    } %}
+{% if paragraph.field_include_line_accent.value %}
+  {% include '@atoms/accents/Line/Line.twig' %}
+{% endif %}
 
-    {% if header_add_wrapper %}
+{% include '@atoms/text/Heading.twig' with {
+  heading__level: heading_level,
+  heading: content.field_heading|field_value,
+  heading__extra_classes: classes,
+} %}
 
-  </div>
-</header>
+{% if add_wrapper %}
+    </div>
+  </header>
 {% endif %}

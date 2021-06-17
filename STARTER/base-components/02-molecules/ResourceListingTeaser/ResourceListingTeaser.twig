@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * ResourceListingTeaser
+ * used in organisms/ResourceListing
+ *
+ * Available variables:
+ * - resource_listing_teaser__icon - svg
+ * - resource_listing_teaser__image_src - image source
+ * - resource_listing_teaser__title
+ * - resource_listing_teaser__subtitle
+ * - resource_listing_teaser__caption - if there is one, show it! Will show for documents, videos, but NOT downloads
+ * - resource_listing_teaser__url - URL to the document file
+ * - resource_listing_teaser__video - true/false
+ */
+#}
+
+{{ attach_library('msi/resource-listing-teaser') }}
+
+{% set resource_listing_teaser__base_class = resource_listing_teaser__base_class|default('ResourceListingTeaser') %}
+{% set resource_listing_teaser__extra_classes = resource_listing_teaser__extra_classes|default(['ResourceCategoryIconBlock']) %}
+
+{% if (resource_listing_teaser__video == true) %}
+  {% set resource_listing_teaser__extra_classes = resource_listing_teaser__extra_classes|merge(['ResourceListingTeaserVideo']) %}
+{% endif %}
+
+<a {{ suit(resource_listing_teaser__base_class, resource_listing_teaser__modifiers, resource_listing_teaser__blockname, resource_listing_teaser__extra_classes) }} target="_blank" href="{{ resource_listing_teaser__url }}" title="{{ resource_listing_teaser__title }}">
+  <div {{ suit('container', [], resource_listing_teaser__base_class) }}>
+    <div {{ suit('image', [], resource_listing_teaser__base_class) }}>
+      {% block resource_listing_teaser__image %}
+        {% include '@atoms/images/Image/ResponsiveImage.twig' with {
+          responsive_image__src: resource_listing_teaser__image_src,
+        }%}
+      {% endblock %}
+    </div>
+    <div {{ suit('icon', [], resource_listing_teaser__base_class) }}>
+      {% block resource_listing_teaser__icon %}
+        {{ resource_listing_teaser__icon }}
+      {% endblock %}
+    </div>
+    <div {{ suit('text', [], resource_listing_teaser__base_class) }}>
+      <div class="full-width">
+        {% include '@atoms/text/Heading.twig' with {
+          heading__level: 4,
+          heading: resource_listing_teaser__title,
+          heading__extra_classes: ['HeaderFont--regular', resource_listing_teaser__base_class ~ '-title'],
+        } %}
+        <p {{ suit('subtitle', [], resource_listing_teaser__base_class) }}>
+          <small>{{ resource_listing_teaser__subtitle }}</small>
+        </p>
+        {% if resource_listing_teaser__caption %}
+          <p {{ suit('caption', [], resource_listing_teaser__base_class) }}>{{ resource_listing_teaser__caption }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</a>

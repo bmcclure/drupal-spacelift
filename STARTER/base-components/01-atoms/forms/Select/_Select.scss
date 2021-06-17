@@ -10,3 +10,25 @@ select,
 .Select {
   @include select;
 }
+
+/* override for chosen select fields */
+.select2-container--default .select2-selection--single, .chosen-container-single .chosen-single {
+  height: 2.4375rem;
+  border-radius: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered, .chosen-container-single .chosen-single {
+  line-height: 2.375rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 2.4375rem;
+
+}
+
+.chosen-container-single .chosen-single {
+  background: color(background);
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position: -16px 10px;
+}

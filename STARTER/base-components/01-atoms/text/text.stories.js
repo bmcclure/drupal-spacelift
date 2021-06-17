@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Heading from './Heading/Heading.twig';
+import Heading from './Heading.twig';
 import Blockquote from './Blockquote.twig';
 import Pre from './Pre-demo.twig';
 import Paragraph from './InlineElements-demo.twig';
 
 import BlockquoteData from './Blockquote.yml';
-import HeadingData from './Heading/Heading.yml';
+import HeadingData from './Heading.yml';
 
 /**
  * Storybook Definition.

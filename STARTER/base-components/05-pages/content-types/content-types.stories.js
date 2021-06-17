@@ -1,13 +1,11 @@
 import React from 'react';
 
-import '../../02-molecules/menus/main-menu/main-menu';
+import Article from './article.twig';
 
-import articleTwig from './article.twig';
-
-import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
-import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
-import socialMenuData from '../../02-molecules/menus/social/social-menu.yml';
-import footerMenuData from '../../02-molecules/menus/inline/inline-menu.yml';
+import MainMenuData from '../../02-molecules/Menu/MainMenu/MainMenu.yml';
+import BreadcrumbsData from '../../02-molecules/Breadcrumbs/Breadcrumbs.yml';
+import SocialLinksData from '../../02-molecules/SocialLinks/SocialLinks.yml';
+import FooterMenuData from '../../02-molecules/Menu/Inline/InlineMenu.yml';
 
 /**
  * Storybook Definition.
@@ -17,12 +15,12 @@ export default { title: 'Pages/Content Types' };
 export const article = () => (
   <div
     dangerouslySetInnerHTML={{
-      __html: articleTwig({
+      __html: Article({
         page_layout_modifier: 'contained',
-        ...mainMenuData,
-        ...breadcrumbData,
-        ...socialMenuData,
-        ...footerMenuData,
+        ...MainMenuData,
+        ...BreadcrumbsData,
+        ...SocialLinksData,
+        ...FooterMenuData,
         card__link__text: 'Click here',
       }),
     }}

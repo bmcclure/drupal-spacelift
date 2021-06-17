@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a menu link entity entity.
+ *
+ * Available variables:
+ * - menu_link_content: Menu link entity.
+ * - show_item_link: Indicator for menu item link.
+ *
+ * @see template_preprocess_menu_link_content()
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menu %}
+
+{{ menu.build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) }}
+
+{% macro build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) %}
+  {% set menu_dropdown_classes = [
+    'MainMenu-dropdown',
+    'reveal'
+  ] %}
+
+  <div data-reveal {{ attributes.setAttribute('id', 'reveal-' ~ menu_link_content.getTitle()|clean_class).addClass(menu_dropdown_classes) }}>
+    {% if content %}
+      <div class="grid-container">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    <div class="MegaMenu-footer">
+      <div class="grid-container">
+        <div class="MegaMenu-footerRow">
+          <div class="MegaMenu-footerItem">
+            <a href="{{ path('entity.node.canonical', {'node': 34}) }}">
+              <span class="fas fa-search-location"></span>
+              Find a Rep <span class="fas fa-caret-right"></span>
+            </a>
+          </div>
+          <div class="MegaMenu-footerItem">
+            <a href="{{ path('entity.node.canonical', {'node': 16}) }}">
+              <span class="fas fa-envelope"></span>
+              Contact Support <span class="fas fa-caret-right"></span>
+            </a>
+          </div>
+          <div class="MegaMenu-footerItem">
+            <a href="tel:+18002340135">
+              <span class="fas fa-phone"></span> Talk to a CSR
+              <span class="light">(800) 234-0135</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include '@atoms/buttons/Button/CloseButton.twig' %}
+  </div>
+{% endmacro %}

@@ -1,0 +1,12 @@
+{
+  "name": "ResourceListing",
+  "description": "Resource Listing",
+  "entries": {
+    "scss": [
+      "ResourceListing.scss"
+    ],
+    "js": [
+      "ResourceListing.js"
+    ]
+  }
+}

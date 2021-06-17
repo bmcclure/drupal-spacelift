@@ -1,0 +1,50 @@
+$SocialLinks-background: red !default;
+$SocialLinks-border-color: red !default;
+$SocialLinks-border-radius: 0 !default;
+$SocialLinks-color: white !default;
+$SocialLinks-hover-background: transparent !default;
+$SocialLinks-fontsize: 14px !default;
+
+.SocialLinks {
+  &-menu {
+    @include list-reset;
+
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1.5rem;
+
+    .vertical & {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &-item {
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  &-link {
+    background: $SocialLinks-background;
+    border: 1px solid $SocialLinks-border-color;
+    border-radius: $SocialLinks-border-radius;
+    color: $SocialLinks-color;
+    display: block;
+    font-size: $SocialLinks-fontsize;
+    line-height: 28px;
+    padding: 0;
+    text-align: center;
+    transition: ease all 0.4s;
+    width: 30px;
+
+    &:focus,
+    &:focus-within {
+      color: $SocialLinks-color;
+    }
+
+    &:hover {
+      background: $SocialLinks-hover-background;
+      color: $SocialLinks-border-color;
+      text-decoration: none;
+    }
+  }
+}

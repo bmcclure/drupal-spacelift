@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Testimonials Slider
+ *
+ * Available variables:
+ * - individual_testimonial__image - image
+ * - individual_testimonial__type
+ * - individual_testimonial__testimonial
+ * - individual_testimonial__citation
+ */
+#}
+
+{{ attach_library('msi/testimonials') }}
+
+{% set testimonials__base_class = testimonials_base_class|default('Testimonials') %}
+
+<section {{ suit(testimonials__base_class, testimonials__modifiers, testimonials__blockname, testimonials__extra_classes) }}>
+  <div {{ suit('grid-container') }}>
+    <div {{ suit('row', [], testimonials__base_class, ['MSISlider']) }}>
+      {% block testimonials %}
+        {% for testimonial in testimonial_list %}
+          {% include '@molecules/Testimonial/Testimonial.twig' with {
+            testimonial__image: testimonial.image,
+            testimonial__testimonial: testimonial.testimonial,
+            testimonial__citation: testimonial.citation,
+          } %}
+        {% endfor %}
+      {% endblock %}
+    </div>
+  </div>
+</section>

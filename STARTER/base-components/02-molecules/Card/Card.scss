@@ -10,6 +10,7 @@ $Card-paddingAspectRatio: 50% !default;
     background: $Card-background;
     display: block;
     height: 100%;
+    position: relative;
 
     h3 {
       color: $Card-headerColor;
@@ -20,11 +21,22 @@ $Card-paddingAspectRatio: 50% !default;
     padding: 1rem;
 
     @include breakpoint(medium) {
-      padding: 1.25rem;
+      padding: 1.25rem 1.25rem 3rem;
+      .link:last-child {
+        position: absolute;
+        left: 1.25rem;
+        bottom: 1.5rem;
+      }
     }
 
     @include breakpoint(large) {
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.5rem 3.5rem;
+      .link:last-child {
+        position: absolute;
+        left: 1.25rem;
+        bottom: 1.5rem;
+        width: calc(100% - 2rem); /* because this is absolute, we need some space around it */
+      }
     }
 
     #{$self}--tight-space & {

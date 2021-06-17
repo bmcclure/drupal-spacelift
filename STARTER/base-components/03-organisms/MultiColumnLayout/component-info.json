@@ -1,9 +1,0 @@
-{
-  "name": "MultiColumnLayout",
-  "description": "Multi-Column Layout",
-  "entries": {
-    "scss": [
-      "MultiColumnLayout.scss"
-    ]
-  }
-}

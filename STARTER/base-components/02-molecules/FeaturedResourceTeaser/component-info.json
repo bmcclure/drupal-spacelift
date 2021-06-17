@@ -1,0 +1,9 @@
+{
+  "name": "FeaturedResourceTeaser",
+  "description": "Featured resource teaser (Used for selected resources)",
+  "entries": {
+    "scss": [
+      "FeaturedResourceTeaser.scss"
+    ]
+  }
+}

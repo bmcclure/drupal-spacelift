@@ -1,0 +1,60 @@
+$Blockquote-fontFamily: sans-serif !default;
+
+@mixin blockquote {
+  border-left: 0;
+  position: relative;
+
+  @include breakpoint(medium) {
+    padding-left: 100px;
+  }
+
+  @include breakpoint(large) {
+    margin: auto;
+    max-width: 80%;
+  }
+
+  &::before {
+    color: color(accent);
+    content: '\f10d';
+    font-family: $font-family-fontawesome;
+    font-size: 60px;
+    font-weight: bold;
+
+    @include breakpoint(medium) {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  p {
+    color: color(secondary-dark);
+    font-family: $Blockquote-fontFamily;
+    font-weight: bold;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(18);
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoint(large) {
+      font-size: rem-calc(20);
+    }
+  }
+
+  cite {
+    font-size: 1rem;
+    font-style: normal;
+
+    &::before {
+      content: '';
+    }
+  }
+}
+
+blockquote,
+.Blockquote {
+  @include blockquote;
+}

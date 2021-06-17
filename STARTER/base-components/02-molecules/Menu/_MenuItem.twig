@@ -1,0 +1,51 @@
+{% if not item__modifiers %}
+  {% set item__modifiers = [] %}
+{% endif %}
+
+{# Pass original item modifiers down to children #}
+{% set original_item__modifiers = item__modifiers %}
+
+{% if item.in_active_trail == TRUE %}
+  {% set item__modifiers = item__modifiers|merge(['active']) %}
+{% endif %}
+
+{% if menu__level > 0 %}
+  {% set item__modifiers = item__modifiers|merge(['sub', 'sub-' ~ menu__level]) %}
+{% endif %}
+
+{% if item.below %}
+  {% set item__modifiers = item__modifiers|merge(['with-sub']) %}
+{% endif %}
+
+{# below could maybe be done without a loop? #}
+{% for modifier in item.modifiers %}
+  {% set item__modifiers = item__modifiers|merge([modifier]) %}
+{% endfor %}
+
+{% set li__label = item__label %}
+{% set li__base_class = item__base_class|default(menu__base_class ~ '--item') %}
+{% set li__modifiers = item__modifiers %}
+{% set li__blockname = item__blockname %}
+
+{% extends '@atoms/lists/_ListItem.twig' %}
+
+{% block li__content %}
+  {# if drupal #}
+  {% if directory %}
+    {{ link(item.title, item.url, suit(item__base_class|default(menu__class ~ '--link'), item__modifiers)) }}
+  {% else %}
+    {% include '@atoms/links/Link/Link.twig' with {
+      link__content: item.title,
+      link__url: item.url,
+      link__base_class: item__base_class|default(menu__base_class ~ '--link'),
+      link__modifiers: item__modifiers,
+      } %}
+  {% endif %}
+
+  {{ item.content }}
+
+  {% if item.below %}
+    <span class="expand-sub"></span>
+    {{ menus.menu__links(item.below, attributes, menu__level + 1, menu__base_class, menu__modifiers, menu__blockname, item__base_class, original_item__modifiers, item__blockname, directory) }}
+  {% endif %}
+{% endblock %}

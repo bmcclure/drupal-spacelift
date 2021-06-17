@@ -22,7 +22,7 @@
       {{ content.field_teaser_image }}
     </div>
     <div {{ suit('text', grid_teaser__modifiers, grid_teaser__base_class ) }} data-aos="SectionFade">
-      {% include '@atoms/text/Heading/Heading.twig' with {
+      {% include '@atoms/text/Heading.twig' with {
         heading__base_class: '',
         heading__level: 3,
         heading: content.field_teaser_title,
@@ -41,7 +41,9 @@
   {% set link__url = grid_teaser__url %}
 
   {% include '@atoms/links/Link/Link.twig' with {
-    link__content: grid_teaser__content
+    link__content: grid_teaser__content,
+    link__base_class: 'FlexRow-item',
+    link__extra_classes: 'GridTeaser'
   } %}
 {% else %}
   {{ grid_teaser__content }}

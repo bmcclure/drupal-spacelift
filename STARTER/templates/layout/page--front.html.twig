@@ -46,8 +46,8 @@
  */
 #}
 
-{% extends 'page.html.twig' %}
-
-{% block page_breadcrumbs %}
-  {# Hide breadcrumbs on the homepage #}
-{% endblock %}
+{% embed 'page.html.twig' %}
+  {% block page_breadcrumbs %}
+    {# Hide breadcrumbs on the homepage #}
+  {% endblock %}
+{% endembed %}

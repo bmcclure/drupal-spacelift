@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Multi-column Layout
+ *
+ * Available variables:
+ * - multi_column_layout__columns - Individual column components
+ *
+ * Available blocks:
+ * - columns - Section holding individual column components
+ */
+#}
+
+{{ attach_library('msi/accents') }}
+{{ attach_library('msi/multi-column-layout') }}
+
+{% set multi_column_layout__base_class = multi_column_layout__base_class|default('MultiColumnLayout') %}
+
+<section {{ suit(multi_column_layout__base_class, multi_column_layout__modifiers, multi_colummn_layout__blockname, multi_column_layout__extra_classes) }}>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x grid-margin-y">
+      {% block columns %}
+        {% for item in multi_column_layout__columns %}
+          {% include '@molecules/Column/Column.twig' with {column__content: item} %}
+        {% endfor %}
+      {% endblock %}
+    </div>
+  </div>
+</section>

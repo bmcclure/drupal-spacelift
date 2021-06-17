@@ -1,0 +1,12 @@
+{
+  "name": "Testimonials",
+  "description": "Testimonial Slider",
+  "entries": {
+    "scss": [
+      "Testimonials.scss"
+    ],
+    "js": [
+      "Testimonials.js"
+    ]
+  }
+}

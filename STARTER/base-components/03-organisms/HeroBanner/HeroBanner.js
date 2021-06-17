@@ -4,17 +4,21 @@ Drupal.behaviors.HeroBannerComponent = {
   attach: (context) => {
     'use strict';
 
-    if ($(window).width() > 1023) {
-      $('.HeroBanner-block', context).hover(
-        () => {
-          const imageNumber = $(this).attr('data-herobanner');
-          $(`.HeroBanner-background--${imageNumber}`).addClass('show');
-        },
-        () => {
-          const imageNumber = $(this).attr('data-herobanner');
-          $(`.HeroBanner-background--${imageNumber}`).removeClass('show');
-        },
-      );
-    }
+    $('.HeroBanner-block', context).hover(
+      (e) => {
+        if ($(window).width() > 1023) {
+          const imageNumber = $(e.currentTarget).data('herobanner');
+          $(`.HeroBanner-background--${imageNumber}`, context).addClass('show');
+        }
+      },
+      (e) => {
+        if ($(window).width() > 1023) {
+          const imageNumber = $(e.currentTarget).data('herobanner');
+          $(`.HeroBanner-background--${imageNumber}`, context).removeClass(
+            'show',
+          );
+        }
+      },
+    );
   },
 };

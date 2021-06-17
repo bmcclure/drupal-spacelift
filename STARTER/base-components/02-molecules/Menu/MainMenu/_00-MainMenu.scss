@@ -1,0 +1,311 @@
+@include foundation-reveal;
+@include foundation-close-button;
+
+/// Main Navigation
+$MainMenu-height: 375px !default;
+$MainMenu-subMenuHeight: 245px !default;
+$MainMenu-productMenuHeight: 500px !default;
+$MainMenu-productSubMenuHeight: 400px !default;
+$MainMenu-headerMainNavBorder: 1px solid #484848 !default;
+
+.MainMenu {
+  border-top: $MainMenu-headerMainNavBorder;
+  width: 100%;
+
+  /// UL
+  &-menu {
+    @include transition;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+
+    > .menu--item {
+      &::after {
+        background: $light-gray;
+        border: 1px solid $medium-gray;
+        border-bottom: 0;
+        border-right: 0;
+        bottom: -4px;
+        content: '';
+        display: none;
+        height: 10px;
+        margin-left: 1rem;
+        position: absolute;
+        transform: rotate(45deg);
+        width: 10px;
+        z-index: 100;
+      }
+
+      &.show-MegaMenu {
+        &::after {
+          display: block;
+        }
+      }
+
+      /// @todo: Replace color and font variables
+      > a {
+        border-top: 3px solid transparent;
+        color: $dark-blue;
+        display: block;
+        font-family: $header-font-family;
+        font-weight: 400;
+        margin: 0 .5rem;
+        padding: calc(0.625rem - 3px) 0 0.625rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        @include breakpoint(xlarge) {
+          margin: 0 1rem;
+        }
+
+        &.show-MegaMenu {
+          border-top: 3px solid $primary-color;
+          color: $primary-color;
+        }
+
+        &::after {
+          color: $red;
+          content: '\f0d7';
+          font-family: 'Font Awesome 5 Pro', sans-serif;
+          font-weight: bold;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.MegaMenu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  position: relative;
+
+  &-wrapper {
+    @include transition;
+
+    background: $light-gray;
+    border-top: 1px solid $medium-gray;
+    display: none;
+    left: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 2rem 0 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &-menu {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  &-topMenu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
+  }
+
+  a {
+    color: $dark-gray;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+
+  &-columns {
+    border-right: 1px solid $medium-gray;
+    flex: 0 1 auto;
+    max-width: 33.3333%;
+    padding: 0 1rem;
+
+    @include breakpoint(xlarge) {
+      padding: 0 2rem;
+    }
+
+    &:last-child {
+      border: none;
+      flex-grow: 1;
+      max-width: 40%;
+    }
+
+    &:nth-child(2) {
+      .is-MegaMenu.long & {
+        min-width: 33.333%;
+      }
+    }
+
+    a {
+      font-size: rem-calc(14);
+    }
+
+    > a {
+      color: $dark-blue;
+      display: inline-block;
+      font-family: $header-font-family;
+      font-size: 1rem;
+      height: 2rem;
+      line-height: 2rem;
+      margin-bottom: .25rem;
+      pointer-events: none;
+      vertical-align: baseline;
+      text-transform: uppercase;
+    }
+
+    &:first-child {
+      > a {
+        color: $dark-blue;
+        display: block;
+        font-family: $header-font-family;
+        font-size: rem-calc(22);
+        margin-bottom: 0.5rem;
+        margin-top: -2px;
+        text-transform: none;
+      }
+
+      a.link {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &-submenu {
+    display: flex;
+    flex-flow: column wrap;
+    max-height: $MainMenu-subMenuHeight;
+
+    > li {
+      padding-right: 0.25rem;
+
+      @include breakpoint(xlarge) {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  &-footer {
+    background: $red;
+    bottom: 0;
+    padding: 0.75rem 0;
+    position: absolute;
+    width: 100%;
+
+    &Row {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+    &Item {
+      border-right: 1px solid $white;
+      flex: 0 1 auto;
+      font-family: $header-font-family;
+      padding: 0 1rem;
+      text-transform: uppercase;
+
+      &:last-child {
+        border: none;
+      }
+
+      .light {
+        font-family: 'Selawik', 'Selawik Semibold', sans-serif;
+      }
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &-teasers {
+    padding-top: 0.5rem;
+
+    &.FlexRow {
+      flex-flow: row wrap;
+    }
+
+    &Image {
+      padding-top: 75%;
+    }
+
+    .FlexRow-item {
+      padding: 2px;
+    }
+
+    &Title {
+      color: $primary-color;
+      font-family: 'Selawik', 'Selawik Semibold', sans-serif;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.is-MegaMenu-product {
+  .MegaMenu-wrapper {
+    min-height: $MainMenu-productMenuHeight;
+  }
+
+  .MegaMenu-columns {
+    width: 25%;
+
+    > .MegaMenu-submenu {
+      height: $MainMenu-productSubMenuHeight;
+      max-height: 400px;
+    }
+
+    &:first-child {
+      max-width: 75%;
+      width: 75%;
+
+      > a {
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+
+      .MegaMenu-submenu > li {
+        > a {
+          color: $red;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+      }
+
+      .MegaMenu-subsubmenu {
+        display: block;
+
+        > li > a {
+          color: $dark-gray;
+          display: block;
+          font-size: 0.85em;
+          font-weight: normal;
+          margin-bottom: 0.175rem;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-MegaMenu.show-MegaMenu > .MegaMenu-wrapper {
+  display: block;
+  max-height: 600px;
+  min-height: $MainMenu-height;
+  opacity: 1;
+  z-index: 100;
+}
+
+.is-MegaMenu.is-MegaMenu-product.show-MegaMenu > .MegaMenu-wrapper {
+  min-height: $MainMenu-productMenuHeight;
+}

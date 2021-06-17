@@ -5,29 +5,37 @@
  * Used in organism/FeaturedIndustries/
  *
  * Available variables:
- * - icon_teaser_block__base_class - the base class name
- * - icon_teaser_block__blockname - blockname prepended to the base classname
- * - icon_teaser_block__extra_classes - extra classes
  * - icon_teaser_block__icon - icon
- * - icon_teaser_block__title
- * - icon_teaser_block__url
+ * - icon_teaser_block__title - text for the H4 title element
+ * - icon_teaser_block__url - link url that will surround teaser (optional)
+ *
+ * Available blocks:
+ * - icon - icon content, usually a rendered SVG
+ * - text - the textual content of the icon teaser, consisting of the title and arrow icon
  */
 #}
-{% set icon_teaser_block__base_class = 'IconTeaserBlock' %}
-{% set icon_teaser_block__extra_classes = icon_teaser_block__extra_classes|default(['FlexRow-item']) %}
 
-<div {{ suit(icon_teaser_block__base_class, icon_teaser_block__modifiers, icon_teaser_block__blockname, icon_teaser_block__extra_classes) }}>
-  <a {{ suit('container', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}
-    href="{{ icon_teaser_block__url }}"
-    title="{{ icon_teaser_block__title }}">
-    <div {{ suit('icon', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>
+{% set icon_teaser_block__base_class = 'IconTeaserBlock' %}
+{% set icon_teaser_block__extra_classes = icon_teaser_block__extra_classes|default([])|merge(['FlexRow-item']) %}
+
+<article {{ suit(icon_teaser_block__base_class, icon_teaser_block__modifiers, icon_teaser_block__blockname, icon_teaser_block__extra_classes) }}>
+  {% if icon_teaser_block__url is not empty %}
+    <a {{ suit('container', [], icon_teaser_block__base_class) }} href="{{ icon_teaser_block__url }}" title="{{ icon_teaser_block__title }}">
+  {% endif %}
+  <div {{ suit('icon', [], icon_teaser_block__base_class) }}>
+    {% block icon %}
       {{ icon_teaser_block__icon }}
-    </div>
-    <div {{ suit('text', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>
-      <h4 {{ suit('textTitle', icon_teaser_block__modifiers,icon_teaser_block__base_class ) }}>
+    {% endblock %}
+  </div>
+  <div {{ suit('text', [], icon_teaser_block__base_class) }}>
+    {% block text %}
+      <h4 {{ suit('textTitle', [], icon_teaser_block__base_class) }}>
         {{ icon_teaser_block__title }}
       </h4>
       <span class="fas fa-long-arrow-alt-right"></span>
-    </div>
-  </a>
-</div>
+    {% endblock %}
+  </div>
+  {% if icon_teaser_block__url is not empty %}
+    </a>
+  {% endif %}
+</article>

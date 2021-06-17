@@ -37,10 +37,8 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
 <a id="{{ content.field_id|field_value }}" {{ attributes.addClass(classes) }}></a>

@@ -1,0 +1,9 @@
+{
+  "name": "HeaderBanner",
+  "description": "Header Banner",
+  "entries": {
+    "scss": [
+      "HeaderBanner.scss"
+    ]
+  }
+}

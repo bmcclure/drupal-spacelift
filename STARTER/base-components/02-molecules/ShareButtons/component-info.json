@@ -1,0 +1,9 @@
+{
+  "name": "ShareButtons",
+  "description": "Social share buttons used on articles",
+  "entries": {
+    "scss": [
+      "ShareButtons.scss"
+    ]
+  }
+}

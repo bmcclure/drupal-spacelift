@@ -9,12 +9,12 @@ import LinkButtonDataAlt from './LinkButton--link.yml';
 /**
  * Add storybook definition for lines
  */
-export default { title: 'Atoms/LinkButton' };
+export default { title: 'Atoms/Buttons/Link Button' };
 
-export const LinkButtonExample = () => (
+export const linkButton = () => (
   <div dangerouslySetInnerHTML={{ __html: LinkButton(LinkButtonData) }} />
 );
 
-export const altLinkButtonExample = () => (
+export const altLinkButton = () => (
   <div dangerouslySetInnerHTML={{ __html: LinkButton(LinkButtonDataAlt) }} />
 );

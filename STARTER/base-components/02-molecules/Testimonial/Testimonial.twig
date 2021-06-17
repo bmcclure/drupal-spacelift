@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Testimonial
+ *
+ * Available variables:
+ * - testimonial__image
+ * - testimonial__testimonial
+ * - testimonial__citation
+ */
+#}
+
+{{ attach_library('msi/testimonial') }}
+
+{% set testimonial__base_class = testimonial_base_class|default('Testimonial') %}
+
+<div {{ suit(testimonial__base_class, testimonial__modifiers, testimonial__blockname, testimonial__extra_classes) }}>
+  <div {{ suit('row', [], testimonial__base_class) }}>
+    {% block image %}
+      {% include '@atoms/images/Image/ResponsiveImage.twig' with {
+        responsive_image__src: testimonial__image,
+      } %}
+    {% endblock %}
+    <blockquote {{ suit('quote', [], testimonial__base_class, ['Blockquote']) }}>
+      {% block testimonial %}
+        <p>{{ testimonial__testimonial }}</p>
+      {% endblock %}
+      <footer>
+        <cite>
+          {% block citation %}
+            {{ testimonial__citation }}
+          {% endblock %}
+        </cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>

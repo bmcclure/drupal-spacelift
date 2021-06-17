@@ -8,6 +8,8 @@ $IconTeaserBlock-hoverText: #fff !default;
   $self: &;
 
   &-container {
+    @include transition;
+
     background: $IconTeaserBlock-background;
     color: $IconTeaserBlock-color;
     display: block;
@@ -19,8 +21,6 @@ $IconTeaserBlock-hoverText: #fff !default;
     .bg-light & {
       background: $IconTeaserBlock-lightBackground;
     }
-
-    @include transition;
 
     &:hover {
       background: $IconTeaserBlock-hoverBackground;

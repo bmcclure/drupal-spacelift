@@ -1,2 +1,5 @@
 node_modules
 .eyeglass_cache
+dist/css
+dist/js
+styleguide

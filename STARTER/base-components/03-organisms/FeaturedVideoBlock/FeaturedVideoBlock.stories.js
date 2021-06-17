@@ -4,6 +4,8 @@ import FeaturedVideoBlock from './FeaturedVideoBlock.twig';
 
 import FeaturedVideoBlockData from './FeaturedVideoBlock.yml';
 
+import './FeaturedVideoBlock';
+
 /**
  * Storybook Definition.
  */

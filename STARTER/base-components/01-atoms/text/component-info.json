@@ -4,7 +4,8 @@
   "entries": {
     "scss": [
       "Text.scss",
-      "Heading/Heading.scss"
+      "Blockquote.scss",
+      "Heading.scss"
     ]
   }
 }

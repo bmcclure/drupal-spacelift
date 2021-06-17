@@ -1,0 +1,91 @@
+$ResourceListingFeatured-titleColor: red !default;
+$ResourceListingFeatured-titleHoverColor: red !default;
+$ResourceListingFeatured-color: gray !default;
+
+.ResourceListingFeatured {
+  $self: &;
+
+  &-container {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+      #{$self}-title {
+        color: $ResourceListingFeatured-titleHoverColor;
+      }
+
+      #{$self}-image {
+        @include drop-shadow-hover;
+
+        transform: scale(1.025);
+      }
+    }
+  }
+
+  &-image {
+    @include drop-shadow;
+    @include transition;
+
+    flex: 0 0 auto;
+
+    img {
+      display: block;
+      width: 80px;
+    }
+  }
+
+  &-text {
+    padding: 0.5rem 1rem;
+  }
+
+  & &-title {
+    color: $ResourceListingFeatured-titleColor;
+    text-transform: capitalize;
+  }
+
+  &-subtitle {
+    color: $ResourceListingFeatured-color;
+    font-size: rem-calc(14);
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  &-caption {
+    color: $ResourceListingFeatured-color;
+    margin-bottom: 0;
+    text-transform: initial;
+  }
+
+  &--video {
+    text-align: center;
+
+    span {
+      @include breakpoint(medium) {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+.ResourceListingTeaserVideo {
+  &-image {
+    display: none;
+  }
+
+  p {
+    color: $ResourceListingFeatured-color;
+  }
+}
+
+.Resources {
+  .heading {
+    margin-bottom: 1.25rem;
+  }
+
+  .Subcomponents & {
+    padding: 0;
+  }
+}
+

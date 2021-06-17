@@ -37,16 +37,18 @@
  */
 #}
 
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
+{% set classes = [
+  paragraph.bundle|clean_class
+] %}
 
-{# TODO: Hook up this template with front-end component(s) #}
+{% if add_wrapper %}
+  <section {{ attributes.addClass(classes) }}>
+    <div class="grid-container short">
+{% endif %}
 
-{% set video_entity = paragraph.field_media.entity.field_media_oembed_video.entity %}
-
-{#{{ dump(video_entity) }}#}
 {{ content }}
-{{ content.field_button_paragraph }}
+
+{% if add_wrapper %}
+    </div>
+  </section>
+{% endif %}

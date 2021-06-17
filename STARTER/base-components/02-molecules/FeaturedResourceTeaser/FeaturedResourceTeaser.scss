@@ -1,0 +1,23 @@
+.FeaturedResourceTeaser {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  &-text {
+    width: calc(100% - 100px);
+  }
+
+  .Image {
+    @include box-shadow;
+
+    margin-right: 20px;
+    width: 80px;
+  }
+
+  &:hover {
+    .Image img {
+      @include box-shadow-hover;
+    }
+  }
+}

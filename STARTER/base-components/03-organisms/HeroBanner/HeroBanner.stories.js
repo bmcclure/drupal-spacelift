@@ -4,7 +4,6 @@ import HeroBanner from './HeroBanner.twig';
 
 import HeroBannerData from './HeroBanner.yml';
 
-// Todo: Remove if we can load via twig attach_library()
 import './HeroBanner';
 
 /**

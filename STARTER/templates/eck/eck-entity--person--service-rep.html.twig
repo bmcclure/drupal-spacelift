@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an ECK entity.
+ *
+ * Available variables:
+ * - eck_entity: The full ECK entity with limited access to object properties
+ *   and methods. Only "getter" methods (method names starting with "get",
+ *   "has", or "is") and a few common methods such as "id" and "label" are
+ *   available. Calling other methods (such as node.delete) will result in an
+ *   exception.
+ * - content: All ECK entity items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ *
+ * @see template_preprocess_eck_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'eck-entity',
+] %}
+{{ attach_library('msi/horizontal-card') }}
+
+{# purposefully not adding  horizontal_card__job_url, since this isn't used #}
+{# we discussed using blocks, but for this instance, perhaps the regular include would have worked. #}
+
+{# gets the first available service, and puts that as the subtitle #}
+{% set horizontal_card__subtitle = content.field_available_services %}
+
+ {% if 'Contractor Material' in  content.field_available_services.0['#title'] %}
+   {% set horizontal_card__contractor = true %}
+   {% set horizontal_card__subtitle = 'CONTRACTOR' %}
+ {% endif %}
+
+{% if content.field_states_served is not empty %}
+  {% set horizontal_card__states = content.field_states_served %}
+{% endif %}
+{% if content.field_industries_served is not empty %}
+  {% set horizontal_card__industries = true %}
+{% endif %}
+
+{% set horizontal_card__email = content.field_email|field_value %}
+{% set horizontal_card__phone = content.field_phone_number %}
+{% if content.field_mobile_number|field_value is not empty %}
+  {% set horizontal_card__mobile = content.field_mobile_number %}
+{% endif %}
+{% if content.field_fax_number|field_value is not empty %}
+  {% set horizontal_card__fax = content.field_fax_number %}
+{% endif %}
+
+{% embed '@molecules/HorizontalCard/HorizontalCard.twig' %}
+  {% block image %}
+    <div class="HorizontalCard-image HorizontalCard-image--border cell shrink">
+      {{ content.field_profile_image }}
+    </div>
+  {% endblock %}
+  {% block title %}
+    {% include '@atoms/text/Heading.twig' with {
+      heading__base_class: 'h3',
+      heading__level: 3,
+      heading: content.title ,
+      heading__extra_classes: ['HeaderFont--regular'],
+    } %}
+    {% include '@atoms/text/Heading.twig' with {
+      heading__base_class: 'white',
+      heading__level: 6,
+      heading: horizontal_card__subtitle,
+      heading__extra_classes: ['uppercase'],
+    } %}
+  {% endblock %}
+  {% if content.field_industries_served is not empty %}
+    {% block industries %}
+      {{ content.field_industries_served }}
+    {% endblock %}
+  {% endif %}
+{% endembed %}

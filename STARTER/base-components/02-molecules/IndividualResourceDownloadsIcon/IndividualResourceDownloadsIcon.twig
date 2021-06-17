@@ -37,14 +37,14 @@
     </a>
   </div>
   <div {{ suit('text', individual_resource_downloads_icon__modifiers, individual_resource_downloads_icon__base_class) }}>
-    {% include '@atoms/text/Heading/Heading.twig' with {
+    {% include '@atoms/text/Heading.twig' with {
       heading__base_class: '',
       heading__level: 5,
       heading: individual_resource_downloads_icon__title,
       heading__extra_classes: ['IndividualResourceDownloadsIcon-title', 'HeaderFont--regular'],
       heading__url: individual_resource_downloads_icon__url,
     } %}
-    {% include '@atoms/text/Heading/Heading.twig' with {
+    {% include '@atoms/text/Heading.twig' with {
       heading__base_class: '',
       heading__level: 6,
       heading: individual_resource_downloads_icon__type,

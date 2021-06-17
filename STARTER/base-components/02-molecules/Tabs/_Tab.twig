@@ -26,16 +26,20 @@
 
 {# If Storybook atoms example, add ul wrapper #}
 {% if example %}
-<ul class="Tabs-nav">
+  <ul class="Tabs-nav">
+{% endif %}
+
+<li {{ attributes.addClass(list_item_classes) }}>
+  {# Detect if Drupal #}
+  {% if attributes %}
+    {{ link(link['#title'], link['#url'], { 'class' : link_classes }) }}
+  {% else %}
+    <a href="{{ tab_link }}" class="Tabs-link Tabs-link--local-tasks{% if key == 0 %} is-active{% endif %}">
+      {{ tab_text }}
+    </a>
   {% endif %}
-  <li{{ attributes.addClass(list_item_classes) }}>
-    {# Detect if Drupal #}
-    {% if attributes %}
-      {{ link(link['#title'], link['#url'], { 'class' : link_classes }) }}
-    {% else %}
-      <a href="{{ tab_link }}" class="Tabs-link Tabs-link--local-tasks{% if key == 0 %} is-active{% endif %}">{{ tab_text }}</a>
-    {% endif %}
-  </li>
-  {% if example %}
-</ul>
+</li>
+
+{% if example %}
+  </ul>
 {% endif %}

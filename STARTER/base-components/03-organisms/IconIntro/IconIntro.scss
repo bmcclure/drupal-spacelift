@@ -1,0 +1,29 @@
+$IconIntro-background: white !default;
+$IconIntro-border: 1px solid black !default;
+
+.IconIntro {
+  border-top: $IconIntro-border;
+  padding-bottom: 1rem;
+
+  &-container {
+    background: $IconIntro-background;
+    border: $IconIntro-border;
+    margin-top: -7rem;
+  }
+
+  &-text {
+    padding: 1rem;
+
+    @include breakpoint(medium) {
+      padding: 2.5rem 2.5rem 1rem;
+    }
+  }
+
+  &-blocks > .grid-x {
+    height: 100%;
+  }
+
+  + .bg-light {
+    padding-top: 2rem;
+  }
+}

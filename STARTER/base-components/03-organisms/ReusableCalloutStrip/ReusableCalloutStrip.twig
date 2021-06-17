@@ -26,7 +26,7 @@
     <div class="grid-x grid-padding-y large-up-2 vertical-center">
       <div {{ suit('text', reusable_callout_strip__modifiers, reusable_callout_strip__base_class, ['cell'] ) }}>
         <div {{ suit('textContainer', reusable_callout_strip__modifiers, reusable_callout_strip__base_class) }}>
-          {% include '@atoms/text/Heading/Heading.twig' with {
+          {% include '@atoms/text/Heading.twig' with {
             heading__level: 2,
             heading: reusable_callout_strip__title,
             heading__extra_classes: ['ReusableCalloutStrip-title','SectionFade-one'],

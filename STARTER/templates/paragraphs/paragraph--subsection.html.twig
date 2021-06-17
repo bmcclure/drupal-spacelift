@@ -39,8 +39,6 @@
 
 {{ attach_library('msi/subsection') }}
 
-{% set subsection__base_class = 'Subsection' %}
-
-<div {{ attributes }} {{ suit(subsection__base_class) }}>
+<div {{ suit('Subsection') }}>
   {{ content }}
 </div>

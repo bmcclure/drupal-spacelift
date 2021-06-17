@@ -1,0 +1,31 @@
+@import 'base-components/01-atoms/accents/AngledBackground/AngledBackground';
+
+.MultiColumnLayout {
+  padding: 2rem 0;
+
+  &--theme-blue {
+    @include angled-background;
+  }
+
+  .path-frontpage & {
+    .Column:first-of-type {
+      > .Subcomponents {
+        max-width: 400px;
+      }
+    }
+  }
+  .Column:first-child {
+    .Subcomponents  {
+      @include breakpoint(large) {
+        margin-right: 2rem;
+      }
+    }
+  }
+  .Column:nth-child(2){
+    .Subcomponents {
+      @include breakpoint(large) {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
