@@ -22,7 +22,7 @@ include "components/03-organisms/OtherPagesToView/OtherPagesToView.php";
 
 // bg-white or bg-light.
 $background_toggle = 'bg-light';
-$headline          = "View Other Case Studies From MSI";
+$headline          = "View Other Case Studies";
 
 // Limit to 9.
 $featured_case_studies = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -31,7 +31,7 @@ $count                 = count($featured_case_studies);
 $displayClass = 'FlexRow medium-up-2 large-up-3';
 
 if ($count > 3) {
-  $displayClass = 'FeaturedCaseStudies-slider MSISlider';
+  $displayClass = 'FeaturedCaseStudies-slider Slider';
 }
 
 if ($featured_case_studies) {

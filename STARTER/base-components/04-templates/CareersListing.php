@@ -59,7 +59,7 @@ $featured_testimonials = [1, 2, 3];
 $count                 = count($featured_testimonials);
 $class                 = '';
 if ($count > 1) {
-  $class = 'FeaturedTestimonials-slider MSISlider';
+  $class = 'FeaturedTestimonials-slider Slider';
 }
 $background_toggle = 'bg-white';
 ?>
@@ -100,7 +100,7 @@ $count        = count($featured_pages);
 $displayClass = 'FlexRow medium-up-3 large-up-4';
 
 if ($count > 4) {
-  $displayClass = 'OtherPagesToView-slider MSISlider';
+  $displayClass = 'OtherPagesToView-slider Slider';
 }
 ?>
 

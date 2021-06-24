@@ -10,8 +10,8 @@
 */
 #}
 
-{{ attach_library('msi/share-buttons') }}
-{{ attach_library('msi/foundation-reveal') }}
+{{ attach_library('{{starter}}/share-buttons') }}
+{{ attach_library('{{starter}}/foundation-reveal') }}
 
 {% set share_buttons__base_class = share_buttons__base_class|default('ShareButtons') %}
 {% set social_links__base_class = social_links__base_class|default('SocialLinks') %}

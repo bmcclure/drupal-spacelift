@@ -41,8 +41,8 @@
   paragraph.bundle|clean_class
 ] %}
 
-{{ attach_library('msi/half-callout-strip') }}
-{{ attach_library('msi/individual-resource-downloads-thumbnail') }}
+{{ attach_library('{{starter}}/half-callout-strip') }}
+{{ attach_library('{{starter}}/individual-resource-downloads-thumbnail') }}
 
 {% set half_callout_strip__base_class = half_callout_strip__base_class|default('HalfCalloutStrip') %}
 {% set half_callout_strip__extra_classes = half_callout_strip__extra_classes|default(['FlexRow-item']) %}

@@ -18,7 +18,7 @@
   {% endblock %}
 
   {% block header__branding %}
-    {{ blocks.msi_branding }}
+    {{ blocks.{{starter}}_branding }}
   {% endblock %}
 
   {% block header__search %}
@@ -26,10 +26,10 @@
   {% endblock %}
 
   {% block header__account_menu %}
-    {{ blocks.msi_account_menu }}
+    {{ blocks.{{starter}}_account_menu }}
   {% endblock %}
 
   {% block header__main_nav %}
-    {{ blocks.msi_main_menu }}
+    {{ blocks.{{starter}}_main_menu }}
   {% endblock %}
 {% endembed %}

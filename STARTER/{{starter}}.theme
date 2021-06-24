@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Functions to support theming in the MSI theme.
+ * Functions to support theming in the Spacelift child theme.
  */
 
 use Drupal\block_content\BlockContentInterface;

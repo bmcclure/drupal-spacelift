@@ -42,8 +42,8 @@
     paragraph.bundle|clean_class
   ]
 %}
-{{ attach_library('msi/icon-infobox') }}
-{{ attach_library('msi/flex-row') }}
+{{ attach_library('{{starter}}/icon-infobox') }}
+{{ attach_library('{{starter}}/flex-row') }}
 
 {% set icon_info_box__base_class = icon_info_box__base_class|default('IconInfoBox') %}
 {% set icon_info_box__extra_classes = icon_info_box__extra_classes|default(['FlexRow-item']) %}

@@ -36,10 +36,10 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('msi/foundation-reveal') }}
-{{ attach_library('msi/foundation-sticky') }}
-{{ attach_library('msi/socials') }}
-{{ attach_library('msi/social-share-to') }}
+{{ attach_library('{{starter}}/foundation-reveal') }}
+{{ attach_library('{{starter}}/foundation-sticky') }}
+{{ attach_library('{{starter}}/socials') }}
+{{ attach_library('{{starter}}/social-share-to') }}
 
 {% set content_box__extra_classes = [
   paragraph.bundle|clean_class,

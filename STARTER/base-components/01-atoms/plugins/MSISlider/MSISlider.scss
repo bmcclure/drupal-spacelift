@@ -1,8 +1,8 @@
-$MSISlider-border: 1px solid #fff !default;
-$MSISlider-arrowBackground: red !default;
-$MSISlider-arrowBackgroundHover: red !default;
+$Slider-border: 1px solid #fff !default;
+$Slider-arrowBackground: red !default;
+$Slider-arrowBackgroundHover: red !default;
 
-.MSISlider {
+.Slider {
   position: relative;
   padding-bottom: 2rem;
 
@@ -13,15 +13,15 @@ $MSISlider-arrowBackgroundHover: red !default;
   .slick-prev, .slick-next {
     width: 80px;
     height: 27px;
-    background: $MSISlider-arrowBackground;
-    border: $MSISlider-border;
+    background: $Slider-arrowBackground;
+    border: $Slider-border;
     position: absolute;
     bottom: 0;
     top: auto;
     @include transition;
 
     &:hover {
-      background: $MSISlider-arrowBackgroundHover;
+      background: $Slider-arrowBackgroundHover;
     }
 
     &::before {

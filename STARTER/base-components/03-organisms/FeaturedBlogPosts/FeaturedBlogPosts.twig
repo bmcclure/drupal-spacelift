@@ -42,7 +42,7 @@
         </div>
       </header>
       <div
-        {{ suit('slider', featured_blog_posts__modifiers, featured_blog_posts__base_class, ['MSISlider', 'grid-x','grid-margin-x','grid-margin-y','large-up-2 '] ) }}>
+        {{ suit('slider', featured_blog_posts__modifiers, featured_blog_posts__base_class, ['Slider', 'grid-x','grid-margin-x','grid-margin-y','large-up-2 '] ) }}>
         {% for blog in featured_blog_posts__blogs %}
           {% include '@molecules/IndividualPostTeaser/IndividualPostTeaser.twig' with {
             individual_post_teaser__image: blog.image,

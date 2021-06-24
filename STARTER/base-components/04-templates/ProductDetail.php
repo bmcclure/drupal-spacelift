@@ -18,7 +18,7 @@ $recommended_products = [1, 2, 3, 4, 5];
 $count = count($recommended_products);
 $class = 'FlexRow justify-center medium-up-3 large-up-4';
 if ($count > 3) {
-  $class = "RecommendedProductsCarousel-slider MSISlider";
+  $class = "RecommendedProductsCarousel-slider Slider";
 }
 
 if ($recommended_products) {
@@ -55,7 +55,7 @@ $count = count($featured_pages);
 $displayClass = 'FlexRow medium-up-3 large-up-4';
 
 if ($count > 4) {
-  $displayClass = 'OtherPagesToView-slider MSISlider';
+  $displayClass = 'OtherPagesToView-slider Slider';
 }
 ?>
 

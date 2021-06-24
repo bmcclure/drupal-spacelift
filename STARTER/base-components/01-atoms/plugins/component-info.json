@@ -4,7 +4,7 @@
   "entries": {
     "scss": [
       "Tooltip/Tooltip.scss",
-      "MSISlider/MSISlider.scss"
+      "Slider/Slider.scss"
     ]
   }
 }

@@ -12,7 +12,7 @@
 */
 #}
 
-{{ attach_library('msi/header') }}
+{{ attach_library('{{starter}}/header') }}
 
 {% set header__base_class = header__base_class|default('Header') %}
 {# If `directory` is defined, set the path relative for Drupal.

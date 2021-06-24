@@ -56,7 +56,7 @@ $count        = count($featured_pages);
 $displayClass = 'FlexRow medium-up-3 large-up-4';
 
 if ($count > 4) {
-  $displayClass = 'OtherPagesToView-slider MSISlider';
+  $displayClass = 'OtherPagesToView-slider Slider';
 }
 ?>
 

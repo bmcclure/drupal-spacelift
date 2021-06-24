@@ -32,12 +32,12 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('msi/flex-row') }}
-{{ attach_library('msi/rep-locator-filter-bar') }}
-{{ attach_library('msi/rep-locator-results') }}
-{{ attach_library('msi/resources-header') }}
-{{ attach_library('msi/form') }}
-{{ attach_library('msi/forms') }}
+{{ attach_library('{{starter}}/flex-row') }}
+{{ attach_library('{{starter}}/rep-locator-filter-bar') }}
+{{ attach_library('{{starter}}/rep-locator-results') }}
+{{ attach_library('{{starter}}/resources-header') }}
+{{ attach_library('{{starter}}/form') }}
+{{ attach_library('{{starter}}/forms') }}
 
 {% set classes = [
   dom_id ? 'js-view-dom-id-' ~ dom_id,

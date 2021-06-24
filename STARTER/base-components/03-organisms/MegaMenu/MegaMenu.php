@@ -682,7 +682,7 @@ $main_nav = [
               'children' => '',
             ],
             [
-              'name' => 'MSI Central',
+              'name' => 'Business Central',
               'url' => '',
               'children' => '',
             ],

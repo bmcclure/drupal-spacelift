@@ -41,8 +41,8 @@
   paragraph.bundle|clean_class
 ] %}
 
-{{ attach_library('msi/accents') }}
-{{ attach_library('msi/callout-section') }}
+{{ attach_library('{{starter}}/accents') }}
+{{ attach_library('{{starter}}/callout-section') }}
 
 {% set reusable_callout_strip__base_class = reusable_callout_strip__base_class|default('ReusableCalloutStrip') %}
 {% set reusable_callout_strip__extra_classes = reusable_callout_strip__extra_classes|default(['AngledBackground','reverse','bg-dark-blue']) %}

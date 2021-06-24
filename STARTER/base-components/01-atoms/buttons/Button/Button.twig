@@ -12,7 +12,7 @@
  */
 #}
 
-{{ attach_library('msi/buttons') }}
+{{ attach_library('{{starter}}/buttons') }}
 
 {% set button__base_class = button__base_class|default('Button') %}
 {% set button__extra_classes = button__extra_classes|default([])|merge(['button']) %}

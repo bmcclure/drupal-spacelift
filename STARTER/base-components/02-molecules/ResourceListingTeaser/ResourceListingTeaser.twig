@@ -15,7 +15,7 @@
  */
 #}
 
-{{ attach_library('msi/resource-listing-teaser') }}
+{{ attach_library('{{starter}}/resource-listing-teaser') }}
 
 {% set resource_listing_teaser__base_class = resource_listing_teaser__base_class|default('ResourceListingTeaser') %}
 {% set resource_listing_teaser__extra_classes = resource_listing_teaser__extra_classes|default(['ResourceCategoryIconBlock']) %}

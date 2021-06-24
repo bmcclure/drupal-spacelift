@@ -1,5 +1,5 @@
 {
-  "name": "spacelift/msi",
+  "name": "spacelift/{{starter}}",
   "type": "drupal-theme",
   "description": "Spacelift is a forward-thinking, developer-focused base theme for Drupal 8.",
   "keywords": ["Drupal"],

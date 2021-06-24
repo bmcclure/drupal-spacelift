@@ -11,13 +11,13 @@
  */
 #}
 
-{{ attach_library('msi/testimonials') }}
+{{ attach_library('{{starter}}/testimonials') }}
 
 {% set testimonials__base_class = testimonials_base_class|default('Testimonials') %}
 
 <section {{ suit(testimonials__base_class, testimonials__modifiers, testimonials__blockname, testimonials__extra_classes) }}>
   <div {{ suit('grid-container') }}>
-    <div {{ suit('row', [], testimonials__base_class, ['MSISlider']) }}>
+    <div {{ suit('row', [], testimonials__base_class, ['Slider']) }}>
       {% block testimonials %}
         {% for testimonial in testimonial_list %}
           {% include '@molecules/Testimonial/Testimonial.twig' with {

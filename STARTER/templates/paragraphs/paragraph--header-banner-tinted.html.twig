@@ -41,7 +41,7 @@
   paragraph.bundle|clean_class
 ] %}
 
-{{ attach_library('msi/red-header-banner') }}
+{{ attach_library('{{starter}}/red-header-banner') }}
 
 {% set red_header_banner__base_class = red_header_banner__base_class|default('RedHeaderBanner') %}
 {% set red_header_banner__extra_classes = red_header_banner__extra_classes|default(['']) %}

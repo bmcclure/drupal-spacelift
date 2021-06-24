@@ -1,7 +1,7 @@
 {% set main_menu__base_class = main_menu__base_class|default('MainMenu') %}
 
-{{ attach_library('msi/main-menu') }}
-{{ attach_library('msi/foundation-reveal') }}
+{{ attach_library('{{starter}}/main-menu') }}
+{{ attach_library('{{starter}}/foundation-reveal') }}
 
 <div class="grid-container">
   {% include '@molecules/Menu/_Menu.twig' with {

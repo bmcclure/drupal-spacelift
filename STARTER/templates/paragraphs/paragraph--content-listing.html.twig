@@ -37,7 +37,7 @@
  */
 #}
 
-{{ attach_library('msi/content-listing') }}
+{{ attach_library('{{starter}}/content-listing') }}
 
 {% set content_listing__base_class = content_listing__base_class|default('ContentListing') %}
 {% set content_listing__modifiers = content_listing__modifiers|default([])|merge([layout_direction]) %}

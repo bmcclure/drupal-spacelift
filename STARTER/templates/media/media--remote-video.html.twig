@@ -18,8 +18,8 @@
   not media.isPublished() ? 'media--unpublished',
   view_mode ? 'media--view-mode-' ~ view_mode|clean_class,
 ] %}
-{{ attach_library('msi/featured-video-block') }}
-{{ attach_library('msi/lity') }}
+{{ attach_library('{{starter}}/featured-video-block') }}
+{{ attach_library('{{starter}}/lity') }}
 
 {% set featured_video_block__base_class = featured_video_block__base_class|default('FeaturedVideoBlock') %}
 {% set featured_video_block__extra_classes = featured_video_block__extra_classes|default(['cell']) %}

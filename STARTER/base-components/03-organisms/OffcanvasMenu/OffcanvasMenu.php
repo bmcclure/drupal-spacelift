@@ -636,7 +636,7 @@ $main_nav = [
               'url' => '',
             ],
             [
-              'name' => 'MSI Central',
+              'name' => 'Business Central',
               'url' => '',
             ],
           ],
