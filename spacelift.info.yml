@@ -2,7 +2,7 @@ name: Spacelift
 type: theme
 base theme: classy
 description: A forward-thinking, developer-focused base theme for Drupal 8.
-core: 8.x
+core_version_requirement: ^8 || ^9
 regions:
   utility: Utility
   header: Header
